@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 18:43 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. One concrete player-research invitation is prepared locally and awaits authorization. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, approximately 18:50 Europe/Oslo. Work is preserved; further progress currently needs moderation, real player feedback or authorization for the prepared invitation. The user stopped the screenshot attempt with Escape before game entry. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -240,6 +240,28 @@ actual public download availability and real tester adoption.
 A direct one-page HTTP ranking request previously returned 403. Do not bypass or
 repeat blocked requests; use permitted rendered observations with provenance.
 No external outreach, money spent, fabricated downloads, ratings or reviews.
+
+### Current impasse after the pilot and invitation preparation
+
+The recent consecutive goal turns delivered the tested local pilot and its CI,
+then prepared a concrete player-research invitation. Both ended with the same
+external gates: moderation and actual player evidence, with outreach still
+unauthorized. The following turn attempted the remaining screenshot task, but
+Computer Use reported the user's physical Escape stop before any game entry or
+runtime-data change. Do not automatically resume PC control on a goal continuation.
+
+Two SessionScout saved-variable files were backed up for that attempt under
+`backups/sessionscout-media-20261011T164805Z`. At 18:49 both live file hashes still
+exactly matched their backups. No fixture, screenshot overlay, installation or
+new client test was executed. There is no unfinished UI operation to resume.
+
+At the next audit the same adoption/publication gates remained, with no owner
+reply and no GitHub issues. No substantial authorized independent task remained;
+repeated tests, searches or speculative features would not resolve those gates.
+This is the current resumed-run audit, not the earlier resolved access blockers.
+Keep the prepared invitation local and unsent until expressly authorized.
+The existing hourly heartbeat remains ACTIVE and must continue the requested
+status reports and check for changes that permit meaningful work.
 
 ## Next concrete work
 
