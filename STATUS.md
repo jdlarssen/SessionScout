@@ -52,10 +52,13 @@ Use that answer to redirect work if supplied.
   No actual WoW client testing has occurred. The user has been asked to restart
   the game, enable SessionScout, run `/scout` and report the result. Prepared code
   and installation are not runtime proof. Do not repeatedly reinstall unchanged files.
-- Browser connector could not connect to Chrome. Native Computer Use then stopped
-  because it could not verify the current browser URL sufficiently for its policy.
-  No further UI actions may be taken in that interrupted turn; do not work around
-  the browser safety check. CurseForge account access remains unverified.
+- Browser access recovered in the in-app browser after the user's explicit request
+  to handle author access. CurseForge SSO is reachable; GitHub sign-in was selected
+  and the known username filled. That browser has no authenticated GitHub session
+  and requires a password or passkey. The handoff tab is preserved. Never request
+  credentials in chat, copy CLI tokens into a browser, or claim author access before
+  the provider login and CurseForge return are verified. No account was created and
+  no OAuth authorization or project submission was completed.
 - A direct one-page HTTP listing request returned 403. Do not bypass or repeatedly
   request it; web search/rendered observations can be recorded with provenance.
 - No external outreach, money spent, fabricated downloads, ratings or reviews.
@@ -77,6 +80,11 @@ features or repeatedly reinstalling it. The persistent goal should be marked
 blocked after this audit; it is not complete. Keep the hourly status automation
 active as requested. Resume substantive work when the user supplies client-test
 results, makes a safe testing interval available, or restores verified author access.
+
+Latest access change: the previous browser URL-observation failure is resolved
+for the in-app browser. The current blocker is interactive provider authentication,
+not an inability to see the login page. The user's renewed request starts a fresh
+blocker audit; do not reuse the historical three-turn count for a new blocked action.
 
 ## Next concrete work
 
