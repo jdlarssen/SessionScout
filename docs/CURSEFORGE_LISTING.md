@@ -12,7 +12,7 @@ Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 Submitted file: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
 Release channel: Alpha.
 Only **WoW Forever 1.60.1** is selected, with automatic publication after approval.
-Server status at approximately 14:45 Europe/Oslo on 11 October 2026: **Under Review**, with zero
+Server status at approximately 20:17 Europe/Oslo on 11 October 2026: **Under Review**, with zero
 downloads shown in the author portal. The project-moderation banner is still
 present; public approval and download availability are not yet confirmed.
 ZIP: `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
@@ -24,6 +24,15 @@ Source: https://github.com/jdlarssen/SessionScout
 Issues: https://github.com/jdlarssen/SessionScout/issues
 
 ## Separate GitHub prerelease
+
+The current GitHub download is
+[SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever),
+published at approximately 20:21 on 11 October. It adds the tested planner
+window-ordering correction and targets `098d7ea2c43fbcbfe289965096592b793016d6bf`.
+CI passed on that commit; the uploaded ZIP digest is
+`823f66642b936b23aa2750ab52bc81d4d92cad68bf0c7ed9c678add0148359ba`.
+Alpha.2 has not been submitted to CurseForge. Its package excludes the local
+GearEvidencePilot and does not change the alpha.1 submission above.
 
 The same tested ZIP and its checksum were published on 11 October 2026 at
 [SessionScout 0.1.0-alpha.1 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).

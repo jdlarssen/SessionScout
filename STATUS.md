@@ -1,6 +1,26 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 20:15 Europe/Oslo. A specific Forever player report was verified directly, and a pinned-source audit separated selected gear models from detected talents; the next comparison now records both and uses the existing competitor controls. Details and limits are in docs/RESEARCH.md. Dedicated Reddit account SessionScoutResearch is verified, but r/WowUI blocks posting on age and karma with no numeric thresholds disclosed. No invitation was submitted. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha and merged UI correction remain delivered; no software changed in this follow-up.
+Last updated: 11 October 2026, approximately 20:22 Europe/Oslo. GitHub alpha.2 is public with the already client-tested planner window-ordering correction. Its exact commit passed CI and the uploaded ZIP digest matches the local package audit. Alpha.1 and the pending CurseForge submission are unchanged. The 20:17 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. No new GitHub issues/comments arrived through 20:18. The dedicated Reddit account remains blocked by r/WowUI age/karma requirements; no invitation was submitted. The next player comparison records selected versus detected model and uses existing competitor controls, as documented in docs/RESEARCH.md.
+
+## Current GitHub alpha — 20:21 Europe/Oslo
+
+[SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever)
+is a verified public prerelease targeting `098d7ea2c43fbcbfe289965096592b793016d6bf`.
+[CI run 38163416331](https://github.com/jdlarssen/SessionScout/actions/runs/38163416331)
+completed successfully on that exact commit. The package contains five files:
+the TOC, Core.lua, Model.lua, UI.lua and MIT license. Aside from version strings,
+all packaged source matches the `d6c8251` revision used in the scoped client
+checks. The local GearEvidencePilot is excluded and remains unpublished.
+
+ZIP: `dist/SessionScout-0.1.0-alpha.2-forever.zip`, 36,139 bytes.
+SHA256: `823f66642b936b23aa2750ab52bc81d4d92cad68bf0c7ed9c678add0148359ba`.
+GitHub's uploaded asset metadata confirmed the size, digest and complete upload;
+the tag reference confirmed the commit. No verification download was performed.
+The original alpha.1 ZIP still matches its recorded hash. README, changelog and
+repository homepage now direct GitHub visitors to alpha.2. The game installation
+was not changed or reloaded. Alpha.2 is not submitted to CurseForge, whose alpha.1
+file remains pending moderation. This release delivers a tested correction, not
+evidence of player adoption or attainment of the ranking goal.
 
 The hourly check read the existing source, status and goal, checked the issue feed
 and the author portal, and closed the temporary browser tab. No new client-test
@@ -67,11 +87,12 @@ validate this prototype, decision accuracy or voluntary reuse. The resulting
 next test remains a comparison with existing tools on a real item choice, not
 new speculative implementation. Details and source limits are in docs/RESEARCH.md.
 
-The tested alpha remains a public GitHub prerelease at
+The original alpha remains a public GitHub prerelease at
 https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever,
 targeting 0fffb795b25d98032d2bbd0280017315eeec4946. PR #1's scoped stacking
 correction is merged at 08be56eb6793e98d135b33a483bd85da4694efa6 and is not in
-that immutable alpha. CurseForge moderation and unvalidated player value remain
+that immutable alpha; its SessionScout portion is now in alpha.2 above.
+CurseForge moderation and unvalidated player value remain
 external dependencies, not reasons to repeat unchanged tests or build new features.
 
 ## Screen-use agreement — latest user instruction
@@ -128,8 +149,9 @@ The ignored screenshot
 must never be published. No public product screenshots were captured. Keep the
 tagged alpha and its ZIP unchanged; this correction is installed locally and
 merged into `codex/sessionscout` through
-[PR #1](https://github.com/jdlarssen/SessionScout/pull/1), not included in a new
-release. The merge and unchanged release tag target were verified through the
+[PR #1](https://github.com/jdlarssen/SessionScout/pull/1). Its SessionScout portion
+is now packaged in the separate alpha.2 release above; the pilot remains local.
+The merge and unchanged alpha.1 release tag target were verified through the
 GitHub API. The final PR commit changed documentation only; its source is the
 same `d6c8251` revision with successful CI and the scoped client observations.
 
