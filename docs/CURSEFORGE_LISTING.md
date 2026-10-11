@@ -1,4 +1,4 @@
-# Registered listing — no release file submitted
+# Registered listing — submitted alpha processing
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; not yet publicly visible.
@@ -9,8 +9,16 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Release channel: Alpha. Primary flavor: Forever. Target version: 1.60.1.
-Supported versions must be selected only after client tests; do not select all Classic versions.
+Submitted file: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
+Release channel: Alpha.
+Only **WoW Forever 1.60.1** is selected, with automatic publication after approval.
+Server status at 13:54 Europe/Oslo on 11 October 2026: **Processing**, with zero
+downloads shown in the author portal. The project-moderation banner is still
+present; public approval and download availability are not yet confirmed.
+ZIP: `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
+SHA256: `1143a35967230832078c6e0cea8cdfac81cf698c27b35fba2081f81320ca790b`.
+The portal explicitly states that Alpha files are not visible in the CurseForge
+client; after approval, downloads use the direct project website file page.
 License: MIT. Third-party distribution allowed; no automatic packaging.
 Source: https://github.com/jdlarssen/SessionScout
 Issues: https://github.com/jdlarssen/SessionScout/issues
@@ -24,8 +32,11 @@ estimates and priorities, choose your available time, and see up to three tasks
 that fit. Use it for a weekly goal, an alt's next step, or a quick reminder before
 your next login.
 
-**Development status:** Early alpha targeting WoW Forever 1.60.1. In-game
-compatibility testing is still pending; no download is available yet.
+**Early alpha for WoW Forever 1.60.1.** Core workflows and saving through `/reload`
+have been tested in Forever beta 1.60.1.70338. Real reset crossings, use across
+multiple characters, combat behavior, other UI scales and long sessions still
+need testing. Retail and other Classic versions are not supported by the initial
+file.
 
 ## Features
 
@@ -43,6 +54,10 @@ priority, then choose a budget. Daily and weekly completion resets according to
 the game server. Tasks are completed manually; SessionScout does not automatically
 track quests or supply a maintained list of current-season activities.
 
+Task definitions are shared: editing or deleting a task changes it for every
+character. The completion setting controls whether finishing it applies to one
+character or the account.
+
 Recurring completion needs the corresponding server-reset API. If that API is
 unavailable, the task stays unfinished and SessionScout explains the problem;
 it does not invent a reset schedule. One-time tasks remain available.
@@ -58,8 +73,15 @@ your game version and steps to reproduce a problem.
 ## Alpha release notes
 
 Initial implementation of task planning, manual completion, server reset timing,
-task editing, character notes and readiness information. This draft must be updated
-with actual client-test results and known issues before submission.
+task editing, character notes and readiness information. Fixed missing task-list
+metadata discovered in the actual client and corrected singular plan wording.
+In-client task operations, selection controls, budget limits, pagination,
+daily/weekly completion and Unicode-note reload persistence passed. Physical
+Unicode/pipe entry, edit cancellation and Escape were also checked.
+
+Known validation limits: reset crossings, alternate characters, combat,
+extreme UI scales, long sessions, full restart/logout permutations and the full
+bag/durability matrix. See `docs/CLIENT_TESTING.md` for the detailed evidence.
 
 ## Submission preparation
 
@@ -67,6 +89,13 @@ Uploaded project icon: `assets/icon-400.png` (400 x 400), rendered from the orig
 editable `assets/icon.svg`. The original 512px `assets/icon.png` is retained.
 The 400px export follows the current [moderation policy](https://support.curseforge.com/support/solutions/articles/9000197279-moderation-policies).
 
-Required remaining items: verified client compatibility, real screenshots,
-updated release notes, file upload and moderation approval. Do not present the
-registered project as a released product or use unverified adoption claims.
+Scoped client checks are complete for this alpha. The original account and
+character data were restored and independently hash-verified; the temporary QA
+addon was removed. Public screenshots have not been uploaded: full-window client
+evidence contains unrelated game UI/chat and is private.
+
+The description update and server receipt of the file are confirmed. Remaining
+publication steps: file processing, moderation approval and actual public
+download availability. Private evidence: `.tools/evidence/curseforge-alpha-processing.png`
+and `.tools/evidence/curseforge-description-tested.png`. Do not present the
+processing alpha as publicly released or use unverified adoption claims.

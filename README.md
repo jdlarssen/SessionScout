@@ -6,8 +6,9 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**It loads in the Forever client, but functional validation is still in progress.
-The CurseForge project is registered; no release has been published.**
+**Scoped in-client checks passed on Forever 1.60.1.70338.
+The alpha was submitted to CurseForge and is processing, pending moderation.
+Public download availability is not yet confirmed.**
 
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
@@ -43,14 +44,28 @@ complete until it is available; the addon does not guess a reset date.
 
 ## Compatibility and validation
 
-The initial TOC targets **Forever 1.60.1, interface 16001**, as requested by the
-project owner. This is a development target, not a compatibility certification.
-The local client is Classic beta 1.60.1.70338. Retail, Classic Era and other
-Classic flavors have not been validated or packaged as supported releases.
+The alpha targets **Forever 1.60.1, interface 16001**. Actual client checks on
+**1.60.1.70338** passed for task creation/editing/deletion, completion/undo,
+priorities and budgets, pagination, and reload persistence of tasks, completion,
+budget and a Unicode note. Daily and weekly completion stored server-reset
+timestamps. Physical Unicode/pipe text entry, cancelling an edit and Escape were
+also checked. A task-metadata display defect found in the client was fixed and
+visually verified.
 
-Lua model tests, mocked integration tests and tooling tests validate logic and
-packaging only (56 automated tests currently pass). Before publication,
-run the [client checklist](docs/CLIENT_TESTING.md) on the intended Forever version.
+This is a scoped alpha, not full compatibility certification. Actual daily/weekly
+reset crossings, second-character behavior, combat transitions, extreme UI scales
+and long-session behavior remain unverified. Retail, Classic Era and other
+Classic flavors have not been validated or packaged as supported releases.
+See the [client test record](docs/CLIENT_TESTING.md) for methodology and the
+remaining checks. The temporary QA addon was removed and the user's original
+account and character data were restored and independently hash-verified.
+
+The 56 automated Lua model, mocked integration and Python tooling checks support
+logic and packaging validation. They do not replace actual client checks.
+
+The submitted CurseForge release is **Alpha**. The author portal states that Alpha
+files are not visible in the CurseForge client; after approval, downloads use the
+project's website file page.
 
 ## Development
 
