@@ -377,6 +377,98 @@ These thresholds are provisional screening rules chosen before results, not stat
 
 Manual experiments must remain honest about automation. Reservation cards should include every user step a real product would require. If a researcher supplies information that a supported client cannot reliably expose, record that dependency and do not count the polished card as proof of a feasible product.
 
+### H4 source-case preparation — 11 October 2026, 22:14 onward
+
+Independent work remained available while publication and recruitment waited:
+the diagnostic case collection specified above had not been done. The initial
+result is [19 attributed source cases](../data/diagnostic-cases-20261011.json).
+Eleven are candidates with an explicitly reported, scoped successful outcome;
+seven are controls or unresolved reports, and one concerns a developer tool
+outside the player pool. Nine candidate cases concern Forever, while two
+are historical Classic cases and establish no Forever compatibility. These
+are selected reports, not eleven reproduced root causes or eleven research
+participants. An author-only barber workaround remains a low-confidence candidate
+under the same reported-outcome criterion; it is not an independently verified fix.
+
+Every entry preserves the symptom, known context, outcome source, warranted
+next check, existing help and missing evidence. Closed issues, merged fixes,
+thanks, and announced releases were not sufficient by themselves. In threads
+with several participants, the successful outcome stays attached to the
+participant who reported it. No private logs or player identifiers are copied.
+
+The collection covers client/build changes, settings interactions, incompatible
+interface metadata, external manager configuration, incomplete updates and
+misleading stack paths. A content-pack case distinguishes **installed but not
+loaded** from physically missing files; it does not fill the still-missing
+confirmed physical-dependency case. A historical missing-base-addon report has
+a successful follow-up after installation advice, but does not explicitly report
+the installation step; it is retained as a control, not the missing complete
+evidence chain. The old shared-library case is retained
+as a false-attribution control, not counted as an explicitly successful full
+retest. Insufficient evidence and partial fixes remain visible. This narrows
+what is ready for comparison without weakening the advance rule above.
+
+#### Information the proposed product could actually obtain
+
+This is a source audit of the pinned Forever mirror, not a fresh runtime test.
+The [C_AddOns declarations](https://github.com/Gethe/wow-ui-source/blob/943764493e6b16d63ded3ab304150d1f05e58b57/Interface/AddOns/Blizzard_APIDocumentationGenerated/AddOnsDocumentation.lua)
+and [Blizzard addon list](https://github.com/Gethe/wow-ui-source/blob/943764493e6b16d63ded3ab304150d1f05e58b57/Interface/AddOns/Blizzard_AddOnList/AddonList.lua)
+support inspecting known addons, selected-character enablement, metadata,
+declared dependencies and loadability/reason. Not loaded can be intentional,
+including demand loading. A missing list entry does not identify an extraction
+error or the directory used by another client installation. Access to another
+addon's private table requires that addon's opt-in; do not presume general
+access to its internal settings.
+
+| Information | Source required in a fair comparison |
+| --- | --- |
+| Current client build and addon load state | Game readout, with exact client context. |
+| Previous desired settings and the character the player meant | Player account of the incident; current identity alone cannot reconstruct intent. |
+| Persistence after restart | A recorded before/after procedure. Lifecycle events do not certify successful disk writes. |
+| WowUp registered client, channel and scan result | External manager observation; no in-game access established. |
+| Questie tracker/filter choices | Player observation or a separately verified, version-specific integration. |
+| Which historical issue/fix applies | Maintained source knowledge with build/version limits. |
+
+The [Forever system-event declarations](https://github.com/Gethe/wow-ui-source/blob/943764493e6b16d63ded3ab304150d1f05e58b57/Interface/AddOns/Blizzard_APIDocumentationGenerated/SystemDocumentation.lua)
+do not supply arbitrary SavedVariables file contents, hashes or proof of earlier
+disk state. The [watch-list API](https://github.com/Gethe/wow-ui-source/blob/943764493e6b16d63ded3ab304150d1f05e58b57/Interface/AddOns/Blizzard_APIDocumentationGenerated/QuestLogDocumentation.lua)
+does not replace Questie's own tracker/filter settings used in its
+[specific fix](https://github.com/Questie/Questie/pull/7894/files).
+
+For any later manual comparison, label supplied facts as game readout, player
+report, external observation or historical source knowledge. Give both options
+the same facts available at the chosen point in the incident, hide later outcomes
+from participants, and include time spent obtaining missing information. An
+answer may correctly request more evidence. Do not count a researcher's access
+to external screenshots or the eventual solution as in-game automation.
+
+#### Existing baseline and decision
+
+[BugSack's inspected source](https://github.com/funkydude/BugSack/blob/e707fd126f4dc021dc126546a7911f3bfa736cd6/core.lua)
+already displays errors gathered by BugGrabber and supplies concrete guidance
+when its own dependencies are missing. That establishes neither general root-cause
+accuracy nor the behavior of every BugGrabber implementation. The earlier
+0xgle Bugs author-description observation already overlaps understandable errors
+and next-step guidance. Its implementation was not available in the inspected
+[author repository revision](https://github.com/0xgle/ForeverForge/tree/fb7b9ff47662a993b177cb376b989365deebfefb);
+do not infer that advertised features are absent or accurate. No competitor was
+installed or exercised here.
+
+An additional direct baseline is [TOG Tools' versioned author changelog](https://www.curseforge.com/wow/addons/togtools/files/9095461/dependencies).
+It describes named missing dependencies, separate not-installed/disabled/wrong-version
+states, load-on-demand handling and navigation from an error explanation to an
+addon-load view. The author explicitly marks the dependency work as not verified
+in a client. These are attributed capabilities, not our accuracy measurements.
+They do rule out presenting this workflow as an established novel idea. A future
+comparison must include this baseline where available, not only a raw error window.
+
+**Decision:** keep H4 exploratory. The case sources already contain useful
+maintainer/player advice; assembling them does not demonstrate superior advice,
+an unmet market, feasibility of every diagnosis, or willingness to install.
+No five-player comparison, competitor runtime comparison, recruitment or new
+diagnostic implementation has occurred. The existing two-hour preparation cap
+and advance/stop rules still apply.
+
 ### Prepared experiment prompts
 
 - **H1:** “Show a recent session in which choosing what to do took effort. What did you choose, and did it fit the available time?” Use the existing alpha only after recording the baseline.
@@ -390,7 +482,15 @@ After the comparisons, choose at most one candidate for new implementation. Pref
 
 A Forever winner would still need sustained retention, authorized discovery channels, and separately verified support for any broader audience. None of the present hypotheses is demonstrated to support the scale required for first place on the overall list. Actual rank on that list remains the final success criterion.
 
-As of this revision: competitor research is complete enough to define initial tests; **none of the four comparative demand tests has run**. H1 has a technically tested alpha, but no validated adoption or retention. H2–H4 are research hypotheses without implementations. No users have been recruited, diagnostic case set assembled, or reservations verified. The user's recent-play problem report was requested and is pending; priorities remain provisional. Future entries should record date, hypothesis, real incident, baseline, setup burden, observed result, repeat use and the resulting decision.
+At the original 14:36 revision, none of the four comparative demand tests had
+run and no diagnostic cases had been collected. Later work has now assembled
+the H4 source ledger above and recorded the owner's real RFK gear-choice
+episode. Neither is a comparative demand test. H1 has a technically tested alpha,
+without validated adoption or retention; the gear explanation has a local pilot,
+without a demonstrated advantage over existing tools. H2–H4 remain unimplemented
+research hypotheses. No participants have been recruited or goal reservations
+verified. Future entries must retain negative results and distinguish baseline,
+setup burden, observed benefit, repeat use and the resulting decision.
 
 The sections below retain the original SessionScout research and release checklist. The portfolio rules above supersede its treatment as the default product direction. See [STATUS.md](../STATUS.md) and [CLIENT_TESTING.md](CLIENT_TESTING.md) for completed submission and client checks; checklist items below are not claims that those checks remain undone.
 

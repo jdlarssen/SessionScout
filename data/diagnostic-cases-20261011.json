@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-11",
+  "hypothesis": "H4: help a player choose the next justified addon troubleshooting check",
+  "status": "Initial source ledger; not a validated diagnostic benchmark",
+  "preparationStartedAt": "2026-10-11T22:14:00+02:00",
+  "sourceCollectionCompletedAt": "2026-10-11T22:31:00+02:00",
+  "preparationLimitMinutes": 120,
+  "candidateMeaning": "A source explicitly reports a scoped successful outcome after an intervention with an identifiable target or a specified update. This is possible eligibility for later comparison, not a reproduced root cause or a ready benchmark. Author-only workarounds, maintainer tests and participant reports retain distinct evidence classes. Unidentified intervention targets, attribution alone and component-only fixes remain controls.",
+  "method": "Purposive public-source search. Reported outcomes are attributed to their authors; nothing was reproduced locally. No participant contact or diagnostic product comparison has occurred.",
+  "limits": [
+    "A merged fix or closed issue alone does not establish successful resolution.",
+    "A successful workaround does not isolate a root cause or prove broad compatibility.",
+    "These selected incidents do not estimate prevalence, demand, willingness to install or retention.",
+    "No raw logs, player identifiers or private saved-data contents are copied into this ledger."
+  ],
+  "cases": [
+    {
+      "id": "H4-001",
+      "component": "Questie",
+      "reportedAt": "2026-09-27",
+      "context": "Forever, Questie v12.0.1; Questie tracker disabled and hiding untracked quest icons enabled.",
+      "symptom": "Map icons did not follow changes to quests watched in Blizzard's tracker.",
+      "outcome": "The maintainer explicitly reported a successful test on Forever and MoP on September 28. The linked fix was merged that day as 909f2471ebb2ce802d7b0ecc55615310aa454eed.",
+      "evidenceClass": "maintainer-tested-fix",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "Original issue contains reproduction steps and a linked fix; a maintainer supplied the test result.",
+      "justifiedNextCheck": "Check exact addon version and both tracker/filter settings against the documented combination before diagnosing a general map failure.",
+      "cannotConclude": "No evidence that every map icon problem has this cause or that our explanation would outperform the existing report.",
+      "missing": ["Exact client build", "First distributed release containing the fix", "Independent reproduction by this project"],
+      "sources": [
+        "https://github.com/Questie/Questie/issues/7893",
+        "https://github.com/Questie/Questie/pull/7894",
+        "https://github.com/Questie/Questie/pull/7894#issuecomment-5866482066"
+      ]
+    },
+    {
+      "id": "H4-002",
+      "component": "Questie plus an unnamed external SavedVariables workaround",
+      "reportedAt": "2026-09-26",
+      "context": "Questie v12.0.1. Forever appears in the report text; the form's flavor field initially says Era/HC.",
+      "symptom": "Reporter could not retain the intended tracker state after reload.",
+      "outcome": "After discussion of different tracker displays and a map option, the original reporter said on October 2 that removing an external SavedVariables workaround restored normal behavior.",
+      "evidenceClass": "reporter-improvement-with-unisolated-cause",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "Maintainers asked which actual client and tracker were involved. The later reporter response changed the causal interpretation.",
+      "justifiedNextCheck": "Resolve the conflicting flavor metadata and ask about external settings-persistence tools before attributing the symptom to Questie.",
+      "cannotConclude": "Neither the maintainer's earlier option suggestion nor a particular third-party tool is proven to be the isolated cause.",
+      "missing": ["External tool name and version", "Exact client build", "Controlled isolation", "Confirmation of the earlier map-option advice"],
+      "sources": [
+        "https://github.com/Questie/Questie/issues/7887",
+        "https://github.com/Questie/Questie/issues/7887#issuecomment-5949127872"
+      ]
+    },
+    {
+      "id": "H4-003",
+      "component": "Forever Chronicle",
+      "reportedAt": "2026-09-29",
+      "context": "Forever; initial addon version not specified. Follow-up explicitly identifies version 0.9.3.",
+      "symptom": "Find Treasure on a dwarf accompanied an aura-access error; a later report described a different protected-string error.",
+      "outcome": "The maintainer announced a fix in 0.9.3, but the same tester subsequently reported another error. A later update announcement did not contain a tester success confirmation.",
+      "evidenceClass": "fix-announced-without-confirmed-final-resolution",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The discussion already distinguishes the initial trigger, next version and further error report.",
+      "justifiedNextCheck": "Match the exact error and version, and obtain a post-update result; a release announcement alone is insufficient.",
+      "cannotConclude": "The later distinct error neither proves the original fix failed nor proves the addon became error-free.",
+      "missing": ["Exact client build", "Final tester confirmation", "Verified outcome for the initial trigger after the fix"],
+      "sources": ["https://eu.forums.blizzard.com/en/wow/t/forever-chronicle-%E2%80%93-an-addon-to-remember-your-journey-through-wow-forever/632506"]
+    },
+    {
+      "id": "H4-004",
+      "component": "Blizzard character-customization UI and an author's local workaround",
+      "reportedAt": "2026-09-20",
+      "context": "Forever beta; exact build and workaround package/version not supplied.",
+      "symptom": "Barber appearance controls failed with a Lua error.",
+      "outcome": "The post author reported normal appearance controls after a local guard against an absent character-creation frame. Blizzard separately listed the barber Lua symptom as a known issue.",
+      "evidenceClass": "author-only-workaround-report",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "An official known-issue entry provides a reason to check the beta's own status before blaming a third-party addon.",
+      "justifiedNextCheck": "Compare the exact client build and symptom with official known issues; preserve uncertainty about the workaround and cause.",
+      "cannotConclude": "The official symptom listing does not validate the author's root-cause analysis or confirm the workaround across builds.",
+      "missing": ["Exact client build", "Independent successful reproduction", "Maintainer validation of the proposed root cause"],
+      "sources": [
+        "https://us.forums.blizzard.com/en/wow/t/wow-forever-i-have-figured-out-why-the-barbershop-is-broken-i-even-fixed-it/2355539",
+        "https://eu.forums.blizzard.com/en/wow/t/wow-forever-beta-known-issues-8-october/629369/1"
+      ]
+    },
+    {
+      "id": "H4-005",
+      "component": "Character sheet and world map",
+      "reportedAt": "2026-09-19",
+      "context": "Forever; original reporter confirms frFR client text locale.",
+      "symptom": "Character-sheet Lua error and a map without its background artwork.",
+      "outcome": "A responder proposed a localization explanation and workarounds. The reporter confirmed locale and filing a bug report, but did not report a successful fix.",
+      "evidenceClass": "unresolved-primary-report",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The existing exchange requests locale and gives conditional suggestions; those suggestions remain unverified here.",
+      "justifiedNextCheck": "Record client build, locale and exact symptom, then seek an actual outcome before labelling a proposed workaround effective.",
+      "cannotConclude": "Thanks, confirmation of locale and submission of a bug report do not establish resolution or an isolated localization cause.",
+      "missing": ["Exact client build", "Tested workaround", "Reporter resolution confirmation", "Independent cause validation"],
+      "sources": ["https://eu.forums.blizzard.com/en/wow/t/character-sheet-lua-error-world-map-issue-wow-forever/629831"]
+    },
+    {
+      "id": "H4-006",
+      "component": "wow-secret-lint developer tool",
+      "reportedAt": "2026-09-29",
+      "context": "Versions 1.8.1 and 1.9.0; contributor comparison against Forever client 1.60.1.70205.",
+      "symptom": "Forever-only targets were initially skipped; a subsequent version reported some Retail API removals incorrectly for Forever.",
+      "outcome": "The maintainer documented fixes, a contributor reported a scoped version comparison, and the original reporter later confirmed the tool worked via npx.",
+      "evidenceClass": "developer-tool-resolution-outside-player-pool",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The existing release and issue discussion already explain flavor-specific checks and limits of the presence scan.",
+      "justifiedNextCheck": "Inspect tool version, target flavor and rule scope before accepting either a clean pass or an API-removal warning.",
+      "cannotConclude": "Contributor testing was not independent of the fix. Saved data and absent error entries do not prove all addon functionality or unreachable fallback calls worked.",
+      "missing": ["Ordinary player troubleshooting outcome", "Independent test of all relevant code paths", "Evidence of H4 demand"],
+      "sources": [
+        "https://github.com/Booyaka101/wow-secret-lint/issues/14",
+        "https://github.com/Booyaka101/wow-secret-lint/issues/14#issuecomment-5980933882",
+        "https://github.com/Booyaka101/wow-secret-lint/issues/14#issuecomment-5986949406",
+        "https://github.com/Booyaka101/wow-secret-lint/releases/tag/v1.9.0"
+      ]
+    },
+    {
+      "id": "H4-007",
+      "component": "Stryk's Emote Wheel settings on the Forever client",
+      "reportedAt": "2026-09-21",
+      "context": "Forever; addon version unspecified. Successful retest on client 1.60.1.70009.",
+      "symptom": "The addon author reported position and color settings resetting after reload/logout in a thread initially about Soundtrack persistence.",
+      "outcome": "On September 25 the Emote Wheel author confirmed settings loaded on build 70009 without special corrective code. This author explicitly disputed the earlier September 21 fix claim.",
+      "evidenceClass": "affected-addon-author-confirms-client-update-outcome",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The source distinguishes an initial disputed claim from a later build-specific successful result.",
+      "justifiedNextCheck": "Check exact client build and whether the same setting survives an ordinary restart before blaming profile corruption or disk writes.",
+      "cannotConclude": "The original Soundtrack version and reproduction are not the Emote Wheel version or test. The thread does not prove all persistence problems share this cause.",
+      "missing": ["Emote Wheel version", "Earlier affected client build", "Full retest procedure", "Independent reproduction by this project"],
+      "sources": ["https://us.forums.blizzard.com/en/wow/t/wowf-beta-addon-savedvariables-appear-to-write-correctly-to-disk-but-are-not-restored-at-startup/2356559"]
+    },
+    {
+      "id": "H4-008",
+      "component": "Forever secure-handler initialization",
+      "reportedAt": "2026-09-22",
+      "context": "Initial report concerned Clique/Danders keyboard bindings; successful isolated compilation probe on client 1.60.1.70009.",
+      "symptom": "Secure snippet execution failed; a later tester also described nonworking automatic state-driver dispatch.",
+      "outcome": "Two testers confirmed successful isolated snippet compilation on September 24 and 26. The second still found state-driver dispatch broken. Full binding functionality was not confirmed.",
+      "evidenceClass": "component-fix-with-unresolved-related-flow",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The public follow-up explicitly separates compilation from dispatch and explains why an absent global alone is not a valid diagnostic.",
+      "justifiedNextCheck": "Distinguish the failing operation and exact build before treating one passing component check as restoration of the whole flow.",
+      "cannotConclude": "A passing Execute probe does not establish working state drivers or Clique/Danders bindings.",
+      "missing": ["Exact affected addon versions", "Confirmed complete player workflow", "Resolution of the dispatch issue"],
+      "sources": [
+        "https://github.com/ClassicWoWCommunity/forever-bugs/issues/74",
+        "https://github.com/ClassicWoWCommunity/forever-bugs/issues/74#issuecomment-5823895934",
+        "https://github.com/ClassicWoWCommunity/forever-bugs/issues/74#issuecomment-5843587591"
+      ]
+    },
+    {
+      "id": "H4-009",
+      "component": "Dialogue UI",
+      "reportedAt": "2026-10-02",
+      "context": "Forever beta; original addon version unspecified. Compatibility update subsequently announced in 1.0.6.",
+      "symptom": "Default quest-giver UI appeared while the addon did not open; no Lua error was reported.",
+      "outcome": "The original reporter confirmed that adding interface 16001 to the TOC and reloading resolved the problem. A collaborator subsequently said release 1.0.6 should fix compatibility; that release did not receive a separate reporter confirmation in the thread.",
+      "evidenceClass": "original-reporter-confirms-scoped-workaround",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The existing issue already gives a short exact workaround and links the announced release.",
+      "justifiedNextCheck": "Check the addon's load status, installed version and declared client compatibility even when no runtime error appears.",
+      "cannotConclude": "No general claim that changing an interface label makes incompatible code work. This supports only the observed workaround on the reported setup.",
+      "missing": ["Original addon version", "Full client build", "Independent confirmation of release 1.0.6"],
+      "sources": ["https://github.com/Peterodox/YUI-Dialogue/issues/226"]
+    },
+    {
+      "id": "H4-010",
+      "component": "Questie Journey character context",
+      "reportedAt": "2026-09-27",
+      "context": "Questie 12.0.1, Forever; similarly named characters.",
+      "symptom": "Reporter initially believed Journey data were unexpectedly wiped again after relogging.",
+      "outcome": "The original reporter corrected the report: it concerned a different character with a similar name whose Journey should have reset.",
+      "evidenceClass": "withdrawn-report-context-control",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The corrected character context is explicit in the existing issue; no addon fix was needed for this reported incident.",
+      "justifiedNextCheck": "Confirm the character and expected profile/reset behavior before recommending changes to saved data.",
+      "cannotConclude": "The correction proves no general absence of persistence defects and must not be counted as a fixed addon bug.",
+      "missing": ["Full client build", "Independent reproduction"],
+      "sources": [
+        "https://github.com/Questie/Questie/issues/7896",
+        "https://github.com/Questie/Questie/issues/7896#issuecomment-5883905079"
+      ]
+    },
+    {
+      "id": "H4-011",
+      "component": "WowUp client registration",
+      "reportedAt": "2026-10-06",
+      "context": "Confirmed participant branch used a newer WowUp.CF beta after Beta6; exact version unspecified. Forever client had been registered as TWW beta.",
+      "symptom": "Participant saw outdated addon versions and unrecognized installations; switching the release channel did not solve the problem.",
+      "outcome": "After a contributor identified the wrong registered client type, the participant confirmed on October 8 that removing and re-adding the client configuration restored expected behavior.",
+      "evidenceClass": "participant-confirms-scoped-workaround",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The contributor identified the wrong client type from the participant's shared manager UI and supplied a successful next action.",
+      "justifiedNextCheck": "Inspect the client type registered in the addon manager before changing addon release channels again.",
+      "cannotConclude": "Do not transfer the initial NixOS reporter's version 2.23.1 or outcome to this participant. No in-game access to the manager configuration is established.",
+      "missing": ["Exact successful WowUp version", "Full WoW build", "Original reporter's resolution", "A verified in-game source for manager configuration"],
+      "sources": [
+        "https://github.com/WowUp/WowUp/issues/1580",
+        "https://github.com/WowUp/WowUp/issues/1580#issuecomment-6057652084",
+        "https://github.com/WowUp/WowUp/issues/1580#issuecomment-6057750103"
+      ]
+    },
+    {
+      "id": "H4-012",
+      "component": "ClassicUI Forever layout presets",
+      "reportedAt": "2026-10-04",
+      "context": "Reported with ClassicUI 0.11.5, Forever 1.60.1.70205, interface 16001; still occurred with only ClassicUI enabled.",
+      "symptom": "A saved preset's gryphon placement did not apply as expected on a new character.",
+      "outcome": "After an initially unsuccessful follow-up, the maintainer linked changes to 0.22.0 and on October 11 confirmed the issue no longer occurred on newly created characters. No final original-reporter confirmation is present.",
+      "evidenceClass": "maintainer-tested-fix-with-unspecified-final-build",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The report includes version and isolation context; the discussion includes a negative follow-up and the later maintainer retest.",
+      "justifiedNextCheck": "Check addon version and whether the failure concerns a newly created character and a saved layout; request the same scoped retest after updating.",
+      "cannotConclude": "No evidence that all profile/placement failures are resolved or that the original reporter confirmed the final release.",
+      "missing": ["Exact client and addon version at final successful test", "Final reporter confirmation", "Independent root-cause verification"],
+      "sources": [
+        "https://github.com/wowaddonmaker/classicuiforever/issues/126",
+        "https://github.com/wowaddonmaker/classicuiforever/issues/126#issuecomment-6110622852"
+      ]
+    },
+    {
+      "id": "H4-013",
+      "component": "ClassicUI Forever and BasicMinimap",
+      "reportedAt": "2026-10-03",
+      "context": "ClassicUI 0.17.0, BasicMinimap 12.1.1; Forever 1.60.1.70205, interface 16001.",
+      "symptom": "A hidden minimap day/night icon reappeared after reload with ClassicUI enabled despite its minimap feature being disabled. No Lua error was reported.",
+      "outcome": "After the maintainer proposed version 0.18.0, the original reporter explicitly confirmed testing it and finding the issue solved.",
+      "evidenceClass": "original-reporter-confirms-update-outcome",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The report already supplies the competing minimap configuration and a version-specific successful follow-up.",
+      "justifiedNextCheck": "Identify other addons controlling the same element, exact versions and behavior after reload before treating this as lost saved settings.",
+      "cannotConclude": "No isolated cause in BasicMinimap or guarantee that all minimap interactions are resolved. The form's single-addon answer is insufficient to reproduce the reported cross-addon flow.",
+      "missing": ["Independent reproduction", "Exact source-level cause", "Full isolation procedure"],
+      "sources": [
+        "https://github.com/wowaddonmaker/classicuiforever/issues/115",
+        "https://github.com/wowaddonmaker/classicuiforever/issues/115#issuecomment-5971455072"
+      ]
+    },
+    {
+      "id": "H4-014",
+      "component": "Questie and an old Forever compatibility addon",
+      "reportedAt": "2026-10-09",
+      "context": "Original reporter lists Questie 12.0.4 and Era/HC, then clarifies Forever beta and multiple affected characters. Exact version/build at final confirmation is not independently stated.",
+      "symptom": "Questie failed to initialize while other players reported normal operation.",
+      "outcome": "After an initial local code workaround and discussion of an unexpectedly present skill API global, the original reporter identified an old WoW Forever Compatibility addon, removed it and confirmed normal behavior on October 10.",
+      "evidenceClass": "original-reporter-confirms-conflict-removal",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The maintainer suggested reverting the local patch and testing Questie alone to distinguish a compatibility shim from a missing client API.",
+      "justifiedNextCheck": "Ask about installed compatibility shims and isolate the reported combination before assuming that Questie's use of a global proves the client supplied it.",
+      "cannotConclude": "Do not generalize to all Questie load failures or preserve the form's initial flavor after the reporter's correction. The final comment does not explicitly confirm patch reversion.",
+      "missing": ["Exact compatibility-addon version", "Client build and exact Questie version at final confirmation", "Explicit confirmation that the local workaround was reverted", "Independent isolation"],
+      "sources": [
+        "https://github.com/Questie/Questie/issues/8012",
+        "https://github.com/Questie/Questie/issues/8012#issuecomment-6098582186",
+        "https://github.com/Questie/Questie/issues/8012#issuecomment-6098714336"
+      ]
+    },
+    {
+      "id": "H4-015",
+      "component": "Blizzard world-map filter after Questie removal",
+      "reportedAt": "2026-10-04",
+      "context": "Original report identifies Forever and Questie v12.0.3 + v1.0.4; the separately confirming participant supplies no exact versions.",
+      "symptom": "Quest objectives disappeared from the world map after uninstalling Questie.",
+      "outcome": "Another participant reported the same problem and said re-enabling Quest Objectives in the world-map filters fixed it. A maintainer later endorsed checking that default UI setting.",
+      "evidenceClass": "participant-reports-successful-setting-change",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The existing reply gives the relevant built-in setting directly; no diagnostic addon is needed to execute that check.",
+      "justifiedNextCheck": "Inspect the built-in Quest Objectives map filter before recommending a reinstall or saved-data deletion.",
+      "cannotConclude": "No proof that Questie changed the setting, that the original reporter was resolved, or that every missing map icon has this explanation.",
+      "missing": ["Confirming participant's addon versions and client build", "Original reporter outcome", "Isolated cause of the setting state"],
+      "sources": [
+        "https://github.com/Questie/Questie/issues/7973",
+        "https://github.com/Questie/Questie/issues/7973#issuecomment-5985381854"
+      ]
+    },
+    {
+      "id": "H4-016",
+      "component": "Elkano's BuffBars, shared libraries and Critline",
+      "reportedAt": "2021-05-22",
+      "context": "Historical TBC Classic, not Forever. ElkBuffBars 2.6.2-199; Critline version unknown.",
+      "symptom": "Only default buffs appeared. The reporter disabled Accountant Classic and Atlas in turn as their names appeared in an error stack.",
+      "outcome": "The author explained that shared library providers appear in stacks and suggested a LibDualSpec/LibStub conflict. On May 26 the reporter said this helped identify Critline and that it would remain disabled. No explicit complete working-flow retest was supplied.",
+      "evidenceClass": "reporter-identifies-conflict-without-explicit-full-retest",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The existing author reply already cautions against disabling a library provider solely because its name is in the stack.",
+      "justifiedNextCheck": "Distinguish shared-library paths from evidence of causation and request controlled isolation instead of blaming each named addon.",
+      "cannotConclude": "No independent proof of the precise conflict, successful complete retest or transfer to Forever.",
+      "missing": ["Explicit successful player-flow retest", "Critline version", "Full client build", "Controlled retest", "Forever applicability"],
+      "sources": [
+        "https://www.wowace.com/projects/elkbuffbars?comment=2381",
+        "https://www.wowace.com/projects/elkbuffbars?comment=2386"
+      ]
+    },
+    {
+      "id": "H4-017",
+      "component": "BigWigs/BtWQuests content-pack loading",
+      "reportedAt": "2026-02-15",
+      "context": "TBC Anniversary, not Forever; Bazzite/Faugus and a Linux Curse client. Exact addon versions/build unspecified.",
+      "symptom": "Core addons reported missing content packs although the corresponding files were installed.",
+      "outcome": "The original reporter marked the case solved and confirmed the reply about enablement: content packs were not loading because they were marked out of date and loading outdated addons was unchecked.",
+      "evidenceClass": "original-reporter-confirms-load-setting-outcome",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "A one-question existing reply about whether the extra addons were enabled led to the reported solution.",
+      "justifiedNextCheck": "Inspect each content pack's actual load state and reason rather than equating files on disk with available addon data.",
+      "cannotConclude": "The dependency was physically absent, all outdated addons are safe/compatible, or this historical result establishes Forever behavior.",
+      "missing": ["Exact addon versions", "Client build", "Independent reproduction", "Forever applicability"],
+      "sources": [
+        "https://www.reddit.com/r/linux_gaming/comments/1r5de64/world_of_warcraft_tbc_anniversary_mods_unable_to/",
+        "https://www.reddit.com/r/linux_gaming/comments/1r5de64/comment/o5ttr3q/"
+      ]
+    },
+    {
+      "id": "H4-018",
+      "component": "Shadowed Unit Frames",
+      "reportedAt": "2019-08-27",
+      "context": "Historical WoW Classic, not Forever. Confirmed successful release v4.2-Classic-Beta5; affected participant's prior version uncertain.",
+      "symptom": "A participant reported frames stuck in configuration state and disappearing after reload/relog, followed by an updater extraction problem.",
+      "outcome": "After the developer repackaged Beta5, that participant confirmed a successful update and then working frames without the earlier problems. A separate participant also confirmed a working fresh Beta5 install.",
+      "evidenceClass": "participant-confirms-update-and-functional-outcome",
+      "resolvedPlayerCaseCandidate": true,
+      "baselineAlreadyAvailable": "The maintainer thread already separates version/package updates, requested error evidence and another participant's wrong-flavor installation.",
+      "justifiedNextCheck": "Confirm the exact package/version and whether the update actually completed before reusing another participant's diagnosis.",
+      "cannotConclude": "No single cause is established for every branch in the thread; the Retail installation error belonged to someone else. No Forever support is established.",
+      "missing": ["Affected participant's exact prior version", "Full client build", "Precise isolated cause", "Forever applicability"],
+      "sources": ["https://www.wowace.com/projects/shadowed-unit-frames/issues/1262"]
+    },
+    {
+      "id": "H4-019",
+      "component": "ConRO Mage and the ConRO base addon",
+      "reportedAt": "2024-01-04",
+      "context": "Historical report, not Forever. Client flavor/build and addon versions unspecified; level 70 alone does not identify the flavor.",
+      "symptom": "The reporter had the panel and class modules but saw a missing-dependency problem despite reinstalling those components.",
+      "outcome": "The maintainer identified the missing ConRO base addon and linked it. On January 6 the original reporter confirmed working behavior and asked about the displayed symbols. The installation step itself was not explicitly reported.",
+      "evidenceClass": "successful-follow-up-with-unreported-installation-step",
+      "resolvedPlayerCaseCandidate": false,
+      "baselineAlreadyAvailable": "The existing maintainer reply names and links the dependency; the next reporter reply supplies a positive functional result.",
+      "justifiedNextCheck": "Check whether the named base addon is installed and loadable, separately from its panel and class modules.",
+      "cannotConclude": "The inferred installation step is not an observed or explicitly reported action; this does not establish the full physical-absence-to-installation-to-working chain or Forever applicability.",
+      "missing": ["Explicit installation action", "Independently observed physical absence", "Client flavor/build", "Addon versions", "Forever applicability"],
+      "sources": [
+        "https://github.com/Vae2009/ConRO_Mage/issues/4",
+        "https://github.com/Vae2009/ConRO_Mage/issues/4#issuecomment-1877791930",
+        "https://github.com/Vae2009/ConRO_Mage/issues/4#issuecomment-1879438818"
+      ]
+    }
+  ]
+}

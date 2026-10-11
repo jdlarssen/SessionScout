@@ -1,5 +1,62 @@
 # CurseForge number-one project status
 
+## Independent hypothesis work — 11 October 2026, 22:30 Europe/Oslo
+
+The earlier broad impasse assessment was premature: H4's already planned public
+diagnostic-case collection was a useful task independent of moderation, outreach
+and screen access. That work has now produced
+[19 attributed cases](data/diagnostic-cases-20261011.json), with eleven possible
+comparison candidates reporting a scoped successful outcome, seven controls or
+unresolved reports, and one excluded developer-tool case. Nine candidates concern
+Forever; two concern other Classic clients. Author-only workarounds, maintainer
+tests and player reports retain different confidence levels. They are not eleven
+reproduced fixes or eleven recruited players.
+
+The [H4 research update](docs/RESEARCH.md#h4-source-case-preparation--11-october-2026-2214-onward)
+records source provenance, limits and the distinction between in-game facts and
+external information. For example, no in-game access to WowUp's registered client
+configuration is established. Existing author replies already supply useful
+next steps, and TOG Tools also describes dependency/load-state explanations.
+This is evidence against assuming the workflow is novel. H4 remains exploratory;
+no diagnostic addon or claim of superiority is justified by the collection alone.
+
+Source review corrected one attribution error: Questie #8012's later Forever
+clarification and successful conflict-removal report belong to the original
+reporter, not another participant. JSON parsing, case counts and whitespace checks
+are the appropriate verification for this research-only change. Unchanged addon
+tests were not repeated. No native screen use, installation, purchases, outreach,
+new upload or fabricated adoption occurred.
+
+The goal remains ACTIVE and the old first-impasse count is reset by this concrete
+independent result. Daily reporting at 20:00 Europe/Oslo remains configured.
+Latest publication evidence is still the 22:02 Under Review observation below;
+overall rank is unknown and first place is unachieved. The existing moderator
+message and screen-window permission requests remain pending without repetition.
+
+## Moderation follow-up — 11 October 2026, 22:13 Europe/Oslo
+
+The official [status definitions](https://support.curseforge.com/support/solutions/articles/9000197905-project-statuses-101)
+say that a new project's files are reviewed after its project page is approved.
+The [submission guide](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project)
+also distinguishes website approval from app distribution, which needs a
+Release file. The inspected current articles did not establish a guaranteed
+approval deadline for this submission; do not treat generic ticket-response
+text or historical community estimates as one.
+
+A focused review against the current [moderation policy](https://support.curseforge.com/support/solutions/articles/9000197279-moderation-policies)
+found no external file-download link or unsupported compatibility claim in the
+saved CurseForge description. Its source and issue links follow the description;
+GitHub release links elsewhere in the local listing document are not part of
+the submitted text. No corrective upload or description change is indicated.
+
+Check the existing submission at the next daily follow-up (12 October, 20:00
+Europe/Oslo), or earlier if a new moderation notification or relevant owner
+message arrives. Do not repeatedly refresh the same queue between automatic
+goal turns. Work that depends on players still awaits the existing moderator
+permission request or actual feedback; the pending screen window covers the
+remaining client cases. This research narrowed the available actions but did
+not deliver product changes, new adoption or ranking progress.
+
 ## Feedback intake correction — 11 October 2026, 22:10 Europe/Oslo
 
 A bounded review found one concrete mismatch: the newly published no-install
