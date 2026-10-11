@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>SessionScout compass</title>
+  <desc>Original geometric compass pointing toward the next useful action.</desc>
+  <rect width="512" height="512" rx="112" fill="#101c25"/>
+  <circle cx="256" cy="256" r="174" fill="#182f3a" stroke="#2d5660" stroke-width="10"/>
+  <path d="M256 103v26M256 383v26M103 256h26M383 256h26" stroke="#91adae" stroke-width="10" stroke-linecap="round"/>
+  <path d="M326 159L286 286L159 326L199 199Z" fill="#52d9bb"/>
+  <path d="M326 159L256 256L159 326L199 199Z" fill="#b6f4de"/>
+  <circle cx="256" cy="256" r="22" fill="#101c25"/>
+  <path d="M340 353l23 23 45-53" fill="none" stroke="#101c25" stroke-width="37" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M340 353l23 23 45-53" fill="none" stroke="#52d9bb" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
