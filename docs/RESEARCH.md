@@ -21,6 +21,24 @@ in choosing Ferine Leggings. No reply, comparative advantage, voluntary repeat
 use or wider demand has yet been observed. Further work should respond to that
 evidence instead of expanding the candidate list or supported classes.
 
+### Feedback intake and channel check — 18:42
+
+Two short GitHub issue templates now separate reproducible technical faults from
+actual play-session value and later voluntary reuse. Negative outcomes and no
+later opportunity are valid responses. They request anonymous examples rather
+than full SavedVariables or unrelated chat. Creating these forms does not mean
+any tester has been recruited or any feedback received.
+
+A read-only check of [r/wowforever's displayed community rules](https://www.reddit.com/r/wowforever/)
+found a relevant addon category, but also restrictions on predominantly generated
+content and recruitment outside designated threads. The dedicated rules URL
+returned only an empty rules table; the rules above came from the community
+page's sidebar. An autonomous AI-written recruitment post has therefore not been
+prepared for publication there, and the addon category alone is not permission
+to post it. No messages or moderator requests were sent. A suitable authorized
+recruitment channel remains unverified; do not treat public research access as
+authority to contact players.
+
 ## Autonomous equipment comparison — 11 October, 17:00 Europe/Oslo
 
 The user explicitly authorized PC use as needed and asked us to advance without

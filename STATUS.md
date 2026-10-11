@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 18:34 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client. The game has been returned to character selection. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, 18:42 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. The game has been returned to character selection. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -109,9 +109,21 @@ backups of subsequent changes. SessionScout and unrelated addons were not
 modified. Passing this functional test does not establish player demand.
 Normal logout completed after QA; character selection was visibly confirmed at
 18:32. No gameplay, gear or talent changes were made.
+Commit `0fffb795b25d98032d2bbd0280017315eeec4946` is on the GitHub default branch.
+Its [CI run](https://github.com/jdlarssen/SessionScout/actions/runs/38156082926)
+passed all 89 checks (56 existing project checks and 33 pilot checks), syntax and
+packaging. The SessionScout release ZIP retained the previously submitted SHA256;
+the separate pilot was not accidentally added to that package.
 An owner-feedback question about what remains unresolved in the Ferine choice
 is pending. Next validation is comparative decision value and voluntary reuse,
 not more candidates or classes without evidence.
+
+README and two new GitHub issue templates provide separate routes for bugs and
+actual-use feedback, including setup burden, voluntary versus prompted reuse,
+negative results and privacy guidance. This is feedback preparation, not
+recruitment or adoption. A scoped r/wowforever channel check found relevant
+content/recruitment restrictions; no post was sent or scheduled. Outreach still
+needs a suitable channel and explicit authorization.
 
 ## Completed work
 

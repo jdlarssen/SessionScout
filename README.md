@@ -42,6 +42,16 @@ your activities, or synchronize between separate WoW accounts. Time estimates ar
 your own. If the weekly-reset API is unavailable, weekly tasks cannot be marked
 complete until it is available; the addon does not guess a reset date.
 
+## Feedback
+
+Use the [issue tracker](https://github.com/jdlarssen/SessionScout/issues) to report
+a reproducible bug or describe a real play session. The templates distinguish
+technical errors from whether the addon helped after setup effort, and whether
+you chose to use it again. Reports that it did not help are useful too.
+
+Use fictional task names and remove chat or personal information from optional
+screenshots. Please do not attach complete SavedVariables files.
+
 ## Compatibility and validation
 
 The alpha targets **Forever 1.60.1, interface 16001**. Actual client checks on

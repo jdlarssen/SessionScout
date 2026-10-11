@@ -31,6 +31,13 @@ gaps that were fixed: inaccessible values not classified as secret, and pending
 talent edits. The tests cover synchronous/asynchronous item loading and changed
 equipment/request generations as well as invalid, missing and unsupported data.
 
+GitHub CI subsequently passed for commit
+`0fffb795b25d98032d2bbd0280017315eeec4946` at approximately 18:35, including the
+same 33 pilot checks under Ubuntu's Lua 5.1 and the 56 existing project checks.
+The release build retained the previously submitted SessionScout ZIP hash,
+confirming that the separate experiment is excluded from that package.
+[Run record](https://github.com/jdlarssen/SessionScout/actions/runs/38156082926).
+
 ## Client test record
 
 Target: the existing Forever beta client 1.60.1.70338, interface 16001.
