@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "Draft retrospective task bank; no study has run",
+  "instructions": "For each scenario, name one next check, explain why it is justified, and state how certain you are. You may ask for missing information. Do not change any game settings or install software for this exercise.",
+  "tasks": [
+    {
+      "id": "D01",
+      "scenario": "On Forever, a player using Questie 12.0.1 has disabled Questie's tracker and enabled hiding icons for untracked quests. The player reports that changing watched quests in Blizzard's tracker does not update the map icons. The exact client build is not provided."
+    },
+    {
+      "id": "D02",
+      "scenario": "On Forever, the author of Stryk's Emote Wheel reports that players can move the wheel and change its colors, but their choices return to defaults after reload or logout. The affected client build and addon version are not provided. There is no disk-file inspection for this addon in the available report."
+    },
+    {
+      "id": "D03",
+      "scenario": "On Forever beta, a player reports that Dialogue UI no longer opens when talking to a quest giver. The default quest window appears instead. The player reports no Lua error. The installed addon version, its load status and the exact client build have not been supplied."
+    },
+    {
+      "id": "D04",
+      "scenario": "A Forever player reports that WowUp.CF shows old addon versions or cannot identify manually installed addons after a scan. They have updated from Beta6 to a newer beta, whose exact version is not provided here. Changing the addon channel from Alpha to Stable did not help. The manager's registered client type and configured providers have not been supplied here."
+    },
+    {
+      "id": "D05",
+      "scenario": "A player using ClassicUI Forever 0.11.5 on client 1.60.1.70205 saves a layout with moved gryphon decorations. After creating a new character and selecting that layout, the decorations attach to the action bar instead of appearing in the saved positions. The player says this also happens with only ClassicUI enabled."
+    },
+    {
+      "id": "D06",
+      "scenario": "On Forever 1.60.1.70205, a player uses ClassicUI 0.17.0 and BasicMinimap 12.1.1. BasicMinimap hides the day/night icon, but it returns after reload when ClassicUI is enabled. The player says ClassicUI's minimap feature is disabled and reports no Lua error."
+    },
+    {
+      "id": "D07",
+      "scenario": "A Questie 12.0.4 reporter has clarified that they are playing Forever beta, although the original form selected Era/HC. Questie fails to initialize on several characters. They have tried a local code change and say that some other players can run Questie normally. The full addon list, exact client build and current code state have not been supplied here."
+    },
+    {
+      "id": "D08",
+      "scenario": "A participant in a Forever support discussion reports the same missing world-map quest objectives that another player described after removing Questie. The participant's own addon versions, client build and current map-filter settings are not provided."
+    },
+    {
+      "id": "D09",
+      "scenario": "In a historical TBC Anniversary report, a player using Bazzite/Faugus says BigWigs and BtWQuests cannot find their content packs. The player says the content-pack files are installed. Their in-game activation and load states, addon versions and exact client build have not been provided. This is not a Forever case."
+    },
+    {
+      "id": "D10",
+      "scenario": "In a historical WoW Classic report, a Shadowed Unit Frames user describes frames stuck in configuration state and disappearing after reload or relog. The same participant later says the updater gets stuck extracting the addon. Their exact installed version and client build are unknown. This is not a Forever case."
+    },
+    {
+      "id": "D11",
+      "scenario": "A Forever report describes nonworking Clique/Danders keyboard bindings. A later tester reports that a small isolated secure-snippet test completes without error on build 1.60.1.70009. No successful test of the complete keyboard-binding workflow has been supplied."
+    },
+    {
+      "id": "D12",
+      "scenario": "In a historical TBC Classic report, ElkBuffBars 2.6.2-199 shows only the default buffs and reports an error. A stack path contains Accountant_Classic/Libs/AceAddon-3.0. The player disables Accountant Classic, then sees Atlas named in the stack and disables that too. No complete isolation result is supplied. This is not a Forever case."
+    }
+  ]
+}

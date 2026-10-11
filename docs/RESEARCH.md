@@ -469,6 +469,42 @@ No five-player comparison, competitor runtime comparison, recruitment or new
 diagnostic implementation has occurred. The existing two-hour preparation cap
 and advance/stop rules still apply.
 
+### H4 task-bank preparation — 11 October, 22:38 Europe/Oslo
+
+The [participant prompt file](../data/diagnostic-prompts-20261011.json) contains
+twelve retrospective scenarios: ten selected outcome candidates and two controls
+(partial workflow verification and misleading stack attribution). The low-confidence
+barber workaround remains in the source ledger but is not selected here. The
+[separate researcher file](../data/diagnostic-taskbank-review-20261011.json) maps
+each prompt to its source, time boundary, acceptable checks and unsupported claims.
+It does not contain participant results or fabricated competitor explanations.
+
+Review exposed a concrete design risk: the source ledger's context sometimes
+contains the eventual solution. Those facts are excluded from the participant
+file. D01's original report already proposed a fix; D08 has no separately posted
+pre-solution account by the confirming participant; D09's original post was edited
+to include a solution. Their symptom excerpts are reconstructions, not recovered
+prospective snapshots. Other multi-participant threads preserve the identity of
+the relevant report without publishing personal identifiers. Current page contents
+do not prove that an earlier revision was identical.
+
+The authors have read all outcomes. A later test using these cases could study
+whether explanations help people choose warranted next checks, but it cannot
+establish accuracy on unseen incidents. Genuine prospective accuracy claims would
+require held-out incidents and evaluation criteria fixed before seeing outcomes.
+The eventual fix is not necessarily the only defensible initial check.
+
+This completes the useful public-source preparation at this stage, within the
+original two-hour cap. It does **not** make the comparison ready. Willing players,
+the earlier problem-discovery gate, case-specific competitor outputs, the missing
+physical-dependency evidence chain and a reviewed condition/scoring plan remain
+required. Public support replies are reference advice, not observations from
+TOG Tools/0xgle or a participant's usual workflow. Each case should be seen once
+per participant; repeated exposure after advice cannot count as independent
+improvement. Retain the existing 4/5 advance rule, rather than substituting case
+counts or an assistant's own answers for it. Do not extend this task bank or build
+H4 merely to occupy time while those prerequisites are absent.
+
 ### Prepared experiment prompts
 
 - **H1:** “Show a recent session in which choosing what to do took effort. What did you choose, and did it fit the available time?” Use the existing alpha only after recording the baseline.

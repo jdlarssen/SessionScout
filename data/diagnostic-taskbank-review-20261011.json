@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "audience": "Researcher only; do not give this file or the source ledger to participants",
+  "status": "Prepared task bank; not a ready comparative study or validated benchmark",
+  "promptsFile": "diagnostic-prompts-20261011.json",
+  "sourceLedger": "diagnostic-cases-20261011.json",
+  "selection": "Ten reported-outcome candidates, excluding the low-confidence author-only barber workaround, plus two controls. The source-ledger classifications are unchanged.",
+  "purpose": "Prepare a retrospective exercise about justified next checks. Authors already know the outcomes; this cannot validate unseen-case diagnostic accuracy or establish demand for a product.",
+  "outcomeLeakageLimits": [
+    "Prompt facts are attributed summaries, not new live game observations.",
+    "Current source pages can contain later edits; a date alone does not prove the original text was unchanged.",
+    "Source URLs, titles, later releases and eventual solutions belong only in researcher materials.",
+    "Do not copy the ledger's context field into participant materials; several entries contain successful later versions or discovered causes.",
+    "D08 and D09 are explicitly retrospective reconstructions; D01's report already proposed a fix. They are not prospective pre-diagnosis snapshots."
+  ],
+  "notYetAvailable": [
+    "Five willing target players and the pre-existing problem-discovery requirement",
+    "Case-specific outputs from the closest relevant competitors, with version, client context, equal inputs and setup cost",
+    "A verified full physical-missing-dependency, installation and working-result chain",
+    "A pre-registered condition assignment and scoring process reviewed independently before any responses",
+    "Unseen held-out incidents for any future claim of diagnostic accuracy"
+  ],
+  "baseline": {
+    "publicSupportAdvice": "Available through each source ledger entry; reference material only, not a competitor's observed output or the participant's usual workflow",
+    "bugSackBugGrabber": "Case-specific runtime outputs not collected",
+    "togTools": "Case-specific runtime outputs not collected",
+    "xgleBugs": "Case-specific runtime outputs not collected",
+    "missingBaselineCountsAsFailure": false
+  },
+  "comparisonRules": [
+    "Do not fabricate baseline or candidate outputs, participant responses, durations, scores or preferences.",
+    "Each participant sees a given case once. Rotate conditions across participants and balance case type and flavor. A repeated view after seeing advice is not an independent improvement.",
+    "Provide the same available facts to both conditions and count the effort to obtain additional facts.",
+    "Accept multiple warranted next checks and explicit uncertainty; the eventual fix is not the only correct initial action.",
+    "Separate next-check choice, unsupported confident attribution and time/confidence observations; do not collapse them into an invented success score.",
+    "Keep the existing advance rule: at least four of five improve next-check choices with no unsupported confident attribution. No part of this preparation satisfies it.",
+    "Preparation remains within the original two-hour cap starting 2026-10-11T22:14:00+02:00. Participant sessions are capped at twenty minutes."
+  ],
+  "tasks": [
+    {
+      "id": "D01",
+      "sourceCaseId": "H4-001",
+      "freeze": "Observation and reproduction paragraphs of the September 27 report, excluding its causal explanation and proposed PR",
+      "temporalStatus": "Reconstructed symptom excerpt; original report already includes a proposed solution",
+      "inputOrigin": "Addon/version/settings and visible behavior reported by the issue author",
+      "acceptableChecks": ["Confirm the exact client build and reproduce the documented tracker/filter combination", "Check a version-specific upstream report or compare watch-list changes with rendered icons"],
+      "unsupportedClaims": ["Every missing map icon has this cause", "A merged patch identifies the first distributed fixed release"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D02",
+      "sourceCaseId": "H4-007",
+      "freeze": "Emote Wheel author's September 21 initial reply, before the September 25 retest",
+      "temporalStatus": "Earlier reply verified; no claim that edit history was recovered",
+      "inputOrigin": "Emote Wheel author report only; no observations borrowed from Soundtrack",
+      "acceptableChecks": ["Ask for exact client/addon versions and a documented before/after persistence test", "Check build-specific known issues before concluding the profile or disk is corrupt"],
+      "unsupportedClaims": ["Build 70009 was the affected build", "Soundtrack's disk inspection proves Emote Wheel wrote its settings", "A nil value proves when data were lost"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D03",
+      "sourceCaseId": "H4-009",
+      "freeze": "Original October 2 symptom report before the TOC suggestion",
+      "temporalStatus": "Earlier report verified; later version and metadata finding omitted",
+      "inputOrigin": "Original player report; loading metadata not yet observed",
+      "acceptableChecks": ["Inspect addon load/enable status and compatibility reason for the current character", "Obtain installed addon version and declared interface metadata"],
+      "unsupportedClaims": ["No Lua error means the addon loaded", "Changing any interface label makes the code compatible"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D04",
+      "sourceCaseId": "H4-011",
+      "freeze": "Confirming participant's October 8 10:13:54 UTC reply, before the 10:14:38 diagnosis",
+      "temporalStatus": "Comment chronology verified; screenshot deliberately withheld from both conditions",
+      "inputOrigin": "Participant observations in an external addon manager, not game API readouts",
+      "acceptableChecks": ["Inspect the manager's registered client type, path and provider configuration", "Record the actual manager version and one precise install/rescan example"],
+      "unsupportedClaims": ["The manager definitely selected TWW beta without inspecting its configuration", "The initial NixOS reporter's version belongs to this participant", "An in-game addon has already read the manager's configuration"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D05",
+      "sourceCaseId": "H4-012",
+      "freeze": "Original October 4 report, before follow-up releases and maintainer retests",
+      "temporalStatus": "Original reproduction details verified; no final-release facts included",
+      "inputOrigin": "Reporter-supplied versions, layout steps and single-addon claim",
+      "acceptableChecks": ["Check the exact new-character/preset flow against version-specific known issues", "Record what layout was saved and selected, preserving existing settings"],
+      "unsupportedClaims": ["All profile failures share one cause", "The original reporter confirmed the final fixed release"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D06",
+      "sourceCaseId": "H4-013",
+      "freeze": "October 3 initial report before the 0.18.0 recommendation",
+      "temporalStatus": "Initial shared-element report verified; contradictory isolation wording not promoted to proof",
+      "inputOrigin": "Reporter-described addon versions, visible icon and settings",
+      "acceptableChecks": ["Check which addons control that same minimap element and reproduce their interaction", "Consult the version-specific report while distinguishing reload behavior from loss of saved settings"],
+      "unsupportedClaims": ["BasicMinimap is necessarily defective", "Disabling a feature guarantees its addon cannot touch that UI element"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D07",
+      "sourceCaseId": "H4-014",
+      "freeze": "Original reporter's October 10 clarification and 14:27:01 UTC comparison with other players, before compatibility-addon identification",
+      "temporalStatus": "Same-reporter attribution verified; local patch remains an explicit confounder",
+      "inputOrigin": "Original report and its author's follow-up; no later culprit imported",
+      "acceptableChecks": ["Establish exact client/addon versions, code changes and active addon list", "Arrange controlled isolation using a known unmodified addon version, including compatibility helpers"],
+      "unsupportedClaims": ["The old compatibility addon is already proven to be installed", "A global function must have been supplied by the client", "The initial form's Era/HC value overrides the author's correction"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D08",
+      "sourceCaseId": "H4-015",
+      "freeze": "Symptom-only reconstruction from the confirming participant's October 4 reply, with its solution removed",
+      "temporalStatus": "No separate pre-solution report from this participant; retrospective exercise only",
+      "inputOrigin": "Participant says the same problem occurred; original reporter's versions and outcome are not transferred",
+      "acceptableChecks": ["Inspect the built-in world-map quest filter", "Ask for the participant's exact client, addon history and visible map state"],
+      "unsupportedClaims": ["Questie is proven to have changed the filter", "The original reporter's setup and resolution were confirmed by this participant"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D09",
+      "sourceCaseId": "H4-017",
+      "freeze": "Symptom paragraphs before the edited Solved section in the current source page",
+      "temporalStatus": "Original pre-edit revision not recovered; retrospective reconstruction only",
+      "inputOrigin": "Player reports files exist; no independent disk or load-state verification",
+      "acceptableChecks": ["Inspect content-pack enablement, load status and rejection reason separately from the core addon", "Confirm the correct package and client versions"],
+      "unsupportedClaims": ["The content pack is physically missing", "Files present on disk prove the module loaded", "All outdated addons should be enabled"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D10",
+      "sourceCaseId": "H4-018",
+      "freeze": "Same participant's August 27 symptoms and August 29 extraction-failure reply, before the Beta5 recommendation",
+      "temporalStatus": "Participant chronology verified; other participants' Retail package and reinstall results excluded",
+      "inputOrigin": "Player report plus external updater observation",
+      "acceptableChecks": ["Confirm what package/version actually installed and whether extraction finished", "Collect a scoped error report before blaming another addon or resetting profiles"],
+      "unsupportedClaims": ["This participant installed the Retail package", "The extraction issue explains every earlier frame failure", "Another participant's successful fresh install proves this setup works"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D11",
+      "sourceCaseId": "H4-008",
+      "freeze": "Initial bindings report plus September 24 isolated-probe confirmation, excluding September 26 dispatch findings",
+      "temporalStatus": "A known component success is the premise; complete workflow outcome remains unknown",
+      "inputOrigin": "Reports from distinct testers, with their scopes kept separate",
+      "acceptableChecks": ["Test the actual keyboard-binding workflow on the specified build", "Distinguish the passing isolated operation from untested related operations"],
+      "unsupportedClaims": ["The complete addon or binding flow is fixed", "A remaining global nil value by itself proves the isolated test failed"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    },
+    {
+      "id": "D12",
+      "sourceCaseId": "H4-016",
+      "freeze": "May 22 original symptom and changing-stack report before maintainer advice and later culprit identification",
+      "temporalStatus": "Initial report verified; Critline and proposed library mechanism omitted",
+      "inputOrigin": "Reporter-supplied stack fragment and attempted changes; no raw player data copied",
+      "acceptableChecks": ["Check whether named paths are shared-library providers and obtain controlled isolation evidence", "Request a complete scoped retest rather than disabling every name in a stack"],
+      "unsupportedClaims": ["Accountant Classic or Atlas caused the error solely because of a stack path", "The later identified conflict proves a complete working-flow retest occurred"],
+      "competitorOutput": null,
+      "candidateExplanation": null
+    }
+  ]
+}

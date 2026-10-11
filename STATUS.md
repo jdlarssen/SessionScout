@@ -1,5 +1,30 @@
 # CurseForge number-one project status
 
+## Diagnostic task bank — 11 October 2026, 22:38 Europe/Oslo
+
+The previous turn delivered the source-case ledger and changed the available
+research action; it was progress, not an impasse or verified wait. This turn
+completed the useful next preparation step: twelve
+[participant scenarios](data/diagnostic-prompts-20261011.json) and a separate
+[researcher mapping](data/diagnostic-taskbank-review-20261011.json). They exclude
+later solution versions and known culprits from the participant text, retain
+source/time boundaries and accept more than one justified next check. Three
+reconstructed cases are explicitly distinguished from earlier posted reports.
+
+Independent review found no concrete outcome leak or claim of study readiness.
+JSON structure, unique task IDs, source mappings and null comparison-output fields
+were checked. These are document/data checks, not game tests or observed research
+outcomes. The H4 comparison remains unrun: no participants, case-specific competitor
+outputs or validated advantage. Since the authors already know the outcomes,
+this task bank also cannot establish accuracy on unseen incidents.
+
+The useful public-source preparation is complete at this stage; do not grow it
+merely to fill time. The existing problem-discovery and comparison requirements
+remain unchanged. No game input, installs, external messages or repeated uploads
+occurred. Goal status remains ACTIVE after this deliverable; ranking remains
+unknown and the last moderation observation remains Under Review at 22:02.
+Daily status at 20:00 Europe/Oslo and the pending permission requests are unchanged.
+
 ## Independent hypothesis work — 11 October 2026, 22:30 Europe/Oslo
 
 The earlier broad impasse assessment was premature: H4's already planned public
