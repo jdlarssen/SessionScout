@@ -1,16 +1,29 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.2 — 2026-10-11
 
-- Fix interleaved text and buttons when SessionScout overlaps the local
-  GearEvidencePilot. Windows now raise together when opened or brought forward;
-  periodic refreshes do not change foreground order. Both opening orders and
-  pilot click-to-front passed scoped Forever client checks. Manual dragging and
-  two additional foreground cases remain unverified in
-  [the client test record](docs/CLIENT_TESTING.md).
+Available as a
+[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever)
+for Forever 1.60.1 (interface 16001). The alpha.1 tag and ZIP remain unchanged.
+CurseForge file **9128965** remains the separate alpha.1 submission, last observed
+**Under Review** on 11 October 2026. Alpha.2 has not been submitted to CurseForge.
 
-This correction is on the development branch, not in the published alpha assets.
-A future release needs a new version and filename; preserve the alpha.1 ZIP.
+- Mark the planner as a top-level window and raise it when opened, addressing
+  interleaved text and buttons observed when overlapping the local
+  GearEvidencePilot. Periodic refreshes do not change foreground order.
+- Package only this two-line SessionScout UI correction plus the version update;
+  the local GearEvidencePilot remains excluded and unpublished.
+
+Scoped checks on Forever **1.60.1.70338**, with both local windows corrected,
+passed for both opening orders, pilot click-to-front and no foreground stealing
+over more than 60 seconds. Lua 5.1 syntax and the existing integration/runtime
+boundary checks passed for the correction. See
+[the client test record](docs/CLIENT_TESTING.md) for exact scope.
+
+Manual dragging, reopening an already-visible pilot behind the planner and
+clicking an exposed planner behind the pilot remain unverified. This was not a
+full error/taint audit. The alpha.1 limits below still apply, including actual
+reset crossings, multiple characters, combat, extreme UI scales and long sessions.
 
 ## 0.1.0-alpha.1 — 2026-10-11
 

@@ -1,7 +1,7 @@
 local addonName, ns = ...
 local M = ns.Model
 ns.name = addonName
-ns.version = "0.1.0-alpha.1"
+ns.version = "0.1.0-alpha.2"
 
 function ns.Now()
     return GetServerTime and GetServerTime() or time()

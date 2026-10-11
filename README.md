@@ -6,19 +6,20 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**The alpha is available as a GitHub prerelease for Forever 1.60.1.
+**Alpha.2 is the GitHub prerelease for Forever 1.60.1.
 Scoped in-client checks passed on Forever 1.60.1.70338.
-The CurseForge submission was still under review at the last check on
-11 October 2026; CurseForge availability remains unconfirmed.**
+The separate CurseForge alpha.1 submission was still under review at the last
+check on 11 October 2026; CurseForge availability remains unconfirmed.
+Alpha.2 has not been submitted to CurseForge.**
 
-[Download the alpha](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever) ·
+[Download the alpha](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
 ## Use
 
-1. Download `SessionScout-0.1.0-alpha.1-forever.zip` from the
-   [release assets](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
+1. Download `SessionScout-0.1.0-alpha.2-forever.zip` from the
+   [release assets](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
@@ -67,6 +68,13 @@ timestamps. Physical Unicode/pipe text entry, cancelling an edit and Escape were
 also checked. A task-metadata display defect found in the client was fixed and
 visually verified.
 
+Alpha.2 adds a window-ordering correction: the planner raises as one window when
+opened, and periodic refreshes do not change foreground order. Scoped overlap
+checks with the separately corrected local GearEvidencePilot passed on the same
+client build. Manual dragging and two additional foreground cases remain
+unverified; see the client test record for the exact checks. The pilot is not
+included in this release, and the alpha.1 tag and ZIP remain unchanged.
+
 This is a scoped alpha, not full compatibility certification. Actual daily/weekly
 reset crossings, second-character behavior, combat transitions, extreme UI scales
 and long-session behavior remain unverified. Retail, Classic Era and other
@@ -78,7 +86,7 @@ account and character data were restored and independently hash-verified.
 The 56 automated Lua model, mocked integration and Python tooling checks support
 logic and packaging validation. They do not replace actual client checks.
 
-The submitted CurseForge release is **Alpha**. The author portal states that Alpha
+The submitted CurseForge alpha.1 release is **Alpha**. The author portal states that Alpha
 files are not visible in the CurseForge client; after approval, downloads use the
 project's website file page.
 
