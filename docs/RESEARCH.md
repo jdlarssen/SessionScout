@@ -2,6 +2,39 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Public player episodes — 11 October, 19:55 Europe/Oslo
+
+A bounded follow-up looked for reported gear-advice uncertainty, rather than
+another inventory of addon features. Two primary discussions expose the original
+player's later response. They are self-reports from other WoW clients, not
+recruited testers or observations of the Forever prototype.
+
+| Episode | Reported problem and subsequent response | What this supports and does not support |
+| --- | --- | --- |
+| [Feral/Pawn, April 2026](https://www.reddit.com/r/wow/comments/1sart4z/comment/odyxmqs/) | A new player questions a ring recommendation against their interpretation of Wowhead stat priorities. After discussion, the original player reports uninstalling Pawn, plans to follow the guide more closely and asks how to simulate. The discussion is Retail-oriented; exact client/addon version and item IDs are absent. | Conflicting advice affected reported tool choice. No completed simulation, equipment change or better result is reported. Connecting players to existing tools could be sufficient. |
+| [Hunter/Pawn, TBC Classic, June 2021](https://www.reddit.com/r/classicwowtbc/comments/o7n1oy/comment/h2zrvys/) | A new casual player asks why Intellect is weighted highly and whether Pawn is always correct. The player's later takeaway distinguishes a quick leveling aid from endgame evaluation and recognizes limitations of fixed weights, with simulation as a future intention. Exact level, build and addon version are absent. | Explanations can change stated understanding and intended workflow. This older TBC case does not establish actual decision accuracy, later behavior, or relevance of its numerical advice to Forever. |
+
+A third lead is a search-indexed player comment on the
+[Lootified announcement](https://www.reddit.com/r/wowforever/comments/1wrs5yi/lootified_i_made_an_addon_so_i_dont_need_10/):
+an Arms-heavy Warrior reportedly sees Fury detection and questions Agility-heavy
+advice. The direct page retrieved here does not expose that comment. Its exact
+version, build, outcome and date were not established reliably; keep it as a lead,
+not a reproduced defect or a fully verified third episode. It does not justify
+claiming a bug in the current competitor version.
+
+**Decision:** retain the small explanation experiment, without expanding its
+classes or item list. The useful comparison is whether a player can determine
+which assumptions apply, identify the actual tradeoff, and make the next choice
+with less unresolved lookup than with their existing tools. A clearer explanation
+that only changes confidence is not sufficient evidence of a better decision.
+These episodes establish neither prevalence nor a need for a new addon. Community
+claims about stat mechanics are not independently verified technical facts.
+
+The owner authorized using a separate project account for the prepared r/WowUI
+invitation and explicitly ruled out their personal Reddit account. Registration
+is being prepared; no post, reply, recruitment or new prototype feedback has
+occurred. The two historical discussions must not be counted as pilot participants.
+
 ## Bounded client experiment — 11 October, 18:34 Europe/Oslo
 
 The owner's request for continued autonomous work led to a separate local

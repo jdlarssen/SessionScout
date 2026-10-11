@@ -1,23 +1,51 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 19:33 Europe/Oslo. PR #1 is merged into the development branch at 08be56eb6793e98d135b33a483bd85da4694efa6 (19:31:55 Oslo). Scoped client checks of the dialog-stacking correction passed; dragging and two remaining foreground cases are explicitly unverified. The tested alpha is a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. GitHub still showed zero ZIP downloads and no open issues at 19:29.
+Last updated: 11 October 2026, approximately 19:55 Europe/Oslo. Work resumed after the owner's request to resolve the blockage. GitHub About metadata is corrected and links directly to the public alpha. CurseForge was freshly checked at 19:43: Under Review, zero downloads and the hidden-project moderation banner remain; rank unknown. Two public player episodes and one lower-confidence lead are documented in docs/RESEARCH.md. A separate project mailbox is prepared for Reddit registration, but requires the owner to enter and submit the new password under the browser tool's mandatory handoff rule. No account has been created or invitation posted.
 
-## Current external dependencies — 19:38 Europe/Oslo
+## Resumed work and current dependencies — 19:55 Europe/Oslo
 
-After the merged correction, three consecutive goal follow-ups found no new
-player evidence, recruitment authorization or screen-window permission. The
-independent next-action review found no other grounded task that could materially
-advance the product now. GitHub's issue and PR-comment feeds were empty at 19:36;
-the previously recorded CurseForge observation remains the latest, not a fresh
-moderation result. These checks and this record are not product progress or a
-verified live-process wait. The goal is being marked blocked, not completed.
+The owner's request to resolve the blockage supersedes the 19:38 impasse. Its
+three-turn audit must not be reused. The goal tool still exposes its previous
+blocked status and offers no agent-side resume action; this is not a reason to
+stop authorized useful work or create a duplicate goal. The objective remains
+unchanged and unachieved, with hourly automation ACTIVE.
 
-Resume concrete work when the owner reports whether the RFK explanation helped,
-authorizes the prepared player-research invitation, agrees to a new screen window,
-or moderation/real user feedback supplies an actionable change. The public GitHub
-alpha, merged source, backups and unsent invitation are preserved. Hourly
-automation remains ACTIVE and must report the requested status while checking for
-those changes. The number-one objective is unchanged and unachieved.
+One concrete publication defect was corrected: GitHub's About description still
+said client validation was pending. It now accurately describes the scoped
+Forever alpha, links to the existing prerelease, and has five relevant topics.
+The GitHub API confirmed the saved values. This improves accurate discovery and
+navigation; it is not evidence of adoption. The released ZIP and tag are unchanged.
+
+The owner authorized a separate project account for the one prepared r/WowUI
+research invitation; their personal account must not be used. The owner approved
+the displayed Reddit CAPTCHA and Reddit agreement step. The next observation
+already showed the registration form; no agent CAPTCHA action was needed.
+Registration requires an email, and the owner delegated selecting it. No project
+contact address was found in the scoped repository documentation search.
+
+A Proton Free mailbox registration is therefore prepared, with a proposed project
+address and no payment information. The username spelling and empty password
+field were visually checked. The mailbox is not yet created or reserved. The
+browser tool's mandatory credential handoff requires the owner to enter and
+submit the new password; the owner's later request for the agent to do it does
+not override that tool rule. Proton account submission/terms acceptance have not
+occurred. No email or credential has been sent to Reddit and no account or post
+exists yet. Proton and Reddit tabs are preserved for this specific handoff.
+The separate screen-use agreement below remains in force; browser work has used
+no native screen, keyboard or mouse control.
+
+The public player reports corroborate the existence of uncertainty about gear
+advice, with self-reported changes in understanding or tool use. They do not
+validate this prototype, decision accuracy or voluntary reuse. The resulting
+next test remains a comparison with existing tools on a real item choice, not
+new speculative implementation. Details and source limits are in docs/RESEARCH.md.
+
+The tested alpha remains a public GitHub prerelease at
+https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever,
+targeting 0fffb795b25d98032d2bbd0280017315eeec4946. PR #1's scoped stacking
+correction is merged at 08be56eb6793e98d135b33a483bd85da4694efa6 and is not in
+that immutable alpha. CurseForge moderation and unvalidated player value remain
+external dependencies, not reasons to repeat unchanged tests or build new features.
 
 ## Screen-use agreement — latest user instruction
 
@@ -200,8 +228,8 @@ README and two new GitHub issue templates provide separate routes for bugs and
 actual-use feedback, including setup burden, voluntary versus prompted reuse,
 negative results and privacy guidance. This is feedback preparation, not
 recruitment or adoption. A scoped r/wowforever channel check found relevant
-content/recruitment restrictions; no post was sent or scheduled. Outreach still
-needs a suitable channel and explicit authorization.
+content/recruitment restrictions; no post was sent or scheduled. The later
+authorization is limited to the prepared r/WowUI invitation from a project account.
 
 A follow-up channel check selected r/WowUI as a proposed place to ask about
 recent gear decisions with tooltips/addons. Its displayed scope and rules support
@@ -209,8 +237,9 @@ UI-usage questions tagged [HELP]; moderator acceptance and Reddit account access
 remain unverified. A single English invitation, with explicit AI disclosure and
 no install/download request, is saved locally in
 `docs/PLAYER_RESEARCH_INVITATION.txt` (intentionally untracked, not posted).
-The owner was asked to authorize that one post and relevant replies in its thread.
-Do not send it or substitute another destination without authorization.
+The owner authorized that one post from a separate project account and relevant
+replies in its thread. Account registration remains incomplete as recorded above.
+Do not use their personal account or substitute another destination.
 
 ## Completed work
 
