@@ -2,6 +2,63 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Behavioral discovery — 11 October, 15:12 Europe/Oslo
+
+This entry supersedes the earlier proposed readability comparison as the next
+task. The owner described a recent approximately 90-minute dungeon session:
+RFK was chosen for expected gear upgrades found through an online BiS list.
+The character is a level 30 Enhancement DPS shaman in the Forever beta. The
+owner corrected the supplied link to [WOWF's Enhancement list](https://wowf.io/en/bis/shaman#enhancement).
+**There is no wrong-specialization finding.** The reported uncertainty is whether
+the recommendations are correct when several BiS lists exist.
+
+This episode supplies no reported difficulty choosing an activity within the
+available time, so it does not validate H1. It does supply one concrete gear-advice
+trust problem worth a bounded manual test. It is a retrospective owner report,
+not an independently recruited participant, timed baseline, observed shopping
+decision, measured time saving, or evidence of market prevalence. Prior technical
+QA of SessionScout is not voluntary product reuse. Raw interview answers are
+kept in ignored local research notes.
+
+### Initial audit and its limits
+
+Read-only observations of the specified guide and database on 11 October:
+
+| Question | Evidence and warranted conclusion |
+| --- | --- |
+| Does the guide address the stated character context? | Its selected view is Enhancement PvE, level 30, Forever. The rendered faction default was Alliance; the user's faction and actual talents are unknown. The page recommends a 0/26/0 build with extra talent points. Do not assume the user has that build. |
+| Why is Ferine Leggings scored 39.8? | The guide shows item 6690 with 12 Intellect and 26 Attack Power. Its displayed weights, 1.15 per Intellect and 1 per AP, reproduce 39.8. This explains a weighted score; it is not 39.8 DPS or proof of optimal gear. |
+| Why is Batwing Mantle scored 15.4? | The guide shows item 6697 with 11 Intellect, 3 Agility and 6 Spell Power. Displayed weights 1.15, 0.53 and 0.2 reproduce 15.44, rounded to 15.4. The weighting's accuracy for this character has not been validated. |
+| Where does WOWF obtain its information? | [Its About page](https://wowf.io/en/about) says names/descriptions come from client files; information such as drop locations is supplemented from Blizzard posts and public sources such as Wowhead. Gear rankings are judgments under consistent rules. This general methodology does not individually establish a current-beta boss drop. |
+| Are these item stats supported elsewhere? | [ForeverDB Ferine Leggings](https://foreverdb.net/item/6690) shows matching stats, required level 29, build 1.60.1.70291 and extraction date 8 October. [Batwing Mantle](https://foreverdb.net/item/6697) matches too, required level 29, build 1.60.1.70338 and extraction date 11 October. These are the database's stated provenance, not our own client extraction. |
+| Are the boss drops beta-verified? | ForeverDB labels Agathelos/6690 and Blind Hunter/6697 drop information **Classic data**. Its [RFK page](https://foreverdb.net/dungeon/47-razorfen-kraul) has no recorded Forever drops, and its [Blind Hunter page](https://foreverdb.net/rare/4425) discloses missing Forever observations. Missing observations do not establish that the drops are unavailable or that WOWF is wrong. Do not present Classic percentages as current beta rates. |
+
+Item identity/stats, acquisition evidence and personalized benefit are separate
+claims. Neither agreement between fan sites nor a score derived from static
+weights establishes actual DPS gain or BiS. The specific targeted RFK item and
+currently equipped alternative were requested and are still unknown. No personal
+upgrade verdict or experiment outcome can yet be recorded.
+
+### Next manual comparison, before implementation
+
+For the owner's actual target and equipped item, prepare one short decision card:
+the known stat change, relevant assumptions, current acquisition evidence and
+remaining uncertainty. A supported, contradicted or unresolved recommendation is
+a valid result. Ask whether this changes the next action or resolves a specific
+lookup; record an intention separately from later observed play. Include the cost
+of supplying equipment, build and source information. Do not manufacture a timed
+baseline from this interview or count researcher-supplied data as automatic addon
+capability.
+
+Compare with the existing WOWF workflow and [ForeverDB](https://foreverdb.net/bis),
+which already offers provenance labels and gear guidance. [Lootified](https://www.curseforge.com/wow/addons/lootified)
+also advertises Forever gear comparison and simulation, with disclosed data and
+simulation limits. Those author descriptions are not our runtime tests. A clearer
+manual explanation may reveal a useful workflow, or the existing tools may
+already solve it. Neither outcome justifies another addon without recurring
+benefit and a demonstrated advantage. No new product implementation, installation,
+external outreach or market-validation claim follows from this one episode.
+
 ## Strategy update — 11 October, 14:52 Europe/Oslo
 
 The user asked us to judge what can plausibly support the number-one goal, rather than adopt an arbitrary requirement to serve 80% of players. **There is no fixed market-share gate.** Seek a large, reachable audience with a recurring problem, an immediately useful solution, voluntary continued use, and a meaningful advantage over the strongest available alternative. A unique feature is insufficient by itself. A new solution to an established problem can remain a candidate when it demonstrably improves the complete workflow.

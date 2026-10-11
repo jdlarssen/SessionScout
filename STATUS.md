@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 14:52 Europe/Oslo. Exact popularity page observed; material-reservation implementation parked after evidence audit. Alpha remains Under Review in the latest author check.
+Last updated: 11 October 2026, 15:12 Europe/Oslo. Owner discovery identified uncertainty about gear advice; one concrete RFK recommendation is being audited. Alpha remains Under Review in the fresh author check.
 
 ## Goal
 
@@ -9,7 +9,7 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 14:45; popularity rank remains **unknown**, not zero. A rendered
+at approximately 15:12; popularity rank remains **unknown**, not zero. A rendered
 observation of the exact first page this turn confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
@@ -51,11 +51,15 @@ quest-map, travel and visibility complaints, but existing products or server-sid
 constraints address or limit each. No unique winning concept has been verified.
 See the dated evidence and source limitations in `docs/RESEARCH.md`.
 
-The existing alpha is the H1 baseline. The next comparison priority is a real
-readability/window-placement task against the native interface and existing
-solutions, when an appropriate non-disruptive test context is available. That
-does not authorize assuming a fifth addon is needed. No additional speculative
-feature or addon has been built, and no comparative demand test has run.
+The existing alpha is the H1 baseline. The owner's recent approximately 90-minute
+RFK session already had a gear-driven activity choice; no planning difficulty was
+reported. The actual reported problem was uncertainty about online BiS advice.
+The corrected guide is for Enhancement, matching the stated level 30 DPS shaman.
+The next task is a bounded manual audit of one actual target versus current gear,
+including source confidence and assumptions, compared with existing gear tools.
+The exact target and equipped item are pending. This replaces the earlier
+readability priority; it is one owner's discovery case, not validated demand.
+No additional speculative feature or addon has been built.
 
 The overall number-one goal is unchanged. Further implementation must earn its
 place through comparative value and voluntary reuse, not work already invested.
@@ -122,6 +126,11 @@ place through comparative value and voluntary reuse, not work already invested.
   request for corrections appeared. The later ranking observation used the
   rendered browser successfully; the previously blocked direct HTTP method was
   not repeated. No game input or reinstallations occurred.
+- A further fresh author-portal observation at approximately 15:12 still showed
+  **Under Review**, zero downloads and the project-moderation visibility banner.
+  There was no rejection or correction request. No source changes or game input
+  were needed. Overall popularity rank remains unknown; the last exact-list
+  observation is the complete 14:52 record above.
 
 ## Remaining validation and access limits
 
@@ -156,11 +165,14 @@ No external outreach, money spent, fabricated downloads, ratings or reviews.
    80% target is not required. Keep H2 parked unless new evidence exposes an
    unresolved recurring material-allocation problem; do not restart its searches
    or build it just because it was the earlier priority.
-3. Compare a justified readability/window-placement case with the strongest
-   applicable existing solutions before considering a prototype. Do not interrupt
-   the user's game or treat author-page descriptions as runtime comparison results.
-   No demand tests or participant recruitment have occurred. Outreach requires
-   explicit user authorization. Research outcomes and remaining gaps are recorded.
+3. Complete the owner's concrete gear-advice audit once the target and equipped
+   item are known. WOWF score arithmetic can be reproduced; ForeverDB corroborates
+   the item stats but labels the inspected RFK drops as Classic data. Do not turn
+   missing beta observations into a claim that a drop is impossible, or weighted
+   scores into measured DPS. Compare the usefulness with existing tools, record
+   no-benefit outcomes, and require stronger evidence before implementation.
+   No comparative demand test or participant recruitment has occurred. Outreach
+   still requires explicit user authorization.
 4. Obtain suitable public alpha screenshots excluding unrelated private UI/chat;
    validate the existing alpha's usability and voluntary reuse when feasible.
    Do not add features merely to fill time while moderation or feedback is pending.
