@@ -33,6 +33,10 @@ priority, then choose a budget. Daily and weekly completion resets according to
 the game server. Tasks are completed manually; SessionScout does not automatically
 track quests or supply a maintained list of current-season activities.
 
+Recurring completion needs the corresponding server-reset API. If that API is
+unavailable, the task stays unfinished and SessionScout explains the problem;
+it does not invent a reset schedule. One-time tasks remain available.
+
 ## Alpha release notes
 
 Initial implementation of task planning, manual completion, server reset timing,

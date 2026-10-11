@@ -49,7 +49,7 @@ Classic flavors have not been validated or packaged as supported releases.
 
 Lua model tests, mocked integration tests and tooling tests validate logic and
 packaging only (56 automated tests currently pass). Before publication,
-run the [client checklist](docs/CLIENT_TESTING.md) on the intended Retail version.
+run the [client checklist](docs/CLIENT_TESTING.md) on the intended Forever version.
 
 ## Development
 

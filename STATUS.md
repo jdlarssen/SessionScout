@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 12:25 Europe/Oslo. Forever alpha installed locally; CI passed.
+Last updated: 11 October 2026, 12:31 Europe/Oslo. Publication awaits client evidence and author access.
 
 ## Goal
 
@@ -37,6 +37,10 @@ Use that answer to redirect work if supplied.
 - GitHub Actions verification workflow.
 - [Initial GitHub CI run passed](https://github.com/jdlarssen/SessionScout/actions/runs/38131794299)
   for source commit `2c1616776c2244f23587c47f1a09d733ee3594ee`.
+- [Subsequent GitHub CI run also passed](https://github.com/jdlarssen/SessionScout/actions/runs/38131849735)
+  for `5871d1807ce25ac1bc82e72ed0b39881c0fd95d6`, with the same package SHA256.
+- Corrected the remaining Retail reference in the README and documented unavailable
+  reset APIs in the CurseForge listing draft. No addon source changed in this audit.
 - README, MIT license, changelog, listing draft and actual-client test checklist.
 - Active hourly heartbeat `curseforge-fremdrift-hver-time` in this chat.
 
@@ -55,6 +59,24 @@ Use that answer to redirect work if supplied.
 - A direct one-page HTTP listing request returned 403. Do not bypass or repeatedly
   request it; web search/rendered observations can be recorded with provenance.
 - No external outreach, money spent, fabricated downloads, ratings or reviews.
+
+## External blocker audit
+
+The same publication gate persisted through three consecutive goal turns: the
+original build/install turn and two automatic continuations. In the first
+continuation, a fresh native screenshot showed an active Forever group session;
+no game input was sent. Browser observation again stopped because the tool could
+not safely establish the browser URL. On the second continuation, the live WoW
+process still had its pre-install start time (11:42:56 Oslo), CI was complete and
+successful, and no client result, author-session evidence or CurseForge project ID
+had arrived. This is not a verified wait for a running test or publication job.
+
+The release audit found no additional essential code/packaging action that would
+resolve these gates. Preserve the prepared alpha rather than adding speculative
+features or repeatedly reinstalling it. The persistent goal should be marked
+blocked after this audit; it is not complete. Keep the hourly status automation
+active as requested. Resume substantive work when the user supplies client-test
+results, makes a safe testing interval available, or restores verified author access.
 
 ## Next concrete work
 
