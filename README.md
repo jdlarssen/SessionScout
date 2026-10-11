@@ -7,7 +7,7 @@ Choose how much time you have. See up to three personal tasks that fit.
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
 **Scoped in-client checks passed on Forever 1.60.1.70338.
-The alpha was submitted to CurseForge and is processing, pending moderation.
+The alpha was submitted to CurseForge and is under review, pending moderation.
 Public download availability is not yet confirmed.**
 
 [Source](https://github.com/jdlarssen/SessionScout) ·

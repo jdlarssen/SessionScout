@@ -1,16 +1,21 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 13:54 Europe/Oslo. Scoped Forever client checks passed; submitted alpha is Processing, pending moderation.
+Last updated: 11 October 2026, 14:52 Europe/Oslo. Exact popularity page observed; material-reservation implementation parked after evidence audit. Alpha remains Under Review in the latest author check.
 
 ## Goal
 
 Reach position 1 on the exact [World of Warcraft popularity list](https://www.curseforge.com/wow/search?class=addons&page=1&pageSize=20&sortBy=popularity).
 **Not achieved.** SessionScout is CurseForge project **1738896**, slug
-**sessionscout**. Alpha file **9128965** has reached server status **Processing**.
+**sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at 13:54; popularity rank remains **unknown**, not zero. DBM led the previously
-observed list. Do not substitute a download-count target for the actual goal.
+at approximately 14:45; popularity rank remains **unknown**, not zero. A rendered
+observation of the exact first page this turn confirmed DBM, Details, Auctionator,
+Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
+The complete 20-project record is
+`data/popularity-20261011T125154952497Z-62c235a519dc446aad1441ea38c47da0.json`.
+This does not establish a numerical rank elsewhere. Do not substitute a
+download-count target for the actual goal.
 
 ## Current product
 
@@ -22,6 +27,38 @@ SessionScout 0.1.0-alpha.1 is a manual next-session planner: up to three recomme
 tasks, time budgets, priorities, daily/weekly completion, shared task definitions,
 account/character completion, per-character notes and noncombat bag/durability
 context. Its positioning remains a hypothesis until real users validate it.
+
+## Product strategy
+
+Following the user's request to compare several product hypotheses, SessionScout
+is one experiment, not the presumed winner. [The research portfolio](docs/RESEARCH.md)
+now compares short-session planning, goal-specific item reservations, recovery of
+an interrupted activity, and evidence-based addon troubleshooting. Generic
+readiness/restocking is parked because direct Forever competitors already cover
+much of the proposed behavior.
+
+The user subsequently asked us to judge the route to number one without a fixed
+80% audience requirement. Current selection criteria are immediate usefulness in
+normal play, recurring net benefit, a demonstrable advantage over existing tools,
+reliability, low administration and feasible audience growth. These are product
+hypotheses, not the platform's ranking formula.
+
+The material-reservation audit found current Forever competition (including
+KeepOrSell, Hammerprice and TOG tools), source-confirmed recipe aggregation, and
+real inventory complaints without a demonstrated unmet quantity-conflict case.
+H2 implementation is parked. Broader discovery found actual readability,
+quest-map, travel and visibility complaints, but existing products or server-side
+constraints address or limit each. No unique winning concept has been verified.
+See the dated evidence and source limitations in `docs/RESEARCH.md`.
+
+The existing alpha is the H1 baseline. The next comparison priority is a real
+readability/window-placement task against the native interface and existing
+solutions, when an appropriate non-disruptive test context is available. That
+does not authorize assuming a fifth addon is needed. No additional speculative
+feature or addon has been built, and no comparative demand test has run.
+
+The overall number-one goal is unchanged. Further implementation must earn its
+place through comparative value and voluntary reuse, not work already invested.
 
 ## Completed work
 
@@ -69,10 +106,22 @@ context. Its positioning remains a hypothesis until real users validate it.
 - At 13:54 the file changed from Uploading to **Processing**. This confirms
   server receipt, not moderation approval or public publication. The project
   remains hidden pending moderation.
+- The 14:08 hourly check refreshed the author portal and confirmed **Under Review**.
+  The project-moderation banner remains present, with zero file downloads shown.
+  No rejection or corrective action was presented. The latest GitHub head
+  `38e7443` passed [CI](https://github.com/jdlarssen/SessionScout/actions/runs/38137437208),
+  and the issue tracker had no open issues. No game input, source changes,
+  reinstallations or repeated test runs were performed in this hourly check.
 - The author portal explicitly states that **Alpha files are not visible in the
   CurseForge client**. Approved alpha downloads use the project website file page.
 - Private evidence: `.tools/evidence/curseforge-alpha-processing.png` and
-  `.tools/evidence/curseforge-description-tested.png`.
+  `.tools/evidence/curseforge-description-tested.png`; the 14:08 moderation
+  screenshot is `.tools/evidence/curseforge-alpha-under-review-20261011T1208Z.png`.
+- A fresh author-portal page at approximately 14:45 still showed **Under Review**,
+  zero downloads and the project-moderation visibility banner. No rejection or
+  request for corrections appeared. The later ranking observation used the
+  rendered browser successfully; the previously blocked direct HTTP method was
+  not repeated. No game input or reinstallations occurred.
 
 ## Remaining validation and access limits
 
@@ -91,7 +140,7 @@ both QA attempts; the temporary companion is no longer installed.
 
 Earlier client-loading and browser-access blockers are resolved. Their historical
 three-turn audit must not be reused as grounds for blocking the current submission.
-The meaningful external gate is now CurseForge processing/moderation, followed by
+The meaningful external gate is now CurseForge moderation, followed by
 actual public download availability and real tester adoption.
 
 A direct one-page HTTP ranking request previously returned 403. Do not bypass or
@@ -100,14 +149,24 @@ No external outreach, money spent, fabricated downloads, ratings or reviews.
 
 ## Next concrete work
 
-1. Check file 9128965 and project 1738896 for processing/moderation results;
+1. Check file 9128965 and project 1738896 for moderation results;
    address actual rejection feedback if supplied. Verify public availability
    before describing the alpha as released.
-2. Obtain suitable public screenshots that exclude unrelated private game UI/chat.
-3. Validate first-run usability and repeat use with willing testers. Outreach
-   requires explicit user authorization; research targets are not adoption results.
-4. Observe the real popularity rank after publication and develop from actual
-   feedback. Preserve the original number-one goal.
+2. Incorporate actual Classic/Forever problem episodes when available. A fixed
+   80% target is not required. Keep H2 parked unless new evidence exposes an
+   unresolved recurring material-allocation problem; do not restart its searches
+   or build it just because it was the earlier priority.
+3. Compare a justified readability/window-placement case with the strongest
+   applicable existing solutions before considering a prototype. Do not interrupt
+   the user's game or treat author-page descriptions as runtime comparison results.
+   No demand tests or participant recruitment have occurred. Outreach requires
+   explicit user authorization. Research outcomes and remaining gaps are recorded.
+4. Obtain suitable public alpha screenshots excluding unrelated private UI/chat;
+   validate the existing alpha's usability and voluntary reuse when feasible.
+   Do not add features merely to fill time while moderation or feedback is pending.
+5. Observe the real popularity rank after publication. Select further development
+   from comparative evidence, preserve negative results, and keep the original
+   number-one goal distinct from release and pilot milestones.
 
 Hourly reports must state actual changes, publication/rank status, next steps and
 blockers even when unchanged, as explicitly requested. Keep the machine and Codex

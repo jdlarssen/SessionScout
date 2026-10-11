@@ -1,4 +1,4 @@
-# Registered listing — submitted alpha processing
+# Registered listing — submitted alpha under review
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; not yet publicly visible.
@@ -12,7 +12,7 @@ Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 Submitted file: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
 Release channel: Alpha.
 Only **WoW Forever 1.60.1** is selected, with automatic publication after approval.
-Server status at 13:54 Europe/Oslo on 11 October 2026: **Processing**, with zero
+Server status at approximately 14:45 Europe/Oslo on 11 October 2026: **Under Review**, with zero
 downloads shown in the author portal. The project-moderation banner is still
 present; public approval and download availability are not yet confirmed.
 ZIP: `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
@@ -95,7 +95,7 @@ addon was removed. Public screenshots have not been uploaded: full-window client
 evidence contains unrelated game UI/chat and is private.
 
 The description update and server receipt of the file are confirmed. Remaining
-publication steps: file processing, moderation approval and actual public
+publication steps: moderation approval and actual public
 download availability. Private evidence: `.tools/evidence/curseforge-alpha-processing.png`
 and `.tools/evidence/curseforge-description-tested.png`. Do not present the
-processing alpha as publicly released or use unverified adoption claims.
+pending alpha as publicly released or use unverified adoption claims.
