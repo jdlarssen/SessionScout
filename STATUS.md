@@ -1,6 +1,13 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 19:55 Europe/Oslo. Work resumed after the owner's request to resolve the blockage. GitHub About metadata is corrected and links directly to the public alpha. CurseForge was freshly checked at 19:43: Under Review, zero downloads and the hidden-project moderation banner remain; rank unknown. Two public player episodes and one lower-confidence lead are documented in docs/RESEARCH.md. A separate project mailbox is prepared for Reddit registration, but requires the owner to enter and submit the new password under the browser tool's mandatory handoff rule. No account has been created or invitation posted.
+Last updated: 11 October 2026, 19:55 hourly follow-up (Europe/Oslo). The fresh CurseForge check still shows Under Review, zero downloads and the hidden-project moderation banner; rank unknown. GitHub's issue feed is empty. The owner reports having pasted the project-mailbox password, but has not confirmed completing submission or reaching the inbox. No project-account creation or invitation publication has been verified. The public alpha, merged UI correction, corrected GitHub About metadata and documented player-research findings remain delivered.
+
+The hourly check read the existing source, status and goal, checked the issue feed
+and the author portal, and closed the temporary browser tab. No new client-test
+result, moderation feedback or actionable issue was received. No unchanged tests,
+installations, gameplay input or new speculative implementation were performed.
+The user's credential handoff remains pending; do not store its password in this
+repository or repeat the handoff question. This observation is not product progress.
 
 ## Resumed work and current dependencies — 19:55 Europe/Oslo
 
