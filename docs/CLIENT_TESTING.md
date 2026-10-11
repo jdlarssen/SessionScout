@@ -92,6 +92,41 @@ physical keyboard-entry or native-event timing case.
 
 ## Remaining checks and alpha scope
 
+### Observed overlapping-window defect — pending correction check
+
+On 11 October at approximately 19:00 Europe/Oslo, opening SessionScout while
+GearEvidencePilot was visible showed interleaved text and buttons in their
+overlapping area. Closing the pilot left the planner readable. Both root frames
+use DIALOG strata without top-level window ordering. This supports a frame-level
+collision; the exact rendering cause has not been confirmed with runtime level
+inspection. The 0.98 backdrop opacity alone does not explain foreground controls.
+
+The candidate on `codex/dialog-stacking` marks both roots top-level and raises
+each on opening, preserving SessionScout's existing OnShow ticker and the pilot's
+refresh behavior. It does not raise windows during periodic/background updates.
+The APIs are present in the pinned
+[Blizzard frame API declarations](https://github.com/Gethe/wow-ui-source/blob/09b9db7948abc9b9648dedaab51eb0cf3ee67b31/Interface/AddOns/Blizzard_APIDocumentationGenerated/SimpleFrameAPIDocumentation.lua).
+Automated stubs cannot verify native drawing order or click-to-front behavior.
+
+This candidate is not installed or included in the published alpha. At the next
+agreed screen window, batch these checks with the prepared public screenshots:
+
+1. With the player idle and outside combat, load the candidate in the existing
+   client using an agreed reload; preserve the original installed files.
+2. Open both windows in each order and overlap them. The foreground window must
+   cover the background window's controls, apart from intentional faint opacity.
+3. Click/drag the exposed background window and verify that its whole window
+   comes forward. Check its buttons and text fields still work.
+4. Reopen the already visible pilot and check it comes forward. Check that a
+   planner refresh does not raise it over the pilot.
+5. Capture the planned privacy-safe examples, restore any temporary data and
+   original files as appropriate, close the capture session and release the screen.
+
+Do not claim this defect fixed in-client until those observations pass. Do not
+replace the existing alpha ZIP or install/reload during the user's active play.
+
+### Other remaining checks
+
 - Exercise long-label clipping/tooltips and saved Unicode/pipe task-label edits;
   the physical-entry check covered editing and cancellation, not saving that label.
 - Complete the intended duration cases: runtime fixtures used 5/10/12/15/20-minute

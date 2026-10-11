@@ -20,6 +20,17 @@ release its control bindings. Do not reopen the control tools just to inspect
 the border. Screenshot preparation is local in .tools/pilot/media-commands.json
 and must wait for the next agreed screen window.
 
+## Pending UI correction
+
+Branch `codex/dialog-stacking` addresses the overlapping-window defect observed
+while opening SessionScout over GearEvidencePilot at approximately 19:00. Both
+roots now opt into top-level ordering and are raised on opening, without periodic
+focus changes. Lua 5.1 syntax checks and 44 existing integration/runtime boundary
+checks passed for this change. Native drawing order is still unverified; the
+client checks are batched with screenshots in `docs/CLIENT_TESTING.md`.
+The candidate is not installed or released. Keep the tagged alpha and its ZIP
+unchanged until the agreed client window and release validation are complete.
+
 ## Goal
 
 Reach position 1 on the exact [World of Warcraft popularity list](https://www.curseforge.com/wow/search?class=addons&page=1&pageSize=20&sortBy=popularity).
