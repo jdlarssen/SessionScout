@@ -8,10 +8,11 @@ SessionScout is an early WoW Classic/Forever addon prototype for people who want
 deliberate plan for their next session. Its name and positioning are provisional.
 **Alpha.2 is the GitHub prerelease for Forever 1.60.1.
 Scoped in-client checks passed on Forever 1.60.1.70338.
-Alpha.2 was submitted separately to CurseForge as file 9132600; at 20:29
-Europe/Oslo on 11 October 2026 it showed Processing, with processing and
-moderation pending. Alpha.1 file 9128965 remains preserved and Under Review.
-Public CurseForge availability remains unconfirmed.**
+Alpha.2 was submitted separately to CurseForge as file 9132600; at 22:02
+Europe/Oslo on 11 October 2026 it showed Under Review. Alpha.1 file 9128965
+remains preserved and Under Review. Both showed zero downloads; the project is
+still hidden pending moderator approval. Public CurseForge availability remains
+unconfirmed.**
 
 [Download the alpha](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·

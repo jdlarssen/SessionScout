@@ -1,4 +1,4 @@
-# CurseForge listing — submitted alphas pending processing and moderation
+# CurseForge listing — submitted alphas under review
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; not yet publicly visible.
@@ -10,9 +10,10 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
 Newest submission: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
-At approximately 20:29 Europe/Oslo on 11 October 2026, this separate submission
-showed **Processing**, with zero downloads. Processing and moderation remain
-pending. Release channel: Alpha; only
+At approximately 22:02 Europe/Oslo on 11 October 2026, this separate submission
+showed **Under Review**, with zero downloads. It previously showed **Processing**
+at approximately 20:29 that day. Moderator approval remains pending.
+Release channel: Alpha; only
 **WoW Forever 1.60.1** selected; automatic publication after approval; no
 dependencies. The hidden-project banner remains, with no confirmed public
 CurseForge availability. The existing alpha.1 file was not replaced.
@@ -22,7 +23,7 @@ SHA256: `823f66642b936b23aa2750ab52bc81d4d92cad68bf0c7ed9c678add0148359ba`.
 Preserved submission: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
 Release channel: Alpha.
 Only **WoW Forever 1.60.1** is selected, with automatic publication after approval.
-Server status at approximately 20:29 Europe/Oslo on 11 October 2026: **Under Review**, with zero
+Server status at approximately 22:02 Europe/Oslo on 11 October 2026: **Under Review**, with zero
 downloads shown in the author portal. The project-moderation banner is still
 present; public approval and download availability are not yet confirmed.
 ZIP: `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
@@ -42,7 +43,7 @@ window-ordering correction and targets `098d7ea2c43fbcbfe289965096592b793016d6bf
 CI passed on that commit; the uploaded ZIP digest is
 `823f66642b936b23aa2750ab52bc81d4d92cad68bf0c7ed9c678add0148359ba`.
 The same alpha.2 ZIP was submitted separately to CurseForge as file **9132600**;
-its processing/moderation status is recorded above. Its package excludes the
+its moderation status is recorded above. Its package excludes the
 local GearEvidencePilot and does not change the alpha.1 submission above.
 Both GitHub release tags and assets remain unchanged.
 
@@ -127,8 +128,8 @@ addon was removed. Public screenshots have not been uploaded: full-window client
 evidence contains unrelated game UI/chat and is private.
 
 The description update and server receipt of alpha.1 are confirmed. Alpha.2 has
-a separate file ID and showed Processing at the observation above.
-Remaining CurseForge publication steps: alpha.2 processing, moderation approval
+a separate file ID and showed Under Review at the observation above.
+Remaining CurseForge publication steps: moderator approval
 and actual public CurseForge download availability. Private evidence for the
 original submission: `.tools/evidence/curseforge-alpha-processing.png`
 and `.tools/evidence/curseforge-description-tested.png`. Do not present the

@@ -6,9 +6,10 @@ Available as a
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever)
 for Forever 1.60.1 (interface 16001). The alpha.1 tag and ZIP remain unchanged.
 Alpha.2 was submitted separately to CurseForge as file **9132600**, showing
-**Processing** at approximately 20:29 Europe/Oslo on 11 October 2026. Processing
-and moderation remain pending; public CurseForge availability is unconfirmed.
-Alpha.1 file **9128965** is preserved and remains **Under Review**.
+**Under Review** at approximately 22:02 Europe/Oslo on 11 October 2026.
+Alpha.1 file **9128965** is preserved and remains **Under Review**. Both showed
+zero downloads, and the project remains hidden pending moderator approval;
+public CurseForge availability is unconfirmed.
 
 - Mark the planner as a top-level window and raise it when opened, addressing
   interleaved text and buttons observed when overlapping the local
@@ -30,7 +31,7 @@ reset crossings, multiple characters, combat, extreme UI scales and long session
 ## 0.1.0-alpha.1 — 2026-10-11
 
 Scoped alpha tested in Forever 1.60.1.70338. Submitted as CurseForge file
-**9128965**; last confirmed **Under Review** at 18:53 Europe/Oslo.
+**9128965**; confirmed **Under Review** at 18:53 Europe/Oslo.
 The same tested ZIP is available as a
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
 CurseForge public download availability has not yet been confirmed.

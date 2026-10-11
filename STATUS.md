@@ -1,5 +1,35 @@
 # CurseForge number-one project status
 
+## Current state — 11 October 2026, 22:02 Europe/Oslo
+
+The goal tool now returns **ACTIVE** after the owner's renewed instruction.
+The fresh blocking audit starts from zero; older BLOCKED entries below are
+historical. Routine status is once daily at 20:00 Europe/Oslo, as confirmed in
+the saved existing heartbeat. The exact first-place objective is unachieved.
+
+A fresh author-portal Refresh confirms alpha.2 file **9132600** has moved from
+Processing to **Under Review**. Alpha.1 file **9128965** is also Under Review;
+both show zero downloads. The project is still hidden pending moderator
+approval. This is a changed external state, not public approval or adoption.
+The existing uploads, release tags, assets and installed addons are unchanged.
+The portal observation is saved in `.tools/research/curseforge-moderation-latest.txt`.
+
+The public gear-comparison example is available at commit `ffdd4bc`. The next
+research dependency is reaching willing players. The verified r/WowUI About
+page exposes its official moderator-contact link, and the compose form is
+accessible from SessionScoutResearch with r/WowUI as recipient. This supports
+preparing a request about permitted research and an approved submission route;
+it does not prove an exemption is available. The existing age/karma gate has
+not been retried. No message has been sent. The owner's existing permission
+covers one public research post and replies in that thread, not moderator
+messages; a prepared request requires explicit authorization before sending.
+The concrete text is saved in `docs/MODERATOR_RESEARCH_REQUEST.txt` and filled
+in the unsent compose form. Its Send button is disabled despite populated
+required fields and no displayed field error. The reason is unverified; do not
+claim that moderator outreach is technically available or retry via hidden APIs.
+Do not ask for sending approval until there is an actionable submission route.
+The earlier native-screen window request remains pending and is not repeated.
+
 ## Latest working agreement — 11 October 2026, 21:55 Europe/Oslo
 
 The owner replaced hourly updates with **one daily status** and renewed the
@@ -13,9 +43,9 @@ A blocked publication or outreach task is not sufficient reason to stop all
 useful work. Investigate concrete alternatives within the existing authorization
 and finish evidence-backed tasks that do not depend on that gate. Keep the exact
 first-place objective unchanged, distinguish activity from adoption, and respect
-required external approvals and the separate screen-window agreement. The last
-goal-tool read still returned BLOCKED; this document does not claim to have
-changed that tool state. Treat the owner's renewed request as a fresh blocking
+required external approvals and the separate screen-window agreement. At that
+time the goal-tool read still returned BLOCKED; the newer ACTIVE observation
+above supersedes it. Treat the owner's renewed request as a fresh blocking
 audit, not a continuation of the old three-turn count. Daily follow-up remains
 active regardless of a previously recorded dependency.
 
@@ -39,7 +69,7 @@ this monitoring observation is not product progress. The submitted process was
 not restarted and no gameplay input, installation or unchanged test was run.
 Native screen permission remains pending; do not repeat that request.
 
-## Current external wait — 20:38 Europe/Oslo
+## Historical external wait — 20:38 Europe/Oslo
 
 The goal tool returned **BLOCKED** after three consecutive goal turns with the
 same external impasse. The original first-place objective is unachieved. A fresh
