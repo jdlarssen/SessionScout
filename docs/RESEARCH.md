@@ -39,6 +39,19 @@ to post it. No messages or moderator requests were sent. A suitable authorized
 recruitment channel remains unverified; do not treat public research access as
 authority to contact players.
 
+At approximately 18:42 a further bounded check inspected
+[r/WoWAddons](https://www.reddit.com/r/wowaddons/) and
+[r/WowUI](https://www.reddit.com/r/WowUI/). WoWAddons permits AI use with disclosure
+but prohibits fully generated descriptions, so the autonomous draft is not
+proposed there. WowUI's stated scope includes interface usage and its displayed
+rules require [HELP] for questions and free content. It is the proposed
+destination for one gear-comparison-interface research question, pending owner
+authorization and actual account/posting checks. This is a channel-fit inference,
+not moderator approval. The local draft has been shown to the owner and asks for
+recent choices, sources/tools, and remaining uncertainty; satisfactory existing
+tools are an equally valid answer. It requests no installation and discloses AI
+use. Nothing has been posted and no responses have been collected.
+
 ## Autonomous equipment comparison — 11 October, 17:00 Europe/Oslo
 
 The user explicitly authorized PC use as needed and asked us to advance without

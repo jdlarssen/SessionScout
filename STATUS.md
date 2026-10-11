@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 18:39 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. The game has been returned to character selection. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, 18:43 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. One concrete player-research invitation is prepared locally and awaits authorization. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -9,7 +9,7 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 18:10; popularity rank remains **unknown**, not zero. The 14:52
+at approximately 18:42; popularity rank remains **unknown**, not zero. The 14:52
 rendered observation of the exact first page confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
@@ -125,6 +125,15 @@ recruitment or adoption. A scoped r/wowforever channel check found relevant
 content/recruitment restrictions; no post was sent or scheduled. Outreach still
 needs a suitable channel and explicit authorization.
 
+A follow-up channel check selected r/WowUI as a proposed place to ask about
+recent gear decisions with tooltips/addons. Its displayed scope and rules support
+UI-usage questions tagged [HELP]; moderator acceptance and Reddit account access
+remain unverified. A single English invitation, with explicit AI disclosure and
+no install/download request, is saved locally in
+`docs/PLAYER_RESEARCH_INVITATION.txt` (intentionally untracked, not posted).
+The owner was asked to authorize that one post and relevant replies in its thread.
+Do not send it or substitute another destination without authorization.
+
 ## Completed work
 
 - Pure Lua 5.1 model, event adapter and native WoW frame UI.
@@ -203,6 +212,10 @@ needs a suitable channel and explicit authorization.
 - A fresh author-portal check at approximately 18:10 showed **Under Review**,
   zero downloads and the same moderation banner. No correction request or
   rejection was present. The temporary observation tab was closed afterward.
+- At approximately 18:42, a fresh author page still showed **Under Review**,
+  zero downloads and the project-visibility moderation banner. No rejection or
+  correction request appeared. GitHub had no open issues. The temporary browser
+  tab was closed; no game input or tests were repeated.
 
 ## Remaining validation and access limits
 
