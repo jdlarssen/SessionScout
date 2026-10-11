@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 20:22 Europe/Oslo. GitHub alpha.2 is public with the already client-tested planner window-ordering correction. Its exact commit passed CI and the uploaded ZIP digest matches the local package audit. Alpha.1 and the pending CurseForge submission are unchanged. The 20:17 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. No new GitHub issues/comments arrived through 20:18. The dedicated Reddit account remains blocked by r/WowUI age/karma requirements; no invitation was submitted. The next player comparison records selected versus detected model and uses existing competitor controls, as documented in docs/RESEARCH.md.
+Last updated: 11 October 2026, approximately 20:29 Europe/Oslo. GitHub alpha.2 is public with the already client-tested planner window-ordering correction. Its exact commit passed CI and the uploaded ZIP digest matches the local package audit. The same ZIP was submitted separately to CurseForge as file 9132600 at 20:24 and now shows Processing; alpha.1 file 9128965 remains Under Review. Both show zero downloads and the project is still hidden pending moderation; rank unknown. No new GitHub issues/comments arrived through 20:18. The dedicated Reddit account remains blocked by r/WowUI age/karma requirements; no invitation was submitted. The next player comparison records selected versus detected model and uses existing competitor controls, as documented in docs/RESEARCH.md.
 
 ## Current GitHub alpha — 20:21 Europe/Oslo
 
@@ -18,8 +18,11 @@ GitHub's uploaded asset metadata confirmed the size, digest and complete upload;
 the tag reference confirmed the commit. No verification download was performed.
 The original alpha.1 ZIP still matches its recorded hash. README, changelog and
 repository homepage now direct GitHub visitors to alpha.2. The game installation
-was not changed or reloaded. Alpha.2 is not submitted to CurseForge, whose alpha.1
-file remains pending moderation. This release delivers a tested correction, not
+was not changed or reloaded. Alpha.2 is submitted separately to CurseForge as
+file 9132600. The portal confirmed its saved Alpha type, Forever 1.60.1 version,
+automatic publication after approval, no dependencies and exact changelog. At
+20:29 it showed Processing; alpha.1 remains Under Review. Do not resubmit the
+same package. This release delivers a tested correction, not
 evidence of player adoption or attainment of the ranking goal.
 
 The hourly check read the existing source, status and goal, checked the issue feed
@@ -435,9 +438,10 @@ any future blocked audit must use the current consecutive goal turns.
 
 ## Next concrete work
 
-1. Check file 9128965 and project 1738896 for moderation results;
-   address actual rejection feedback if supplied. Verify public availability
-   before describing the alpha as released.
+1. Follow the existing alpha.2 file 9132600 through processing and moderation;
+   check the preserved alpha.1 file 9128965 and project 1738896 for moderation
+   results. Address actual rejection feedback if supplied. Verify public
+   availability before describing either CurseForge submission as released.
 2. Incorporate actual Classic/Forever problem episodes when available. A fixed
    80% target is not required. Keep H2 parked unless new evidence exposes an
    unresolved recurring material-allocation problem; do not restart its searches

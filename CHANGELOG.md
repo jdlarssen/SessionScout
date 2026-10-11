@@ -5,8 +5,10 @@
 Available as a
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever)
 for Forever 1.60.1 (interface 16001). The alpha.1 tag and ZIP remain unchanged.
-CurseForge file **9128965** remains the separate alpha.1 submission, last observed
-**Under Review** on 11 October 2026. Alpha.2 has not been submitted to CurseForge.
+Alpha.2 was submitted separately to CurseForge as file **9132600**, showing
+**Processing** at approximately 20:29 Europe/Oslo on 11 October 2026. Processing
+and moderation remain pending; public CurseForge availability is unconfirmed.
+Alpha.1 file **9128965** is preserved and remains **Under Review**.
 
 - Mark the planner as a top-level window and raise it when opened, addressing
   interleaved text and buttons observed when overlapping the local
