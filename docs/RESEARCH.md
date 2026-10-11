@@ -21,7 +21,7 @@ in choosing Ferine Leggings. No reply, comparative advantage, voluntary repeat
 use or wider demand has yet been observed. Further work should respond to that
 evidence instead of expanding the candidate list or supported classes.
 
-### Feedback intake and channel check — 18:42
+### Feedback intake and channel check — approximately 18:38
 
 Two short GitHub issue templates now separate reproducible technical faults from
 actual play-session value and later voluntary reuse. Negative outcomes and no

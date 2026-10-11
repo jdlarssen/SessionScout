@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 18:42 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. The game has been returned to character selection. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, 18:39 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client; its source is pushed and CI passed. The game has been returned to character selection. Alpha still Under Review; rank unknown.
 
 ## Goal
 
