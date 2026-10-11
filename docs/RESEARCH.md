@@ -2,6 +2,57 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Follow-up on specific evidence — 11 October, 20:15 Europe/Oslo
+
+The previously search-only Warrior report is now directly readable in the
+[original comment](https://www.reddit.com/r/wowforever/comments/1wrs5yi/comment/pcm8rlg/).
+The player reports an Arms-heavy Human Warrior being labelled Fury and questions
+Agility-heavy recommendations. Reddit displays the comment as 13 days old; exact
+client build, addon version, talent allocation, settings and subsequent outcome
+are absent. This verifies that the report exists, not that the current addon has
+a reproduced defect. Do not recruit or contact this player without authorization.
+
+A static audit of the pinned [Lootified 1.2.0 file](https://www.curseforge.com/wow/addons/lootified/files/9112707)
+resolved the model-selection question for that version. `Core/Player.lua:128-157`
+detects the leading positive talent-group expenditure, but `218-234` gives a valid
+saved selection precedence. `UI/ListFilter.lua:297-330` already distinguishes the
+selected profile from the card labelled "your talents". Missing talent data can
+fall back to Arms, the first DPS entry; it does not invariably select Fury.
+`Data/BiS.lua:739-750` gives Arms and Fury identical default armor-stat weights and
+a shared item table. Their weapon setup differs; custom priorities and simulation
+are separate. A label change alone therefore does not establish different default
+static armor ordering. The inspected file was uploaded 9 October, later than the
+reported episode, so this is neither its reproduced cause nor proof of a fix.
+
+The one source ZIP and five relevant text files are cached only for audit under
+ignored `.tools/research/lootified-1.2.0-source-audit/`, SHA256
+`6446886ad6fd9a58b5edbf4661aef3fe05970e9f131408c485d320ebf375777c`.
+Nothing was executed or installed. The next comparison must record version,
+actual allocation, selected versus detected profile, static versus simulation
+mode, and custom priorities before attributing any recommendation disagreement.
+Use the competitor's existing profile controls as part of the baseline.
+
+A newly observed Warband Companion advert prompted one bounded official-source
+check. Its [features](https://www.warband-companion.com/features) describe loot-roll
+and personal-loot advice against current gear/BiS plus a contextual advisor. The
+[Help Center](https://www.warband-companion.com/help) describes a Windows companion,
+addon, overlay and local simulation. Availability claims conflict: feature and
+pricing pages label Assist forthcoming, while Help describes a stable release.
+The inspected documentation does not establish Forever support or per-drop beta
+provenance. Missing documentation is not evidence of absent functionality.
+
+**Experiment implication:** contextual gear advice alone is not a novelty claim.
+Retain the bounded comparison and include this alternative if a participant uses
+it or applicable support is verified. Ask the participant to identify the active
+model, its assumptions and the actual tradeoff before making a real choice;
+clearer confidence alone remains insufficient. Neither source justifies another
+feature, installation or expansion of supported classes.
+
+The separate Reddit project account is now created and verified. The actual
+r/WowUI posting control blocks it on account age and karma, with no numeric
+thresholds disclosed. No invitation, reply or recruitment has occurred. This
+supersedes the registration-pending notes below; the prepared draft remains local.
+
 ## Public player episodes — 11 October, 19:55 Europe/Oslo
 
 A bounded follow-up looked for reported gear-advice uncertainty, rather than
@@ -14,13 +65,14 @@ recruited testers or observations of the Forever prototype.
 | [Feral/Pawn, April 2026](https://www.reddit.com/r/wow/comments/1sart4z/comment/odyxmqs/) | A new player questions a ring recommendation against their interpretation of Wowhead stat priorities. After discussion, the original player reports uninstalling Pawn, plans to follow the guide more closely and asks how to simulate. The discussion is Retail-oriented; exact client/addon version and item IDs are absent. | Conflicting advice affected reported tool choice. No completed simulation, equipment change or better result is reported. Connecting players to existing tools could be sufficient. |
 | [Hunter/Pawn, TBC Classic, June 2021](https://www.reddit.com/r/classicwowtbc/comments/o7n1oy/comment/h2zrvys/) | A new casual player asks why Intellect is weighted highly and whether Pawn is always correct. The player's later takeaway distinguishes a quick leveling aid from endgame evaluation and recognizes limitations of fixed weights, with simulation as a future intention. Exact level, build and addon version are absent. | Explanations can change stated understanding and intended workflow. This older TBC case does not establish actual decision accuracy, later behavior, or relevance of its numerical advice to Forever. |
 
-A third lead is a search-indexed player comment on the
+A third lead was initially a search-indexed player comment on the
 [Lootified announcement](https://www.reddit.com/r/wowforever/comments/1wrs5yi/lootified_i_made_an_addon_so_i_dont_need_10/):
 an Arms-heavy Warrior reportedly sees Fury detection and questions Agility-heavy
-advice. The direct page retrieved here does not expose that comment. Its exact
+advice. The direct page retrieved at that time did not expose that comment. Its exact
 version, build, outcome and date were not established reliably; keep it as a lead,
-not a reproduced defect or a fully verified third episode. It does not justify
-claiming a bug in the current competitor version.
+not a reproduced defect or a fully verified third episode. The 20:15 follow-up
+above directly verified the comment and narrowed the source interpretation; it
+still does not justify claiming a bug in the current competitor version.
 
 **Decision:** retain the small explanation experiment, without expanding its
 classes or item list. The useful comparison is whether a player can determine

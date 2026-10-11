@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 20:10 Europe/Oslo. Dedicated Reddit account SessionScoutResearch is created and its logged-in identity was verified. The actual r/WowUI Create post control blocks this account because of account age and total karma; no numeric eligibility thresholds are disclosed. No invitation was submitted. This is a new external dependency, superseding the completed registration handoffs. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha, merged UI correction, corrected GitHub About metadata and player-research findings remain delivered.
+Last updated: 11 October 2026, approximately 20:15 Europe/Oslo. A specific Forever player report was verified directly, and a pinned-source audit separated selected gear models from detected talents; the next comparison now records both and uses the existing competitor controls. Details and limits are in docs/RESEARCH.md. Dedicated Reddit account SessionScoutResearch is verified, but r/WowUI blocks posting on age and karma with no numeric thresholds disclosed. No invitation was submitted. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha and merged UI correction remain delivered; no software changed in this follow-up.
 
 The hourly check read the existing source, status and goal, checked the issue feed
 and the author portal, and closed the temporary browser tab. No new client-test

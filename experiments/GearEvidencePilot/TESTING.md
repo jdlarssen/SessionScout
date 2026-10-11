@@ -95,3 +95,12 @@ that the user's existing list/addon leaves unresolved, and whether they choose
 to use it again. One owner's feedback cannot establish broad demand or a route
 to first place. Preserve negative findings rather than expand the prototype to
 make activity look like validation.
+
+The 20:15 source comparison in `docs/RESEARCH.md` adds a concrete baseline check:
+record the comparison tool's version, the player's actual allocation, selected
+versus automatically detected profile, static versus simulation mode, and custom
+priorities. Let the player use the existing tool's profile/explanation controls
+before comparing the pilot. Keep correcting a context selection distinct from
+understanding a stat tradeoff: an unexpected spec label can coexist with identical
+default armor weights. Ask what changes in the player's actual next decision;
+increased confidence or a corrected label alone does not pass the value test.
