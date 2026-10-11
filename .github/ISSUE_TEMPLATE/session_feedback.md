@@ -1,6 +1,6 @@
 ---
-name: Feedback from actual use
-about: Describe a recent use, a skipped opportunity, or why you stopped.
+name: Feedback from a real session or decision
+about: Describe using the addon or written comparison, a skipped opportunity, or why you stopped.
 title: ""
 ---
 
@@ -13,14 +13,17 @@ useful answers. Estimates are welcome; say "not measured" when appropriate.
 
 ## Recent situation
 
-- Component: SessionScout / GearEvidencePilot (local prototype)
+- Component: SessionScout / GearEvidencePilot (local prototype) / Written gear comparison (no installation)
 - What were you actually doing, and how much time did you have?
 - Was there a specific problem or decision, or was the usual approach enough?
 
+For the written comparison, describe reading or applying the explanation;
+reading it alone is not addon use.
+
 ## Usual approach, effort and result
 
-- How did you handle this situation before or without the addon?
-- What setup or maintenance did using it require?
+- How did you handle this situation before or without the tool or explanation?
+- What setup, reading or maintenance effort did it require?
 - What, if anything, changed in what you actually did? Include any extra work,
   confusion or lack of benefit.
 

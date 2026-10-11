@@ -1,5 +1,24 @@
 # CurseForge number-one project status
 
+## Feedback intake correction — 11 October 2026, 22:10 Europe/Oslo
+
+A bounded review found one concrete mismatch: the newly published no-install
+gear comparison linked to a feedback template that offered only installed-addon
+components. The existing component field now includes the written comparison,
+and the effort prompts include reading/applying an explanation. No extra
+questions were added. This prevents written-example feedback being confused
+with use of the unpublished pilot; it does not constitute participant feedback.
+The review found no additional concrete defect in the alpha.2 download link,
+documented installation path, package structure or bug-report template.
+GitHub issues and issue comments were still empty at approximately 22:08.
+An independent, read-only check of the two known SessionScout SavedVariables
+paths found both last written at 21:01:30, but byte-identical to the verified
+19:20 backup. That establishes a later save, not use, non-use or voluntary reuse;
+there is no new saved-content evidence to analyze. No task/note contents or
+character/account identifiers were included in the report.
+No unchanged tests, client input, reinstallations or outreach were performed.
+The daily reporting agreement and the two existing permission requests remain.
+
 ## Current state — 11 October 2026, 22:02 Europe/Oslo
 
 The goal tool now returns **ACTIVE** after the owner's renewed instruction.
