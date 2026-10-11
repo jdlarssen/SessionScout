@@ -32,7 +32,7 @@ Useful manual pilot examples are "finish my chosen quest-chain step," "gather in
 
 ## Name check
 
-Searches for `SessionScout` and `Session Scout` with WoW/addon and CurseForge, WoWInterface, and Wago restrictions returned no matching WoW addon in the results inspected. Direct CurseForge search/slug requests were not accessible through the web tool, so this does not establish slug availability. The name is already used outside WoW, including the [Session Scout weather app](https://apps.apple.com/us/app/session-scout-weather-forecast/id6786918682) and [Codex Session Scout](https://github.com/strato-space/codex-session-scout). Keep the addon name provisional and recheck the publisher form before submission; this is not trademark clearance.
+Searches for `SessionScout` and `Session Scout` with WoW/addon and CurseForge, WoWInterface, and Wago restrictions returned no matching WoW addon in the results inspected. Direct CurseForge search/slug requests were not accessible through the web tool, so those searches did not establish slug availability. On 11 October 2026, the author portal accepted SessionScout and saved slug `sessionscout` as project 1738896. The name is already used outside WoW, including the [Session Scout weather app](https://apps.apple.com/us/app/session-scout-weather-forecast/id6786918682) and [Codex Session Scout](https://github.com/strato-space/codex-session-scout). Successful project registration is not trademark clearance.
 
 ## API evidence and limits
 

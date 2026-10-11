@@ -1,12 +1,13 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 12:52 Europe/Oslo. Publication awaits client evidence and author access.
+Last updated: 11 October 2026, 13:04 Europe/Oslo. Author access and project registration complete; publication awaits client evidence.
 
 ## Goal
 
 Reach position 1 on the exact [World of Warcraft popularity list](https://www.curseforge.com/wow/search?class=addons&page=1&pageSize=20&sortBy=popularity).
-**Not achieved.** SessionScout is unpublished, with no registered CurseForge
-project ID or slug. Its rank is unknown, not zero. DBM leads the observed list.
+**Not achieved.** SessionScout is registered as CurseForge project **1738896**, slug
+**sessionscout**, but has no uploaded files and is not visible to others pending
+moderation. Its rank is unknown, not zero. DBM leads the previously observed list.
 Do not replace the goal with a download-count target or call a prototype success.
 
 ## Current product
@@ -43,6 +44,14 @@ Use that answer to redirect work if supplied.
   reset APIs in the CurseForge listing draft. No addon source changed in this audit.
 - README, MIT license, changelog, listing draft and actual-client test checklist.
 - Active hourly heartbeat `curseforge-fremdrift-hver-time` in this chat.
+- CurseForge account `jdlarssen` created after the user's explicit confirmation
+  to accept Overwolf's Terms of Service and Privacy Policy. Author dashboard verified.
+- [SessionScout project 1738896](https://authors.curseforge.com/#/projects/1738896/files)
+  created successfully; slug `sessionscout` confirmed in saved General settings.
+- Description, summary, original 400px icon, Quests & Leveling / Miscellaneous
+  categories, MIT license, enabled comments and public GitHub source link saved.
+  Third-party distribution enabled; automatic packaging remains disabled.
+  Description explicitly states that Forever 1.60.1 in-game validation is pending.
 
 ## Access and validation limits
 
@@ -52,14 +61,16 @@ Use that answer to redirect work if supplied.
   No actual WoW client testing has occurred. The user has been asked to restart
   the game, enable SessionScout, run `/scout` and report the result. Prepared code
   and installation are not runtime proof. Do not repeatedly reinstall unchanged files.
-- Browser access recovered in the in-app browser. The user completed GitHub login;
-  CurseForge now recognizes the provider identity as `jdlarssen`. Existing-account
-  login returned "Sorry, we couldn't find an account with that email". Registration
-  is prepared at "Continue as jdlarssen", which states acceptance of Overwolf's
-  Terms of Service and Privacy Policy. Action-time confirmation was requested before
-  continuing new-account registration. The handoff tab is preserved. No CurseForge
-  account creation, author-portal access or project submission has been verified.
-  Never request credentials in chat or copy CLI tokens into a browser.
+  A fresh read-only screenshot at 13:03:50 Oslo still showed active five-player
+  combat in Razorfen Kraul. WowB PID 32524 still started at 11:42:56, before the
+  addon's installation at 12:23:15. No game input was sent. A safe test interval
+  has been requested; do not restart or interrupt this active group session.
+- Browser access, provider authentication, CurseForge account and author access
+  are verified. Use the existing project rather than creating a duplicate.
+  The portal's Files tab says "Add your first file" and its banner states that a
+  moderator must approve the new project before it becomes visible to others.
+  No addon ZIP has been uploaded. Never request credentials in chat or copy CLI
+  tokens into a browser.
 - A direct one-page HTTP listing request returned 403. Do not bypass or repeatedly
   request it; web search/rendered observations can be recorded with provenance.
 - No external outreach, money spent, fabricated downloads, ratings or reviews.
@@ -82,19 +93,20 @@ blocked after this audit; it is not complete. Keep the hourly status automation
 active as requested. Resume substantive work when the user supplies client-test
 results, makes a safe testing interval available, or restores verified author access.
 
-Latest access change: both browser observation and GitHub authentication work.
-The pending step is consent to new CurseForge account registration, followed by
-verification of author-portal access. The user's renewed request starts a fresh
-blocker audit; do not reuse the historical three-turn count for a new blocked action.
+Latest access change: the user approved registration, and author access plus
+project creation succeeded. The remaining release gate is actual Forever client
+validation. The earlier access blockers are historical; do not reuse their
+three-turn count for a new blocked action.
 
 ## Next concrete work
 
 1. Incorporate actual Forever client results; fix defects before submission.
-2. Resolve Forever client testing and CurseForge author access, then capture real
-   screenshots and publish an accurately labeled alpha when technically validated.
+2. Capture real client screenshots and upload the accurately labeled alpha to
+   existing project 1738896 when technically validated. Update the development
+   status in the listing and record the actual supported version before submission.
 3. Validate first-run usability and repeat use with willing testers; outreach
    requires explicit user authorization. Targets in RESEARCH.md are not results.
-4. Observe actual rank after registration; develop based on real feedback.
+4. Observe actual rank after approval/publication; develop based on real feedback.
 
 Hourly reports must state what actually changed, rank/publication status, next
 step and blockers even when unchanged, as explicitly requested by the user.
