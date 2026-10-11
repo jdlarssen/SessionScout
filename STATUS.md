@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 20:01 Europe/Oslo. The owner completed Proton registration, and the dedicated project inbox is verified. Reddit accepted the emailed verification code and the proposed project username is available. Its separate new-password entry and submission now require the owner under the browser tool's credential handoff rule. No Reddit account completion or invitation publication has been verified. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha, merged UI correction, corrected GitHub About metadata and player-research findings remain delivered.
+Last updated: 11 October 2026, approximately 20:10 Europe/Oslo. Dedicated Reddit account SessionScoutResearch is created and its logged-in identity was verified. The actual r/WowUI Create post control blocks this account because of account age and total karma; no numeric eligibility thresholds are disclosed. No invitation was submitted. This is a new external dependency, superseding the completed registration handoffs. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha, merged UI correction, corrected GitHub About metadata and player-research findings remain delivered.
 
 The hourly check read the existing source, status and goal, checked the issue feed
 and the author portal, and closed the temporary browser tab. No new client-test
@@ -14,7 +14,7 @@ Never store passwords, verification codes or recovery material in this repositor
 
 The owner's request to resolve the blockage supersedes the 19:38 impasse. Its
 three-turn audit must not be reused. The latest goal-tool read returned ACTIVE.
-The verified mailbox and Reddit email-verification progress reset the current
+The verified mailbox and completed Reddit registration reset the current
 no-progress audit; do not carry forward historical blocked counts. The objective
 remains unchanged and unachieved, with hourly automation ACTIVE.
 
@@ -40,13 +40,24 @@ was entered and no personal mailbox was connected.
 The dedicated address was submitted to Reddit under the already approved terms
 step. The resulting verification email arrived in that project inbox; its code
 was accepted by Reddit. The username SessionScoutResearch was filled and Reddit
-explicitly reported it available. The remaining form requests a new password and
-submission. This separate credential step requires the same mandatory user
-handoff as Proton. A distinct generated password was prepared for the user, not
-entered into Reddit or saved in project files. The invitation draft passed an
+explicitly reported it available. A distinct generated password was prepared for
+the user, not entered into Reddit or saved in project files. A subsequent fresh
+observation showed the password step had passed. The owner then completed the
+birth-date form directly; the date was not collected or recorded by the agent.
+For every necessary human step, provide exact field names, values where known,
+formats and the button to press. The agent selected Gaming and PC Gaming for
+the ordinary onboarding and declined optional cookies. Reddit's home page
+explicitly showed "Logged in as SessionScoutResearch" in its Norwegian UI.
+The invitation draft passed an
 independent check for leading questions and unsupported claims; publish only its
-TITLE and BODY when registration and current community rules permit. No Reddit
-account completion or post has been verified. Proton and Reddit tabs are preserved.
+TITLE and BODY when current community rules permit. Opening the actual r/WowUI
+Create post control then displayed an eligibility gate: account too new and
+insufficient total karma. The UI labels the newly registered account "1 day old"
+but does not reveal the required age or karma. No editor was reached and no post
+was submitted. Do not repost elsewhere, use the owner's personal account, farm
+karma or contact moderators under the current authorization. Check eligibility
+again only after meaningful account/time state changes. The prepared invitation
+remains local. Proton and Reddit tabs are preserved.
 The separate screen-use agreement below remains in force; all browser work used
 no native screen, keyboard or mouse control.
 
