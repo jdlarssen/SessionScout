@@ -62,6 +62,22 @@ specific model/data discrepancies or actual reported failures; do not restart
 generic competitor searches or wait on gear information already obtained. Demand,
 retention and a scalable route to number one remain unverified.
 
+### Follow-up: sensitivity to Intellect weight
+
+The 17:15 follow-up varied only the Intellect coefficient, holding every other
+coefficient and supplied item stat fixed. An independent calculation agreed with
+the saved script output. In WOWF's model the shoulder gain is `11w - 10.16`,
+crossing zero at `w = 0.92364` versus default `1.15`; the legs give `12w + 6.88`
+and stay positive for nonnegative `w`. Lootified gives `11w - 3.9142` for shoulders
+(zero at `0.35584`, default `0.512`) and `12w - 3.2805` for legs (zero at `0.273375`).
+The shoulder verdict changes after a smaller relative reduction of this one
+weight in either model. No evidence establishes that these alternative weights
+are realistic for the character, so this is not a confidence interval, a talent
+simulation, a DPS gain, or proof that either recommendation is generally robust.
+This completes the bounded arithmetic check; do not extend it into repeated
+arbitrary weight sweeps. Next evidence must concern actual recommendation quality,
+decision usefulness or acquisition, not additional calculations of the same case.
+
 ## Behavioral discovery — 11 October, 15:12 Europe/Oslo
 
 This entry supersedes the earlier proposed readability comparison as the next

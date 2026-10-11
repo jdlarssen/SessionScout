@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 17:00 Europe/Oslo. Current equipment/talents obtained autonomously and two RFK swaps compared. Alpha still Under Review at the latest author check; rank unknown.
+Last updated: 11 October 2026, 17:15 Europe/Oslo. RFK comparison extended with an independently checked Intellect-weight sensitivity calculation. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -9,7 +9,7 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 17:00; popularity rank remains **unknown**, not zero. The 14:52
+at approximately 17:15; popularity rank remains **unknown**, not zero. The 14:52
 rendered observation of the exact first page confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
@@ -66,6 +66,12 @@ Existing tools already cover personalized gear scoring. The next test concerns
 whether explicit tradeoffs, assumptions and acquisition evidence improve the
 actual decision beyond those tools. This is one owner's discovery case, not
 validated demand. No speculative addon feature has been built.
+
+The subsequent Intellect-weight check identifies a smaller relative margin to a
+changed shoulder verdict than the leg verdict in both fixed models. It does not
+establish plausible weight uncertainty or actual DPS. That bounded calculation
+is complete; do not repeat arbitrary sensitivity sweeps to substitute for actual
+decision-quality or acquisition evidence. Details are in `docs/RESEARCH.md`.
 
 The overall number-one goal is unchanged. Further implementation must earn its
 place through comparative value and voluntary reuse, not work already invested.
@@ -143,7 +149,7 @@ place through comparative value and voluntary reuse, not work already invested.
   answer identifying the targeted/equipped gear was received. No implementation,
   reinstall, gameplay interaction or outreach was warranted by this check.
 - The author portal still showed **Under Review**, zero downloads and the new
-  project visibility banner at approximately 17:00. No rejection or correction
+  project visibility banner at approximately 17:00 and 17:15. No rejection or correction
   request was present. Public release and overall rank remain unverified.
 
 ## Remaining validation and access limits
