@@ -2,6 +2,23 @@
 
 Last updated: 11 October 2026, approximately 19:33 Europe/Oslo. PR #1 is merged into the development branch at 08be56eb6793e98d135b33a483bd85da4694efa6 (19:31:55 Oslo). Scoped client checks of the dialog-stacking correction passed; dragging and two remaining foreground cases are explicitly unverified. The tested alpha is a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. GitHub still showed zero ZIP downloads and no open issues at 19:29.
 
+## Current external dependencies — 19:38 Europe/Oslo
+
+After the merged correction, three consecutive goal follow-ups found no new
+player evidence, recruitment authorization or screen-window permission. The
+independent next-action review found no other grounded task that could materially
+advance the product now. GitHub's issue and PR-comment feeds were empty at 19:36;
+the previously recorded CurseForge observation remains the latest, not a fresh
+moderation result. These checks and this record are not product progress or a
+verified live-process wait. The goal is being marked blocked, not completed.
+
+Resume concrete work when the owner reports whether the RFK explanation helped,
+authorizes the prepared player-research invitation, agrees to a new screen window,
+or moderation/real user feedback supplies an actionable change. The public GitHub
+alpha, merged source, backups and unsent invitation are preserved. Hourly
+automation remains ACTIVE and must report the requested status while checking for
+those changes. The number-one objective is unchanged and unachieved.
+
 ## Screen-use agreement — latest user instruction
 
 The user wants to play. Work in the background; do not take the screen, keyboard
