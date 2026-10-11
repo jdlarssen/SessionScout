@@ -33,4 +33,21 @@ matching and refusal of unconfigured flavors. On 11 October 2026 the installer
 passed `-WhatIf`, then installed the alpha into the verified local Forever
 1.60.1.70338 client and checked file hashes. Existing-installation rollback has
 not been exercised against the game folder. Installation does not establish
-in-game compatibility; game execution remains pending.
+in-game compatibility; see the later [client test record](../docs/CLIENT_TESTING.md)
+for the completed scoped checks and remaining gaps.
+
+## Offline research observation
+
+`observe_tog_parser.py` reproduces the narrow TOG Tools observation described in
+[RESEARCH.md](../docs/RESEARCH.md#h4-offline-competitor-observation--11-october-2248-europeoslo).
+It requires the separately obtained official ZIP and an existing Lupa runtime
+with Lua 5.1 (2.8 was used, from `.tools/python`). It downloads nothing, reads only
+the pinned parser member, and neither installs an addon nor interacts with WoW.
+
+```powershell
+python tools/observe_tog_parser.py --zip 'C:\path\TOGTools-TOGTools-v0.10.2.zip' --output '.tools/togtools-observation.json'
+```
+
+The output must not already exist. Package/source hashes and inputs are fixed;
+different versions require a fresh source review. This is a parser observation
+with no metadata callback, not a full product comparison or a game test.

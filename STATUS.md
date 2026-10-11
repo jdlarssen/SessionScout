@@ -1,5 +1,37 @@
 # CurseForge number-one project status
 
+## Offline competitor evidence — 11 October 2026, 22:50 Europe/Oslo
+
+A concrete independent alternative to waiting was completed: the official
+TOG Tools v0.10.2 parser was inspected and exercised offline on one public
+historical TBC Classic error, first in its posted message format and then in an
+explicitly labeled normalized format. [Inputs and actual outputs](docs/RESEARCH.md#h4-offline-competitor-observation--11-october-2248-europeoslo),
+version/source hashes, MIT notice and a reproduction script are preserved.
+
+The existing implementation gives a missing-function explanation in its expected
+format and selects ElkBuffBars as report destination in both runs. It does not
+select the shared-library provider Accountant_Classic. The older multiline format
+loses file/reason detail. This is evidence of existing capability plus a narrow
+format limitation, not evidence of a viable rival product or diagnostic superiority.
+H4 remains exploratory; no new addon implementation is justified by this result.
+
+The run supplied no metadata callback or WoW APIs. It did not test installation,
+live dependency detection, Forever behavior or player benefit. One incident in
+two forms is not two independent cases. The separate full-comparison fields
+remain null. Independent review found no concrete source/output mismatch; no
+unchanged client tests were rerun. The latest completed GitHub verification for
+the earlier task-bank commit 003f9b4 succeeded (run 38173147325).
+
+Only one legitimate research package download occurred; no competitor or product
+was installed, and no native screen/game input or external message was sent.
+The temporary browser tab was closed and its control session reset. This turn
+delivered new evidence, so the current impasse counter remains zero and the goal
+remains ACTIVE. First place remains unverified. Moderation was last observed
+Under Review at 22:02; routine recheck stays 12 October at 20:00, unless a relevant
+new notification arrives. Daily reporting and the two pending permission requests
+are unchanged. Further synthetic parser probes are not a substitute for the
+missing real-player comparison.
+
 ## Diagnostic task bank — 11 October 2026, 22:38 Europe/Oslo
 
 The previous turn delivered the source-case ledger and changed the available

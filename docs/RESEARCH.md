@@ -505,6 +505,51 @@ improvement. Retain the existing 4/5 advance rule, rather than substituting case
 counts or an assistant's own answers for it. Do not extend this task bank or build
 H4 merely to occupy time while those prerequisites are absent.
 
+### H4 offline competitor observation — 11 October, 22:48 Europe/Oslo
+
+The official [TOG Tools v0.10.2 package, file 9095461](https://www.curseforge.com/wow/addons/togtools/files/9095461)
+was downloaded once for source inspection. Its actual package license is MIT,
+copyright 2026 Pimptasty; the [notice](../data/TOGTools-LICENSE.txt) is retained.
+The unchanged `Modules/Diagnostics/ErrorInterpreter.lua` uses ordinary Lua
+functions and can run independently. Its Forever TOC declares interface 16001,
+but that metadata is not a successful client test. No addon was installed.
+
+The [inputs](../data/togtools-parser-inputs-20261011.json),
+[actual outputs](../data/togtools-parser-observations-20261011.json) and
+[reproduction script](../tools/observe_tog_parser.py) record a deliberately narrow
+observation of **one historical TBC Classic error in two formats**. The original
+[H4-016 report](https://www.wowace.com/projects/elkbuffbars?comment=2381) puts
+the file/line and missing-method reason on separate lines. The second input is
+our explicitly labeled normalization to a single `path:line: reason` line;
+it is not another player incident or an automatic TOG Tools conversion.
+
+| Input | Observed parser result | What this establishes |
+| --- | --- | --- |
+| Original message and Debug-stack format | Generic Lua-error classification; no extracted file/line; ElkBuffBars selected through the stack as report destination. The explanation describes it as the most likely cause. | This particular format loses available file/reason information in this parser version. |
+| Same excerpt with the message normalized | Missing-function classification; EnhanceDatabase, ElkBuffBars.lua and line 283 identified; ElkBuffBars selected as file owner/report destination. | The existing parser already explains this error category and offers update/report steps when its expected format is supplied. |
+
+Both outputs list Accountant_Classic in the stack but do **not** select it as
+the report destination. They do not identify the later reported Critline
+interaction. Reporting to the failing addon's maintainer is still a reasonable
+action; failure to name the eventual conflicting addon is not itself a wrong
+report destination. The source discussion also lacks a complete successful
+retest, so it must not become a binary diagnostic accuracy score.
+
+Execution used Lupa 2.8 / Lua 5.1 with a restricted standard-function environment,
+the inspected package/source hashes, and `lookup=nil`. No WoW APIs or client API
+mocks were supplied. In particular, this does not exercise TOG Tools' actual
+metadata, dependency lookup, collection, UI, installation effort or Forever
+runtime. Its absent dependency details here are not a product failure. The task
+bank's full-comparison fields remain null; these separately scoped parser outputs
+do not fill them. No player or candidate-product comparison occurred.
+
+**Decision:** basic plain-language error explanations are demonstrably present
+in an existing implementation. This small formatting limitation does not justify
+building a rival addon or establish demand for one. Keep H4 exploratory and stop
+this source-only probe here; the next comparison still requires actual player
+problems and the full relevant competitor workflow. Do not turn more synthetic
+parser probes into apparent progress toward adoption.
+
 ### Prepared experiment prompts
 
 - **H1:** “Show a recent session in which choosing what to do took effort. What did you choose, and did it fit the available time?” Use the existing alpha only after recording the baseline.

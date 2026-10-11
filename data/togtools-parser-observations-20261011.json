@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-11T20:48:12.675414+00:00",
+  "kind": "Offline parser observation; no WoW client, players or comparison scores",
+  "packageUrl": "https://www.curseforge.com/wow/addons/togtools/files/9095461",
+  "packageVersion": "TOGTools-v0.10.2",
+  "packageSha256": "04530bbcd39a53b97419ac22414c9e27a72e0b057dd4bdb78cca94f2bdc70dd0",
+  "sourceMember": "TOGTools/Modules/Diagnostics/ErrorInterpreter.lua",
+  "sourceSha256": "4164bcca8cb99973316def948edbfe7de62c329daf6fff2c1d3899bf692f18df",
+  "runtime": {
+    "python": "3.12.14",
+    "lupa": "2.8",
+    "lua": "5.1"
+  },
+  "metadataLookup": null,
+  "environment": "Allowlisted standard Lua functions; no WoW APIs; no client API mocks",
+  "inputs": "data/togtools-parser-inputs-20261011.json",
+  "license": "data/TOGTools-LICENSE.txt",
+  "observations": [
+    {
+      "inputId": "EBB-original-format",
+      "interpret": {
+        "message": "..\\AddOns\\ElkBuffBars\\ElkBuffBars.lua line 283:",
+        "reason": "..\\AddOns\\ElkBuffBars\\ElkBuffBars.lua line 283:",
+        "path": null,
+        "file": null,
+        "line": null,
+        "folder": null,
+        "library": null,
+        "libraryAddon": null,
+        "blizzard": null,
+        "truncated": null,
+        "taintedBy": null,
+        "culprit": "ElkBuffBars",
+        "culpritWhy": "caller",
+        "ruleKey": "generic",
+        "ruleTitle": "Lua error",
+        "stack": [
+          "ElkBuffBars",
+          "Accountant_Classic"
+        ]
+      },
+      "explainRaw": "|cffFF8000What happened|r\n|cffffd700Lua error|r - A programming mistake inside the addon. The wording is technical, but the useful part is where it happened, below.\n \n|cffFF8000Where it happened|r\nThe error does not say which file it came from.\n \n|cffFF8000Who to tell|r\nShared or Blizzard code rarely breaks on its own. |cffffd700ElkBuffBars|r appears in the error's trace and is the most likely cause - report it there.\n \n|cffFF8000What you can try|r\n1. Update |cffffd700ElkBuffBars|r to its latest version for this game version.\n2. If it keeps happening, disable |cffffd700ElkBuffBars|r and see if the error stops.\n3. When reporting, copy the whole error (including Stack:) and say which WoW version you play.",
+      "wantsAddonLoad": false
+    },
+    {
+      "inputId": "EBB-normalized-format",
+      "interpret": {
+        "message": "..\\AddOns\\ElkBuffBars\\ElkBuffBars.lua:283: attempt to call method 'EnhanceDatabase' (a nil value)",
+        "reason": "attempt to call method 'EnhanceDatabase' (a nil value)",
+        "path": "../AddOns/ElkBuffBars/ElkBuffBars.lua",
+        "file": "ElkBuffBars.lua",
+        "line": 283,
+        "folder": "ElkBuffBars",
+        "library": null,
+        "libraryAddon": null,
+        "blizzard": null,
+        "truncated": false,
+        "taintedBy": null,
+        "culprit": "ElkBuffBars",
+        "culpritWhy": "owner",
+        "ruleKey": "call",
+        "ruleTitle": "Missing function",
+        "stack": [
+          "ElkBuffBars",
+          "Accountant_Classic"
+        ]
+      },
+      "explainRaw": "|cffFF8000What happened|r\n|cffffd700Missing function|r - The addon tried to use a feature (a function) that does not exist. The usual cause is an addon that is out of date for this version of the game, or one made for a different WoW version (Classic vs Retail). A half-installed addon or a missing library can do it too.\n|cffaaaaaaIt was looking for: EnhanceDatabase|r\n \n|cffFF8000Where it happened|r\nInside |cffffd700ElkBuffBars|r.\n|cffaaaaaaFile ElkBuffBars.lua, line 283 (for the addon's author).|r\n \n|cffFF8000Who to tell|r\nReport it to |cffffd700ElkBuffBars|r.\n \n|cffFF8000What you can try|r\n1. Update |cffffd700ElkBuffBars|r to its latest version for this game version.\n2. If it keeps happening, disable |cffffd700ElkBuffBars|r and see if the error stops.\n3. When reporting, copy the whole error (including Stack:) and say which WoW version you play.",
+      "wantsAddonLoad": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Narrow format-sensitivity observation, not a diagnostic accuracy benchmark",
+  "sourceCaseId": "H4-016",
+  "sourceUrl": "https://www.wowace.com/projects/elkbuffbars?comment=2381",
+  "sourceContext": "May 22, 2021 historical TBC Classic report; not Forever. Later identification of Critline does not establish a complete successful retest.",
+  "cases": [
+    {
+      "id": "EBB-original-format",
+      "kind": "Public error excerpt preserving message and Debug stack formatting",
+      "edits": "Omitted surrounding prose, date/ID/global/count headers and trailing AddOns version listing; retained Message, Debug and empty Locals sections. No cause or solution added.",
+      "text": "Message: ..\\AddOns\\ElkBuffBars\\ElkBuffBars.lua line 283:\nattempt to call method 'EnhanceDatabase' (a nil value)\nDebug:\n[string \"@ElkBuffBars\\ElkBuffBars.lua\"]:283:\nElkBuffBars\\ElkBuffBars.lua:212\n[string \"=[C]\"]: ?\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:70:\n...ccountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua:65\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:498: InitializeAddon()\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:623:\n...ccountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua:615\nLocals:\nNone"
+    },
+    {
+      "id": "EBB-normalized-format",
+      "kind": "Researcher-transformed sensitivity probe; not an authentic second player error",
+      "edits": "Changed the same message from 'file line 283:' plus newline to 'file:283: reason' on one line. All Debug and Locals lines match the first excerpt. This normalization was not performed by TOG Tools or a participant.",
+      "text": "Message: ..\\AddOns\\ElkBuffBars\\ElkBuffBars.lua:283: attempt to call method 'EnhanceDatabase' (a nil value)\nDebug:\n[string \"@ElkBuffBars\\ElkBuffBars.lua\"]:283:\nElkBuffBars\\ElkBuffBars.lua:212\n[string \"=[C]\"]: ?\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:70:\n...ccountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua:65\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:498: InitializeAddon()\n[string \"@Accountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua\"]:623:\n...ccountant_Classic\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua:615\nLocals:\nNone"
+    }
+  ]
+}
