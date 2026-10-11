@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 19:32 Europe/Oslo. Scoped client checks of the dialog-stacking correction passed. Source and release-readiness reviews support merging PR #1 into the development branch with dragging and two remaining foreground cases explicitly unverified. The tested alpha is a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. GitHub still showed zero ZIP downloads and no open issues at 19:29.
+Last updated: 11 October 2026, approximately 19:33 Europe/Oslo. PR #1 is merged into the development branch at 08be56eb6793e98d135b33a483bd85da4694efa6 (19:31:55 Oslo). Scoped client checks of the dialog-stacking correction passed; dragging and two remaining foreground cases are explicitly unverified. The tested alpha is a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. GitHub still showed zero ZIP downloads and no open issues at 19:29.
 
 ## Screen-use agreement — latest user instruction
 
@@ -55,7 +55,11 @@ The ignored screenshot
 `.tools/pilot/evidence/dialog-stacking-pilot-front-20261011.png` contains chat and
 must never be published. No public product screenshots were captured. Keep the
 tagged alpha and its ZIP unchanged; this correction is installed locally and
-prepared for the development branch, not included in a new release.
+merged into `codex/sessionscout` through
+[PR #1](https://github.com/jdlarssen/SessionScout/pull/1), not included in a new
+release. The merge and unchanged release tag target were verified through the
+GitHub API. The final PR commit changed documentation only; its source is the
+same `d6c8251` revision with successful CI and the scoped client observations.
 
 ## Goal
 

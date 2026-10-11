@@ -1,10 +1,24 @@
 # Changelog
 
+## Unreleased
+
+- Fix interleaved text and buttons when SessionScout overlaps the local
+  GearEvidencePilot. Windows now raise together when opened or brought forward;
+  periodic refreshes do not change foreground order. Both opening orders and
+  pilot click-to-front passed scoped Forever client checks. Manual dragging and
+  two additional foreground cases remain unverified in
+  [the client test record](docs/CLIENT_TESTING.md).
+
+This correction is on the development branch, not in the published alpha assets.
+A future release needs a new version and filename; preserve the alpha.1 ZIP.
+
 ## 0.1.0-alpha.1 — 2026-10-11
 
 Scoped alpha tested in Forever 1.60.1.70338. Submitted as CurseForge file
-**9128965**; status **Processing** at 13:54 Europe/Oslo, pending moderation.
-Public download availability has not yet been confirmed.
+**9128965**; last confirmed **Under Review** at 18:53 Europe/Oslo.
+The same tested ZIP is available as a
+[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
+CurseForge public download availability has not yet been confirmed.
 
 - Prioritize Forever beta 1.60.1 (interface 16001) at the user's request.
 - Separate task names and metadata into bounded lines after the first client
