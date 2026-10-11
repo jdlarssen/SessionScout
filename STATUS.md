@@ -24,10 +24,14 @@ not been retried. No message has been sent. The owner's existing permission
 covers one public research post and replies in that thread, not moderator
 messages; a prepared request requires explicit authorization before sending.
 The concrete text is saved in `docs/MODERATOR_RESEARCH_REQUEST.txt` and filled
-in the unsent compose form. Its Send button is disabled despite populated
-required fields and no displayed field error. The reason is unverified; do not
-claim that moderator outreach is technically available or retry via hidden APIs.
-Do not ask for sending approval until there is an actionable submission route.
+in the unsent compose form. Send was initially disabled, then became enabled
+after the visible recipient field was validated and background publication
+work completed. The final accessibility check confirms an enabled Send button;
+this supersedes the intermediate disabled state. A single explicit owner
+permission request is now pending for this message and relevant replies in
+the same moderator conversation. Wait for that answer; do not repeat the
+request or send on the strength of the broader goal alone. A screenshot of
+the exact unsent draft was shown to the owner.
 The earlier native-screen window request remains pending and is not repeated.
 
 ## Latest working agreement — 11 October 2026, 21:55 Europe/Oslo
