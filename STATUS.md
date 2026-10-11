@@ -1,5 +1,34 @@
 # CurseForge number-one project status
 
+Hourly check, 11 October 2026 at 20:58 Europe/Oslo: authenticated author access
+still works. A fresh portal refresh shows file 9132600 Processing, file 9128965
+Under Review, both zero downloads and the project still hidden. GitHub issues,
+issue comments and review comments contain no updates since 20:38, verified at
+20:58:31. No new client results, player feedback or screen-window permission
+arrived. The goal remains BLOCKED with the same external dependencies below;
+this monitoring observation is not product progress. The submitted process was
+not restarted and no gameplay input, installation or unchanged test was run.
+Native screen permission remains pending; do not repeat that request.
+
+## Current external wait — 20:38 Europe/Oslo
+
+The goal tool returned **BLOCKED** after three consecutive goal turns with the
+same external impasse. The original first-place objective is unachieved. A fresh
+portal refresh still shows alpha.2 file 9132600 **Processing**, alpha.1 file
+9128965 **Under Review**, zero downloads and the hidden-project banner. The
+remote processing job is live; this is not evidence that it failed or stopped.
+GitHub issues/comments remained empty through 20:38. No unchanged upload, test
+or installation should be repeated. Hourly automation remains in force.
+
+One screen-window request is pending for the remaining foreground/drag cases
+and privacy-safe product screenshots. Wait for explicit "Klar nå" before native
+input; do not repeat the question on automatic continuations. The r/WowUI
+research invitation remains blocked by the project account's age/karma gate.
+The previously checked alternative communities do not permit the prepared
+autonomous content, and no alternative outreach is authorized. New moderation
+feedback, player feedback or an agreed screen window can enable concrete work.
+Browser control was reset; the user's screen is free.
+
 Last updated: 11 October 2026, approximately 20:29 Europe/Oslo. GitHub alpha.2 is public with the already client-tested planner window-ordering correction. Its exact commit passed CI and the uploaded ZIP digest matches the local package audit. The same ZIP was submitted separately to CurseForge as file 9132600 at 20:24 and now shows Processing; alpha.1 file 9128965 remains Under Review. Both show zero downloads and the project is still hidden pending moderation; rank unknown. No new GitHub issues/comments arrived through 20:18. The dedicated Reddit account remains blocked by r/WowUI age/karma requirements; no invitation was submitted. The next player comparison records selected versus detected model and uses existing competitor controls, as documented in docs/RESEARCH.md.
 
 ## Current GitHub alpha — 20:21 Europe/Oslo
