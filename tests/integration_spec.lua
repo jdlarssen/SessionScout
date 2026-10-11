@@ -47,7 +47,7 @@ local function world(saved, characterSaved, options)
     end
     for _, method in ipairs({"SetPoint", "SetJustifyH", "SetTextColor", "SetClampedToScreen", "SetMovable", "EnableMouse",
         "SetFrameStrata", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "RegisterForDrag", "SetAutoFocus",
-        "SetNumeric", "StartMoving", "StopMovingOrSizing"}) do
+        "SetNumeric", "StartMoving", "StopMovingOrSizing", "SetToplevel", "Raise"}) do
         methods[method] = function() end
     end
     function methods:SetSize(width, height) self.width, self.height = width, height end

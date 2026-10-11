@@ -346,6 +346,7 @@ function ns.Open()
     end
     if not ns.window then ns.CreateWindow() end
     ns.window:Show()
+    ns.window:Raise()
     if ns.FitWindow then ns.FitWindow() end
     ns.Refresh()
 end

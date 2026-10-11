@@ -71,6 +71,7 @@ function ns.CreateWindow()
     ns.window = w
     w:Hide(); w:SetSize(720, 720); w:SetPoint("CENTER")
     w:SetClampedToScreen(true); w:SetMovable(true); w:EnableMouse(true); w:SetFrameStrata("DIALOG")
+    w:SetToplevel(true)
     w:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8X8", edgeFile = "Interface\\Buttons\\WHITE8X8", edgeSize = 1 })
     w:SetBackdropColor(0.045, 0.055, 0.075, 0.98); w:SetBackdropBorderColor(0.24, 0.42, 0.44, 1)
     w:RegisterForDrag("LeftButton"); w:SetScript("OnDragStart", w.StartMoving); w:SetScript("OnDragStop", w.StopMovingOrSizing)

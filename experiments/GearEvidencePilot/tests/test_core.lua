@@ -155,6 +155,7 @@ local function fixture()
     f.ns.window = {shown = true}
     function f.ns.window:IsShown() return self.shown end
     function f.ns.window:Show() self.shown = true end
+    function f.ns.window:Raise() end -- Native stacking is checked in the client.
     function f.ns.window:Hide()
         self.shown = false
         if f.ns.OnWindowHidden then f.ns.OnWindowHidden() end

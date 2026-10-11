@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 19:09 Europe/Oslo. The tested alpha is now a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. This corrects the earlier assessment that no independent publication work remained.
+Last updated: 11 October 2026, approximately 19:32 Europe/Oslo. Scoped client checks of the dialog-stacking correction passed. Source and release-readiness reviews support merging PR #1 into the development branch with dragging and two remaining foreground cases explicitly unverified. The tested alpha is a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. GitHub still showed zero ZIP downloads and no open issues at 19:29.
 
 ## Screen-use agreement — latest user instruction
 
@@ -10,15 +10,52 @@ Prepare and batch screen tasks into a short session, then release the control
 session and explicitly tell the user the screen is free. The hourly automation
 has been updated with this rule and remains ACTIVE.
 
-The renewed screenshot attempt opened SessionScout and the existing Windows
-Snipping Tool, and closed the overlapping GearEvidencePilot window. Only the
-read-only addon preflight command ran. No SCShot backup, fixture mutation, new
-client test, reload, logout or screenshot capture occurred. The user's task and
-note remain unchanged. Native control stopped when the user wanted to play;
-after the user reported the blue border, the node_repl kernel was reset to
-release its control bindings. Do not reopen the control tools just to inspect
-the border. Screenshot preparation is local in .tools/pilot/media-commands.json
-and must wait for the next agreed screen window.
+The latest agreed screen session ran from **19:18:39 to 19:27:25 Europe/Oslo**.
+It completed the scoped stacking checks below with one reload. Product
+screenshots were not captured, and no `SCShot` or example/fixture commands ran.
+The original one completed task and blank note were untouched; the temporarily
+selected 30-minute budget was restored to 15. Both windows and chat were closed
+at the end. Native node_repl and CUA sessions were reset successfully at 19:27 to
+release control. **The screen is free; there is no permission for further PC
+use.** Do not reopen control tools just to inspect the border. Public screenshot
+preparation remains local in `.tools/pilot/media-commands.json` and must wait for
+a new explicitly agreed screen window. The fresh SavedVariables backup manifest
+is `backups/sessionscout-media-20261011T172000Z/manifest.json`.
+
+## UI correction — scoped client verification
+
+Branch `codex/dialog-stacking` addresses the overlapping-window defect observed
+while opening SessionScout over GearEvidencePilot at approximately 19:00. Both
+roots now opt into top-level ordering and are raised on opening, without periodic
+focus changes. Lua 5.1 syntax checks and 44 existing integration/runtime boundary
+checks passed for this change. Commit `d6c8251` was installed during the agreed
+19:18–19:27 session using only three changed files, with previous files and
+hashes recorded in `backups/dialog-stacking-20261011T171931Z/manifest.json`.
+Exactly one reload was performed.
+
+Visible passes: opening the planner over the pilot produced a clean foreground;
+mouse-down on the exposed pilot header brought its entire window forward;
+the Batwing Mantle button rendered its data; pilot Close worked; reopening the
+closed pilot put it above the still-visible planner; and it stayed in front for
+more than 60 seconds without the planner refresh stealing focus. The planner's
+30-minute budget button and restoration to 15 worked, as did final Close.
+Only faint normal backdrop transparency remained; controls were not interleaved.
+No error popup was observed, but no full error/taint audit was performed.
+
+Two pilot drag attempts and one planner drag attempt did not move the windows.
+Source review did not identify a credible drag defect; manual dragging remains
+unverified. Reopening an already-visible pilot from behind the planner and
+clicking an exposed planner behind the pilot were not tested. Source and
+release-readiness reviews found no concrete regression or reason to hold this
+development fix for those remaining checks. They remain open validation limits,
+not evidence of a dragging defect. Do not add a speculative drag fix.
+Full results and remaining checks are in `docs/CLIENT_TESTING.md`.
+
+The ignored screenshot
+`.tools/pilot/evidence/dialog-stacking-pilot-front-20261011.png` contains chat and
+must never be published. No public product screenshots were captured. Keep the
+tagged alpha and its ZIP unchanged; this correction is installed locally and
+prepared for the development branch, not included in a new release.
 
 ## Goal
 
@@ -122,9 +159,11 @@ After Refresh clears text focus, the same observed input did not scroll;
 clicking the text or using the scrollbar is the local pilot's current workaround.
 This remaining limitation is documented, not treated as fully repaired.
 
-The pilot is installed locally using six allowlisted, hash-verified files with
-backups of subsequent changes. SessionScout and unrelated addons were not
-modified. Passing this functional test does not establish player demand.
+The pilot was initially installed locally using six allowlisted, hash-verified
+files with backups of subsequent changes. That initial installation did not
+modify SessionScout or unrelated addons; the later scoped stacking update to
+both owned windows is recorded above. Passing these functional checks does not
+establish player demand.
 Normal logout completed after QA; character selection was visibly confirmed at
 18:32. No gameplay, gear or talent changes were made.
 Commit `0fffb795b25d98032d2bbd0280017315eeec4946` is on the GitHub default branch.
@@ -289,11 +328,11 @@ Keep the prepared invitation local and unsent until expressly authorized.
 The existing hourly heartbeat remains ACTIVE and must continue the requested
 status reports and check for changes that permit meaningful work.
 
-The 18:51 heartbeat reactivated the goal. A fresh three-turn audit (hourly check,
-the 18:53 author-portal observation, and the subsequent state review) found the
-same gates unchanged, no authorization reply and no independent substantive task.
-This recheck is not claimed as product progress or a live-job wait. Return the
-goal to blocked; keep the hourly automation and prepared work intact.
+The 18:51–18:53 checks found those gates unchanged. They were observations, not
+product progress or a verified live-job wait. Tool calls within one turn do not
+constitute separate turns for the blocking threshold. The later public GitHub
+prerelease and actual-client correction work supersede that earlier impasse;
+any future blocked audit must use the current consecutive goal turns.
 
 ## Next concrete work
 
@@ -311,7 +350,8 @@ goal to blocked; keep the hourly automation and prepared work intact.
    Model scores are not measured DPS, and missing recorded drops do not prove
    unavailability. No comparative demand test or participant recruitment has
    occurred. Outreach still requires explicit user authorization.
-4. At the next explicitly agreed screen window, obtain suitable public alpha
+4. At the next explicitly agreed screen window, finish the remaining scoped
+   foreground/manual-drag checks and obtain suitable public alpha
    screenshots excluding unrelated private UI/chat;
    validate the existing alpha's usability and voluntary reuse when feasible.
    Do not add features merely to fill time while moderation or feedback is pending.
