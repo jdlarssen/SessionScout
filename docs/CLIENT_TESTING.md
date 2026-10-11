@@ -113,7 +113,10 @@ Europe/Oslo**, in Forever 1.60.1.70338 / interface 16001. Commit `d6c8251`
 was installed with exactly three changed files: SessionScout `UI.lua` and the
 pilot's `Core.lua` and `UI.lua`. Prior files and installed hashes are recorded in
 `backups/dialog-stacking-20261011T171931Z/manifest.json`. Exactly one `/reload`
-was performed. This local candidate is not included in the published alpha ZIP.
+was performed. This correction is absent from the preserved alpha.1 ZIP. Its
+SessionScout portion is included in the published GitHub alpha.2 ZIP, also
+submitted to CurseForge as file 9132600 with moderation still pending. The
+GearEvidencePilot portion remains local and unpublished.
 
 Observed passes:
 

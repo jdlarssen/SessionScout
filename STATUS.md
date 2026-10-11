@@ -4,6 +4,13 @@ Last updated: 11 October 2026, approximately 20:29 Europe/Oslo. GitHub alpha.2 i
 
 ## Current GitHub alpha — 20:21 Europe/Oslo
 
+Follow-up at approximately 20:34: the live CurseForge file 9132600 still shows
+Processing, file 9128965 remains Under Review, both show zero downloads and the
+project is hidden. The notification panel contains only the old alpha.1
+Processing event. GitHub issue and comment feeds had no updates through 20:32.
+This is a verified wait on the existing submission, not new product progress.
+No resubmission, unchanged test or gameplay input was performed.
+
 [SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever)
 is a verified public prerelease targeting `098d7ea2c43fbcbfe289965096592b793016d6bf`.
 [CI run 38163416331](https://github.com/jdlarssen/SessionScout/actions/runs/38163416331)
