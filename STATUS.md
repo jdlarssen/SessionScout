@@ -1,21 +1,22 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 19:55 hourly follow-up (Europe/Oslo). The fresh CurseForge check still shows Under Review, zero downloads and the hidden-project moderation banner; rank unknown. GitHub's issue feed is empty. The owner reports having pasted the project-mailbox password, but has not confirmed completing submission or reaching the inbox. No project-account creation or invitation publication has been verified. The public alpha, merged UI correction, corrected GitHub About metadata and documented player-research findings remain delivered.
+Last updated: 11 October 2026, approximately 20:01 Europe/Oslo. The owner completed Proton registration, and the dedicated project inbox is verified. Reddit accepted the emailed verification code and the proposed project username is available. Its separate new-password entry and submission now require the owner under the browser tool's credential handoff rule. No Reddit account completion or invitation publication has been verified. The 19:55 CurseForge check still showed Under Review, zero downloads and the hidden-project banner; rank unknown. The public alpha, merged UI correction, corrected GitHub About metadata and player-research findings remain delivered.
 
 The hourly check read the existing source, status and goal, checked the issue feed
 and the author portal, and closed the temporary browser tab. No new client-test
 result, moderation feedback or actionable issue was received. No unchanged tests,
 installations, gameplay input or new speculative implementation were performed.
-The user's credential handoff remains pending; do not store its password in this
-repository or repeat the handoff question. This observation is not product progress.
+That hourly observation was not product progress. The subsequent completed mailbox
+and Reddit email verification below supersede its account-creation dependency.
+Never store passwords, verification codes or recovery material in this repository.
 
 ## Resumed work and current dependencies — 19:55 Europe/Oslo
 
 The owner's request to resolve the blockage supersedes the 19:38 impasse. Its
-three-turn audit must not be reused. The goal tool still exposes its previous
-blocked status and offers no agent-side resume action; this is not a reason to
-stop authorized useful work or create a duplicate goal. The objective remains
-unchanged and unachieved, with hourly automation ACTIVE.
+three-turn audit must not be reused. The latest goal-tool read returned ACTIVE.
+The verified mailbox and Reddit email-verification progress reset the current
+no-progress audit; do not carry forward historical blocked counts. The objective
+remains unchanged and unachieved, with hourly automation ACTIVE.
 
 One concrete publication defect was corrected: GitHub's About description still
 said client validation was pending. It now accurately describes the scoped
@@ -30,15 +31,23 @@ already showed the registration form; no agent CAPTCHA action was needed.
 Registration requires an email, and the owner delegated selecting it. No project
 contact address was found in the scoped repository documentation search.
 
-A Proton Free mailbox registration is therefore prepared, with a proposed project
-address and no payment information. The username spelling and empty password
-field were visually checked. The mailbox is not yet created or reserved. The
-browser tool's mandatory credential handoff requires the owner to enter and
-submit the new password; the owner's later request for the agent to do it does
-not override that tool rule. Proton account submission/terms acceptance have not
-occurred. No email or credential has been sent to Reddit and no account or post
-exists yet. Proton and Reddit tabs are preserved for this specific handoff.
-The separate screen-use agreement below remains in force; browser work has used
+The owner completed Proton Free signup and reported ready. At approximately 19:59,
+the account selector showed the dedicated address and the Mail inbox opened.
+The introductory screens were completed with the default theme; personal-mail
+import and desktop/mobile app installation were skipped. No payment information
+was entered and no personal mailbox was connected.
+
+The dedicated address was submitted to Reddit under the already approved terms
+step. The resulting verification email arrived in that project inbox; its code
+was accepted by Reddit. The username SessionScoutResearch was filled and Reddit
+explicitly reported it available. The remaining form requests a new password and
+submission. This separate credential step requires the same mandatory user
+handoff as Proton. A distinct generated password was prepared for the user, not
+entered into Reddit or saved in project files. The invitation draft passed an
+independent check for leading questions and unsupported claims; publish only its
+TITLE and BODY when registration and current community rules permit. No Reddit
+account completion or post has been verified. Proton and Reddit tabs are preserved.
+The separate screen-use agreement below remains in force; all browser work used
 no native screen, keyboard or mouse control.
 
 The public player reports corroborate the existence of uncertainty about gear
