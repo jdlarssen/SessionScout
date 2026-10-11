@@ -92,12 +92,12 @@ physical keyboard-entry or native-event timing case.
 
 ## Remaining checks and alpha scope
 
-### Observed overlapping-window defect — pending correction check
+### Overlapping-window correction — scoped client checks passed, remaining checks open
 
 On 11 October at approximately 19:00 Europe/Oslo, opening SessionScout while
 GearEvidencePilot was visible showed interleaved text and buttons in their
 overlapping area. Closing the pilot left the planner readable. Both root frames
-use DIALOG strata without top-level window ordering. This supports a frame-level
+then used DIALOG strata without top-level window ordering. This supports a frame-level
 collision; the exact rendering cause has not been confirmed with runtime level
 inspection. The 0.98 backdrop opacity alone does not explain foreground controls.
 
@@ -108,22 +108,55 @@ The APIs are present in the pinned
 [Blizzard frame API declarations](https://github.com/Gethe/wow-ui-source/blob/09b9db7948abc9b9648dedaab51eb0cf3ee67b31/Interface/AddOns/Blizzard_APIDocumentationGenerated/SimpleFrameAPIDocumentation.lua).
 Automated stubs cannot verify native drawing order or click-to-front behavior.
 
-This candidate is not installed or included in the published alpha. At the next
-agreed screen window, batch these checks with the prepared public screenshots:
+The agreed client session ran on **11 October 2026, 19:18:39–19:27:25
+Europe/Oslo**, in Forever 1.60.1.70338 / interface 16001. Commit `d6c8251`
+was installed with exactly three changed files: SessionScout `UI.lua` and the
+pilot's `Core.lua` and `UI.lua`. Prior files and installed hashes are recorded in
+`backups/dialog-stacking-20261011T171931Z/manifest.json`. Exactly one `/reload`
+was performed. This local candidate is not included in the published alpha ZIP.
 
-1. With the player idle and outside combat, load the candidate in the existing
-   client using an agreed reload; preserve the original installed files.
-2. Open both windows in each order and overlap them. The foreground window must
-   cover the background window's controls, apart from intentional faint opacity.
-3. Click/drag the exposed background window and verify that its whole window
-   comes forward. Check its buttons and text fields still work.
-4. Reopen the already visible pilot and check it comes forward. Check that a
-   planner refresh does not raise it over the pilot.
-5. Capture the planned privacy-safe examples, restore any temporary data and
-   original files as appropriate, close the capture session and release the screen.
+Observed passes:
 
-Do not claim this defect fixed in-client until those observations pass. Do not
-replace the existing alpha ZIP or install/reload during the user's active play.
+- Opening `/gearevidence` and then `/scout` left the planner cleanly in front,
+  with only faint normal backdrop transparency and no interleaved controls.
+- A mouse-down/drag attempt on the exposed pilot header brought the whole pilot
+  in front without interleaved controls. This establishes foreground ordering,
+  not successful dragging.
+- The Batwing Mantle candidate button rendered the corresponding data, and the
+  pilot's Close button worked.
+- `/gearevidence` reopened the closed pilot above the still-visible planner.
+  The pilot remained in front for more than 60 seconds while the planner was
+  shown; the planner's periodic refresh did not steal the foreground.
+- The planner's 30-minute budget button worked, and the original 15-minute budget
+  was restored. The final Close action worked. Both windows and chat were closed
+  at the end of the session.
+
+No error popup was observed; this was not a full Lua-error or taint audit. Two
+pilot drag attempts and one planner drag attempt did not move either window.
+Source review found the expected movable/mouse/drag handlers and no later
+re-anchoring, so these automation attempts do not establish a drag defect.
+**Dragging remains unverified; no speculative drag fix is proposed.**
+
+Not tested: reopening an already-visible pilot from behind the planner, or
+clicking an exposed planner behind the pilot (the pilot completely covered it).
+These remain explicit validation limits. Source and release-readiness reviews
+support merging the small correction into the development branch: the original
+defect was exercised, both opening orders passed, and the unchanged drag handlers
+show no concrete regression. At a new explicitly agreed screen window, check the
+remaining cases and manual dragging, then capture the prepared privacy-safe
+product examples. Do not mark the full client checklist passed or replace the
+alpha ZIP from these partial results.
+
+Private evidence is `.tools/pilot/evidence/dialog-stacking-pilot-front-20261011.png`.
+It contains chat and **must never be published**. Product screenshots were not
+captured. Neither `SCShot` nor example/fixture commands were executed: the one
+original completed task and blank note were untouched, and the budget was
+restored to 15. A fresh SavedVariables backup is recorded in
+`backups/sessionscout-media-20261011T172000Z/manifest.json`.
+
+The native node_repl and CUA sessions were reset successfully at 19:27 to release
+control. The screen is free; no further PC use is authorized without a new agreed
+window. Do not reopen control tools merely to inspect the border.
 
 ### Other remaining checks
 
