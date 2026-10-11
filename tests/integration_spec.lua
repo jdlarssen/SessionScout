@@ -239,9 +239,12 @@ test("long task labels use bounded rows and full escaped hover tooltips", functi
     end
     for _, row in ipairs(ns.window.taskRows) do
         eq(row.text.wordWrap, false, "task name must not create extra visual lines")
-        eq(row.text.maxLines, 2); eq(row.text.height, 28)
+        eq(row.text.maxLines, 1); eq(row.text.height, 14)
+        eq(row.metadata.wordWrap, false); eq(row.metadata.maxLines, 1); eq(row.metadata.height, 14)
     end
     local planRow, taskRow = ns.window.planRows[1], s:row(longLabel)
+    eq(taskRow.text:GetText():find("\n", 1, true), nil, "a non-wrapping title must not contain newline metadata")
+    contains(taskRow.metadata:GetText(), "10m / Medium / Once / Character")
     local escaped = longLabel:gsub("|", "||")
     for _, control in ipairs({planRow.done, taskRow.edit}) do
         control:MouseEnter()
@@ -271,6 +274,7 @@ test("shared scope completes across characters and delete requires two clicks", 
     ok(ns.Model.IsCompleted(ns.db, ns.db.tasks[1].id, "Other-Player", s.now))
     local row = s:row("Shared task"); row.remove:Click(); eq(#ns.db.tasks, 1); eq(row.remove:GetText(), "Confirm?")
     row.remove:Click(); eq(#ns.db.tasks, 0); eq(ns.window.taskRows[1].task, nil)
+    eq(ns.window.taskRows[1].metadata:GetText(), "", "deleted rows must clear their details")
 end)
 
 test("character note persists through typing, hiding, logout and a fresh login", function()

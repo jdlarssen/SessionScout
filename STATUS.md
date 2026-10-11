@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 13:04 Europe/Oslo. Author access and project registration complete; publication awaits client evidence.
+Last updated: 11 October 2026, 13:28 Europe/Oslo. First client UI defect fixed and installed; reload verification pending.
 
 ## Goal
 
@@ -30,7 +30,7 @@ Use that answer to redirect work if supplied.
 - 19 Python tooling tests passed, including timestamp collision regression.
 - Fixed long-label overlap and UTF-8 note truncation found in independent review.
 - Built `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
-- ZIP SHA256: `1f80edcaaa2477d125cd0d194453855534c05f488c9125dd2ebc2e6f2d8bc8ad`.
+- Current ZIP SHA256: `1143a35967230832078c6e0cea8cdfac81cf698c27b35fba2081f81320ca790b`.
 - Installed that source into the verified Forever client's `Interface/AddOns/SessionScout`
   using the guarded installer. File hashes verified; no other addons modified.
 - Original editable compass icon and 512px PNG ready under `assets/`.
@@ -52,19 +52,28 @@ Use that answer to redirect work if supplied.
   categories, MIT license, enabled comments and public GitHub source link saved.
   Third-party distribution enabled; automatic packaging remains disabled.
   Description explicitly states that Forever 1.60.1 in-game validation is pending.
+- First real-client defect fixed: task-list minutes/priority/recurrence/scope were
+  invisible under the task name. Each now has its own bounded text line. Corrected
+  singular "1 next action" wording. All 22 updated Lua integration tests passed.
+  Rebuilt and installed the revised alpha at 13:28; prior addon files preserved
+  in `backups/20261011T1128200425015Z-9eeec5271b4b4ea78fa81c3e65b8beee`.
+  Installation hashes verified. The running UI still needs `/reload` and visual
+  verification of this exact build; no SavedVariables or other addons changed.
 
 ## Access and validation limits
 
 - GitHub source repository created: https://github.com/jdlarssen/SessionScout.
   Source pushed and CI passed. This is source distribution, not a CurseForge publication.
 - WoW Classic beta 1.60.1.70338 is installed and is now the primary target.
-  No actual WoW client testing has occurred. The user has been asked to restart
-  the game, enable SessionScout, run `/scout` and report the result. Prepared code
-  and installation are not runtime proof. Do not repeatedly reinstall unchanged files.
-  A fresh read-only screenshot at 13:03:50 Oslo still showed active five-player
-  combat in Razorfen Kraul. WowB PID 32524 still started at 11:42:56, before the
-  addon's installation at 12:23:15. No game input was sent. A safe test interval
-  has been requested; do not restart or interrupt this active group session.
+  At 13:23–13:26 Oslo, fresh screenshots showed SessionScout's empty panel and then
+  a user-created 10-minute task correctly appearing in a 15-minute plan. The addon
+  is now demonstrably loaded. These observations do not establish full functional
+  compatibility or absence of Lua errors. See `docs/CLIENT_TESTING.md` for evidence.
+  The user is actively using the auction house; an uninterrupted interval for
+  keyboard/mouse testing and `/reload` was requested. Do not interfere with those
+  concurrent actions. Do not repeatedly reinstall unchanged files.
+  The process start time remained unchanged while the addon appeared: it is not
+  a reliable indicator of whether the addon has been loaded.
 - Browser access, provider authentication, CurseForge account and author access
   are verified. Use the existing project rather than creating a duplicate.
   The portal's Files tab says "Add your first file" and its banner states that a
@@ -93,10 +102,10 @@ blocked after this audit; it is not complete. Keep the hourly status automation
 active as requested. Resume substantive work when the user supplies client-test
 results, makes a safe testing interval available, or restores verified author access.
 
-Latest access change: the user approved registration, and author access plus
-project creation succeeded. The remaining release gate is actual Forever client
-validation. The earlier access blockers are historical; do not reuse their
-three-turn count for a new blocked action.
+Latest change: author access and project creation succeeded, and SessionScout
+is now visibly loaded in Forever. Functional client validation remains incomplete;
+the observed task-list detail defect is patched and awaits live verification. Earlier access/loading blockers are
+historical; do not reuse their three-turn count for a new blocked action.
 
 ## Next concrete work
 

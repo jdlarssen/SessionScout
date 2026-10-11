@@ -1,6 +1,7 @@
 # Release validation in the actual game
 
-Status: **not run**. Automated tests are not a substitute for these checks.
+Status: **initial live observations recorded; functional validation incomplete**.
+Automated tests are not a substitute for these checks.
 Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
@@ -28,4 +29,21 @@ public release. Never mark a platform supported only by changing its TOC number.
 
 | Date | Client/build | Tester | Result / evidence |
 | --- | --- | --- | --- |
-| Pending | Forever 1.60.1.70338 / 16001 | Pending | No in-client execution yet |
+| 2026-10-11 13:23–13:26 Europe/Oslo | Installed Forever 1.60.1.70338 / 16001 | Codex observation of user's client | SessionScout loaded and empty panel rendered fully on a 3440x1440 display. Later the user-created task `Sell items på AH` appeared with `10 min` in the plan and `1 next actions / 10 of 15 min`. Bag/durability context displayed. Functional test sequence and Lua-error reporting are not yet verified. |
+
+Local, private evidence: `.tools/evidence/client/01-empty.png` and
+`02-first-task.png`. These full-window captures contain unrelated game UI/chat
+and must not be uploaded as project media as-is.
+
+The same client process remained running while SessionScout became visible.
+Process start time alone cannot establish whether the addon is loaded; use the
+actual visible UI and test results instead. The user continued interacting with
+the auction house, so an uninterrupted test interval was requested.
+
+Confirmed first-client defect: the task list displayed the task name but omitted
+its second-line minutes/priority/recurrence/scope details. Fixed using separate
+bounded title and metadata FontStrings. All 22 updated Lua integration checks
+passed. Revised package installed at 13:28 with SHA256
+`1143a35967230832078c6e0cea8cdfac81cf698c27b35fba2081f81320ca790b`.
+The fix still requires `/reload` and live visual verification; the earlier
+screenshots show the pre-fix build.

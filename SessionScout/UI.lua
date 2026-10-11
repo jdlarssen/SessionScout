@@ -118,7 +118,11 @@ function ns.CreateWindow()
         local y = -312 - (i - 1) * 33
         local row = {}
         row.text = label(w, "", 24, y, "GameFontHighlightSmall", 377)
-        row.text:SetWordWrap(false); row.text:SetMaxLines(2); row.text:SetHeight(28)
+        row.text:SetWordWrap(false); row.text:SetMaxLines(1); row.text:SetHeight(14)
+        -- Forever suppresses newline metadata in a non-wrapping FontString.
+        -- Give the title and details their own bounded lines instead.
+        row.metadata = label(w, "", 24, y - 14, "GameFontHighlightSmall", 377)
+        row.metadata:SetWordWrap(false); row.metadata:SetMaxLines(1); row.metadata:SetHeight(14)
         row.toggle = button(w, "Done", 413, y + 5, 63, function()
             if not row.task then return end
             if row.task.completed then M.ResetTask(ns.db, row.task.id, ns.character); ns.Refresh()
@@ -180,7 +184,7 @@ function ns.Render()
     elseif count == 0 then
         w.planSummary:SetText("No unfinished task fits " .. budget .. " min. Try a larger budget or a smaller task.")
     else
-        w.planSummary:SetText(count .. " next actions / " .. plan.totalMinutes .. " of " .. budget .. " min. High priority first.")
+        w.planSummary:SetText(count .. (count == 1 and " next action / " or " next actions / ") .. plan.totalMinutes .. " of " .. budget .. " min. High priority first.")
     end
     for i, row in ipairs(w.planRows) do
         local task = plan.tasks[i]; row.task = task
@@ -193,7 +197,8 @@ function ns.Render()
     for i, row in ipairs(w.taskRows) do
         local task = tasks[(page - 1) * 5 + i]; row.task = task
         local color = task and task.completed and "|cff7d9393" or "|cffe6ecec"
-        row.text:SetText(task and (color .. ns.SafeText(task.label) .. "|r\n" .. task.minutes .. "m / " .. priorityNames[task.priority] .. " / " .. recurrenceNames[task.recurrence] .. " / " .. (task.scope == "account" and "Shared" or "Character")) or "")
+        row.text:SetText(task and (color .. ns.SafeText(task.label) .. "|r") or "")
+        row.metadata:SetText(task and (color .. task.minutes .. "m / " .. priorityNames[task.priority] .. " / " .. recurrenceNames[task.recurrence] .. " / " .. (task.scope == "account" and "Shared" or "Character") .. "|r") or "")
         row.toggle:SetShown(task ~= nil); row.edit:SetShown(task ~= nil); row.remove:SetShown(task ~= nil)
         if task then row.toggle:SetText(task.completed and "Undo" or "Done"); row.remove:SetText("Delete") end
     end
