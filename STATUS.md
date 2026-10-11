@@ -1,5 +1,34 @@
 # CurseForge number-one project status
 
+## Latest working agreement — 11 October 2026, 21:55 Europe/Oslo
+
+The owner replaced hourly updates with **one daily status** and renewed the
+instruction to resolve obstacles independently. The existing heartbeat was
+updated through the app, verified ACTIVE, and renamed "CurseForge – daglig
+fremdrift", scheduled daily at 20:00 Europe/Oslo. Its existing ID is preserved;
+no duplicate automation was created. This supersedes older hourly requirements
+below and in the historical goal description.
+
+A blocked publication or outreach task is not sufficient reason to stop all
+useful work. Investigate concrete alternatives within the existing authorization
+and finish evidence-backed tasks that do not depend on that gate. Keep the exact
+first-place objective unchanged, distinguish activity from adoption, and respect
+required external approvals and the separate screen-window agreement. The last
+goal-tool read still returned BLOCKED; this document does not claim to have
+changed that tool state. Treat the owner's renewed request as a fresh blocking
+audit, not a continuation of the old three-turn count. Daily follow-up remains
+active regardless of a previously recorded dependency.
+
+Independent deliverable: `docs/GEAR_COMPARISON_EXAMPLE.md` presents the existing,
+verified Ferine comparison as a short anonymous example, linked from README and
+to the existing feedback route. Its item table was checked against the recorded
+client observations, and its arithmetic against the recorded coefficients.
+It distinguishes listed item bonuses from resulting character stats, different
+model scales from DPS, and recorded observations from uncertain beta drops.
+This makes the pilot explanation inspectable without installation,
+CurseForge approval, Reddit posting or a screen session. It is not evidence of
+recruitment, demand, improved decisions or reuse.
+
 Hourly check, 11 October 2026 at 20:58 Europe/Oslo: authenticated author access
 still works. A fresh portal refresh shows file 9132600 Processing, file 9128965
 Under Review, both zero downloads and the project still hidden. GitHub issues,
@@ -139,7 +168,7 @@ external dependencies, not reasons to repeat unchanged tests or build new featur
 The user wants to play. Work in the background; do not take the screen, keyboard
 or mouse again without asking for a new time window and receiving permission.
 Prepare and batch screen tasks into a short session, then release the control
-session and explicitly tell the user the screen is free. The hourly automation
+session and explicitly tell the user the screen is free. The daily automation
 has been updated with this rule and remains ACTIVE.
 
 The latest agreed screen session ran from **19:18:39 to 19:27:25 Europe/Oslo**.
@@ -356,7 +385,7 @@ Do not use their personal account or substitute another destination.
 - Original project icon, MIT license, changelog, source/issue links, release
   notes and client-validation record prepared. Full-screen evidence is private;
   no public screenshot media has been uploaded.
-- Active hourly heartbeat `curseforge-fremdrift-hver-time` in this chat.
+- Active daily heartbeat `curseforge-fremdrift-hver-time` in this chat (ID retained).
 
 ## CurseForge submission
 
@@ -463,7 +492,7 @@ reply and no GitHub issues. No substantial authorized independent task remained;
 repeated tests, searches or speculative features would not resolve those gates.
 This is the current resumed-run audit, not the earlier resolved access blockers.
 Keep the prepared invitation local and unsent until expressly authorized.
-The existing hourly heartbeat remains ACTIVE and must continue the requested
+The existing heartbeat is now daily and remains ACTIVE to continue the requested
 status reports and check for changes that permit meaningful work.
 
 The 18:51–18:53 checks found those gates unchanged. They were observations, not
@@ -498,7 +527,7 @@ any future blocked audit must use the current consecutive goal turns.
    from comparative evidence, preserve negative results, and keep the original
    number-one goal distinct from release and pilot milestones.
 
-Hourly reports must state actual changes, publication/rank status, next steps and
-blockers even when unchanged, as explicitly requested. Keep the machine and Codex
+One daily report at 20:00 Europe/Oslo must state actual changes, publication/rank
+status, next steps and real dependencies, even when unchanged. Keep the machine and Codex
 running for local scheduled work. Do not duplicate automations or mark the goal
 complete while first place remains unverified.

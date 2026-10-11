@@ -117,3 +117,7 @@ Forever. It reads equipped items and two candidate items from the client,
 explains stat tradeoffs under two dated fixed-weight models, and exposes source
 limitations. It is not included in the SessionScout package or published on
 CurseForge. See its [validation record](experiments/GearEvidencePilot/TESTING.md).
+
+Read the [Ferine Leggings comparison](docs/GEAR_COMPARISON_EXAMPLE.md) for one
+verified stat tradeoff, the two fixed-model calculations and what remains unknown.
+No installation is needed to read the example.
