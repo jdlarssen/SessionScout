@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 17:15 Europe/Oslo. RFK comparison extended with an independently checked Intellect-weight sensitivity calculation. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, 18:34 Europe/Oslo. The bounded RFK gear-evidence pilot is implemented, installed and checked in the actual client. The game has been returned to character selection. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -9,7 +9,7 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 17:15; popularity rank remains **unknown**, not zero. The 14:52
+at approximately 18:10; popularity rank remains **unknown**, not zero. The 14:52
 rendered observation of the exact first page confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
@@ -65,7 +65,8 @@ hunt target remains unknown but does not block this prepared comparison.
 Existing tools already cover personalized gear scoring. The next test concerns
 whether explicit tradeoffs, assumptions and acquisition evidence improve the
 actual decision beyond those tools. This is one owner's discovery case, not
-validated demand. No speculative addon feature has been built.
+validated demand. This grounded case now has a separate local prototype;
+it is not part of the SessionScout release or a new CurseForge submission.
 
 The subsequent Intellect-weight check identifies a smaller relative margin to a
 changed shoulder verdict than the leg verdict in both fixed models. It does not
@@ -75,6 +76,42 @@ decision-quality or acquisition evidence. Details are in `docs/RESEARCH.md`.
 
 The overall number-one goal is unchanged. Further implementation must earn its
 place through comparative value and voluntary reuse, not work already invested.
+
+## Local gear-evidence experiment
+
+`experiments/GearEvidencePilot` implements the two-candidate RFK comparison
+against the currently equipped items. `/gearevidence` opens it outside combat.
+The bounded scope is level 30 Shaman, Forever interface 16001, with a verified
+positive unique Enhancement talent-rank lead and no pending talent changes.
+Actual item links and client stats are required; research fixtures never fill
+missing live data. No SavedVariables, telemetry or gameplay actions are added.
+
+The UI shows raw gains/losses, separate WOWF and Lootified fixed-model scores,
+each stat's contribution, exact coefficients, source dates and the unverified
+status of beta boss/drop claims. These are model points, not measured DPS or BiS.
+The two sources agree on both tested swaps but use different scales and values.
+
+Eleven model checks and 22 mocked runtime boundary scenarios passed under Lua
+5.1. Actual-client checks confirmed both candidate comparisons against all four
+visible item tooltips, a 26/0/0 talent allocation, reload, manual refresh,
+candidate selection, Escape closing, and the new contribution explanations.
+The client record is [TESTING.md](experiments/GearEvidencePilot/TESTING.md);
+non-identifying numeric observations are in
+`data/gear-evidence-client-20261011.json`. Dragging the scrollbar works. After a
+narrow handler change and reload, mouse-wheel input scrolled correctly in both
+directions after clicking the evidence text, with the scrollbar following.
+After Refresh clears text focus, the same observed input did not scroll;
+clicking the text or using the scrollbar is the local pilot's current workaround.
+This remaining limitation is documented, not treated as fully repaired.
+
+The pilot is installed locally using six allowlisted, hash-verified files with
+backups of subsequent changes. SessionScout and unrelated addons were not
+modified. Passing this functional test does not establish player demand.
+Normal logout completed after QA; character selection was visibly confirmed at
+18:32. No gameplay, gear or talent changes were made.
+An owner-feedback question about what remains unresolved in the Ferine choice
+is pending. Next validation is comparative decision value and voluntary reuse,
+not more candidates or classes without evidence.
 
 ## Completed work
 
@@ -151,6 +188,9 @@ place through comparative value and voluntary reuse, not work already invested.
 - The author portal still showed **Under Review**, zero downloads and the new
   project visibility banner at approximately 17:00 and 17:15. No rejection or correction
   request was present. Public release and overall rank remain unverified.
+- A fresh author-portal check at approximately 18:10 showed **Under Review**,
+  zero downloads and the same moderation banner. No correction request or
+  rejection was present. The temporary observation tab was closed afterward.
 
 ## Remaining validation and access limits
 
@@ -185,7 +225,7 @@ No external outreach, money spent, fabricated downloads, ratings or reviews.
    80% target is not required. Keep H2 parked unless new evidence exposes an
    unresolved recurring material-allocation problem; do not restart its searches
    or build it just because it was the earlier priority.
-3. Use the prepared RFK comparison to evaluate a clear, evidence-backed gear
+3. Use the installed RFK pilot to evaluate a clear, evidence-backed gear
    explanation against existing tools. Current gear/talents are already available
    locally; do not wait on the earlier manual-transcription question. Investigate
    specific source/model discrepancies and real feedback, not generic new ideas.

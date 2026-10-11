@@ -2,6 +2,25 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Bounded client experiment — 11 October, 18:34 Europe/Oslo
+
+The owner's request for continued autonomous work led to a separate local
+`GearEvidencePilot`, limited to the two RFK comparisons already investigated.
+It now reads live equipped and candidate links/stats, checks the active
+Enhancement allocation, and shows each model's contributions, assumptions and
+source dates. It is not included in SessionScout's package or submitted as a
+second public addon. The [validation record](../experiments/GearEvidencePilot/TESTING.md)
+documents 33 automated checks and the actual Forever client observations.
+
+Four visible item tooltips agreed with the stat inputs; both candidate outcomes
+matched the earlier calculations. The prototype confirms that the bounded
+explanation can be produced from supported client data in this tested case.
+It does not validate either model's weights, a DPS increase, beta drops or a
+better player decision. An owner-feedback question asks what uncertainty remains
+in choosing Ferine Leggings. No reply, comparative advantage, voluntary repeat
+use or wider demand has yet been observed. Further work should respond to that
+evidence instead of expanding the candidate list or supported classes.
+
 ## Autonomous equipment comparison — 11 October, 17:00 Europe/Oslo
 
 The user explicitly authorized PC use as needed and asked us to advance without

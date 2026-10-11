@@ -84,3 +84,12 @@ single-page ranking observer; unavailable observations are recorded as unknown.
 See [research](docs/RESEARCH.md), [project status](STATUS.md) and the
 [provisional listing draft](docs/CURSEFORGE_LISTING.md). No ranking or download
 claims should be made without fresh evidence from the actual published project.
+
+## Local product experiment
+
+[`experiments/GearEvidencePilot`](experiments/GearEvidencePilot/README.txt) is a
+separate RFK gear-evidence experiment for a level 30 Enhancement Shaman on
+Forever. It reads equipped items and two candidate items from the client,
+explains stat tradeoffs under two dated fixed-weight models, and exposes source
+limitations. It is not included in the SessionScout package or published on
+CurseForge. See its [validation record](experiments/GearEvidencePilot/TESTING.md).

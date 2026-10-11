@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: GearEvidencePilot
+## Notes: Local RFK evidence pilot: client item stats and two fixed point models.
+## Author: SessionScout contributors
+## Version: 0.0.1-local
+
+Data.lua
+Model.lua
+Core.lua
+UI.lua
