@@ -1,6 +1,24 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 18:53 Europe/Oslo. The hourly follow-up found the same external gates. Work is preserved; further progress currently needs moderation, real player feedback or authorization for the prepared invitation. The user stopped the screenshot attempt with Escape before game entry. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, approximately 19:09 Europe/Oslo. The tested alpha is now a public GitHub prerelease at https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever, with the unchanged ZIP and checksum, targeting verified commit 0fffb795b25d98032d2bbd0280017315eeec4946. CurseForge was last checked at 18:53 and remained Under Review; rank unknown. This corrects the earlier assessment that no independent publication work remained.
+
+## Screen-use agreement — latest user instruction
+
+The user wants to play. Work in the background; do not take the screen, keyboard
+or mouse again without asking for a new time window and receiving permission.
+Prepare and batch screen tasks into a short session, then release the control
+session and explicitly tell the user the screen is free. The hourly automation
+has been updated with this rule and remains ACTIVE.
+
+The renewed screenshot attempt opened SessionScout and the existing Windows
+Snipping Tool, and closed the overlapping GearEvidencePilot window. Only the
+read-only addon preflight command ran. No SCShot backup, fixture mutation, new
+client test, reload, logout or screenshot capture occurred. The user's task and
+note remain unchanged. Native control stopped when the user wanted to play;
+after the user reported the blue border, the node_repl kernel was reset to
+release its control bindings. Do not reopen the control tools just to inspect
+the border. Screenshot preparation is local in .tools/pilot/media-commands.json
+and must wait for the next agreed screen window.
 
 ## Goal
 
@@ -245,7 +263,11 @@ A direct one-page HTTP ranking request previously returned 403. Do not bypass or
 repeat blocked requests; use permitted rendered observations with provenance.
 No external outreach, money spent, fabricated downloads, ratings or reviews.
 
-### Current impasse after the pilot and invitation preparation
+### Historical impasse after the pilot and invitation preparation
+
+This assessment was superseded by the GitHub prerelease described at the top of
+this file. Its description of an impasse must not be treated as a current audit
+or reused to satisfy the three-consecutive-goal-turn blocking threshold.
 
 The recent consecutive goal turns delivered the tested local pilot and its CI,
 then prepared a concrete player-research invitation. Both ended with the same
@@ -289,7 +311,8 @@ goal to blocked; keep the hourly automation and prepared work intact.
    Model scores are not measured DPS, and missing recorded drops do not prove
    unavailability. No comparative demand test or participant recruitment has
    occurred. Outreach still requires explicit user authorization.
-4. Obtain suitable public alpha screenshots excluding unrelated private UI/chat;
+4. At the next explicitly agreed screen window, obtain suitable public alpha
+   screenshots excluding unrelated private UI/chat;
    validate the existing alpha's usability and voluntary reuse when feasible.
    Do not add features merely to fill time while moderation or feedback is pending.
 5. Observe the real popularity rank after publication. Select further development

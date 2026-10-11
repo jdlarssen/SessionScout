@@ -1,4 +1,4 @@
-# Registered listing — submitted alpha under review
+# CurseForge listing — submitted alpha under review
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; not yet publicly visible.
@@ -22,6 +22,17 @@ client; after approval, downloads use the direct project website file page.
 License: MIT. Third-party distribution allowed; no automatic packaging.
 Source: https://github.com/jdlarssen/SessionScout
 Issues: https://github.com/jdlarssen/SessionScout/issues
+
+## Separate GitHub prerelease
+
+The same tested ZIP and its checksum were published on 11 October 2026 at
+[SessionScout 0.1.0-alpha.1 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
+The tag targets verified source commit `0fffb795b25d98032d2bbd0280017315eeec4946`;
+the release is public and marked prerelease. Its uploaded ZIP digest matches the
+CurseForge submission hash above. This provides a manual download while
+CurseForge moderation remains pending; it establishes neither CurseForge
+approval nor user adoption. The saved CurseForge description below has not
+been changed by this GitHub publication.
 
 ## Saved project description
 
@@ -95,7 +106,7 @@ addon was removed. Public screenshots have not been uploaded: full-window client
 evidence contains unrelated game UI/chat and is private.
 
 The description update and server receipt of the file are confirmed. Remaining
-publication steps: moderation approval and actual public
-download availability. Private evidence: `.tools/evidence/curseforge-alpha-processing.png`
+CurseForge publication steps: moderation approval and actual public
+CurseForge download availability. Private evidence: `.tools/evidence/curseforge-alpha-processing.png`
 and `.tools/evidence/curseforge-description-tested.png`. Do not present the
-pending alpha as publicly released or use unverified adoption claims.
+pending CurseForge alpha as approved or use unverified adoption claims.

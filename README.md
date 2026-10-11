@@ -6,17 +6,22 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**Scoped in-client checks passed on Forever 1.60.1.70338.
-The alpha was submitted to CurseForge and is under review, pending moderation.
-Public download availability is not yet confirmed.**
+**The alpha is available as a GitHub prerelease for Forever 1.60.1.
+Scoped in-client checks passed on Forever 1.60.1.70338.
+The CurseForge submission was still under review at the last check on
+11 October 2026; CurseForge availability remains unconfirmed.**
 
+[Download the alpha](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
 ## Use
 
-1. Copy the `SessionScout` directory into your Forever `Interface/AddOns` folder
-   (the current beta uses `_classic_beta_/Interface/AddOns`).
+1. Download `SessionScout-0.1.0-alpha.1-forever.zip` from the
+   [release assets](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
+   With WoW closed, extract its `SessionScout` directory into your Forever
+   `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
+   The resulting path must contain `SessionScout/SessionScout.toc` directly.
 2. Start the game and enable SessionScout in the AddOns menu.
 3. Enter `/scout` (or `/sessionscout`).
 4. Add a task, its estimated minutes, priority and recurrence. Choose whether
