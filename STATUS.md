@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 15:12 Europe/Oslo. Owner discovery identified uncertainty about gear advice; one concrete RFK recommendation is being audited. Alpha remains Under Review in the fresh author check.
+Last updated: 11 October 2026, 17:00 Europe/Oslo. Current equipment/talents obtained autonomously and two RFK swaps compared. Alpha still Under Review at the latest author check; rank unknown.
 
 ## Goal
 
@@ -9,8 +9,8 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 15:12; popularity rank remains **unknown**, not zero. A rendered
-observation of the exact first page this turn confirmed DBM, Details, Auctionator,
+at approximately 17:00; popularity rank remains **unknown**, not zero. The 14:52
+rendered observation of the exact first page confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
 `data/popularity-20261011T125154952497Z-62c235a519dc446aad1441ea38c47da0.json`.
@@ -55,11 +55,17 @@ The existing alpha is the H1 baseline. The owner's recent approximately 90-minut
 RFK session already had a gear-driven activity choice; no planning difficulty was
 reported. The actual reported problem was uncertainty about online BiS advice.
 The corrected guide is for Enhancement, matching the stated level 30 DPS shaman.
-The next task is a bounded manual audit of one actual target versus current gear,
-including source confidence and assumptions, compared with existing gear tools.
-The exact target and equipped item are pending. This replaces the earlier
-readability priority; it is one owner's discovery case, not validated demand.
-No additional speculative feature or addon has been built.
+The user then authorized PC use as needed. A brief visit from character selection
+obtained a fresh snapshot through the already installed WhatToWear addon; the
+game was returned to character selection. Current equipment and relevant talents
+are now known. Two analyst-selected RFK candidates were compared with that gear
+under WOWF and Lootified's default fixed weights. Both models prefer both swaps;
+that is not measured DPS, confirmed acquisition, or proof of BiS. The original
+hunt target remains unknown but does not block this prepared comparison.
+Existing tools already cover personalized gear scoring. The next test concerns
+whether explicit tradeoffs, assumptions and acquisition evidence improve the
+actual decision beyond those tools. This is one owner's discovery case, not
+validated demand. No speculative addon feature has been built.
 
 The overall number-one goal is unchanged. Further implementation must earn its
 place through comparative value and voluntary reuse, not work already invested.
@@ -126,11 +132,19 @@ place through comparative value and voluntary reuse, not work already invested.
   request for corrections appeared. The later ranking observation used the
   rendered browser successfully; the previously blocked direct HTTP method was
   not repeated. No game input or reinstallations occurred.
-- A further fresh author-portal observation at approximately 15:12 still showed
+- Fresh author-portal observations at approximately 15:12 and 16:14 still showed
   **Under Review**, zero downloads and the project-moderation visibility banner.
   There was no rejection or correction request. No source changes or game input
   were needed. Overall popularity rank remains unknown; the last exact-list
   observation is the complete 14:52 record above.
+- At 16:14 the GitHub API showed zero open issues and remote head `38e7443`.
+  Its existing CI remains successful; no new run was triggered. Local discovery
+  documentation is preserved through `ee29d1f`. No new client-test result or
+  answer identifying the targeted/equipped gear was received. No implementation,
+  reinstall, gameplay interaction or outreach was warranted by this check.
+- The author portal still showed **Under Review**, zero downloads and the new
+  project visibility banner at approximately 17:00. No rejection or correction
+  request was present. Public release and overall rank remain unverified.
 
 ## Remaining validation and access limits
 
@@ -165,14 +179,13 @@ No external outreach, money spent, fabricated downloads, ratings or reviews.
    80% target is not required. Keep H2 parked unless new evidence exposes an
    unresolved recurring material-allocation problem; do not restart its searches
    or build it just because it was the earlier priority.
-3. Complete the owner's concrete gear-advice audit once the target and equipped
-   item are known. WOWF score arithmetic can be reproduced; ForeverDB corroborates
-   the item stats but labels the inspected RFK drops as Classic data. Do not turn
-   missing beta observations into a claim that a drop is impossible, or weighted
-   scores into measured DPS. Compare the usefulness with existing tools, record
-   no-benefit outcomes, and require stronger evidence before implementation.
-   No comparative demand test or participant recruitment has occurred. Outreach
-   still requires explicit user authorization.
+3. Use the prepared RFK comparison to evaluate a clear, evidence-backed gear
+   explanation against existing tools. Current gear/talents are already available
+   locally; do not wait on the earlier manual-transcription question. Investigate
+   specific source/model discrepancies and real feedback, not generic new ideas.
+   Model scores are not measured DPS, and missing recorded drops do not prove
+   unavailability. No comparative demand test or participant recruitment has
+   occurred. Outreach still requires explicit user authorization.
 4. Obtain suitable public alpha screenshots excluding unrelated private UI/chat;
    validate the existing alpha's usability and voluntary reuse when feasible.
    Do not add features merely to fill time while moderation or feedback is pending.

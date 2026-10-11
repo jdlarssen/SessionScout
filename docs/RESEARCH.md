@@ -2,6 +2,66 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Autonomous equipment comparison — 11 October, 17:00 Europe/Oslo
+
+The user explicitly authorized PC use as needed and asked us to advance without
+waiting for more manual input. The game was at character selection. A brief login
+allowed the already installed WhatToWear addon to refresh its equipment/talent
+snapshot; normal logout saved it, and character selection was visibly restored.
+No gear, talents, addon configuration or source files were changed. The snapshot
+is dated 16:53:32 Oslo, level 30 Enhancement, build 70338. It records shoulders
+5964 and legs 252516, with Mental Dexterity 3, Ancestral Knowledge 1 and Mental
+Quickness 2. Character identifiers and the analysis inputs/results remain local
+under ignored `.tools/pilot/`. Equipped gear is no longer a blocker. The owner's
+original RFK target is still unknown; the two candidates below were selected by
+the analyst from the supplied guide, not attributed to the owner's intent.
+
+The current items are [Barbaric Shoulders](https://foreverdb.net/item/5964) and
+[Brawler's Leather Legguards](https://foreverdb.net/item/252516). Their attributes
+in this calculation come from the cited database pages, not a fresh in-game
+tooltip extraction. Decimal arithmetic was reproduced from explicit inputs in
+the local analysis record; no game tests were rerun.
+
+| Conditional replacement | WOWF fixed score, before -> after | Lootified default static score, before -> after |
+| --- | --- | --- |
+| Barbaric Shoulders -> Batwing Mantle | 12.95 -> 15.44 (+2.49) | 6.5062 -> 8.2240 (+1.7178) |
+| Brawler's Leather Legguards -> Ferine Leggings | 19.12 -> 39.80 (+20.68) | 11.6005 -> 14.4640 (+2.8635) |
+
+Both inspected fixed-weight models prefer both replacements under the stated
+stats and defaults. Their scales differ, and neither result is measured DPS.
+Ferine sacrifices Strength, Agility, Stamina and Spirit for AP and Intellect;
+Batwing sacrifices physical/survival stats for Intellect and spell power. These
+tradeoffs and the purpose of the weights must accompany a recommendation. Model
+agreement does not independently confirm optimal gear, current boss availability,
+drop rates, or the time efficiency of farming. No player decision change or reuse
+has yet been observed.
+
+### Stronger existing baseline and product decision
+
+The [published Lootified 1.2.0 source](https://www.curseforge.com/wow/addons/lootified/files/9112707)
+already implements current-gear comparison, live talent inputs and an optional
+item-swap simulation. Its static mode uses fixed weights; its simulation has
+rotation, talent and buff assumptions and disclosed missing mechanics. Its RFK
+data labels the dungeon collectively confirmed in beta while individual boss
+rows supply no observation date/build/source link. This is a provenance
+limitation in the inspected source, not proof that the drops are wrong. We did
+not install or runtime-test Lootified.
+
+The installed WhatToWear also already offers active-spec comparisons and Shift
+explanations. Its own README describes a private provisional build. Source-based
+calculations prefer both replacements too, but that model values survival, mana
+and healing as well as damage. It must not be treated as an independent DPS
+authority. Its files were inspected without modification.
+
+**Decision:** a generic personal BiS list or gear-score tooltip is not a supported
+new product gap. Keep the next test focused on whether a short explanation of
+the actual tradeoff, model assumptions and acquisition evidence improves a real
+decision beyond these existing tools. The prepared case can now be used without
+asking the owner to transcribe equipment. Further autonomous work should verify
+specific model/data discrepancies or actual reported failures; do not restart
+generic competitor searches or wait on gear information already obtained. Demand,
+retention and a scalable route to number one remain unverified.
+
 ## Behavioral discovery — 11 October, 15:12 Europe/Oslo
 
 This entry supersedes the earlier proposed readability comparison as the next
