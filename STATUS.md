@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, 12:22 Europe/Oslo. Forever alpha installed locally.
+Last updated: 11 October 2026, 12:25 Europe/Oslo. Forever alpha installed locally; CI passed.
 
 ## Goal
 
@@ -35,13 +35,15 @@ Use that answer to redirect work if supplied.
 - Original editable compass icon and 512px PNG ready under `assets/`.
 - Deterministic ZIP builder and offline tests for packaging and ranking records.
 - GitHub Actions verification workflow.
+- [Initial GitHub CI run passed](https://github.com/jdlarssen/SessionScout/actions/runs/38131794299)
+  for source commit `2c1616776c2244f23587c47f1a09d733ee3594ee`.
 - README, MIT license, changelog, listing draft and actual-client test checklist.
 - Active hourly heartbeat `curseforge-fremdrift-hver-time` in this chat.
 
 ## Access and validation limits
 
 - GitHub source repository created: https://github.com/jdlarssen/SessionScout.
-  This is source distribution, not a CurseForge publication. Initial CI pending.
+  Source pushed and CI passed. This is source distribution, not a CurseForge publication.
 - WoW Classic beta 1.60.1.70338 is installed and is now the primary target.
   No actual WoW client testing has occurred. The user has been asked to restart
   the game, enable SessionScout, run `/scout` and report the result. Prepared code
@@ -56,13 +58,12 @@ Use that answer to redirect work if supplied.
 
 ## Next concrete work
 
-1. Preserve the tested source milestone and verify CI.
-2. Incorporate actual Forever client results; fix defects before submission.
-3. Resolve Forever client testing and CurseForge author access, then capture real
+1. Incorporate actual Forever client results; fix defects before submission.
+2. Resolve Forever client testing and CurseForge author access, then capture real
    screenshots and publish an accurately labeled alpha when technically validated.
-4. Validate first-run usability and repeat use with willing testers; outreach
+3. Validate first-run usability and repeat use with willing testers; outreach
    requires explicit user authorization. Targets in RESEARCH.md are not results.
-5. Observe actual rank after registration; develop based on real feedback.
+4. Observe actual rank after registration; develop based on real feedback.
 
 Hourly reports must state what actually changed, rank/publication status, next
 step and blockers even when unchanged, as explicitly requested by the user.
