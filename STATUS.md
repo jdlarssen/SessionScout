@@ -1,6 +1,6 @@
 # CurseForge number-one project status
 
-Last updated: 11 October 2026, approximately 18:50 Europe/Oslo. Work is preserved; further progress currently needs moderation, real player feedback or authorization for the prepared invitation. The user stopped the screenshot attempt with Escape before game entry. Alpha still Under Review; rank unknown.
+Last updated: 11 October 2026, 18:53 Europe/Oslo. The hourly follow-up found the same external gates. Work is preserved; further progress currently needs moderation, real player feedback or authorization for the prepared invitation. The user stopped the screenshot attempt with Escape before game entry. Alpha still Under Review; rank unknown.
 
 ## Goal
 
@@ -9,7 +9,7 @@ Reach position 1 on the exact [World of Warcraft popularity list](https://www.cu
 **sessionscout**. Alpha file **9128965** has reached server status **Under Review**.
 The project-moderation banner remains present and public visibility/download
 availability are not yet confirmed. The author portal showed zero file downloads
-at approximately 18:42; popularity rank remains **unknown**, not zero. The 14:52
+at approximately 18:53; popularity rank remains **unknown**, not zero. The 14:52
 rendered observation of the exact first page confirmed DBM, Details, Auctionator,
 Questie and Raider.IO in positions 1–5. SessionScout is not on the observed page.
 The complete 20-project record is
@@ -216,6 +216,10 @@ Do not send it or substitute another destination without authorization.
   zero downloads and the project-visibility moderation banner. No rejection or
   correction request appeared. GitHub had no open issues. The temporary browser
   tab was closed; no game input or tests were repeated.
+- The 18:51 hourly follow-up found no new issues or client-test feedback. A
+  background author-portal check at 18:53 again confirmed **Under Review**, zero
+  downloads and the visibility banner, with no correction request. The temporary
+  browser tab was closed. No native PC/game control, tests or installs resumed.
 
 ## Remaining validation and access limits
 
@@ -262,6 +266,12 @@ This is the current resumed-run audit, not the earlier resolved access blockers.
 Keep the prepared invitation local and unsent until expressly authorized.
 The existing hourly heartbeat remains ACTIVE and must continue the requested
 status reports and check for changes that permit meaningful work.
+
+The 18:51 heartbeat reactivated the goal. A fresh three-turn audit (hourly check,
+the 18:53 author-portal observation, and the subsequent state review) found the
+same gates unchanged, no authorization reply and no independent substantive task.
+This recheck is not claimed as product progress or a live-job wait. Return the
+goal to blocked; keep the hourly automation and prepared work intact.
 
 ## Next concrete work
 
