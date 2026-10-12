@@ -1,5 +1,38 @@
 # CurseForge number-one project status
 
+## Client window follow-up — 12 October 2026, 20:53–20:59 Europe/Oslo
+
+The user's fresh instruction, "Bare overta pcn", authorized one new screen
+session and resolved the pending client-access dependency for that session.
+Two previously untested overlap cases now passed in the actual game: invoking
+`/gearevidence` while the pilot was already visible behind SessionScout raised
+the entire pilot cleanly; clicking the exposed planner background then raised
+the entire planner cleanly. No interleaved controls or error popup was observed.
+The [scoped observation](data/client-window-observation-20261012.json) records
+the actions and limits; this does not establish the whole client checklist.
+
+A fresh independent backup of both known SavedVariables files was verified
+before and after copying. Installed SessionScout UI and both pilot files match
+the repository. The only installed SessionScout Core difference is its alpha.1
+version string versus alpha.2; no reinstall or reload was needed for these UI
+checks. Local backup and comparison records are under
+`backups/sessionscout-screen-20261012T185533Z/`.
+
+An incoming game group invitation ended the batch early so the user could
+respond. Both addon windows and chat were closed, the invitation was untouched,
+and the native control session was reset at approximately 20:59. The screen,
+keyboard and mouse were released. No fixture commands, task edits, budget
+changes, movement, group response or external message were performed. Product
+photos and actual dragging remain untested; a future screen batch needs a new
+agreed window. Do not reopen control merely to inspect the released screen.
+
+The new permission and delivered client evidence reset the consecutive-impasse
+audit to zero. The goal remains ACTIVE and unachieved. Today's latest exact-list
+observation still places DBM first and SessionScout outside the top 20, with
+its exact rank unknown. The published alpha.2 remains Approved. Player research
+still needs real participant evidence; the Reddit eligibility gate and separate
+moderator-message permission are unchanged. Daily reporting remains in place.
+
 ## CI runtime maintenance — 12 October 2026
 
 The installation-guidance commit `8f64380` passed verification in run

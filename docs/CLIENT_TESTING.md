@@ -114,8 +114,8 @@ was installed with exactly three changed files: SessionScout `UI.lua` and the
 pilot's `Core.lua` and `UI.lua`. Prior files and installed hashes are recorded in
 `backups/dialog-stacking-20261011T171931Z/manifest.json`. Exactly one `/reload`
 was performed. This correction is absent from the preserved alpha.1 ZIP. Its
-SessionScout portion is included in the published GitHub alpha.2 ZIP, also
-submitted to CurseForge as file 9132600 with moderation still pending. The
+SessionScout portion is included in the published GitHub alpha.2 ZIP and
+CurseForge file 9132600, verified Approved on 12 October. The
 GearEvidencePilot portion remains local and unpublished.
 
 Observed passes:
@@ -140,15 +140,11 @@ Source review found the expected movable/mouse/drag handlers and no later
 re-anchoring, so these automation attempts do not establish a drag defect.
 **Dragging remains unverified; no speculative drag fix is proposed.**
 
-Not tested: reopening an already-visible pilot from behind the planner, or
-clicking an exposed planner behind the pilot (the pilot completely covered it).
-These remain explicit validation limits. Source and release-readiness reviews
-support merging the small correction into the development branch: the original
-defect was exercised, both opening orders passed, and the unchanged drag handlers
-show no concrete regression. At a new explicitly agreed screen window, check the
-remaining cases and manual dragging, then capture the prepared privacy-safe
-product examples. Do not mark the full client checklist passed or replace the
-alpha ZIP from these partial results.
+The already-visible pilot and exposed-planner click cases were not tested in
+that 11 October session; the follow-up below resolves those two limits. Source
+and release-readiness reviews supported merging the small correction into the
+development branch: the original defect was exercised, both opening orders
+passed, and the unchanged drag handlers showed no concrete regression.
 
 Private evidence is `.tools/pilot/evidence/dialog-stacking-pilot-front-20261011.png`.
 It contains chat and **must never be published**. Product screenshots were not
@@ -160,6 +156,41 @@ restored to 15. A fresh SavedVariables backup is recorded in
 The native node_repl and CUA sessions were reset successfully at 19:27 to release
 control. The screen is free; no further PC use is authorized without a new agreed
 window. Do not reopen control tools merely to inspect the border.
+
+### Follow-up on 12 October — two remaining foreground cases passed
+
+The user's fresh "Bare overta pcn" instruction authorized one additional batch
+at approximately 20:53–20:59 Europe/Oslo. A fresh backup of the two known
+SavedVariables files was verified against source hashes before and after copying:
+`backups/sessionscout-screen-20261012T185533Z/manifest.json`. The companion
+`installed-file-comparison.json` verifies the installed SessionScout `UI.lua`
+and pilot `Core.lua` / `UI.lua` against the repository. Installed SessionScout
+`Core.lua` differs only in its alpha.1 version string; its repository value is
+alpha.2. No installation, reload or build-number query occurred during this
+batch. The same Forever client was used; a fresh exact build number was not
+independently collected.
+
+Observed through physical input and tool screenshots:
+
+- `/gearevidence` opened the pilot, then `/scout` opened the planner cleanly
+  in front. Original completed task, 15-minute budget and blank note were visible.
+- Invoking `/gearevidence` again while the pilot remained visible behind the
+  planner raised the entire pilot, including its controls, above the overlap.
+- Clicking the exposed blank background of the planner behind the pilot raised
+  the entire planner. No interleaved controls were visible in either case.
+- Both Close buttons worked at the end. Chat was closed. No error popup was
+  observed; this was not a Lua-error or taint audit.
+
+An incoming group invitation prompted immediate wind-down so the user could
+respond. The invitation was left untouched. Native control was reset and the
+screen released at approximately 20:59. No task edits, budget changes or fixture
+commands were executed. These observations are recorded in
+`data/client-window-observation-20261012.json`; the live screenshots remain in
+the tool transcript and were not exported as product media.
+
+Actual dragging and privacy-safe product photos remain outstanding. Schedule
+those together at a future explicitly agreed screen window. Do not mark the
+full client checklist passed or replace the alpha ZIP from these scoped results.
 
 ### Other remaining checks
 
