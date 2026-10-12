@@ -6,22 +6,21 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**Alpha.2 is the GitHub prerelease for Forever 1.60.1.
+**Alpha.2 is publicly available on CurseForge for Forever 1.60.1.
 Scoped in-client checks passed on Forever 1.60.1.70338.
-Alpha.2 was submitted separately to CurseForge as file 9132600; at 22:02
-Europe/Oslo on 11 October 2026 it showed Under Review. Alpha.1 file 9128965
-remains preserved and Under Review. Both showed zero downloads; the project is
-still hidden pending moderator approval. Public CurseForge availability remains
-unconfirmed.**
+CurseForge approval and public visibility were confirmed on 12 October 2026;
+both releases remain on the Alpha channel.**
 
-[Download the alpha](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever) ·
+[Download the alpha on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
+[GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
 ## Use
 
 1. Download `SessionScout-0.1.0-alpha.2-forever.zip` from the
-   [release assets](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever).
+   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
+   or [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
@@ -88,9 +87,10 @@ account and character data were restored and independently hash-verified.
 The 56 automated Lua model, mocked integration and Python tooling checks support
 logic and packaging validation. They do not replace actual client checks.
 
-Both CurseForge submissions use the **Alpha** channel. The author portal states
-that Alpha files are not visible in the CurseForge client; after approval,
-downloads use the project's website file page.
+Both CurseForge releases use the **Alpha** channel. On the project's website,
+open **Files** and set **Show alpha files** to **Show** if the list appears empty.
+The direct file link above opens alpha.2. Availability through the CurseForge
+client app has not been tested.
 
 ## Development
 

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "observationWindowLocal": "2026-10-12 approximately 19:57-20:01 Europe/Oslo",
+  "method": "Manual observation of rendered CurseForge author portal and ordinary public website in the authenticated Codex in-app browser",
+  "project": {
+    "id": 1738896,
+    "slug": "sessionscout",
+    "url": "https://www.curseforge.com/wow/addons/sessionscout",
+    "publicRouteRendered": true,
+    "anonymousAccessIndependentlyVerified": false,
+    "displayedTotalDownloads": 2,
+    "publicCommentsObserved": 0
+  },
+  "files": [
+    {
+      "id": 9132600,
+      "version": "0.1.0-alpha.2-forever",
+      "moderationStatus": "Approved",
+      "releaseChannel": "Alpha",
+      "gameVersion": "1.60.1",
+      "displayedDownloads": 1,
+      "fileDetailHrefObserved": "https://www.curseforge.com/wow/addons/sessionscout/files/9132600"
+    },
+    {
+      "id": 9128965,
+      "version": "0.1.0-alpha.1-forever",
+      "moderationStatus": "Approved",
+      "releaseChannel": "Alpha",
+      "gameVersion": "1.60.1",
+      "displayedDownloads": 1
+    }
+  ],
+  "distribution": {
+    "defaultFilesView": "No results while Show alpha files was hidden",
+    "alphaEnabledFilesView": "Both approved files visible",
+    "descriptionChanged": true,
+    "change": "Added a direct alpha.2 file-page link and explained Show alpha files under Getting started",
+    "saveConfirmation": "Changes saved successfully",
+    "publicDescriptionLinkVerified": true,
+    "packageChanged": false,
+    "releaseChannelChanged": false,
+    "curseForgeClientAppAvailabilityTested": false,
+    "downloadRequestedDuringObservation": false
+  },
+  "rankEvidenceFile": "popularity-20261012T180417930916Z-5b1d28ef319147a8927736a71fc02604.json",
+  "limits": [
+    "Platform download counters do not identify unique players, successful installations or repeat use.",
+    "Publication approval is not evidence of product demand or first place.",
+    "Exact rank remains unknown; SessionScout was absent from the complete first page of 20 results."
+  ]
+}

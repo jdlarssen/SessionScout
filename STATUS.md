@@ -1,5 +1,83 @@
 # CurseForge number-one project status
 
+## Public release and download guidance — 12 October 2026, 20:04 Europe/Oslo
+
+The publication dependency is resolved: the author portal showed **Approved**
+for alpha.2 (file **9132600**) and alpha.1 (file **9128965**) at approximately
+19:57. The ordinary [public project page](https://www.curseforge.com/wow/addons/sessionscout)
+rendered successfully, with both files visible after enabling alpha files.
+Each file showed one download and the project showed two. These are platform
+counters, not evidence of two players, successful installation or repeat use.
+The browser was authenticated; anonymous access was not independently verified.
+
+A concrete distribution problem was addressed: the default Files view hid both
+Alpha builds and showed no results. The live project description now links
+directly to [alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
+and explains **Show alpha files**. Saving was confirmed by the portal and the
+new link was verified on the public description. README and the saved listing
+now use CurseForge as the primary route and retain GitHub as a mirror. Neither
+ZIP, release channel, version nor compatibility claim changed. Availability
+through the CurseForge client app remains untested.
+
+The exact requested popularity list was read in full: **DBM was first and
+SessionScout was absent from all 20 cards**. Its exact rank is unknown; the
+goal is not achieved. The [recorded observation](data/popularity-20261012T180417930916Z-5b1d28ef319147a8927736a71fc02604.json)
+preserves the order, URL and scope. [Publication evidence](data/publication-observation-20261012.json)
+separates observations from remaining unknowns. No package download was requested.
+
+GitHub issues and public CurseForge comments contained no player feedback.
+The GitHub alpha.2 ZIP and checksum each reported zero downloads. Both known
+SavedVariables files are byte-identical to the prior baseline, so their contents
+were not opened again. This establishes neither use nor non-use. There is no
+new client failure to fix or evidence supporting an additional feature.
+
+Next work is a real-player trial and the remaining client observations.
+The previously requested moderator-message authorization and fresh screen window
+remain unanswered; neither request was repeated. The restricted Reddit channel
+was not retried. No native/game input, reinstallation, duplicate upload or
+unchanged test run occurred. Document changes received a focused independent
+review; the rank record was validated by the existing manual observer.
+
+The goal tool still returned **BLOCKED** at the start of this daily turn; this
+entry does not claim that its state was changed. Today's resolved publication
+dependency and delivered distribution fix are new progress, so the older
+three-turn impasse below must not be reused as evidence of a current impasse.
+The daily 20:00 follow-up remains in place, with the first-place objective intact.
+
+## Current execution status — 11 October 2026, 22:54 Europe/Oslo
+
+The goal tool now returns **BLOCKED**, after three consecutive no-progress
+turns following the completed offline observation at commit `832bf1f`. This is
+the current audit, not a reuse of earlier resolved access blockers. No new owner
+reply, client result or actionable notification arrived during those turns.
+The first-place objective is unchanged and remains unachieved. The latest human
+instruction specifies one daily report; older hourly wording is superseded.
+
+The latest completed verification for `832bf1f` succeeded (run `38173881767`).
+GitHub issues were empty. A visible message indicator prompted a scoped
+CurseForge inbox check: Inbox (0), Unread (0), no private messages. That was not a
+moderation update, and the review queue was not polled again. The alpha.2 ZIP and
+checksum reported zero GitHub downloads; the repository traffic API reported zero
+views/uniques. These potentially delayed aggregates do not establish zero visitors
+or rejection of the product. None of these observations is product progress or a
+verified wait on a live job; the CI job is terminal.
+
+Independent review found no further concrete task supported by current evidence.
+Useful public-source preparation and the narrow competitor probe are complete.
+The authorized Reddit research post still faces the verified account requirements;
+the prepared moderator-message permission remains unanswered. Remaining client
+observations need the already requested fresh screen window. Actual player
+feedback or moderation feedback would also permit specific follow-up work.
+No extra permissions are inferred from an automatic goal continuation.
+
+The existing daily heartbeat is verified **ACTIVE**, at 20:00 Europe/Oslo; next
+routine follow-up is 12 October. It should check for relevant changes, continue
+meaningful work when possible, and report even if unchanged. Do not duplicate
+the schedule, repeat permission requests, poll unchanged state between immediate
+continuations, reinstall unchanged files or generate speculative features to
+keep a loop running. Browser control was released and native/game input was not
+used. A later human resumption starts a fresh blocking audit.
+
 ## Offline competitor evidence — 11 October 2026, 22:50 Europe/Oslo
 
 A concrete independent alternative to waiting was completed: the official

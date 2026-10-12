@@ -1,7 +1,9 @@
-# CurseForge listing — submitted alphas under review
+# CurseForge listing — approved public alphas
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
-Author: **jdlarssen**. Created 11 October 2026; not yet publicly visible.
+Author: **jdlarssen**. Created 11 October 2026; public visibility confirmed
+12 October 2026.
+Public project: https://www.curseforge.com/wow/addons/sessionscout
 Manage: https://authors.curseforge.com/#/projects/1738896/files
 Author preview: https://www.curseforge.com/wow/addons/sessionscout/preview
 
@@ -9,34 +11,41 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Newest submission: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
-At approximately 22:02 Europe/Oslo on 11 October 2026, this separate submission
-showed **Under Review**, with zero downloads. It previously showed **Processing**
-at approximately 20:29 that day. Moderator approval remains pending.
-Release channel: Alpha; only
-**WoW Forever 1.60.1** selected; automatic publication after approval; no
-dependencies. The hidden-project banner remains, with no confirmed public
-CurseForge availability. The existing alpha.1 file was not replaced.
+Newest release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
+At approximately 19:57 Europe/Oslo on 12 October 2026, the author portal showed
+**Approved**, with one download. The public project and both alpha files were
+visible; the project displayed two total downloads. These are observed counters,
+not evidence of use or adoption.
+Primary download route: https://www.curseforge.com/wow/addons/sessionscout/files/9132600
+On the website's **Files** tab, set **Show alpha files** to **Show**; the default
+Hide setting showed no results. Availability through the CurseForge client app
+has not been tested.
+Release channel: **Alpha**; only **WoW Forever 1.60.1** selected; no dependencies.
+The existing alpha.1 file was not replaced, and neither package changed.
+Submission history: alpha.2 showed **Under Review**, with zero downloads, at
+approximately 22:02 Europe/Oslo on 11 October 2026. It previously showed
+**Processing** at approximately 20:29 that day.
 ZIP: `dist/SessionScout-0.1.0-alpha.2-forever.zip`.
 SHA256: `823f66642b936b23aa2750ab52bc81d4d92cad68bf0c7ed9c678add0148359ba`.
 
-Preserved submission: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
+Preserved release: **SessionScout 0.1.0-alpha.1 — Forever**, file ID **9128965**.
 Release channel: Alpha.
-Only **WoW Forever 1.60.1** is selected, with automatic publication after approval.
-Server status at approximately 22:02 Europe/Oslo on 11 October 2026: **Under Review**, with zero
-downloads shown in the author portal. The project-moderation banner is still
-present; public approval and download availability are not yet confirmed.
+Only **WoW Forever 1.60.1** is selected. At approximately 19:57 Europe/Oslo on
+12 October 2026, the author portal showed **Approved**, with one download.
+Submission history: at approximately 22:02 Europe/Oslo on 11 October 2026 it
+showed **Under Review**, with zero downloads and the project-moderation banner.
 ZIP: `dist/SessionScout-0.1.0-alpha.1-forever.zip`.
 SHA256: `1143a35967230832078c6e0cea8cdfac81cf698c27b35fba2081f81320ca790b`.
-The portal explicitly states that Alpha files are not visible in the CurseForge
-client; after approval, downloads use the direct project website file page.
+The portal stated during submission that Alpha files are not visible in the
+CurseForge client. The verified public route is the website file page; current
+client-app availability remains untested.
 License: MIT. Third-party distribution allowed; no automatic packaging.
 Source: https://github.com/jdlarssen/SessionScout
 Issues: https://github.com/jdlarssen/SessionScout/issues
 
-## Separate GitHub prerelease
+## GitHub mirror (prereleases)
 
-The current GitHub download is
+The current GitHub mirror is
 [SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever),
 published at approximately 20:21 on 11 October. It adds the tested planner
 window-ordering correction and targets `098d7ea2c43fbcbfe289965096592b793016d6bf`.
@@ -47,16 +56,20 @@ its moderation status is recorded above. Its package excludes the
 local GearEvidencePilot and does not change the alpha.1 submission above.
 Both GitHub release tags and assets remain unchanged.
 
-The same tested ZIP and its checksum were published on 11 October 2026 at
+The original alpha.1 ZIP and its checksum were published on 11 October 2026 at
 [SessionScout 0.1.0-alpha.1 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
 The tag targets verified source commit `0fffb795b25d98032d2bbd0280017315eeec4946`;
 the release is public and marked prerelease. Its uploaded ZIP digest matches the
-CurseForge submission hash above. This provides a manual download while
-CurseForge moderation remains pending; it establishes neither CurseForge
-approval nor user adoption. The saved CurseForge description below has not
+CurseForge submission hash above. This provided a manual download while
+CurseForge moderation was pending; it does not establish user adoption.
+The saved CurseForge description below has not
 been changed by this GitHub publication.
 
 ## Saved project description
+
+The download paragraph under Getting started was saved in the author portal
+and verified on the public description on 12 October 2026, approximately
+20:01 Europe/Oslo. This was a listing-only change; the Alpha files were unchanged.
 
 **Have 30 minutes? Decide what to do before the time disappears.**
 
@@ -81,6 +94,11 @@ file.
 - No dependencies or external account needed. No telemetry.
 
 ## Getting started
+
+Download the Forever alpha from the
+[alpha.2 file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600).
+If you browse Files, set **Show alpha files** to **Show**; the default view hides
+these early builds.
 
 Open with `/scout` or `/sessionscout`. Add your first task, set its minutes and
 priority, then choose a budget. Daily and weekly completion resets according to
@@ -127,10 +145,9 @@ character data were restored and independently hash-verified; the temporary QA
 addon was removed. Public screenshots have not been uploaded: full-window client
 evidence contains unrelated game UI/chat and is private.
 
-The description update and server receipt of alpha.1 are confirmed. Alpha.2 has
-a separate file ID and showed Under Review at the observation above.
-Remaining CurseForge publication steps: moderator approval
-and actual public CurseForge download availability. Private evidence for the
+Both alpha files were confirmed **Approved** on 12 October 2026, with the public
+project and website file entries visible as recorded above. The packages remain
+unchanged. Private evidence for the
 original submission: `.tools/evidence/curseforge-alpha-processing.png`
-and `.tools/evidence/curseforge-description-tested.png`. Do not present the
-pending CurseForge alpha as approved or use unverified adoption claims.
+and `.tools/evidence/curseforge-description-tested.png`. Approval does not make
+these Alpha releases stable or establish user adoption.
