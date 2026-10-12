@@ -10,10 +10,10 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.12'
       - name: Install Lua 5.1
@@ -30,7 +30,7 @@ jobs:
         run: python -m unittest discover -s tests -p '*_spec.py' -v
       - name: Build local release candidate
         run: python tools/build.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: SessionScout-forever-alpha
           path: |

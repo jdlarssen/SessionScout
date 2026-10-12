@@ -1,5 +1,29 @@
 # CurseForge number-one project status
 
+## CI runtime maintenance — 12 October 2026
+
+The installation-guidance commit `8f64380` passed verification in run
+`38293000811`, including artifact upload. That run also identified deprecated
+Node 20 action declarations and the upcoming `ubuntu-latest` migration. Its
+recorded operating system was Ubuntu 24.04.5 LTS.
+
+The workflow now explicitly selects Ubuntu 24.04 and the official stable
+[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1),
+[setup-python v7.0.0](https://github.com/actions/setup-python/releases/tag/v7.0.0)
+and [upload-artifact v7.0.2](https://github.com/actions/upload-artifact/releases/tag/v7.0.2).
+All three versioned action manifests declare Node 24. The reviewed release
+changes do not remove inputs this workflow uses. Its event triggers, read-only
+repository permission, Python 3.12, Lua 5.1, checks, package paths and artifact
+failure condition are preserved. This is bounded maintenance prompted by actual
+CI warnings, not a new product feature or a release-blocking product defect.
+
+The meaningful verification is one GitHub-hosted run on this workflow change,
+including successful package construction and artifact upload. Its result is
+available in the commit's [Actions checks](https://github.com/jdlarssen/SessionScout/actions/workflows/verify.yml).
+The published Alpha files are unchanged. Current ranking, player-evidence limits
+and the two pending permissions remain as recorded below; those external states
+were not polled again during this maintenance work.
+
 ## Installation follow-through — 12 October 2026, 20:43 Europe/Oslo
 
 The previous daily turn made concrete publication progress. This continuation
