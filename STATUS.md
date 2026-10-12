@@ -1,5 +1,23 @@
 # CurseForge number-one project status
 
+## Current execution dependency — 12 October 2026, 22:12 Europe/Oslo
+
+The goal tool returned **BLOCKED** after three consecutive no-progress
+continuations following the completed image capture and publication below.
+The fresh audit began at zero after that real progress. No new player evidence,
+actionable defect or human authorization arrived. A successful GitHub issues
+query found no updated entries; an independent next-action review found no
+further justified background task. The authorized Reddit post remains gated,
+the separate moderator-message permission is unanswered, and further native
+client checks require a new agreed screen window. There is no live process to
+await. No unchanged tests, gate attempts or ranking polls were repeated.
+
+The daily 20:00 Europe/Oslo automation is verified ACTIVE and will reassess
+changed conditions. Work and test evidence are preserved; the screen remains
+released. First place is unachieved: the last exact-list observation places
+SessionScout outside the top 20, exact rank unknown. Reset this audit on a new
+resume. This entry records the dependency and does not count as product progress.
+
 ## Product image captured — 12 October 2026, 21:55–22:04 Europe/Oslo
 
 The user's fresh "Bare bruk skjermen nå" opened a new bounded client window.
