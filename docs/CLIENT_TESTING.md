@@ -192,12 +192,44 @@ Actual dragging and privacy-safe product photos remain outstanding. Schedule
 those together at a future explicitly agreed screen window. Do not mark the
 full client checklist passed or replace the alpha ZIP from these scoped results.
 
+### Short media fixture session on 12 October — restoration verified
+
+A fresh short screen window was authorized at approximately 21:23–21:29
+Europe/Oslo. The backup manifest is
+`backups/sessionscout-screen-20261012T192338Z/manifest.json`; both copied files
+matched source hashes before and after copying and the previous baseline.
+The original completed task, 15-minute budget and blank note were observed
+before the temporary fixture. One physical title drag did not move the planner.
+This remains inconclusive rather than evidence of a code defect.
+
+Prepared media commands 1–4 displayed four fictional tasks and an explicit
+"Example tasks only" note in the actual planner. The 15-, 10- and 5-minute tasks
+filled the 30-minute plan; the 60-minute dungeon did not fit. This verifies that
+this example rendered and excluded the over-budget task. It does not establish
+normal UI creation, completion or persistence of a 60-minute task.
+
+No clean product image was captured. At the final observation the planner was
+already closed; it was not reopened for a further capture attempt. Commands 5
+and 6 restored both SavedVariables roots in place, checked their keys and values
+in both directions against the retained originals (including nested reference
+identity), and printed "SessionScout restored". Original nested tables had not
+been edited by the fixture sequence. This is an in-memory restoration check,
+not a new persistence test. No reload/logout occurred. The temporary `SCShot`
+backup was cleared only after successful verification. The addon and chat were
+closed and native control was reset at approximately 21:29, releasing the PC.
+
+See `data/client-media-observation-20261012.json`. No full client compatibility,
+Lua-error audit, clean product photo or successful dragging claim follows from
+this limited batch.
+
 ### Other remaining checks
 
 - Exercise long-label clipping/tooltips and saved Unicode/pipe task-label edits;
   the physical-entry check covered editing and cancellation, not saving that label.
 - Complete the intended duration cases: runtime fixtures used 5/10/12/15/20-minute
-  tasks; 30/60-minute task definitions from the checklist remain untested in-client.
+  tasks; a 60-minute task was rendered and excluded from a 30-minute plan in the
+  media fixture above. Normal creation/completion/persistence for the checklist's
+  30/60-minute cases remain untested in-client.
 - Check repeated open/close behavior and a safe combat transition when available.
   There is no measured long-duration memory or timer-growth result.
 

@@ -1,5 +1,35 @@
 # CurseForge number-one project status
 
+## Short client batch — 12 October 2026, 21:23–21:29 Europe/Oslo
+
+The user's fresh "pcn er fri i en liten periode, så bare bruk den" instruction
+opened a new bounded screen window. The goal tool returned ACTIVE; the old
+three-turn impasse count is reset. The earlier BLOCKED entry below is historical.
+
+A fresh backup of both known SavedVariables files was verified before client
+input. A temporary four-task example rendered in the real planner with the
+explicit note "Example tasks only": three suggested tasks filled the 30-minute
+budget, while the 60-minute dungeon remained outside the plan. This is rendering
+evidence, not player demand or a complete duration test. Another physical title
+drag did not move the planner; dragging remains inconclusive and no code change
+is justified by the automation result alone.
+
+No publication-ready product photo was captured. At the final observation the
+planner was closed, so the session was wound down without reopening it for more
+photos. Both live SavedVariables roots were restored using the retained original
+values and table references. Bidirectional equality assertions completed and the
+client printed "SessionScout restored" at approximately 21:29. The temporary
+backup global was released only after that check. No reload, logout or install
+occurred. Native control was reset successfully, with the addon and chat closed;
+the PC is released and another screen batch requires a fresh agreement.
+
+The scoped record is [client media observation](data/client-media-observation-20261012.json).
+No new package, public image or outreach was published. Next work remains a clean
+product capture and actual participant evidence through an authorized route;
+the existing Reddit gate and unanswered moderator-message permission are unchanged.
+Latest verified ranking remains outside the exact list's top 20, exact rank
+unknown. No ranking or adoption claim is inferred from this client work.
+
 ## Execution dependency — 12 October 2026, 21:05 Europe/Oslo
 
 The goal tool now reports **BLOCKED**, after three consecutive no-progress
