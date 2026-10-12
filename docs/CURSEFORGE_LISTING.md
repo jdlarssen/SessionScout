@@ -74,6 +74,14 @@ The same evening, the manual installation paragraph was added and publicly
 verified after a focused review found that the listing skipped from download
 to `/scout`. The repository homepage now points to the public CurseForge project.
 
+Later that evening, the authentic client image below and its example-data
+caption were added to the description. Save completed in the author portal;
+the public page was reloaded and the rendered image and caption were visually
+verified. The image is served from the public GitHub commit `8eb0bcb` and links
+to its full-resolution copy. This was a description-only edit; no gallery
+upload, release replacement or new download was performed. Native screen
+control remained released during browser work.
+
 **Have 30 minutes? Decide what to do before the time disappears.**
 
 SessionScout turns your own WoW to-do list into a small plan. Add tasks with time
@@ -86,6 +94,10 @@ have been tested in Forever beta 1.60.1.70338. Real reset crossings, use across
 multiple characters, combat behavior, other UI scales and long sessions still
 need testing. Retail and other Classic versions are not supported by the initial
 file.
+
+[![SessionScout in the Forever client with fictional example tasks](https://raw.githubusercontent.com/jdlarssen/SessionScout/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](https://github.com/jdlarssen/SessionScout/blob/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+
+*Actual Forever client, fictional example tasks. Open the image at full size to read the planner. Manually entered estimates produce three suggestions totaling 30 minutes; the 60-minute dungeon stays outside this plan.*
 
 ## Features
 

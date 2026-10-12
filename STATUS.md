@@ -29,7 +29,13 @@ angle, so it was stopped; the user was informed. The saved image is the whole
 client, without cropping or generated pixels. Scoped evidence is in
 [the capture record](data/client-product-capture-20261012.json).
 
-The photo is ready for the CurseForge gallery; upload is not yet verified.
+The image and caption were subsequently published in the CurseForge description
+using the public GitHub-hosted image from commit `8eb0bcb`. Save completed and
+the public page was reloaded; visual confirmation showed the image and caption.
+The README is published on the repository's default branch. This was a
+presentation-only update, with no replacement release or additional download.
+Native screen control remained released during this background browser work.
+
 Actual participant feedback is still needed. The authorized Reddit post remains
 gated and the separate moderator-message permission remains unanswered.
 The last exact-list observation places SessionScout outside the top 20, with

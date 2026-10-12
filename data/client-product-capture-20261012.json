@@ -16,7 +16,13 @@
     "editedOrGenerated": false,
     "fixtureNote": "Example tasks only",
     "independentVisualReview": "No visible private chat, player names, sensitive details or obscuring tooltips; planner legible at full resolution",
-    "curseForgeGalleryUploadVerified": false
+    "curseForgeGalleryUploadVerified": false,
+    "gitHubPublicationCommit": "8eb0bcb",
+    "curseForgeDescriptionPublished": true,
+    "publicDescriptionVisuallyVerifiedAfterReload": true,
+    "publicDescriptionUrl": "https://www.curseforge.com/wow/addons/sessionscout",
+    "descriptionCaption": "Actual Forever client, fictional example tasks. Open the image at full size to read the planner. Manually entered estimates produce three suggestions totaling 30 minutes; the 60-minute dungeon stays outside this plan.",
+    "localPublicationProof": ".tools/pilot/evidence/curseforge-product-image-published-20261012.jpg"
   },
   "results": [
     {
