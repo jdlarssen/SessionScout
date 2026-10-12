@@ -1,5 +1,23 @@
 # CurseForge number-one project status
 
+## Current execution dependency — 12 October 2026, 21:34 Europe/Oslo
+
+The goal tool reports **BLOCKED** after three consecutive no-progress
+continuations following the completed short client batch below. The resumed
+run used a fresh audit count. The screen remains released; future client work
+needs a new agreed window. The authorized research post is still gated, the
+separate moderator-message permission remains unanswered, and a successful
+GitHub issues check found no entries updated since 21:05. No new human input,
+actionable defect, participant evidence or live tool process is available.
+Existing independent next-action reviews remain applicable; no unchanged
+tests, gate attempts or ranking polls were repeated in this audit.
+
+The daily 20:00 Europe/Oslo automation is verified ACTIVE and will re-evaluate
+changed conditions. Preserve the completed work and resume when a concrete
+next action becomes available. Do not reuse this three-turn count after a new
+resume. First place remains unachieved; the last exact-list observation places
+SessionScout outside the top 20, with its exact rank unknown.
+
 ## Short client batch — 12 October 2026, 21:23–21:29 Europe/Oslo
 
 The user's fresh "pcn er fri i en liten periode, så bare bruk den" instruction
