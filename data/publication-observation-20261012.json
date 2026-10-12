@@ -42,6 +42,25 @@
     "curseForgeClientAppAvailabilityTested": false,
     "downloadRequestedDuringObservation": false
   },
+  "postPublicationFollowThrough": {
+    "recordedAtLocal": "2026-10-12 approximately 20:43 Europe/Oslo",
+    "descriptionChange": "Added manual installation instructions matching the tested README: extract SessionScout into the Forever Interface/AddOns folder with WoW closed, preserve SessionScout/SessionScout.toc directly, then start Forever and enable the addon.",
+    "saveConfirmation": "Changes saved successfully",
+    "publicParagraphVerified": true,
+    "repositoryHomepage": "https://www.curseforge.com/wow/addons/sessionscout",
+    "repositoryHomepageReadBackVerified": true,
+    "packageChanged": false,
+    "redditEligibilityCheck": {
+      "reason": "One check after roughly another day of account aging",
+      "control": "r/WowUI Create post",
+      "accountDisplayedAgeDays": 2,
+      "ageRequirementMet": false,
+      "karmaRequirementMet": false,
+      "numericThresholdsDisclosed": false,
+      "editorOpened": false,
+      "postSubmitted": false
+    }
+  },
   "rankEvidenceFile": "popularity-20261012T180417930916Z-5b1d28ef319147a8927736a71fc02604.json",
   "limits": [
     "Platform download counters do not identify unique players, successful installations or repeat use.",

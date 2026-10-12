@@ -1,5 +1,33 @@
 # CurseForge number-one project status
 
+## Installation follow-through — 12 October 2026, 20:43 Europe/Oslo
+
+The previous daily turn made concrete publication progress. This continuation
+completed a focused review of the installation and feedback route. It found
+that the CurseForge description jumped from downloading the ZIP to `/scout`,
+omitting manual installation. The tested README instructions for the folder
+layout, closed game and AddOns menu are now in the live description. Portal
+save confirmation and the rendered public paragraph were verified. The GitHub
+repository homepage was also changed from the mirror release to the approved
+CurseForge project and read back successfully. No addon code or package changed.
+
+Account aging justified one new check of the previously authorized r/WowUI
+post. The actual Create post control still blocked it: the UI identified
+`u/SessionScoutResearch` as two days old and showed both the age and karma
+requirements unmet, without numeric thresholds. No editor opened, post was
+submitted, alternate community used or moderator message sent. This is a
+current channel dependency, not proof that the entire objective is impossible.
+Do not retry it again during immediate continuations; today's check is complete.
+
+The remaining fresh-screen and moderator-message permissions are still pending.
+The review found no additional concrete installation or feedback defect. The
+prior full-list rank observation remains the latest evidence: SessionScout is
+absent from the top 20, with exact rank unknown. The goal tool returned ACTIVE
+in this continuation; completed work resets the current impasse count to zero.
+Daily reporting remains the user's latest preference. Native input was not used
+and browser control was released. Private screenshots preserve both the public
+installation paragraph and the Reddit eligibility result under `.tools/research/`.
+
 ## Public release and download guidance — 12 October 2026, 20:04 Europe/Oslo
 
 The publication dependency is resolved: the author portal showed **Approved**

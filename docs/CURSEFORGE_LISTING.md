@@ -70,6 +70,9 @@ been changed by this GitHub publication.
 The download paragraph under Getting started was saved in the author portal
 and verified on the public description on 12 October 2026, approximately
 20:01 Europe/Oslo. This was a listing-only change; the Alpha files were unchanged.
+The same evening, the manual installation paragraph was added and publicly
+verified after a focused review found that the listing skipped from download
+to `/scout`. The repository homepage now points to the public CurseForge project.
 
 **Have 30 minutes? Decide what to do before the time disappears.**
 
@@ -99,6 +102,11 @@ Download the Forever alpha from the
 [alpha.2 file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600).
 If you browse Files, set **Show alpha files** to **Show**; the default view hides
 these early builds.
+
+With WoW closed, extract the ZIP's `SessionScout` folder into your Forever
+`Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
+The resulting path must contain `SessionScout/SessionScout.toc` directly.
+Start Forever and enable SessionScout in the AddOns menu.
 
 Open with `/scout` or `/sessionscout`. Add your first task, set its minutes and
 priority, then choose a budget. Daily and weekly completion resets according to
