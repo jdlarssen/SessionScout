@@ -1,5 +1,30 @@
 # CurseForge number-one project status
 
+## Execution dependency — 12 October 2026, 21:05 Europe/Oslo
+
+The goal tool now reports **BLOCKED**, after three consecutive no-progress
+continuations following the completed client checks below. This is a current
+execution dependency, not completion or abandonment of the first-place goal.
+The daily 20:00 Europe/Oslo automation remains ACTIVE; the user's daily reporting
+preference supersedes the older hourly wording in the stored goal objective.
+
+The remaining useful client observations require a new agreed screen window;
+the prior batch was explicitly released for the user to play. The authorized
+research post remains behind r/WowUI's age/karma gate, and the separate
+moderator-message authorization is unanswered. Today's independent next-action
+review and installation audit found no further concrete background task under
+the current permissions. A final read-only GitHub issues check returned no
+updated entries. No new participant evidence or actionable client defect arrived.
+There is no live process being awaited. Repeating tests, retrying the unchanged
+gate or inventing another feature would not resolve these dependencies.
+
+Resume from the existing work when a new client window, authorized research
+route or actionable player feedback becomes available. Do not repeat unanswered
+permission requests, reclaim the screen, reuse the old three-turn count after a
+resume, or mark the objective achieved. Latest verified ranking remains outside
+the top 20, with exact rank unknown. This entry records state only; it is not
+new product progress.
+
 ## Client window follow-up — 12 October 2026, 20:53–20:59 Europe/Oslo
 
 The user's fresh instruction, "Bare overta pcn", authorized one new screen
