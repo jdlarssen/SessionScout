@@ -16,6 +16,12 @@ both releases remain on the Alpha channel.**
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
+[![SessionScout in the Forever client: three suggested tasks totaling 30 minutes, from four fictional example tasks](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+
+SessionScout in the Forever client, with fictional example tasks. Open the image
+at full size to read the planner. Estimates and priorities are entered manually;
+the 60-minute dungeon stays outside this 30-minute plan.
+
 ## Use
 
 1. Download `SessionScout-0.1.0-alpha.2-forever.zip` from the
@@ -72,8 +78,9 @@ visually verified.
 Alpha.2 adds a window-ordering correction: the planner raises as one window when
 opened, and periodic refreshes do not change foreground order. Scoped overlap
 checks with the separately corrected local GearEvidencePilot passed on the same
-client build. Manual dragging and two additional foreground cases remain
-unverified; see the client test record for the exact checks. The pilot is not
+client. The already-visible pilot and exposed-planner click cases also passed
+in a follow-up on 12 October. Manual dragging remains unverified; see the client
+test record for the exact checks. The pilot is not
 included in this release, and the alpha.1 tag and ZIP remain unchanged.
 
 This is a scoped alpha, not full compatibility certification. Actual daily/weekly

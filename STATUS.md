@@ -1,6 +1,41 @@
 # CurseForge number-one project status
 
-## Current execution dependency — 12 October 2026, 21:34 Europe/Oslo
+## Product image captured — 12 October 2026, 21:55–22:04 Europe/Oslo
+
+The user's fresh "Bare bruk skjermen nå" opened a new bounded client window.
+The goal tool returned ACTIVE. The previous blocked audit is historical and its
+consecutive count is reset to zero because this session delivered new work.
+
+An authentic, unmodified client image is now saved and linked from the README:
+[30-minute plan with fictional example tasks](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg).
+It shows three suggested tasks totaling 30 minutes, with the 60-minute task
+outside the plan. The explicit note says "Example tasks only". Chat and the
+player portrait were temporarily hidden in the client; an independent visual
+review found no private chat, player names or obscuring tooltips in the image.
+This is product presentation, not evidence of demand or adoption.
+
+The fresh backup manifest is
+`backups/sessionscout-screen-20261012T195604Z/manifest.json`.
+All temporary UI visibility changes were restored and asserted; the client
+printed "Capture UI restored" at 22:03:05. Both original SavedVariables roots
+were restored in place, verified with bidirectional key/value assertions, and
+the client printed "SessionScout restored" at 22:03:49. `SCShot` was cleared
+after that check. No reload, logout or installation occurred. Native control
+was reset, and the PC was explicitly released at approximately 22:04.
+
+One background-area drag again did not move the planner; dragging remains
+inconclusive. The region-capture attempt failed and changed the game camera
+angle, so it was stopped; the user was informed. The saved image is the whole
+client, without cropping or generated pixels. Scoped evidence is in
+[the capture record](data/client-product-capture-20261012.json).
+
+The photo is ready for the CurseForge gallery; upload is not yet verified.
+Actual participant feedback is still needed. The authorized Reddit post remains
+gated and the separate moderator-message permission remains unanswered.
+The last exact-list observation places SessionScout outside the top 20, with
+its exact rank unknown. No fresh ranking or adoption claim follows from this work.
+
+## Historical execution dependency — 12 October 2026, 21:34 Europe/Oslo
 
 The goal tool reports **BLOCKED** after three consecutive no-progress
 continuations following the completed short client batch below. The resumed

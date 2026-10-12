@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "sessionLocal": "approximately 2026-10-12 21:55-22:04 Europe/Oslo",
+  "authorization": "Fresh user instruction: Bare bruk skjermen nå",
+  "method": "Native WoW input and immediate screenshots through computer-use; one unmodified client screenshot saved as a product artifact",
+  "client": {
+    "flavor": "Forever beta",
+    "freshExactBuildVerified": false,
+    "installationReloadOrLogoutPerformed": false
+  },
+  "artifact": {
+    "path": "docs/media/sessionscout-30-minute-plan-forever-20261012.jpg",
+    "bytes": 394295,
+    "sha256": "b19a76744f4ae6b3c27298b6e95acc5453d593bbcc80e30a0f2d4e22077de963",
+    "capturedLocal": "approximately 2026-10-12 22:02 Europe/Oslo",
+    "editedOrGenerated": false,
+    "fixtureNote": "Example tasks only",
+    "independentVisualReview": "No visible private chat, player names, sensitive details or obscuring tooltips; planner legible at full resolution",
+    "curseForgeGalleryUploadVerified": false
+  },
+  "results": [
+    {
+      "case": "Physical planner background drag",
+      "result": "inconclusive",
+      "observed": "No visible movement; this automation result alone does not establish a code defect"
+    },
+    {
+      "case": "Fictional media fixture",
+      "result": "rendered and captured",
+      "observed": "Four manual tasks visible; 15-, 5- and 10-minute suggestions total 30/30 minutes; 60-minute dungeon excluded; explicit Example tasks only note"
+    },
+    {
+      "case": "Native region capture",
+      "result": "abandoned",
+      "observed": "No usable clip produced; attempted drag changed the game camera angle. Full-client capture used instead; user informed"
+    },
+    {
+      "case": "Restore UI visibility",
+      "result": "passed",
+      "observed": "ChatFrame1 and PlayerFrame restored to captured IsShown flags and asserted equal; Capture UI restored printed at 22:03:05"
+    },
+    {
+      "case": "Restore original data and release",
+      "result": "passed",
+      "observed": "Commands 5 and 6 completed; client printed SessionScout restored at 22:03:49; addon and chat closed; native session reset and PC released"
+    }
+  ],
+  "dataPreservation": {
+    "localBackupManifest": "backups/sessionscout-screen-20261012T195604Z/manifest.json",
+    "backupHashesVerifiedBeforeAndAfterCopy": true,
+    "fixtureCommandsExecuted": [1, 2, 3, 4, 5, 6],
+    "originalRootsPreserved": true,
+    "originalNestedTablesModifiedByFixture": false,
+    "bidirectionalRootKeyValueEqualityAsserted": true,
+    "temporaryUIVisibilityRestoredBeforeClearingBackup": true,
+    "temporaryBackupClearedAfterVerification": true,
+    "postReloadPersistenceTested": false
+  },
+  "limits": [
+    "No full Lua-error or taint audit",
+    "Actual dragging remains unverified",
+    "Normal UI creation, completion and persistence of these fixture tasks were not tested",
+    "No player demand, adoption or ranking evidence follows from this image",
+    "Future native control requires a fresh agreed screen window"
+  ]
+}

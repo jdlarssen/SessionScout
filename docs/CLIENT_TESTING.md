@@ -222,6 +222,39 @@ See `data/client-media-observation-20261012.json`. No full client compatibility,
 Lua-error audit, clean product photo or successful dragging claim follows from
 this limited batch.
 
+### Product capture on 12 October — image saved and original data restored
+
+A new explicitly authorized batch ran at approximately 21:55–22:04 Europe/Oslo.
+The fresh backup is recorded in
+`backups/sessionscout-screen-20261012T195604Z/manifest.json`; both copied files
+matched source hashes before and after copying and the previous baseline.
+The original UI was observed before prepared media steps 1–4 were executed.
+
+The same clearly labelled four-task example rendered in the real client.
+An unmodified full-client image was saved as
+`docs/media/sessionscout-30-minute-plan-forever-20261012.jpg`. Its 30-minute plan
+contains the 15-, 5- and 10-minute tasks; the 60-minute task remains outside the
+plan. ChatFrame1 and PlayerFrame visibility was saved, temporarily hidden for
+the image, then restored using the retained flags and equality assertions.
+The client printed "Capture UI restored" at 22:03:05. An independent review of
+the deliverable found no private chat, player names or obscuring tooltips.
+
+The attempted native region capture did not produce a clip and changed the
+camera angle; it was abandoned. The saved full-client image was not cropped,
+retouched or generated. A separate background-area drag did not move the addon;
+that remains an inconclusive automation result, not a confirmed code defect.
+
+Media steps 5–6 restored the original SavedVariables roots in place and asserted
+bidirectional root key/value equality, including nested reference identity.
+"SessionScout restored" appeared at 22:03:49. `SCShot` was cleared only after
+verification. No reload/logout/install occurred. The addon and chat were closed;
+native control was reset and the screen released. See
+`data/client-product-capture-20261012.json` for the scoped record.
+
+This image establishes rendered product behavior with a fixture, not player
+demand, normal task-entry/persistence of these exact examples, full compatibility,
+or a new Lua-error/taint audit. Actual dragging remains unverified.
+
 ### Other remaining checks
 
 - Exercise long-label clipping/tooltips and saved Unicode/pipe task-label edits;
