@@ -1,6 +1,24 @@
 # CurseForge number-one project status
 
-## Current execution dependency — 12 October 2026, 22:12 Europe/Oslo
+## Current execution dependency — 13 October 2026, 07:41 Europe/Oslo
+
+The resumed run used a fresh blocked audit. Overnight checks found no CurseForge
+comments or GitHub issues/comments updated since 12 October 20:11 UTC, no new CI
+runs and no change in GitHub release-asset download counts. The exact overall
+popularity list was inspected at approximately 07:39: DBM remains first;
+SessionScout is outside the 20 displayed results, with exact rank unknown.
+The private observation record is `.tools/observations/20261013-morning.json`.
+
+No participant evidence, actionable defect, new outreach permission or agreed
+native-client window has arrived. The previously reviewed alternative tasks
+remain dependent on those inputs; there is no live process to await. The same
+condition persisted for three consecutive turns in this resumed run, and the
+goal tool returned **BLOCKED**. This is not completion. The daily 20:00
+Europe/Oslo automation is verified ACTIVE, and the PC remains released.
+Reset the blocked audit again on a future resume. These observations record
+unchanged dependencies and do not count as product progress.
+
+## Historical execution dependency — 12 October 2026, 22:12 Europe/Oslo
 
 The goal tool returned **BLOCKED** after three consecutive no-progress
 continuations following the completed image capture and publication below.
