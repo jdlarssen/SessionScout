@@ -1,6 +1,33 @@
 # CurseForge number-one project status
 
-## Current execution dependency — 13 October 2026, 07:41 Europe/Oslo
+## Daily follow-up — 13 October 2026, approximately 20:05 Europe/Oslo
+
+The public project still displays 2 downloads and no comments. GitHub has no
+new or updated issues/PRs, issue comments, review comments or CI runs since the
+morning check; both alpha releases still show zero downloads for each asset.
+These counters do not establish independent users or repeat use.
+
+The exact overall popularity list was checked again: DBM is first and
+SessionScout is absent from the displayed top 20. Its exact rank is unknown.
+One new Reddit eligibility check was justified by the additional day of account
+age. The dedicated account is now shown as 3 days old, but r/WowUI still blocks
+contributions for insufficient account age and karma; thresholds are not shown.
+No post was submitted. The new account notification was only an achievement.
+
+The next useful research step remains obtaining actual player cases through the
+prepared, authorized invitation. A moderator inquiry is ready but its separate
+permission request remains unanswered. Existing public feedback intake is open.
+Further native client checks require a new agreed screen window. The reviewed
+alternative tasks still need player evidence, a reproducible defect or access;
+there is no new basis for speculative features or repeated unchanged tests.
+
+Today's work was verification, not a product release. Alpha.2 and the authentic
+client image remain published. No native input, installation, package download,
+new outreach or release occurred; the screen stayed free. Evidence is saved in
+`.tools/observations/20261013-evening.json`. The goal tool still reports BLOCKED;
+first place is unachieved and the daily follow-up remains active.
+
+## Historical execution dependency — 13 October 2026, 07:41 Europe/Oslo
 
 The resumed run used a fresh blocked audit. Overnight checks found no CurseForge
 comments or GitHub issues/comments updated since 12 October 20:11 UTC, no new CI
