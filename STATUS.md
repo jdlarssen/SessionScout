@@ -1,5 +1,31 @@
 # CurseForge number-one project status
 
+## Daily follow-up — 14 October 2026, approximately 20:05 Europe/Oslo
+
+The exact overall popularity list now has **Details! Damage Meter first** and
+DBM second. SessionScout is absent from all 20 displayed results; its exact rank
+is unknown. The project still displays 2 downloads and no comments. GitHub has
+no new issues/PRs or issue/review comments since today's earlier check, and both
+public alpha releases still show zero downloads for each ZIP and checksum file.
+These counts do not establish users or repeat use.
+
+One daily Reddit eligibility check found the dedicated account is now 4 days
+old, but both account-age and karma requirements remain unmet. The required
+thresholds are not shown. No post or moderator message was sent. The separate
+moderator-message permission remains unanswered; native client checks still
+require a fresh agreed screen window. The next concrete research step remains
+obtaining actual player cases through the prepared invitation or a permitted
+moderator inquiry. Existing public feedback intake stays open.
+
+Earlier today, a bounded independent persistence/completion review plus a
+Core/UI review found no demonstrated ordinary-input defect. No code change or
+new test run followed. Today's work was verification, not a new product release;
+alpha.2 and the authentic client image remain published. Evidence is retained in
+`.tools/observations/20261014-evening.json`. The goal tool reports BLOCKED after
+today's fresh three-turn audit; this heartbeat does not reset that count or
+claim completion. Daily follow-up remains active. No native control occurred,
+and the screen remains free.
+
 ## Daily follow-up — 13 October 2026, approximately 20:05 Europe/Oslo
 
 The public project still displays 2 downloads and no comments. GitHub has no
