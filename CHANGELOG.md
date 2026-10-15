@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.3 — local candidate, 2026-10-15
+
+- Add a visible **Custom minutes** field and **Apply** button for session budgets
+  from 1 to 240 minutes. Enter also applies the value; presets and `/scout 120`
+  remain supported. Invalid values preserve the current budget and explain the range.
+- Explain the shortest unfinished task when nothing fits, and distinguish this
+  from having completed every task. Estimates are not silently shortened.
+- Preserve an unfinished budget entry during timer/inventory refreshes. Escape
+  cancels the entry; closing and reopening restores the saved budget.
+
+This fixes a reported usability failure: the owner had unfinished 120-minute
+tasks but the visible time choices stopped at 60 minutes. Six new UI regression
+cases reproduce that situation and related input/refresh behavior. All 62 model,
+mocked integration and Python checks passed, with Lua 5.1 syntax validation.
+Installed locally in Forever 1.60.1.70374; loading and visual checks for this new
+control are pending. No alpha.3 public release has been uploaded, and the earlier
+alpha packages are unchanged.
+
 ## 0.1.0-alpha.2 — 2026-10-11
 
 Available as a

@@ -1,7 +1,7 @@
 local addonName, ns = ...
 local M = ns.Model
 ns.name = addonName
-ns.version = "0.1.0-alpha.2"
+ns.version = "0.1.0-alpha.3"
 
 function ns.Now()
     return GetServerTime and GetServerTime() or time()
@@ -129,7 +129,7 @@ events:SetScript("OnEvent", function(_, event, loadedName)
     elseif event == "PLAYER_LOGIN" and ns.db then
         ns.character = characterKey()
         if not ns.settings.welcomed then
-            ns.Message("Type /scout to plan your next 15, 30 or 60 minutes. Add your own tasks to start.")
+            ns.Message("Type /scout and choose your available minutes. Add your own tasks to start.")
             ns.settings.welcomed = true
         end
     elseif event == "PLAYER_LOGOUT" and ns.SaveNote then

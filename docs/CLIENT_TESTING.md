@@ -5,6 +5,32 @@ Automated tests are not a substitute for these checks.
 Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
+## Custom budget correction — 15 October, local alpha.3 pending client check
+
+An owner-supplied screenshot showed ten saved tasks, a selected 60-minute budget,
+several unfinished 120-minute tasks and no recommendation. The preset-only UI
+provided no visible custom budget control even though the slash command already
+accepted up to 240 minutes. This is actual usability evidence from the existing
+version, not a runtime observation of the correction.
+
+Alpha.3 adds a visible Custom minutes field and Apply button, explicit no-fit
+guidance, and a distinct all-complete message. Fifteen model, 28 mocked integration
+and 19 Python checks passed; six integration cases cover the new input behavior.
+These verify real addon callbacks with mocked widgets, not fonts/layout in WoW.
+Lua 5.1 syntax validation passed. No task model or SavedVariables schema changed.
+
+The guarded installer identified the current client as Forever 1.60.1.70374 and
+installed alpha.3 without starting, reloading or controlling the game. It preserved
+the prior addon directory and verified installed hashes. SavedVariables and other
+addons were not install targets. The installation record is
+`backups/20261015T1715589539098Z-09001f5c273b42d4809a5868511de48b/installation.json`.
+
+Pending in the player's next convenient reload: open `/scout`, set Custom minutes
+to 120 and Apply, confirm an unfinished 120-minute task appears; set 90 and confirm
+that it is excluded with the shortest-task explanation. Check that the new controls
+and two-line summary are readable. No alpha.3 public upload or successful in-client
+check is claimed yet. The broader checklist below remains incomplete.
+
 ## Full client validation checklist
 
 - Fresh install: addon appears, login has no Lua errors, `/scout` opens the empty

@@ -64,6 +64,28 @@ local function editTask(task)
     updateForm(); ns.window.taskLabel:SetFocus()
 end
 
+local function setBudget(minutes)
+    local w = ns.window
+    ns.settings.budget = minutes
+    w.budgetError = nil
+    w.budgetInput:ClearFocus()
+    w.budgetInput:SetText(tostring(minutes))
+    ns.Refresh()
+end
+
+local function applyBudget()
+    local w = ns.window
+    local minutes = tonumber(w.budgetInput:GetText())
+    if not minutes or minutes ~= minutes or minutes < 1 or minutes > M.MAX_BUDGET_MINUTES
+        or minutes ~= math.floor(minutes) then
+        w.budgetError = "Enter 1-240 whole minutes. Current budget: " .. ns.settings.budget .. " min."
+        w.budgetInput:SetFocus()
+        ns.Refresh()
+        return
+    end
+    setBudget(minutes)
+end
+
 function ns.SaveNote()
     if ns.window and ns.settings then ns.settings.note = ns.window.note:GetText() end
 end
@@ -96,10 +118,25 @@ function ns.CreateWindow()
     w.budgets = {}
     for i, minutes in ipairs({ 15, 30, 60 }) do
         w.budgets[i] = button(w, minutes .. " min", 208 + (i - 1) * 86, -70, 78, function()
-            ns.settings.budget = minutes; ns.Refresh()
+            setBudget(minutes)
         end)
     end
+    label(w, "Custom minutes", 476, -51, "GameFontHighlightSmall", 158)
+    w.budgetInput = entry(w, 476, -70, 60, 3)
+    w.budgetInput:SetNumeric(true)
+    w.budgetInput:SetText(tostring(ns.settings.budget))
+    w.budgetInput:SetScript("OnEnterPressed", applyBudget)
+    w.budgetInput:SetScript("OnEscapePressed", function(self)
+        self:ClearFocus(); self:SetText(tostring(ns.settings.budget))
+        w.budgetError = nil; ns.Refresh()
+    end)
+    w.applyBudget = button(w, "Apply", 550, -70, 84, applyBudget)
+    w:HookScript("OnHide", function()
+        w.budgetInput:ClearFocus(); w.budgetInput:SetText(tostring(ns.settings.budget))
+        w.budgetError = nil
+    end)
     w.planSummary = label(w, "", 22, -108, "GameFontHighlight", 612)
+    w.planSummary:SetWordWrap(true); w.planSummary:SetMaxLines(2); w.planSummary:SetHeight(32)
     w.planRows = {}
     for i = 1, 3 do
         local y = -140 - (i - 1) * 34
@@ -176,15 +213,24 @@ function ns.Render()
     local budget = ns.settings.budget
     local plan, err = M.BuildPlan(ns.db, ns.character, ns.Now(), budget)
     local tasks = M.ListTasks(ns.db, ns.character, ns.Now())
+    if not w.budgetInput:HasFocus() then w.budgetInput:SetText(tostring(budget)) end
     for i, minutes in ipairs({ 15, 30, 60 }) do
         w.budgets[i]:SetText((budget == minutes and "|cff52d9bb" or "") .. minutes .. " min" .. (budget == minutes and "|r" or ""))
     end
     if not plan then w.planSummary:SetText(ns.SafeText(err)); return end
     local count = math.min(3, #plan.tasks)
-    if #tasks == 0 then
+    local shortest
+    for _, task in ipairs(tasks) do
+        if not task.completed then shortest = math.min(shortest or task.minutes, task.minutes) end
+    end
+    if w.budgetError then
+        w.planSummary:SetText(w.budgetError)
+    elseif #tasks == 0 then
         w.planSummary:SetText("Start with one task below: what would make this session worthwhile?")
+    elseif not shortest then
+        w.planSummary:SetText("All your tasks are complete. Add a task or undo a completion below.")
     elseif count == 0 then
-        w.planSummary:SetText("No unfinished task fits " .. budget .. " min. Try a larger budget or a smaller task.")
+        w.planSummary:SetText("No task fits " .. budget .. " min. Shortest unfinished task: " .. shortest .. " min.\nSet your available minutes above, or edit a task's estimate below.")
     else
         w.planSummary:SetText(count .. (count == 1 and " next action / " or " next actions / ") .. plan.totalMinutes .. " of " .. budget .. " min. High priority first.")
     end

@@ -60,6 +60,7 @@ local function world(saved, characterSaved, options)
     function methods:SetMaxLetters(limit) self.maxLetters = limit end
     function methods:SetFocus() self.focus = true end
     function methods:ClearFocus() self.focus = false end
+    function methods:HasFocus() return self.focus == true end
     function methods:SetText(text) self.text = text; fire(self, "OnTextChanged", false) end
     function methods:GetText() return self.text end
     function methods:SetScript(name, callback) self.scripts[name] = callback end
@@ -73,6 +74,7 @@ local function world(saved, characterSaved, options)
     function methods:SetShown(shown) if shown then self:Show() else self:Hide() end end
     function methods:CreateFontString(name) return frame("FontString", name, self) end
     function methods:Click() fire(self, "OnClick", "LeftButton") end
+    function methods:PressEnter() fire(self, "OnEnterPressed") end
     function methods:MouseEnter() fire(self, "OnEnter") end
     function methods:MouseLeave() fire(self, "OnLeave") end
     env.CreateFrame = function(kind, name, parent) return frame(kind, name, parent) end
@@ -209,6 +211,104 @@ test("slash commands clamp budgets, toggle visibility and cancel every ticker", 
     s:open(); eq(ns.window:IsShown(), false); eq(s:activeTimers(), 0)
     for _ = 1, 10 do s:open(); eq(s:activeTimers(), 1); s:open(); eq(s:activeTimers(), 0) end
     eq(#env.UISpecialFrames, 1, "one window should be registered")
+end)
+
+test("custom session minutes make a two-hour task actionable without exceeding the chosen budget", function()
+    local ns, _, s = world(nil, {budget=60}); s:login(); s:open()
+    s:add("Completed short task", 30); s:row("Completed short task").toggle:Click()
+    s:add("RFK equipment run", 120); s:add("Scarlet Monastery run", 120)
+    eq(ns.window.budgetInput:GetText(), "60")
+    eq(ns.window.planRows[1].task, nil)
+    contains(ns.window.planSummary:GetText(), "Shortest unfinished task: 120 min.")
+
+    ns.window.budgetInput:SetText("120"); ns.window.applyBudget:Click()
+    eq(ns.settings.budget, 120)
+    eq(ns.window.planRows[1].task.label, "RFK equipment run")
+    eq(ns.window.planRows[1].task.minutes, 120)
+    eq(ns.window.planRows[2].task, nil, "two 120-minute tasks must not fit a 120-minute session")
+    contains(ns.window.planSummary:GetText(), "120 of 120 min")
+
+    ns.window.budgetInput:SetText("90"); ns.window.budgetInput:PressEnter()
+    eq(ns.settings.budget, 90); eq(ns.window.planRows[1].task, nil)
+    contains(ns.window.planSummary:GetText(), "Shortest unfinished task: 120 min.")
+    ns.window.budgets[3]:Click()
+    eq(ns.settings.budget, 60); eq(ns.window.planRows[1].task, nil)
+    eq(ns.db.tasks[2].minutes, 120, "choosing a session must not silently shorten a task estimate")
+end)
+
+test("invalid session input explains the accepted range and preserves the committed plan", function()
+    local ns, _, s = world(nil, {budget=120}); s:login(); s:open(); s:add("Long run", 120)
+    local taskID = ns.window.planRows[1].task.id
+    for _, invalid in ipairs({"", "0", "241", "abc", "1.5", "-1"}) do
+        ns.window.budgetInput:SetFocus(); ns.window.budgetInput:SetText(invalid)
+        ns.window.applyBudget:Click()
+        eq(ns.settings.budget, 120, "invalid input must not change the committed session")
+        eq(ns.window.planRows[1].task.id, taskID, "invalid input must preserve the current recommendation")
+        contains(ns.window.planSummary:GetText(), "1-240 whole minutes")
+        contains(ns.window.planSummary:GetText(), "Current budget: 120 min.")
+        ns.Refresh()
+        contains(ns.window.planSummary:GetText(), "1-240 whole minutes", "refresh must not hide the validation feedback")
+    end
+    ns.window.budgetInput:SetText("120"); ns.window.budgetInput:PressEnter()
+    contains(ns.window.planSummary:GetText(), "120 of 120 min")
+    eq(ns.window.budgetInput:HasFocus(), false)
+end)
+
+test("visible refresh preserves a session draft until the player applies it", function()
+    local ns, _, s = world(nil, {budget=60}); s:login(); s:open(); s:add("Long run", 120)
+    ns.window.budgetInput:SetFocus(); ns.window.budgetInput:SetText("120")
+    s.timers[#s.timers].callback()
+    eq(ns.window.budgetInput:GetText(), "120", "timer refresh must not overwrite a focused draft")
+    eq(ns.settings.budget, 60, "typing alone must not change the committed budget")
+    eq(ns.window.planRows[1].task, nil)
+    s:event("BAG_UPDATE_DELAYED")
+    eq(ns.window.budgetInput:GetText(), "120", "inventory refresh must not overwrite a focused draft")
+    ns.window.budgetInput:PressEnter()
+    eq(ns.settings.budget, 120); eq(ns.window.planRows[1].task.label, "Long run")
+end)
+
+test("presets and reopening synchronize the custom field and clear obsolete feedback", function()
+    local ns, env, s = world(nil, {budget=60}); s:login(); s:open(); s:add("Long run", 120)
+    ns.window.budgetInput:SetFocus(); ns.window.budgetInput:SetText("0"); ns.window.applyBudget:Click()
+    contains(ns.window.planSummary:GetText(), "1-240 whole minutes")
+    ns.window.budgets[2]:Click()
+    eq(ns.settings.budget, 30); eq(ns.window.budgetInput:GetText(), "30")
+    eq(ns.window.budgetInput:HasFocus(), false)
+    contains(ns.window.planSummary:GetText(), "Shortest unfinished task: 120 min.")
+    ns.window.budgetInput:SetFocus(); ns.window.budgetInput:SetText("180")
+    s:open(); s:open()
+    eq(ns.settings.budget, 30); eq(ns.window.budgetInput:GetText(), "30", "reopening must show the saved budget")
+    eq(ns.window.budgetInput:HasFocus(), false)
+    env.SlashCmdList.SESSIONSCOUT("120")
+    eq(ns.window.budgetInput:GetText(), "120", "legacy slash budgets must remain visible in the new field")
+    eq(ns.window.planRows[1].task.label, "Long run")
+end)
+
+test("custom session boundaries persist across login without inventing task changes", function()
+    local ns, env, s = world(); s:login(); s:open(); s:add("Four-hour task", 240)
+    ns.window.budgetInput:SetText("1"); ns.window.budgetInput:PressEnter()
+    eq(ns.settings.budget, 1); eq(ns.window.planRows[1].task, nil)
+    ns.window.budgetInput:SetText("240"); ns.window.applyBudget:Click()
+    eq(ns.settings.budget, 240); eq(ns.window.planRows[1].task.minutes, 240)
+    s:event("PLAYER_LOGOUT")
+    local ns2, _, s2 = world(env.SessionScoutDB, env.SessionScoutCharDB); s2:login(); s2:open()
+    eq(ns2.settings.budget, 240); eq(ns2.window.budgetInput:GetText(), "240")
+    eq(ns2.window.planRows[1].task.label, "Four-hour task")
+    eq(#ns2.db.tasks, 1)
+end)
+
+test("empty completed and too-long tasks give distinct useful plan guidance", function()
+    local ns, _, s = world(nil, {budget=60}); s:login(); s:open()
+    contains(ns.window.planSummary:GetText(), "Start with one task")
+    s:add("Completed short task", 30); s:row("Completed short task").toggle:Click()
+    contains(ns.window.planSummary:GetText(), "All your tasks are complete")
+    s:add("Long run", 120)
+    contains(ns.window.planSummary:GetText(), "Shortest unfinished task: 120 min.")
+    s:row("Long run").toggle:Click()
+    contains(ns.window.planSummary:GetText(), "All your tasks are complete")
+    eq(ns.window.planRows[1].task, nil)
+    s:row("Completed short task").toggle:Click()
+    eq(ns.window.planRows[1].task.label, "Completed short task")
 end)
 
 test("UI add and edit preserve raw pipe text while rendered labels escape markup", function()

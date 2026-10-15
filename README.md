@@ -91,7 +91,7 @@ See the [client test record](docs/CLIENT_TESTING.md) for methodology and the
 remaining checks. The temporary QA addon was removed and the user's original
 account and character data were restored and independently hash-verified.
 
-The 56 automated Lua model, mocked integration and Python tooling checks support
+The 62 automated Lua model, mocked integration and Python tooling checks support
 logic and packaging validation. They do not replace actual client checks.
 
 Both CurseForge releases use the **Alpha** channel. On the project's website,
