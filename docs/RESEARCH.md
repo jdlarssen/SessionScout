@@ -2,6 +2,41 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Owner usability report — 15 October 2026
+
+The owner reported having entered tasks and having more than 60 minutes available,
+but receiving no suggestion of what to do. Their game screenshot shows ten saved
+tasks, a selected 60-minute budget, three visible unfinished tasks estimated at
+120 minutes, and two visible completed 30-minute tasks. Only page one of two is
+visible; the remaining task contents and exact available time are not established.
+The displayed result says that no unfinished task fits 60 minutes. The window
+offered only 15/30/60-minute presets, although `/scout 120` already worked.
+
+This is a concrete discoverability failure in the existing manual planning flow.
+The owner had entered personal goals and expected a shortlist; the visible
+controls did not let them express the longer session. It supports correcting
+that interaction, not relaxing time limits or inventing activity recommendations.
+It does not establish independent adoption, voluntary retention, planning time
+saved, market prevalence, or that H1's core benefit exceeds its setup burden.
+
+Local alpha.3 adds Custom minutes and Apply, plus an explanation of the shortest
+unfinished task when nothing fits. The task-selection model is unchanged.
+[The client validation record](CLIENT_TESTING.md#custom-budget-correction--15-october-local-alpha3-pending-client-check)
+records 62 automated checks and installation; the new controls have not yet been
+observed after an in-client reload. A real 90-minute budget must still exclude a
+120-minute task. The owner's statement of "more than 60 minutes" alone does not
+justify selecting 120 or shortening an estimate to force a recommendation.
+
+The next useful observation is this same owner using their actual available
+minutes after reload: can they apply the budget, understand the resulting fit or
+no-fit explanation, and choose a suitable next task? Record which task they
+choose and whether the shortlist helped beyond reading their existing list; an
+unchanged choice or no useful suggestion is also evidence. Displaying a
+120-minute task under a 120-minute budget confirms the correction, but does not
+by itself validate planning value. Instructions have already been provided, so
+this check cannot count as unaided discovery. Actual completion within the time
+available and later voluntary reuse remain unobserved.
+
 ## Follow-up on specific evidence — 11 October, 20:15 Europe/Oslo
 
 The previously search-only Warrior report is now directly readable in the
