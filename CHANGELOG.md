@@ -7,9 +7,15 @@ Available as a
 for Forever 1.60.1 (interface 16001). The alpha.1 tag and ZIP remain unchanged.
 Alpha.2 was submitted separately to CurseForge as file **9132600**, showing
 **Under Review** at approximately 22:02 Europe/Oslo on 11 October 2026.
-Alpha.1 file **9128965** is preserved and remains **Under Review**. Both showed
-zero downloads, and the project remains hidden pending moderator approval;
-public CurseForge availability is unconfirmed.
+At that time, alpha.1 file **9128965** was also **Under Review**, both files
+showed zero downloads, and the project was hidden pending moderator approval.
+
+**Availability update — 12 October:** both files were approved and publicly
+visible. Download [alpha.2 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600).
+Both files remain on the Alpha channel; on the website's Files tab, set
+**Show alpha files** to **Show** if the list appears empty. Availability through
+the CurseForge client app has not been tested. This is a publication-status
+update; the release tags and ZIPs are unchanged.
 
 - Mark the planner as a top-level window and raise it when opened, addressing
   interleaved text and buttons observed when overlapping the local
@@ -23,10 +29,12 @@ over more than 60 seconds. Lua 5.1 syntax and the existing integration/runtime
 boundary checks passed for the correction. See
 [the client test record](docs/CLIENT_TESTING.md) for exact scope.
 
-Manual dragging, reopening an already-visible pilot behind the planner and
-clicking an exposed planner behind the pilot remain unverified. This was not a
-full error/taint audit. The alpha.1 limits below still apply, including actual
-reset crossings, multiple characters, combat, extreme UI scales and long sessions.
+**Validation follow-up — 12 October:** reopening an already-visible pilot behind
+the planner and clicking an exposed planner behind the pilot passed in the
+[recorded client follow-up](docs/CLIENT_TESTING.md#follow-up-on-12-october--two-remaining-foreground-cases-passed).
+Manual dragging remains unverified. This was not a full error/taint audit.
+The alpha.1 limits below still apply, including actual reset crossings,
+multiple characters, combat, extreme UI scales and long sessions.
 
 ## 0.1.0-alpha.1 — 2026-10-11
 
@@ -34,7 +42,8 @@ Scoped alpha tested in Forever 1.60.1.70338. Submitted as CurseForge file
 **9128965**; confirmed **Under Review** at 18:53 Europe/Oslo.
 The same tested ZIP is available as a
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).
-CurseForge public download availability has not yet been confirmed.
+Public download availability was not yet confirmed on the release date;
+see the 12 October availability update above.
 
 - Prioritize Forever beta 1.60.1 (interface 16001) at the user's request.
 - Separate task names and metadata into bounded lines after the first client
@@ -61,4 +70,6 @@ Known validation limits: real reset crossings, multiple characters, combat,
 extreme UI scales, long sessions, full restart/logout permutations and the full
 bag/durability matrix remain unverified. Alpha files require download through the
 project website after approval; the portal says they are not visible in the
-CurseForge client. No public screenshots have been uploaded.
+CurseForge client. No public screenshots had been uploaded on the release date;
+an authentic client image with fictional example tasks was subsequently published
+in the README and CurseForge description on 12 October.
