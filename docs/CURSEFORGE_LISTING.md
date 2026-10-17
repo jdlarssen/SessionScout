@@ -45,26 +45,29 @@ Issues: https://github.com/jdlarssen/SessionScout/issues
 
 ## GitHub mirror (prereleases)
 
-### Alpha.3 draft — prepared 17 October, not public
+### Alpha.3 — experimental GitHub prerelease, 17 October
 
-The owner-only [GitHub draft](https://github.com/jdlarssen/SessionScout/releases/tag/untagged-4497b73a9daf02c9b3ce)
-is release ID `415634645`, with tag name `v0.1.0-alpha.3-forever` and target
-`888a47b7ced501687dda3c7563550800cdf1d7fe`. API readback confirmed `draft: true`,
-`prerelease: true`, no publication timestamp, and the exact prepared notes.
-The rendered release page also shows Draft.
+The existing draft was published at **06:58:09 UTC** as
+[an experimental GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever).
+Release ID `415634645` and the uploaded assets are unchanged. API readback confirms
+`draft: false`, `prerelease: true`, the publication timestamp and exact notes.
+The tag `v0.1.0-alpha.3-forever` resolves to the tested source commit
+`888a47b7ced501687dda3c7563550800cdf1d7fe`; the rendered page shows Pre-release.
 
 Its two uploaded assets are the existing 38,070-byte alpha.3 ZIP and checksum;
 GitHub's ZIP digest matches
 `33834eed7b609be233f11dd84d318fb6c91b920d1a5f2db5c5f4b2c900256e74`.
 The checksum asset digest also matches locally. No ZIP was rebuilt, no earlier
 release changed, and no alpha.3 CurseForge file was submitted. The notes explain
-Custom minutes and the remaining actual-client check. Keep the draft unpublished
-until that check is recorded; update the validation paragraph before publication.
-Evidence: `.tools/observations/20261017-alpha3-draft.json`.
+Custom minutes and the unresolved rendering/input checks, including the newly
+installed 1.60.1.70450 client build. The release decision and remaining limits are
+recorded in `docs/CLIENT_TESTING.md`; no pending check was marked passed.
+Evidence: `.tools/observations/20261017-alpha3-publication.json` and
+`.tools/alpha3-public-20261017.png`. The earlier draft record is preserved.
 
 ### Public alpha.2 and alpha.1
 
-The current GitHub mirror is
+The previous GitHub mirror is
 [SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever),
 published at approximately 20:21 on 11 October. It adds the tested planner
 window-ordering correction and targets `098d7ea2c43fbcbfe289965096592b793016d6bf`.

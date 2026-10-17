@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.3 — local candidate, 2026-10-15
+## 0.1.0-alpha.3 — experimental GitHub prerelease, 2026-10-17
 
 - Add a visible **Custom minutes** field and **Apply** button for session budgets
   from 1 to 240 minutes. Enter also applies the value; presets and `/scout 120`
@@ -14,9 +14,17 @@ This fixes a reported usability failure: the owner had unfinished 120-minute
 tasks but the visible time choices stopped at 60 minutes. Six new UI regression
 cases reproduce that situation and related input/refresh behavior. All 62 model,
 mocked integration and Python checks passed, with Lua 5.1 syntax validation.
-Installed locally in Forever 1.60.1.70374; loading and visual checks for this new
-control are pending. No alpha.3 public release has been uploaded, and the earlier
-alpha packages are unchanged.
+Installed locally on 15 October in Forever 1.60.1.70374. Actual-client rendering,
+keyboard entry and focus checks for this new control are still pending, and the
+current client build 1.60.1.70450 has no recorded runtime check.
+
+Published as an explicitly experimental
+[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever)
+on 17 October at 06:58 UTC, using the existing package from source commit
+`888a47b7ced501687dda3c7563550800cdf1d7fe`. The public tag resolves to that commit,
+and both uploaded asset digests match the prepared draft. The previous alpha
+packages remain unchanged. Alpha.3 has not yet been submitted to CurseForge;
+alpha.2 remains available there. See the [release scope](docs/CLIENT_TESTING.md).
 
 ## 0.1.0-alpha.2 — 2026-10-11
 

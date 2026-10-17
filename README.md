@@ -6,27 +6,28 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**Alpha.2 is publicly available on CurseForge for Forever 1.60.1.
-Scoped in-client checks passed on Forever 1.60.1.70338.
-CurseForge approval and public visibility were confirmed on 12 October 2026;
-both releases remain on the Alpha channel.**
+**Experimental alpha.3 is available on GitHub for Forever 1.60.1.** It adds a
+visible Custom minutes control. Its automated checks passed; actual-client
+rendering and input checks for that control are still pending. The earlier
+alpha.2 remains publicly available on CurseForge, with scoped client checks on
+Forever 1.60.1.70338.
 
-[Download the alpha on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
-[GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever) ·
+[Download experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
+[Previous alpha.2 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
 [![SessionScout in the Forever client: three suggested tasks totaling 30 minutes, from four fictional example tasks](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
 
-SessionScout in the Forever client, with fictional example tasks. Open the image
-at full size to read the planner. Estimates and priorities are entered manually;
-the 60-minute dungeon stays outside this 30-minute plan.
+Alpha.2 in the Forever client, with fictional example tasks; this image predates
+the Custom minutes control. Open it at full size to read the planner. Estimates
+and priorities are entered manually; the 60-minute dungeon stays outside this
+30-minute plan.
 
 ## Use
 
-1. Download `SessionScout-0.1.0-alpha.2-forever.zip` from the
-   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
-   or [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever).
+1. Download `SessionScout-0.1.0-alpha.3-forever.zip` from the
+   [experimental GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
@@ -34,7 +35,8 @@ the 60-minute dungeon stays outside this 30-minute plan.
 3. Enter `/scout` (or `/sessionscout`).
 4. Add a task, its estimated minutes, priority and recurrence. Choose whether
    completion is shared across the account or tracked separately per character.
-5. Choose 15, 30 or 60 minutes. `/scout 45` accepts a custom budget up to 240 minutes.
+5. Choose 15, 30 or 60 minutes, or enter 1–240 whole minutes in **Custom minutes**
+   and press **Apply** or Enter. `/scout 45` also accepts a custom budget.
 6. Complete tasks manually. Daily and weekly completion expires at the reset
    time supplied by the game. Undo reverses a completion for the applicable scope.
 
@@ -75,6 +77,12 @@ timestamps. Physical Unicode/pipe text entry, cancelling an edit and Escape were
 also checked. A task-metadata display defect found in the client was fixed and
 visually verified.
 
+Alpha.3 adds the custom-budget field and clearer no-fit messages. Its new-control
+rendering, keyboard entry and focus behavior remain unverified in the actual
+client. Installation was recorded on **1.60.1.70374**; the current executable
+reports **1.60.1.70450**, which has no recorded runtime check. The automated
+regressions and earlier 70338 checks do not establish these pending results.
+
 Alpha.2 adds a window-ordering correction: the planner raises as one window when
 opened, and periodic refreshes do not change foreground order. Scoped overlap
 checks with the separately corrected local GearEvidencePilot passed on the same
@@ -96,8 +104,8 @@ logic and packaging validation. They do not replace actual client checks.
 
 Both CurseForge releases use the **Alpha** channel. On the project's website,
 open **Files** and set **Show alpha files** to **Show** if the list appears empty.
-The direct file link above opens alpha.2. Availability through the CurseForge
-client app has not been tested.
+The CurseForge link above opens alpha.2; alpha.3 is currently available on GitHub.
+Availability through the CurseForge client app has not been tested.
 
 ## Development
 
