@@ -5,7 +5,7 @@ Automated tests are not a substitute for these checks.
 Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
-## Custom budget correction — 15 October, local alpha.3 pending client check
+## Custom budget correction — alpha.3; actual-client check remains pending
 
 An owner-supplied screenshot showed ten saved tasks, a selected 60-minute budget,
 several unfinished 120-minute tasks and no recommendation. The preset-only UI
@@ -28,14 +28,36 @@ addons were not install targets. The installation record is
 Pending in the player's next convenient reload: open `/scout`, set Custom minutes
 to 120 and Apply, confirm an unfinished 120-minute task appears; set 90 and confirm
 that it is excluded with the shortest-task explanation. Check that the new controls
-and two-line summary are readable. No alpha.3 public upload or successful in-client
-check is claimed yet. The broader checklist below remains incomplete.
+and two-line summary are readable. No successful actual-client check of the new
+control is claimed. The broader checklist below remains incomplete.
 
 On 17 October the owner replied "det hjelper litt" (it helps a little) to a
 question about the new control and its usefulness. This is partial owner feedback,
 not recorded reproduction steps or visual verification of the 120/90-minute cases.
-The exact selected budget and remaining difficulty are being clarified. The
-GitHub alpha.3 candidate is prepared as a draft and remains unpublished.
+The exact selected budget and remaining difficulty are being clarified.
+
+### Release decision — 17 October
+
+The existing package is approved for publication as an experimental GitHub
+prerelease, with the limitations below disclosed. This replaces the earlier
+self-imposed decision to keep the draft unpublished until the new-control check.
+It does not change any pending check to passed. Independent review of source
+commit `888a47b7ced501687dda3c7563550800cdf1d7fe` found no actionable defect:
+the correction uses the existing budget setting and changes no task model,
+SavedVariables schema, protected action or external service. The 62 automated
+checks and successful CI run `38776556868` support logic and package readiness.
+
+Actual rendering, font wrapping, keyboard entry and focus transitions for the
+new control remain unverified. On 17 October the installed client executable
+reported **1.60.1.70450**; this is newer than the **70374** installation record
+and the earlier **70338** runtime checks. No runtime compatibility check on 70450
+is claimed. Installed addon files still match the alpha.3 source. The unchanged
+SavedVariables timestamp does not establish which code has loaded in memory.
+
+These limits permit opt-in Alpha availability, not Beta/Release promotion or a
+full compatibility claim. The existing alpha.2 remains available. A convenient
+client smoke check and the owner's more specific usefulness feedback are still
+the next validation steps; neither requires another unchanged installation.
 
 ## Full client validation checklist
 
