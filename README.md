@@ -13,12 +13,16 @@ up to three unfinished tasks that fit. **Version 0.1.0 supports WoW Forever
 [Alternate download on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
 [Report an issue](https://github.com/jdlarssen/SessionScout/issues)
 
-[![SessionScout in Forever with three suggested tasks totaling 30 minutes](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+## Interface preview
 
-*Alpha.2 in the Forever client with fictional example tasks. This image predates
-the Custom minutes control and the separate This session / My tasks views in
-0.1.0. Estimates and priorities are entered manually; the 60-minute dungeon stays
-outside this 30-minute plan.*
+[![Source-derived preview of SessionScout 0.1.0 with one saved task fitting a 120-minute session](docs/media/sessionscout-0.1.0-session-preview.png)](docs/media/sessionscout-0.1.0-session-preview.png)
+
+*Source-derived preview of 0.1.0 with fictional, manually entered tasks.
+One saved task fits a 120-minute session. Fonts and button textures are
+approximate; this is not an in-game screenshot or a calculated gear recommendation.*
+
+An [earlier in-game image of alpha.2](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+shows the previous layout with fictional tasks.
 
 ## Install
 
