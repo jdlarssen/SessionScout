@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "submittedOn": "2026-10-17",
+  "displayedSubmissionTime": "09:27 Europe/Oslo",
+  "authorization": "Owner replied 1. Ja. to the specific alpha.3 upload and automatic-publication request",
+  "projectId": 1738896,
+  "fileId": 9219847,
+  "authorUrl": "https://authors.curseforge.com/#/projects/1738896/files/9219847",
+  "filename": "SessionScout-0.1.0-alpha.3-forever.zip",
+  "displayName": "SessionScout 0.1.0-alpha.3 — Forever (experimental)",
+  "releaseType": "Alpha",
+  "gameVersion": "1.60.1",
+  "autoPublishAfterApproval": true,
+  "bytes": 38070,
+  "sha256": "33834eed7b609be233f11dd84d318fb6c91b920d1a5f2db5c5f4b2c900256e74",
+  "sourceCommit": "888a47b7ced501687dda3c7563550800cdf1d7fe",
+  "observedRowStatus": "Uploading",
+  "detailReadback": "Experimental name, Alpha channel, 1.60.1 and complete changelog matched the prepared submission",
+  "publicAvailabilityVerified": false,
+  "previousFilesUnchanged": [9132600, 9128965],
+  "screenshot": ".tools/alpha3-curseforge-submitted-20261017.png"
+}

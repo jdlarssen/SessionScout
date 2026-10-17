@@ -11,7 +11,14 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Newest CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
+Newest submitted file: **experimental alpha.3**, ID **9219847**, submitted on
+17 October at 09:27 Europe/Oslo after the owner approved the exact upload.
+The previously published GitHub ZIP was reused with the same SHA256, Alpha,
+1.60.1 and automatic publication after approval. The initial author row showed
+**Uploading**; approval/public availability is not yet established.
+[Submission evidence](../data/alpha3-curseforge-submission-20261017.json).
+
+Newest verified public CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
 At approximately 19:57 Europe/Oslo on 12 October 2026, the author portal showed
 **Approved**, with one download. The public project and both alpha files were
 visible; the project displayed two total downloads. These are observed counters,
@@ -58,7 +65,7 @@ Its two uploaded assets are the existing 38,070-byte alpha.3 ZIP and checksum;
 GitHub's ZIP digest matches
 `33834eed7b609be233f11dd84d318fb6c91b920d1a5f2db5c5f4b2c900256e74`.
 The checksum asset digest also matches locally. No ZIP was rebuilt, no earlier
-release changed, and no alpha.3 CurseForge file was submitted. The notes explain
+release changed, and no alpha.3 CurseForge file was submitted at that point. The notes explain
 Custom minutes and the unresolved rendering/input checks, including the newly
 installed 1.60.1.70450 client build. The release decision and remaining limits are
 recorded in `docs/CLIENT_TESTING.md`; no pending check was marked passed.
@@ -97,8 +104,8 @@ experimental GitHub alpha.3, while preserving the direct CurseForge alpha.2 rout
 It also makes the existing `/scout 120` command visible to players who keep alpha.2,
 labels the image as alpha.2, and assigns earlier client checks to earlier releases.
 The public page rendered the new text and exact GitHub release link after saving.
-This was a description update: no ZIP was selected or uploaded, and the separate
-CurseForge file-upload confirmation remains pending. Evidence:
+This was a description update: no ZIP was selected or uploaded then. The separate
+confirmation subsequently arrived and alpha.3 was submitted as recorded above. Evidence:
 `.tools/curseforge-alpha3-link-20261017.png`.
 
 ## Saved project description
