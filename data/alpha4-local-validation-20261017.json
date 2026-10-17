@@ -2,6 +2,13 @@
   "schemaVersion": 1,
   "date": "2026-10-17",
   "version": "0.1.0-alpha.4",
+  "sourceCommit": "d94ca15034c3a65117692042dd3db0d365108c1e",
+  "ci": {
+    "runUrl": "https://github.com/jdlarssen/SessionScout/actions/runs/39014803768",
+    "conclusion": "success",
+    "completedAt": "2026-10-17T07:45:31Z",
+    "packageMatchesLocalSha256": true
+  },
   "scope": "Bounded GUI correction following owner usability feedback",
   "modelChanged": false,
   "savedDataSchemaChanged": false,
@@ -29,5 +36,5 @@
   },
   "installed": false,
   "publishedAsRelease": false,
-  "actualClientValidation": "Pending a fresh agreed screen window"
+  "actualClientValidation": "Owner deferred the proposed screen window to continue playing; wait for a fresh explicit window"
 }
