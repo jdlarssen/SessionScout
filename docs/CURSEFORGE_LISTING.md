@@ -1,4 +1,4 @@
-# CurseForge listing — 0.1.0 approved; public availability pending
+# CurseForge listing — 0.1.0 publicly available
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; public visibility confirmed
@@ -17,31 +17,34 @@ The author portal's [file 9222143](https://authors.curseforge.com/#/projects/173
 initially showed **Release**, **1.60.1**, **Uploading** and **0 downloads**. At
 **13:37 Europe/Oslo** it showed **Approved**, still Release, 1.60.1 and 0 downloads.
 The first check of its [ordinary public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
-returned **404**; public availability remains unverified. See the
+returned **404**, as did the 13:59 follow-up. At **20:04 Europe/Oslo**, the ordinary
+public page showed the correct filename, **Release**, **Forever**, **1.60.1** and
+a Download link. It displayed three file downloads and nine project downloads;
+these are counters, not verified players or adoption. See the
 [submission and status record](../data/curseforge-release-0.1.0-submission-20261017.json).
 The existing alpha.3 still showed **Approved**. ZIP: `dist/SessionScout-0.1.0-forever.zip`,
 47,331 bytes, SHA256
 `ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.
-See `data/release-0.1.0-publication-20261017.json`. Keep this project's public
-download link on alpha.3 until the new CurseForge file is approved and verified;
-do not add an external GitHub file-download link to the CurseForge description.
+See `data/release-0.1.0-publication-20261017.json` for the earlier GitHub publication.
+The current primary download route is
+https://www.curseforge.com/wow/addons/sessionscout/files/9222143.
+The CurseForge description contains no external GitHub file-download link.
 
-**Prepared description, not published:** `CURSEFORGE_DESCRIPTION_0.1.0.txt`
-contains the complete replacement project description for the new release.
+**Published description, 17 October evening:** `CURSEFORGE_DESCRIPTION_0.1.0.txt`
+contains the replacement project description saved and read back on the ordinary
+public page after 0.1.0 availability was verified.
 It documents My tasks → + New task → This session → Custom minutes / Apply,
 manual installation, completion scope and the scoped 70450 client checks. The
 existing public image is explicitly identified as alpha.2 with an older layout.
-Apply this copy only after the exact 0.1.0 CurseForge file is approved and its
-ordinary public file page is verified. Its download instruction uses the native
-Files tab, with no invented file ID or external file-download link. Until then,
-the saved public alpha.3 description below remains the applicable copy. Updating
-the description is preparation for onboarding, not evidence of adoption.
+Its download instruction links the verified file9222143 and also mentions the
+native Files tab. The older alpha.3 observations and copy below are preserved
+as history. Updating the description helps onboarding; it is not adoption evidence.
 
 Summary: Pick a time budget and get up to three personal tasks that fit your next WoW session.
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Newest verified public file: **experimental alpha.3**, ID **9219847**, submitted on
+Previous verified public file: **experimental alpha.3**, ID **9219847**, submitted on
 17 October at 09:27 Europe/Oslo after the owner approved the exact upload.
 The previously published GitHub ZIP was reused with the same SHA256, Alpha,
 1.60.1 and automatic publication after approval. The initial author row showed
@@ -49,17 +52,14 @@ The previously published GitHub ZIP was reused with the same SHA256, Alpha,
 **Approved**, and the ordinary public file page rendered its name, version,
 Alpha channel and Download link. The project displayed three downloads and
 the file one; these counters do not establish independent players or adoption.
-Primary download route: https://www.curseforge.com/wow/addons/sessionscout/files/9219847
+Historical alpha.3 route: https://www.curseforge.com/wow/addons/sessionscout/files/9219847
 The public description's Getting started paragraph was updated to this file
 and verified by its rendered link and screenshot. No repeat upload or download
 was requested. [Submission](../data/alpha3-curseforge-submission-20261017.json)
 and [publication observation](../data/publication-observation-20261017.json).
 
-Only Alpha files have verified public availability; the approved Release's
-first ordinary public-page check returned 404. The project has no verified published
-Release meeting the
-[official Release-file prerequisite for app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
-Manual website installation is the documented route. A successful Forever-app
+The project now has a verified public Release file. Manual website installation
+remains the documented route. A successful Forever-app
 installation/update has not been demonstrated. The [Release decision](RELEASE_READINESS.md)
 rests on essential normal-input and data-preservation observations, not a relabel
 for visibility or completion of every peripheral research experiment.

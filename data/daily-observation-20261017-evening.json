@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "observedAtLocal": "2026-10-17 20:04-20:06 Europe/Oslo",
+  "ranking": {
+    "url": "https://www.curseforge.com/wow/search?class=addons&page=1&pageSize=20&sortBy=popularity",
+    "observedSort": "Popularity",
+    "observedPage": 1,
+    "observedPageSize": 20,
+    "additionalFlavorOrVersionFilters": false,
+    "top20InDisplayedOrder": [
+      "Details! Damage Meter",
+      "DBM - Deadly Boss Mods (DBM-Core)",
+      "Auctionator",
+      "Questie",
+      "Raider.IO Mythic Plus, Raid Progress, and Recruitment",
+      "RareScanner",
+      "BigWigs (Boss Timers & Tools)",
+      "Plater Nameplates",
+      "TomTom",
+      "Leatrix Plus",
+      "DBM - Dungeons, Delves, Challenges, & Events (Requires Deadly Boss Mods) - DBM",
+      "Bagnon",
+      "BagBrother",
+      "LittleWigs",
+      "Leatrix Maps",
+      "Mythic Dungeon Tools - MDT",
+      "Syndicator",
+      "Baganator",
+      "EllesmereUI",
+      "AtlasLootClassic Continued"
+    ],
+    "sessionScoutInTop20": false,
+    "sessionScoutExactRank": null,
+    "goalAchieved": false
+  },
+  "release": {
+    "fileId": 9222143,
+    "publiclyAvailable": true,
+    "projectDownloadsDisplayed": 9,
+    "fileDownloadsDisplayed": 3,
+    "descriptionUpdatedAndPubliclyVerified": true,
+    "evidence": "curseforge-release-0.1.0-submission-20261017.json"
+  },
+  "feedback": {
+    "curseForgeComments": 0,
+    "curseForgeCommentObservation": "Break the silence / Be the first to post a comment",
+    "githubCheckedAtUtc": "2026-10-17T18:04:02Z",
+    "githubSinceUtc": "2026-10-17T11:34:00Z",
+    "githubIssuesOrPullRequestsUpdated": 0,
+    "githubIssueCommentsUpdated": 0,
+    "githubQueriesSucceeded": true
+  },
+  "limits": {
+    "nativeScreenOrInputUsed": false,
+    "newUploadOrDownloadPerformed": false,
+    "unchangedTestsRerun": false,
+    "appInstallationVerified": false,
+    "independentUsersOrAdoptionVerified": false,
+    "dailyAutomationChanged": false
+  },
+  "nextStep": "Assess actual player feedback and voluntary reuse of the released interface; the publication dependency is resolved. Broader in-client cases and app installation need their own evidence, without inferring demand from download counters."
+}

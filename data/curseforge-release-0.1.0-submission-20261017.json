@@ -27,7 +27,36 @@
     "interpretation": "Approval verified; public availability still unverified. No repeat upload or premature description change.",
     "screenshot": ".tools/release-0.1.0-curseforge-approved-20261017.jpg"
   },
-  "publicAvailabilityVerified": false,
+  "scheduledFollowup": {
+    "observedAtLocal": "2026-10-17 13:59 Europe/Oslo",
+    "publicFileObservation": "404",
+    "oneTimeAutomationDeleted": true
+  },
+  "publicVerification": {
+    "observedAtLocal": "2026-10-17 20:04 Europe/Oslo",
+    "url": "https://www.curseforge.com/wow/addons/sessionscout/files/9222143",
+    "displayName": "SessionScout 0.1.0 — Forever",
+    "filename": "SessionScout-0.1.0-forever.zip",
+    "fileId": 9222143,
+    "releaseType": "Release",
+    "flavor": "Forever",
+    "gameVersion": "1.60.1",
+    "displayedSize": "46.2 KB",
+    "downloadUrl": "https://www.curseforge.com/wow/addons/sessionscout/download/9222143",
+    "fileDownloadsDisplayed": 3,
+    "projectDownloadsDisplayed": 9,
+    "downloadPerformed": false,
+    "interpretation": "Ordinary public file and download link verified; displayed counters do not establish independent users, installations or adoption. Time is the observation, not the exact publication time."
+  },
+  "descriptionUpdate": {
+    "observedAtLocal": "2026-10-17 20:05 Europe/Oslo",
+    "source": "docs/CURSEFORGE_DESCRIPTION_0.1.0.txt",
+    "url": "https://www.curseforge.com/wow/addons/sessionscout",
+    "savedAndPubliclyVerified": true,
+    "verifiedContent": "0.1.0 file9222143 link; separate This session and My tasks; custom 1-240-minute budgets; manual installation and completion; older alpha.2 image labeled; scoped 70450 checks and remaining limits",
+    "screenshot": ".tools/release-0.1.0-public-description-20261017.jpg"
+  },
+  "publicAvailabilityVerified": true,
   "previousFilesUnchanged": [9219847, 9132600, 9128965],
   "newUploadAttemptCount": 1,
   "privateClientEvidenceUploaded": false,

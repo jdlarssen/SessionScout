@@ -6,16 +6,15 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**0.1.0 is available on GitHub for Forever 1.60.1.** It includes
+**0.1.0 is available on CurseForge and GitHub for Forever 1.60.1.** It includes
 the session/task-management redesign tested as alpha.4. Physical task operations,
 120/90-minute budgets, invalid input and preservation of existing data after
 reload passed on 17 October in Forever 1.60.1.70450. The release differs from
-that tested build only in its version strings. CurseForge's latest verified public
-file remains experimental alpha.3. Version 0.1.0 was approved as a Release on
-17 October; its public availability has not yet been verified.
+that tested build only in its version strings. Its CurseForge Release file was
+verified publicly available on 17 October at 20:04 Europe/Oslo.
 
-[Download 0.1.0 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
-[Previous experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
+[Download 0.1.0 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143) ·
+[Alternate download on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
@@ -29,7 +28,8 @@ and priorities are entered manually; the 60-minute dungeon stays outside this
 ## Use
 
 1. Download `SessionScout-0.1.0-forever.zip` from the
-   [GitHub release](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
+   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+   or the [GitHub release](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
@@ -112,20 +112,19 @@ The published alpha.3 passed 62 automated Lua model, mocked integration and
 Python tooling checks. The alpha.4 source used for 0.1.0 passed 71. These support
 logic and packaging validation and do not replace actual client checks.
 
-The verified public CurseForge files use the **Alpha** channel. On the project's website,
-open **Files** and set **Show alpha files** to **Show** if the list appears empty.
-The CurseForge link above opens experimental alpha.3; GitHub has 0.1.0. The
-[previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
-remains available.
-The 0.1.0 Release showed **Approved** at 13:37 Europe/Oslo, but its first ordinary
-public file-page check returned **404**. Public availability remains unverified;
-see the [submission record](data/curseforge-release-0.1.0-submission-20261017.json).
-The project therefore has no verified
-published Release meeting CurseForge's
-[requirement for a Release file before app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
+The current public CurseForge file is **0.1.0, Release, Forever 1.60.1**.
+The [previous alpha.3](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
+and [alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
+remain available; set **Show alpha files** to **Show** in the website's **Files**
+tab when looking for those older versions.
+The 0.1.0 Release showed **Approved** at 13:37 Europe/Oslo on 17 October, while
+public checks at 13:37 and 13:59 returned **404**. At 20:04, the ordinary public
+page showed the correct file, Release channel, Forever 1.60.1 and a download link.
+See the [submission record](data/curseforge-release-0.1.0-submission-20261017.json).
 Use the website download and manual installation above. Actual Forever-app
-installation/update support also remains unverified. The release decision and
-submission status are recorded in [Release readiness](docs/RELEASE_READINESS.md).
+installation/update support remains unverified; public availability does not
+establish successful app installation, adoption or popularity. The release
+decision and publication status are recorded in [Release readiness](docs/RELEASE_READINESS.md).
 
 ## Development
 

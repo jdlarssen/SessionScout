@@ -12,7 +12,8 @@ activities, detect quest completion or calculate gear upgrades.
 
 ## Get started
 
-1. Download **SessionScout 0.1.0 — Forever** from this project's **Files** tab.
+1. Download [**SessionScout 0.1.0 — Forever**](https://www.curseforge.com/wow/addons/sessionscout/files/9222143),
+   also available from this project's **Files** tab.
    With WoW closed, extract the ZIP's `SessionScout` folder into your Forever
    `Interface/AddOns` folder. The resulting path must contain
    `SessionScout/SessionScout.toc` directly. Keep your SavedVariables when updating.

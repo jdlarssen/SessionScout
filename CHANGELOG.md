@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — first GitHub Release, 2026-10-17
+## 0.1.0 — first Release, 2026-10-17
 
 Includes the session/task-management redesign below and the custom-minute
 control. A fresh physical-input test on Forever 1.60.1.70450 passed normal task
@@ -23,9 +23,13 @@ The same package was submitted once to CurseForge as file **9222143**, Release
 for Forever 1.60.1, at 13:34 Europe/Oslo after the owner authorized the concrete
 upload. Automatic publication after approval is selected; the initial author
 row showed Uploading and showed **Approved** at approximately 13:37. The first
-public-file check returned 404 and the public list still showed the alphas;
-public availability and app installation are not yet verified. Existing alpha
-files are unchanged. See the
+public-file check returned 404 and the public list still showed the alphas.
+A follow-up at 13:59 also returned 404. At 20:04 Europe/Oslo, the ordinary
+[public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+showed the correct filename, Release channel, Forever 1.60.1 and Download link.
+The project description and installation route were then updated for 0.1.0
+and verified publicly. App installation and actual adoption remain unverified.
+Existing alpha files are unchanged. See the
 [submission record](data/curseforge-release-0.1.0-submission-20261017.json).
 
 ## 0.1.0-alpha.4 — unreleased GUI revision
@@ -43,7 +47,8 @@ A local package and source-derived layout previews were produced. It was
 installed for an authorized client test on 17 October. After resolving concurrent
 screen use, the session and task-list views rendered in Forever 1.60.1.70450.
 A direct Edit callback opened the editor, but physical budget/Edit/Cancel input
-did not respond reliably and remains unresolved. This is not a full client pass.
+did not respond reliably and was unresolved at that initial observation.
+That observation was not a full client pass.
 It has not been published as a release.
 
 Follow-up at 10:34–10:45 Europe/Oslo resolved physical input and data preservation;
@@ -80,7 +85,7 @@ Alpha for 1.60.1, with automatic publication after approval. The initial file ro
 showed **Uploading**. At approximately 10:20 Europe/Oslo, the author portal
 showed **Approved** and the [public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
 rendered the expected name, Alpha channel, Forever 1.60.1 and Download link.
-The project description and README now link that file. No package was rebuilt
+The project description and README were updated at that time to link that file. No package was rebuilt
 or uploaded again; this availability does not establish player adoption.
 Alpha.2 remains available there. See the [release scope](docs/CLIENT_TESTING.md)
 and [submission record](data/alpha3-curseforge-submission-20261017.json).

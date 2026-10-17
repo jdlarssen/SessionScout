@@ -1,9 +1,12 @@
 # First Release decision
 
 Updated 17 October 2026 after the approximately 10:34–10:45 Europe/Oslo client
-follow-up, 13:34 CurseForge submission and 13:37 approval observation.
-**0.1.0 is published on GitHub; CurseForge file 9222143 is approved, but public
-availability remains unverified.**
+follow-up, 13:34 CurseForge submission, 13:37 approval observation and 20:04
+public availability check.
+**0.1.0 is publicly available on CurseForge and GitHub.** The ordinary
+[CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+shows Release, Forever 1.60.1 and a download link. Actual app installation/update
+remains unverified.
 The tested candidate is the installed alpha.4 GUI,
 source `d94ca15034c3a65117692042dd3db0d365108c1e`.
 Its [71 automated checks and CI passed](../data/alpha4-local-validation-20261017.json).
@@ -17,14 +20,12 @@ needed. Direct callback invocation is not counted as a physical-input pass.
 
 ## Why a Release matters
 
-CurseForge's [official submission guide](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project)
-(checked 17 October) requires at least one Release file before a project syncs
-to its app; Release is also its default download channel. Only Alpha files have
-verified public availability; the approved 0.1.0 Release's ordinary public page
-returned 404 on its first check. This is separate from whether
-the app actually detects, installs and updates addons for the current Forever
-beta. That workflow has not been verified. A Release label alone would not prove
-app availability, successful installation, adoption or popularity.
+Release is CurseForge's default download channel. SessionScout now has a
+verified public 0.1.0 Release alongside its earlier Alpha files. This is separate
+from whether the app actually detects, installs and updates addons for the
+current Forever beta. That workflow has not been verified. A Release label or
+public download link does not prove app availability, successful installation,
+adoption or popularity.
 
 The publication decision rests on the supported product's essential
 interactions and data safety. Participant quotas, a measured improvement
@@ -92,12 +93,18 @@ initially showed **Release**, **1.60.1**, **Uploading** and **0 downloads**, wit
 automatic publication after approval selected. At 13:37 Europe/Oslo it showed
 **Approved**, still Release, 1.60.1 and 0 downloads. The first check of its
 [ordinary public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
-returned **404**, so public availability remains unverified. See the
+returned **404**, as did the 13:59 follow-up. At 20:04 Europe/Oslo, that ordinary
+public page showed **SessionScout 0.1.0 — Forever**, filename
+`SessionScout-0.1.0-forever.zip`, file ID **9222143**, **Release**, **Forever
+1.60.1**, **46.2 KB** and a download link ending in `/download/9222143`.
+The page displayed **3 file downloads** and **9 project downloads**. These are
+displayed counters, not verified installations or independent users; no download
+was performed during this check. See the
 [submission and status record](../data/curseforge-release-0.1.0-submission-20261017.json).
-Existing alpha packages and tags are preserved. GitHub download links point to
-verified 0.1.0; CurseForge links remain on verified alpha.3. Apply the prepared
-0.1.0 project description and change the CurseForge download route only after
-this exact file is approved and its ordinary public file page is verified.
+Existing alpha packages and tags are preserved. Download instructions now use
+the verified 0.1.0 CurseForge file as the primary route, with GitHub as an
+alternate. The exact-file public availability gate for the prepared 0.1.0
+project description is satisfied.
 Do not infer outreach permission from this decision.
 
 Keep the broader client checklist as follow-up work. Disclose unobserved real
