@@ -18,7 +18,7 @@ A direct Edit callback opened the editor, but physical budget/Edit/Cancel input
 did not respond reliably and remains unresolved. This is not a full client pass.
 It has not been published as a release.
 
-## 0.1.0-alpha.3 — experimental GitHub prerelease, 2026-10-17
+## 0.1.0-alpha.3 — experimental CurseForge/GitHub alpha, 2026-10-17
 
 - Add a visible **Custom minutes** field and **Apply** button for session budgets
   from 1 to 240 minutes. Enter also applies the value; presets and `/scout 120`
@@ -45,7 +45,11 @@ and both uploaded asset digests match the prepared draft. The previous alpha
 packages remain unchanged. After explicit owner authorization, the same ZIP was
 submitted to CurseForge on 17 October at 09:27 Europe/Oslo as file **9219847**,
 Alpha for 1.60.1, with automatic publication after approval. The initial file row
-showed **Uploading**; this does not confirm approval or public availability.
+showed **Uploading**. At approximately 10:20 Europe/Oslo, the author portal
+showed **Approved** and the [public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
+rendered the expected name, Alpha channel, Forever 1.60.1 and Download link.
+The project description and README now link that file. No package was rebuilt
+or uploaded again; this availability does not establish player adoption.
 Alpha.2 remains available there. See the [release scope](docs/CLIENT_TESTING.md)
 and [submission record](data/alpha3-curseforge-submission-20261017.json).
 

@@ -6,7 +6,7 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**Experimental alpha.3 is available on GitHub for Forever 1.60.1.** It adds a
+**Experimental alpha.3 is available on CurseForge and GitHub for Forever 1.60.1.** It adds a
 visible Custom minutes control. Its automated checks passed; actual-client
 rendering and input checks for that control are still pending. The earlier
 alpha.2 remains publicly available on CurseForge, with scoped client checks on
@@ -17,8 +17,8 @@ Download links below still point to alpha.3/alpha.2. The new session and task-li
 views have been observed in the actual game, but physical input testing is
 unresolved. Alpha.4 has not been published as a release.
 
-[Download experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
-[Previous alpha.2 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
+[Download experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
+[GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
@@ -32,7 +32,8 @@ and priorities are entered manually; the 60-minute dungeon stays outside this
 ## Use
 
 1. Download `SessionScout-0.1.0-alpha.3-forever.zip` from the
-   [experimental GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever).
+   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
+   or the [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
@@ -111,9 +112,11 @@ The published alpha.3 passed 62 automated Lua model, mocked integration and
 Python tooling checks. The unreleased alpha.4 checkout passes 71. These support
 logic and packaging validation and do not replace actual client checks.
 
-Both CurseForge releases use the **Alpha** channel. On the project's website,
+The CurseForge releases use the **Alpha** channel. On the project's website,
 open **Files** and set **Show alpha files** to **Show** if the list appears empty.
-The CurseForge link above opens alpha.2; alpha.3 is currently available on GitHub.
+The link above opens experimental alpha.3. The
+[previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
+remains available.
 Availability through the CurseForge client app has not been tested.
 
 ## Development

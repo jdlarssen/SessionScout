@@ -17,6 +17,7 @@
   "observedRowStatus": "Uploading",
   "detailReadback": "Experimental name, Alpha channel, 1.60.1 and complete changelog matched the prepared submission",
   "publicAvailabilityVerified": false,
+  "laterPublicationObservation": "data/publication-observation-20261017.json",
   "previousFilesUnchanged": [9132600, 9128965],
   "screenshot": ".tools/alpha3-curseforge-submitted-20261017.png"
 }

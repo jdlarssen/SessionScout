@@ -11,19 +11,26 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Newest submitted file: **experimental alpha.3**, ID **9219847**, submitted on
+Newest verified public file: **experimental alpha.3**, ID **9219847**, submitted on
 17 October at 09:27 Europe/Oslo after the owner approved the exact upload.
 The previously published GitHub ZIP was reused with the same SHA256, Alpha,
 1.60.1 and automatic publication after approval. The initial author row showed
-**Uploading**; approval/public availability is not yet established.
-[Submission evidence](../data/alpha3-curseforge-submission-20261017.json).
+**Uploading**. At approximately 10:20 Europe/Oslo, the author portal showed
+**Approved**, and the ordinary public file page rendered its name, version,
+Alpha channel and Download link. The project displayed three downloads and
+the file one; these counters do not establish independent players or adoption.
+Primary download route: https://www.curseforge.com/wow/addons/sessionscout/files/9219847
+The public description's Getting started paragraph was updated to this file
+and verified by its rendered link and screenshot. No repeat upload or download
+was requested. [Submission](../data/alpha3-curseforge-submission-20261017.json)
+and [publication observation](../data/publication-observation-20261017.json).
 
-Newest verified public CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
+Previous public CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
 At approximately 19:57 Europe/Oslo on 12 October 2026, the author portal showed
 **Approved**, with one download. The public project and both alpha files were
 visible; the project displayed two total downloads. These are observed counters,
 not evidence of use or adoption.
-Primary download route: https://www.curseforge.com/wow/addons/sessionscout/files/9132600
+Previous-file route: https://www.curseforge.com/wow/addons/sessionscout/files/9132600
 On the website's **Files** tab, set **Show alpha files** to **Show**; the default
 Hide setting showed no results. Availability through the CurseForge client app
 has not been tested.
@@ -153,10 +160,11 @@ file.
 
 ## Getting started
 
-Download the Forever alpha from the
-[alpha.2 file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600).
-If you browse Files, set **Show alpha files** to **Show**; the default view hides
-these early builds.
+Download the [experimental alpha.3 for Forever 1.60.1](https://www.curseforge.com/wow/addons/sessionscout/files/9219847).
+It is approved and available here on CurseForge. If you browse Files, set
+**Show alpha files** to **Show**; the default view hides these early builds. The
+[previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
+remains available.
 
 **More than 60 minutes?** Alpha.2 already accepts `/scout 120` for a two-hour budget
 (1–240 whole minutes). The

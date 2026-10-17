@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observationWindowLocal": "2026-10-17 approximately 10:20-10:24 Europe/Oslo",
+  "method": "Rendered author portal and ordinary public file/description pages in the authenticated in-app browser; no native desktop control",
+  "project": {
+    "id": 1738896,
+    "url": "https://www.curseforge.com/wow/addons/sessionscout",
+    "displayedTotalDownloads": 3,
+    "anonymousAccessIndependentlyVerified": false
+  },
+  "file": {
+    "id": 9219847,
+    "version": "0.1.0-alpha.3-forever",
+    "displayName": "SessionScout 0.1.0-alpha.3 — Forever (experimental)",
+    "filename": "SessionScout-0.1.0-alpha.3-forever.zip",
+    "moderationStatus": "Approved",
+    "releaseChannel": "Alpha",
+    "gameVersion": "1.60.1",
+    "flavor": "Forever",
+    "displayedDownloads": 1,
+    "publicDetailUrl": "https://www.curseforge.com/wow/addons/sessionscout/files/9219847",
+    "publicDownloadHref": "https://www.curseforge.com/wow/addons/sessionscout/download/9219847",
+    "publicRouteRendered": true,
+    "downloadRequestedDuringObservation": false
+  },
+  "descriptionUpdate": {
+    "change": "Getting started now links the approved experimental alpha.3; previous alpha.2 and GitHub mirror remain available",
+    "saveObserved": "Save returned to disabled; the public description then rendered the new paragraph and exact file link",
+    "publicLinkVerified": true,
+    "screenshot": ".tools/curseforge-alpha3-approved-link-20261017.jpg",
+    "beforeText": ".tools/curseforge-description-before-alpha3-approval.txt",
+    "afterText": ".tools/curseforge-description-alpha3-approved.txt"
+  },
+  "packageChanged": false,
+  "repeatUploadPerformed": false,
+  "alpha4Published": false,
+  "limitations": [
+    "The observation timestamp is not the unknown approval timestamp.",
+    "Displayed download counters do not identify unique players, successful installations or repeat use.",
+    "Publication does not establish first place or product demand.",
+    "CurseForge client-app availability and anonymous access were not independently tested."
+  ]
+}
