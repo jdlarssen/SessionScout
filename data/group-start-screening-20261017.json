@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "inspectedOn": "2026-10-17",
+  "hypothesis": "Reduce the delay between forming a Forever dungeon group and starting the dungeon",
+  "decision": "Park a new group-start addon; reject a generic location/filter clone and unsupported automatic ETA or complete preparation promises",
+  "evidenceType": "Reported experiences from one public discussion, author-described alternatives, and a bounded static source audit; no recruited players or runtime comparison",
+  "limitations": [
+    "These reports share one discussion and are not an independent cohort or prevalence estimate.",
+    "Relative Reddit timestamps varied between retrievals; exact incident and publication dates were not independently established.",
+    "Competitor descriptions establish advertised coverage, not current runtime performance.",
+    "No incident establishes that a clearly agreed departure and the applicable existing tools were tried and failed.",
+    "Unknown outcomes, missing API values and unobserved player intentions remain unknown."
+  ],
+  "incidents": [
+    {
+      "id": "GS01",
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/please_be_near_the_dungeon_or_around_the_area/",
+      "reportedSituation": "The original poster describes a third dungeon with about 30 minutes of arrival waiting; one BFD participant was walking through the Barrens without needed flight paths.",
+      "outcome": null,
+      "baseline": "Check available location and ask about the route before agreeing on departure.",
+      "residualUnknown": "Location does not establish a player's discovered flight network or intention; no demonstrated failure of the explicit-agreement baseline."
+    },
+    {
+      "id": "GS02",
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/comment/pef1gkk/",
+      "reportedSituation": "A warlock reports travelling for 20 minutes and then finding the nearest potential summoning helper an estimated 20 minutes away.",
+      "outcome": null,
+      "baseline": "Agree on two named helpers and their availability before relying on a summon.",
+      "residualUnknown": "The report does not distinguish unavailable helpers from missing assignment, willingness or location information."
+    },
+    {
+      "id": "GS03",
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/comment/peez80a/",
+      "reportedSituation": "A participant reports roughly 15 minutes of waiting while nearby group members continued questing near BFD.",
+      "outcome": null,
+      "baseline": "Explicitly agree when questing ends and departure begins.",
+      "residualUnknown": "Proximity is insufficient, but it is unknown whether an agreement was absent, changed or ignored."
+    },
+    {
+      "id": "GS04",
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/comment/pef1ya2/",
+      "reportedSituation": "A warlock asked to find summoning helpers left for another group.",
+      "outcome": "The commenter reports entering the dungeon approximately three minutes later.",
+      "baseline": "Decline incompatible group expectations and find another group.",
+      "residualUnknown": "This worked for one reported player; availability and role dependence are unknown."
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/comment/pefn445/",
+      "type": "Advice, not an observed resolution",
+      "finding": "A reply suggests naming the two nearest helpers and asking when they will arrive."
+    },
+    {
+      "source": "https://www.reddit.com/r/wowforever/comments/1wzuqwc/comment/pefn544/",
+      "type": "Tradeoff argument, not another measured incident",
+      "finding": "Requiring applicants to wait at an entrance can transfer waiting cost to people who have not yet found a group."
+    }
+  ],
+  "alternatives": [
+    {
+      "source": "https://www.curseforge.com/wow/addons/lfg-forever",
+      "authorClaims": "Role/class/playstyle/level filtering, player locations and whisper management",
+      "testedHere": false
+    },
+    {
+      "source": "https://www.curseforge.com/wow/addons/whereyouat",
+      "authorClaims": "Listing leader's current zone, explicitly limited to the leader information the listing provides",
+      "testedHere": false
+    },
+    {
+      "name": "Native location information, direct chat and a defined ready check",
+      "testedHere": false,
+      "finding": "A relevant comparison baseline, not proof these incidents would have been solved."
+    }
+  ],
+  "sourceAudit": {
+    "repository": "https://github.com/Gethe/wow-ui-source",
+    "provenance": "Blizzard-authored UI/API source redistributed by Gethe; not a Blizzard-operated repository",
+    "commit": "172a387e3ab85b26e6640d3058d5ec1e6ccd4c63",
+    "labelledBuild": "1.60.1 (70450)",
+    "runtimeTested": false,
+    "boundaries": [
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_APIDocumentationGenerated/MapDocumentation.lua",
+        "finding": "GetBestMapForUnit and GetPlayerMapPosition cover the player and party members; values may be nil. No applicant coordinates or arrival-time guarantee."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_APIDocumentationGenerated/LFGListInfoDocumentation.lua",
+        "finding": "Search result player information has nullable areaName; the shared structure does not prove every member's current area is populated."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_ChatFrameBase/Shared/SlashCommands.lua",
+        "finding": "The shared READYCHECK handler requires leader or assistant authority and calls C_PartyInfo.DoReadyCheck. The full Forever dialog was not traced or tested. A response is a player declaration, not verified preparation."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_APIDocumentationGenerated/QuestLogDocumentation.lua",
+        "finding": "Local quest checks and IsUnitOnQuest for a known quest exist; they do not provide an authoritative preparation catalog or another member's full completed-prerequisite history."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_APIDocumentationGenerated/TaxiMapDocumentation.lua",
+        "finding": "Local flight-node APIs do not establish inspection of another member's discovered network."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_APIDocumentationGenerated/IncomingSummonDocumentation.lua",
+        "finding": "Incoming-summon status describes an actual summon, not the availability of two willing future helpers."
+      },
+      {
+        "sourcePath": "Interface/AddOns/Blizzard_GroupFinder_VanillaStyle/Blizzard_GroupFinder_VanillaStyle.toc",
+        "finding": "The vanilla-style finder includes camelot; the other Blizzard_GroupFinder TOC excludes it. Do not import Retail applicant-queue assumptions."
+      }
+    ]
+  },
+  "reopenOnlyWhen": "A concrete new case identifies a costly failure after an explicit departure/helper agreement and applicable existing tools, with obtainable information or an interaction that could prevent it. Count leader administration, applicant waiting and group changes as costs.",
+  "notEstablished": ["A differentiated product benefit", "Time saved", "Voluntary reuse", "Market size", "A route to first place"]
+}

@@ -50,6 +50,83 @@ credible expansion path beyond the initial Forever audience. None currently
 establishes a route to first place. Spread the search across problems; concentrate
 development only after one earns stronger comparative evidence.
 
+### Group-start comparison completed — 17 October 2026
+
+**Decision: park a new group-start addon.** The bounded comparison found four
+reported incidents in one discussion, not independent player tests. Travel
+without needed flight paths, missing summoning helpers and nearby players still
+questing illustrate different causes of delay. One warlock reports solving their
+case by changing groups. Outcomes are absent for the other three cases.
+The [case and source ledger](../data/group-start-screening-20261017.json) preserves
+the individual links, unknowns, alternatives and technical boundaries.
+
+LFG Forever already advertises locations, filtering and whisper management;
+WhereYouAt documents leader-location coverage and its limitation. A location
+clone would add little to these descriptions. Proximity cannot establish a
+departure agreement, and an entrance-readiness requirement may shift waiting
+from the group to applicants. None of the cases establishes a costly failure
+after a clear departure/helper agreement plus the applicable existing tools.
+That is insufficient evidence to invest in a new implementation, not proof that
+the coordination problem is solved for everyone.
+
+A static audit used Blizzard-authored source in the Gethe mirror at
+[`172a387e3ab85b26e6640d3058d5ec1e6ccd4c63`](https://github.com/Gethe/wow-ui-source/commit/172a387e3ab85b26e6640d3058d5ec1e6ccd4c63),
+labelled 1.60.1 (70450), matching the reported installed executable build. This
+updates the reference for this investigation only; it does not retroactively
+validate the older 70338 client observations or test the current client.
+
+| Available source evidence | Product boundary |
+| --- | --- |
+| [Map APIs](https://github.com/Gethe/wow-ui-source/blob/172a387e3ab85b26e6640d3058d5ec1e6ccd4c63/Interface/AddOns/Blizzard_APIDocumentationGenerated/MapDocumentation.lua) describe player/party positions and nullable results. | Unknown location stays unknown; location is not travel time or intention. |
+| [The shared ready-check command](https://github.com/Gethe/wow-ui-source/blob/172a387e3ab85b26e6640d3058d5ec1e6ccd4c63/Interface/AddOns/Blizzard_ChatFrameBase/Shared/SlashCommands.lua#L1275) checks leader/assistant authority. | Native yes/no declarations are a baseline to beat. Complete Forever dialog inclusion and current runtime behaviour remain untested. |
+| Quest and flight-node APIs expose limited observations, chiefly local state; incoming-summon APIs describe an actual summon. | No audited basis for inspecting the whole party's preparation, estimating dependable arrival times, or identifying willing future helpers. |
+| Forever uses the vanilla-style finder; the other finder excludes camelot. | Shared Retail applicant structures alone cannot establish Forever behaviour. |
+
+Reopen only on a specific failure that survives the existing workflow comparison
+and has an obtainable missing fact or preventable interaction. A later comparison
+must include leader administration, applicant waiting and group changes. No new
+addon, automatic ETA prototype, installation, message or client interaction was
+performed. The follow-on interrupted-activity screen is recorded below. That is
+discovery work, not a commitment to build H3 or a new SessionScout feature.
+
+### Interrupted-activity screen completed — 17 October 2026
+
+**Decision: park a new generic recap addon.** Three concrete first-person
+reports describe returning to quests after an absence. They are historical
+Retail reports, not demonstrated Forever needs, a prevalence sample or a current
+comparison with our product. Their missing information concerns quest-chain
+position and chronology more than a record of the last session.
+
+| Report | Observed report and outcome | Implication |
+| --- | --- | --- |
+| [Terokkar after months away](https://www.reddit.com/r/wow/comments/kcqfii/is_there_a_way_to_see_where_you_left_off_on_a/) | Four of five chapters complete; the next quest giver was unclear. The author's update describes Wowhead lookup and visiting NPCs. | Historical chain state and next-step guidance matter; no timed comparison or subsequent addon result. |
+| [Shadowlands and Legion return](https://www.reddit.com/r/wow/comments/1lhri0o/any_trick_to_get_back_in_older_expansions_where/) | Empty quest log and forgotten expansion/class-hall progress. Replies suggest BtWQuests and AllTheThings; no original-player resolution is confirmed. | A newly installed event journal cannot by itself supply unrecorded events; historical quest state may be recoverable separately. |
+| [Dragonflight content order](https://www.reddit.com/r/wow/comments/1qblh54/comment/nzbhtbk/) | The returning player reports using an external list to play maximum-level content in order after a straightforward leveling campaign. | Intended narrative order is different from last-session recall. |
+
+[BtWQuests](https://www.curseforge.com/wow/addons/btw-quests) directly advertises
+chain progression and subsequent-quest guidance. Its actual accuracy and Forever
+applicability were not tested here. [Wayscribe](https://www.curseforge.com/wow/addons/wayscribe)
+already advertises a Forever recap, notes and map markers. Its description says
+pre-install activity is absent from the journal, but `/ws rebuild` also advertises
+adding previously finished quest chains. Therefore its cold-start boundary must
+not be inflated into a claim that it cannot recover any historical quest state.
+The native quest log and personal notes remain comparison baselines, not presumed
+solutions to every prerequisite or phasing problem.
+
+A [BtWQuests user's report](https://www.reddit.com/r/wow/comments/1qblh54/comment/nzcdfq5/)
+describes backtracking around the Earthen unlock and an absent quest-starting
+poster despite using that addon. Exact prerequisites, the cause and the eventual
+poster resolution are unknown. Preserve this narrower problem without treating
+it as proof of a recap gap or as a current reproducible defect.
+
+**Next bounded task:** compare one resolved missing-next-quest case with exact
+quest IDs and known prerequisites against native guidance and the applicable
+existing quest tool. Prefer a Classic/Forever case; do not transfer Retail
+assumptions without checking applicability. If the evidence cannot distinguish
+missing data, presentation and a game bug, make no product claim. Stop if existing
+tools suffice or the proposal depends on invented intent. This screen justifies
+no new journal, maintained quest database, client test or speculative feature.
+
 ## Owner usability report — 15 October 2026
 
 The owner reported having entered tasks and having more than 60 minutes available,
