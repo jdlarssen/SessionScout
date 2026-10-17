@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "version": "0.1.0-alpha.4",
+  "clientVersion": "1.60.1.70450",
+  "sourceCommit": "d94ca15034c3a65117692042dd3db0d365108c1e",
+  "installedAt": "2026-10-17T08:03:10.4954189Z",
+  "installationRecord": "backups/20261017T0803103094536Z-2300a35520844cdc842a9f763e9a1a5c/installation.json",
+  "previousVersionPreserved": true,
+  "savedVariablesBackup": ".tools/evidence/client/alpha4-20261017/before",
+  "installedFiles": [
+    "file:Core.lua:69A01E4A56E8904944C2EA995A0D83794385A7FA5E5DC356727053979DE64534",
+    "file:LICENSE:2F58BCCB770EFEF5141F824A3457A0DAF09DF7F7E0B581283A57F8950542D986",
+    "file:Model.lua:B9FD1421496CE2F24E7E374151AA7C2C829FD61A75EB254920D279A0076B6FAD",
+    "file:SessionScout.toc:32E7CD99D553F73F3F4992D46259F7F9ACE5BA5F6EA400481DAF1B6D80643E2F",
+    "file:UI.lua:71D2FEE814145E0E7B9E42675DAAA31C3F83B5A89879AD3F9AC4057CB55B7CE0"
+  ],
+  "nativeTest": "Limited actual-client rendering observed; physical input validation unresolved",
+  "screenUseEndedAtApproximate": "2026-10-17T10:14:00+02:00",
+  "inputCollision": {
+    "observed": true,
+    "response": "Stopped native input until the other authorized chat reported releasing WoW; then resumed this owner's test window",
+    "anotherChatMessaged": false
+  },
+  "runtime": {
+    "loadedAfter": "Another authorized chat reloaded WoW after installation; the alpha.4 layout was subsequently observed",
+    "observations": [
+      "/scout opened the new session view with the existing 90-minute budget and a matching recommendation",
+      "A physical click opened My tasks; the list displayed 7 unfinished and 4 completed tasks",
+      "The editor rendered with the selected task's existing values when its OnClick callback was invoked directly",
+      "Escape closed the addon; the final observed state had no open chat input"
+    ],
+    "unresolved": [
+      "Clicks on the custom budget field did not visibly focus it; no replacement value was typed or applied",
+      "Physical Edit and Cancel clicks did not produce the expected transition",
+      "No visible Lua error was observed, but this is not a full error-log audit",
+      "The test does not distinguish input delivery from an addon interaction defect"
+    ],
+    "diagnostic": {
+      "method": "pcall of the first task row Edit button's OnClick handler",
+      "result": true,
+      "interpretation": "The callback opened the editor; this does not validate physical clicking"
+    },
+    "dataActions": "No task was added, saved, completed, undone or deleted; no budget or reminder change was applied",
+    "postTestPersistenceCheck": "Not performed; no extra reload or logout was requested after the bounded test"
+  },
+  "localScreenshots": [
+    ".tools/evidence/client/alpha4-20261017/tasks.png",
+    ".tools/evidence/client/alpha4-20261017/editor-diagnostic.png"
+  ],
+  "nextCheck": "In a fresh screen window, distinguish physical input delivery from addon behavior before testing budget changes and disposable task mutations; do not reinstall unchanged alpha.4",
+  "publicRelease": false
+}

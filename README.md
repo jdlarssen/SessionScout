@@ -13,8 +13,9 @@ alpha.2 remains publicly available on CurseForge, with scoped client checks on
 Forever 1.60.1.70338.
 
 The development checkout contains an **unreleased alpha.4 GUI revision**.
-Download links below still point to alpha.3/alpha.2; the new interface has not
-yet been validated in the actual game or published as a release.
+Download links below still point to alpha.3/alpha.2. The new session and task-list
+views have been observed in the actual game, but physical input testing is
+unresolved. Alpha.4 has not been published as a release.
 
 [Download experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
 [Previous alpha.2 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
@@ -83,9 +84,12 @@ visually verified.
 
 Alpha.3 adds the custom-budget field and clearer no-fit messages. Its new-control
 rendering, keyboard entry and focus behavior remain unverified in the actual
-client. Installation was recorded on **1.60.1.70374**; the current executable
-reports **1.60.1.70450**, which has no recorded runtime check. The automated
-regressions and earlier 70338 checks do not establish these pending results.
+client. Alpha.3 installation was recorded on **1.60.1.70374**. The development
+alpha.4 was subsequently installed and observed on **1.60.1.70450**: the session
+and task-list views rendered, and direct invocation of Edit opened the editor.
+Physical budget/Edit/Cancel input remains unresolved. Automated regressions,
+callback diagnostics and earlier 70338 checks do not establish these pending
+interaction results.
 
 Alpha.2 adds a window-ordering correction: the planner raises as one window when
 opened, and periodic refreshes do not change foreground order. Scoped overlap

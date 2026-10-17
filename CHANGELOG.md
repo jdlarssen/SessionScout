@@ -11,9 +11,12 @@
 This revision responds to the owner's GUI/UX feedback. It retains the current
 selection model and saved-data format. All 71 automated checks passed (15 model,
 37 mocked integration, 19 Python), including nine new UI workflow regressions.
-A local package and source-derived layout previews were produced. It has not
-been installed in the game or published as a release. Actual-client rendering
-and keyboard/interaction checks remain pending.
+A local package and source-derived layout previews were produced. It was
+installed for an authorized client test on 17 October. After resolving concurrent
+screen use, the session and task-list views rendered in Forever 1.60.1.70450.
+A direct Edit callback opened the editor, but physical budget/Edit/Cancel input
+did not respond reliably and remains unresolved. This is not a full client pass.
+It has not been published as a release.
 
 ## 0.1.0-alpha.3 — experimental GitHub prerelease, 2026-10-17
 
@@ -31,7 +34,8 @@ cases reproduce that situation and related input/refresh behavior. All 62 model,
 mocked integration and Python checks passed, with Lua 5.1 syntax validation.
 Installed locally on 15 October in Forever 1.60.1.70374. Actual-client rendering,
 keyboard entry and focus checks for this new control are still pending, and the
-current client build 1.60.1.70450 has no recorded runtime check.
+current client build 1.60.1.70450 had no recorded runtime check at submission.
+Later limited alpha.4 observations are recorded separately above.
 
 Published as an explicitly experimental
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever)

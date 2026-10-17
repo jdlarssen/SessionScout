@@ -1,18 +1,42 @@
 # Release validation in the actual game
 
-Status: **scoped alpha smoke checks and final restoration passed; extended validation incomplete**.
+Status: **earlier scoped alpha checks passed; alpha.4 rendering observed, physical input unresolved**.
 Automated tests are not a substitute for these checks.
 Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
-## GUI revision — alpha.4; local development, client check pending
+## GUI revision — alpha.4; limited client observations, input unresolved
 
 The owner's 17 October feedback says the GUI/user experience is not good.
 The local correction separates the session planner and task administration,
 uses a contextual editor and completed-task filter, and improves the no-fit
 path. Model selection rules and the saved-data format are unchanged. Source
 inspection and mocked workflows cannot establish visual quality or real-client
-focus behaviour. No alpha.4 installation or client test is recorded yet.
+focus behaviour. Alpha.4 was installed on 17 October at 10:03 Europe/Oslo in
+Forever 1.60.1.70450 after the owner granted a fresh screen window. The guarded
+installer preserved the previous addon directory and verified installed hashes;
+the on-disk SessionScout SavedVariables were separately backed up. Another chat
+was simultaneously controlling WoW, so input was stopped after a mixed command
+appeared. Testing resumed only after that chat reported releasing the game.
+Its reload after installation had loaded alpha.4; the new layout was observed
+without another reload by this chat. Screen use ended at approximately 10:14.
+See `data/alpha4-client-validation-20261017.json` for the scoped record.
+
+`/scout` opened the session view with the existing 90-minute budget and a matching
+recommendation. A physical click opened My tasks, which displayed 7 unfinished
+and 4 completed tasks. Custom-budget clicks did not visibly establish focus,
+and physical Edit/Cancel clicks did not produce the expected transition.
+No replacement budget was typed or applied. A diagnostic `pcall` of the first
+row Edit button's OnClick handler returned true and opened the editor with the
+existing task values. This validates that callback invocation only; it does not
+pass physical clicking or exclude an input-delivery problem. No visible Lua
+error was observed, but a full error-log audit was not performed.
+
+No task was added, saved, completed, undone or deleted, and no budget or reminder
+change was applied. Escape closed the addon; the final observed state had no
+open chat input. No additional reload/logout was performed to verify persisted
+data after the test. Native screenshots are kept locally under
+`.tools/evidence/client/alpha4-20261017/` because they include unrelated game UI.
 
 Local validation passed: 15 model, 37 mocked integration and 19 Python tests,
 plus Lua 5.1 syntax checks. Nine new workflows cover session-first task creation,
@@ -30,8 +54,11 @@ aids and do not complete the actual-client checks below.
 Local package: `dist/SessionScout-0.1.0-alpha.4-forever.zip`.
 SHA256: `afb902838370b390b8ee64439e446d99a5456b358a02bfbaefa40f37b9583052`.
 
-When a fresh short screen window is explicitly granted, prepare the existing
-guarded install and backup first, then perform one reload and a compact check:
+Alpha.4 is already installed and loaded. Do not reinstall it unchanged. When a
+fresh short screen window is explicitly granted, first distinguish physical
+input delivery from addon behavior, then finish the compact check below.
+The owner can also provide ordinary mouse-click observations during their own
+use; no repeated screen request is needed while they are playing.
 
 1. Open `/scout`. Verify the session view is readable and task-administration
    controls do not obscure the suggested activities.
@@ -93,9 +120,11 @@ checks and successful CI run `38776556868` support logic and package readiness.
 Actual rendering, font wrapping, keyboard entry and focus transitions for the
 new control remain unverified. On 17 October the installed client executable
 reported **1.60.1.70450**; this is newer than the **70374** installation record
-and the earlier **70338** runtime checks. No runtime compatibility check on 70450
-is claimed. Installed addon files still match the alpha.3 source. The unchanged
-SavedVariables timestamp does not establish which code has loaded in memory.
+and the earlier **70338** runtime checks. At the alpha.3 release decision, no
+runtime compatibility check on 70450 was claimed and installed files matched
+alpha.3. The later alpha.4 installation and limited observations are recorded
+above. An unchanged SavedVariables timestamp does not establish which code has
+loaded in memory.
 
 These limits permit opt-in Alpha availability, not Beta/Release promotion or a
 full compatibility claim. The existing alpha.2 remains available. A convenient

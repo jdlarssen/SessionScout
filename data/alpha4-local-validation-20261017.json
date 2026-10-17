@@ -34,7 +34,8 @@
     "bytes": 47347,
     "sha256": "afb902838370b390b8ee64439e446d99a5456b358a02bfbaefa40f37b9583052"
   },
-  "installed": false,
+  "installed": true,
   "publishedAsRelease": false,
-  "actualClientValidation": "Owner deferred the proposed screen window to continue playing; wait for a fresh explicit window"
+  "actualClientValidation": "Installed and observed in Forever 1.60.1.70450: session and task-list views rendered, and direct Edit callback opened the editor. Physical budget/Edit/Cancel input remains unresolved; this is not a full client pass",
+  "clientRecord": "data/alpha4-client-validation-20261017.json"
 }
