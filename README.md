@@ -117,7 +117,11 @@ open **Files** and set **Show alpha files** to **Show** if the list appears empt
 The link above opens experimental alpha.3. The
 [previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
 remains available.
-Availability through the CurseForge client app has not been tested.
+This Alpha-only project does not yet meet CurseForge's
+[requirement for a Release file before app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
+Use the website download and manual installation above. Actual Forever-app
+installation/update support also remains unverified. The next release decision
+is scoped in [Release readiness](docs/RELEASE_READINESS.md).
 
 ## Development
 

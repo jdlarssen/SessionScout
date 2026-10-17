@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "inspectedOn": "2026-10-17",
+  "projectId": 1738896,
+  "fileId": 9219847,
+  "moderationAlignment": {
+    "source": "https://support.curseforge.com/support/solutions/articles/9000197279-moderation-policies",
+    "sourceModifiedDateDisplayed": "2026-10-13",
+    "finding": "External file-download links are not allowed; cross-hosting guidance is also specified",
+    "projectDescriptionChange": "Replaced GitHub prerelease download link with the approved CurseForge alpha.3 file page",
+    "fileChangelogChange": "Removed the external GitHub download sentence; retained previous CurseForge alpha and source/validation/issues links",
+    "publicDescriptionVerified": true,
+    "publicFileChangelogVerified": true,
+    "verification": "Ordinary rendered pages; exact CF file links retained and no GitHub release URL remained on either page after saving. File page required a later reload before reflecting the edit",
+    "screenshot": ".tools/curseforge-native-download-links-20261017.jpg",
+    "beforeAfterText": [
+      ".tools/curseforge-description-before-native-links.txt",
+      ".tools/curseforge-description-native-links.txt",
+      ".tools/curseforge-alpha3-changelog-before-native-links.txt",
+      ".tools/curseforge-alpha3-changelog-native-links.txt"
+    ],
+    "packageChanged": false,
+    "channelChanged": false,
+    "repeatUpload": false,
+    "githubReleaseChanged": false
+  },
+  "appEligibility": {
+    "source": "https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project",
+    "sourceModifiedDateDisplayed": "2024-09-24",
+    "requirement": "At least one Release file before a project syncs to the CurseForge app",
+    "observedFiles": [
+      { "fileId": 9128965, "releaseType": "Alpha" },
+      { "fileId": 9132600, "releaseType": "Alpha" },
+      { "fileId": 9219847, "releaseType": "Alpha" }
+    ],
+    "releaseFileRequirementMet": false,
+    "actualForeverAppWorkflowTested": false,
+    "decisionRecord": "docs/RELEASE_READINESS.md",
+    "releasePromotionPerformed": false
+  },
+  "nextEvidence": "Normal-input and data-preservation client check of already installed alpha.4 in a fresh owner-granted screen window",
+  "nativeScreenUsed": false,
+  "newOutreach": false,
+  "unchangedTestsRerun": false
+}

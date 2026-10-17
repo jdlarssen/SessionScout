@@ -25,6 +25,22 @@ and verified by its rendered link and screenshot. No repeat upload or download
 was requested. [Submission](../data/alpha3-curseforge-submission-20261017.json)
 and [publication observation](../data/publication-observation-20261017.json).
 
+The current Alpha-only project does not meet the
+[official Release-file prerequisite for app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
+Manual website installation is the documented route. A successful Forever-app
+installation/update has not been demonstrated. The [Release decision](RELEASE_READINESS.md)
+requires essential normal-input and data-preservation observations, not a relabel
+for visibility or completion of every peripheral research experiment.
+
+On 17 October, a focused policy review also replaced the GitHub release download
+route in the project description with the approved CurseForge alpha.3 page and
+removed the same external route from the alpha.3 file changelog. Both public
+surfaces were read back after saving. Source, issue and validation links remain;
+the existing GitHub release itself is unchanged. This follows the official
+[external-file-download rule](https://support.curseforge.com/support/solutions/articles/9000197279-moderation-policies).
+No ZIP, supported version or release channel changed. Evidence:
+`../data/distribution-readiness-20261017.json`.
+
 Previous public CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
 At approximately 19:57 Europe/Oslo on 12 October 2026, the author portal showed
 **Approved**, with one download. The public project and both alpha files were
@@ -168,7 +184,7 @@ remains available.
 
 **More than 60 minutes?** Alpha.2 already accepts `/scout 120` for a two-hour budget
 (1–240 whole minutes). The
-[experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever)
+[experimental alpha.3](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
 adds a visible **Custom minutes** field and **Apply**. Its automated checks passed;
 the new controls and current beta build 1.60.1.70450 still need in-client verification.
 
