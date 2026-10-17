@@ -1,8 +1,10 @@
 # First Release decision
 
 Updated 17 October 2026 after the approximately 10:34–10:45 Europe/Oslo client
-follow-up. **0.1.0 is published on GitHub; CurseForge submission is prepared and
-awaits the requested new-file upload authorization.** The tested candidate is the installed alpha.4 GUI,
+follow-up, 13:34 CurseForge submission and 13:37 approval observation.
+**0.1.0 is published on GitHub; CurseForge file 9222143 is approved, but public
+availability remains unverified.**
+The tested candidate is the installed alpha.4 GUI,
 source `d94ca15034c3a65117692042dd3db0d365108c1e`.
 Its [71 automated checks and CI passed](../data/alpha4-local-validation-20261017.json).
 The [initial client observation](../data/alpha4-client-validation-20261017.json)
@@ -17,13 +19,14 @@ needed. Direct callback invocation is not counted as a physical-input pass.
 
 CurseForge's [official submission guide](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project)
 (checked 17 October) requires at least one Release file before a project syncs
-to its app; Release is also its default download channel. The current Alpha-only
-project does not meet that eligibility condition. This is separate from whether
+to its app; Release is also its default download channel. Only Alpha files have
+verified public availability; the approved 0.1.0 Release's ordinary public page
+returned 404 on its first check. This is separate from whether
 the app actually detects, installs and updates addons for the current Forever
 beta. That workflow has not been verified. A Release label alone would not prove
 app availability, successful installation, adoption or popularity.
 
-The next publication decision should rest on the supported product's essential
+The publication decision rests on the supported product's essential
 interactions and data safety. Participant quotas, a measured improvement
 percentage and completion of every peripheral test are research/planning choices,
 not platform Release requirements. They are not prerequisites for this decision.
@@ -81,11 +84,21 @@ artifact, local ZIP and uploaded GitHub asset have the same checksum. See the
 [publication evidence](../data/release-0.1.0-publication-20261017.json).
 No separate alpha.4 publication or unchanged reinstallation is required.
 
-The [release notes](RELEASE_0.1.0.txt) and exact CurseForge upload proposal are
-prepared. The browser's new-file upload confirmation is pending. Existing alpha
-packages and tags are preserved. GitHub download links now point to verified
-0.1.0; CurseForge links remain on verified alpha.3 until its own new file is
-publicly verified. Do not infer outreach permission from this decision.
+After the owner approved the exact upload proposal, the unchanged 47,331-byte
+ZIP was submitted to CurseForge on 17 October at 13:34 Europe/Oslo with the
+[release notes](RELEASE_0.1.0.txt). The author portal's
+[file 9222143](https://authors.curseforge.com/#/projects/1738896/files/9222143)
+initially showed **Release**, **1.60.1**, **Uploading** and **0 downloads**, with
+automatic publication after approval selected. At 13:37 Europe/Oslo it showed
+**Approved**, still Release, 1.60.1 and 0 downloads. The first check of its
+[ordinary public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+returned **404**, so public availability remains unverified. See the
+[submission and status record](../data/curseforge-release-0.1.0-submission-20261017.json).
+Existing alpha packages and tags are preserved. GitHub download links point to
+verified 0.1.0; CurseForge links remain on verified alpha.3. Apply the prepared
+0.1.0 project description and change the CurseForge download route only after
+this exact file is approved and its ordinary public file page is verified.
+Do not infer outreach permission from this decision.
 
 Keep the broader client checklist as follow-up work. Disclose unobserved real
 reset crossings, alternate-character behavior, combat transitions, extreme UI

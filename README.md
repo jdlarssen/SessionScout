@@ -10,8 +10,9 @@ deliberate plan for their next session. Its name and positioning are provisional
 the session/task-management redesign tested as alpha.4. Physical task operations,
 120/90-minute budgets, invalid input and preservation of existing data after
 reload passed on 17 October in Forever 1.60.1.70450. The release differs from
-that tested build only in its version strings. CurseForge currently offers the
-older experimental alpha.3; its 0.1.0 upload is prepared but not submitted.
+that tested build only in its version strings. CurseForge's latest verified public
+file remains experimental alpha.3. Version 0.1.0 was approved as a Release on
+17 October; its public availability has not yet been verified.
 
 [Download 0.1.0 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
 [Previous experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
@@ -111,16 +112,20 @@ The published alpha.3 passed 62 automated Lua model, mocked integration and
 Python tooling checks. The alpha.4 source used for 0.1.0 passed 71. These support
 logic and packaging validation and do not replace actual client checks.
 
-The CurseForge releases use the **Alpha** channel. On the project's website,
+The verified public CurseForge files use the **Alpha** channel. On the project's website,
 open **Files** and set **Show alpha files** to **Show** if the list appears empty.
 The CurseForge link above opens experimental alpha.3; GitHub has 0.1.0. The
 [previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
 remains available.
-This Alpha-only project does not yet meet CurseForge's
+The 0.1.0 Release showed **Approved** at 13:37 Europe/Oslo, but its first ordinary
+public file-page check returned **404**. Public availability remains unverified;
+see the [submission record](data/curseforge-release-0.1.0-submission-20261017.json).
+The project therefore has no verified
+published Release meeting CurseForge's
 [requirement for a Release file before app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
 Use the website download and manual installation above. Actual Forever-app
-installation/update support also remains unverified. The next release decision
-is scoped in [Release readiness](docs/RELEASE_READINESS.md).
+installation/update support also remains unverified. The release decision and
+submission status are recorded in [Release readiness](docs/RELEASE_READINESS.md).
 
 ## Development
 

@@ -19,9 +19,14 @@ Published on [GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.
 at 08:50:56 UTC. The tag resolves to `b4a0f86e10119ca38a6292d1dc8e5627e0b82479`,
 whose CI passed. The CI artifact, local ZIP and uploaded asset all match SHA256
 `ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.
-CurseForge submission is prepared and awaits the requested new-file upload
-authorization; its existing alpha files are unchanged. No CurseForge-app
-installation claim follows from GitHub publication.
+The same package was submitted once to CurseForge as file **9222143**, Release
+for Forever 1.60.1, at 13:34 Europe/Oslo after the owner authorized the concrete
+upload. Automatic publication after approval is selected; the initial author
+row showed Uploading and showed **Approved** at approximately 13:37. The first
+public-file check returned 404 and the public list still showed the alphas;
+public availability and app installation are not yet verified. Existing alpha
+files are unchanged. See the
+[submission record](data/curseforge-release-0.1.0-submission-20261017.json).
 
 ## 0.1.0-alpha.4 — unreleased GUI revision
 

@@ -1,4 +1,4 @@
-# CurseForge listing — approved public alphas
+# CurseForge listing — 0.1.0 approved; public availability pending
 
 Name: **SessionScout**. Slug: **sessionscout**. Project ID: **1738896**.
 Author: **jdlarssen**. Created 11 October 2026; public visibility confirmed
@@ -7,14 +7,19 @@ Public project: https://www.curseforge.com/wow/addons/sessionscout
 Manage: https://authors.curseforge.com/#/projects/1738896/files
 Author preview: https://www.curseforge.com/wow/addons/sessionscout/preview
 
-**0.1.0 preparation update, 17 October:** the first regular Release is published
+**0.1.0 approval update, 17 October:** the first regular Release is published
 on GitHub, tagged `v0.1.0-forever` at `b4a0f86`. Its CI and essential physical
-client checks passed. The CurseForge form is prepared with the name
+client checks passed. After the owner approved the exact upload, the unchanged
+ZIP was submitted to CurseForge at **13:34 Europe/Oslo** with the name
 `SessionScout 0.1.0 — Forever`, Release, 1.60.1, automatic publication after
 approval, no dependencies and `RELEASE_0.1.0.txt` as its Markdown changelog.
-The new ZIP has not been attached or submitted; its upload authorization was
-requested once and remains pending. Do not repeat the question or imply a
-CurseForge Release exists yet. ZIP: `dist/SessionScout-0.1.0-forever.zip`,
+The author portal's [file 9222143](https://authors.curseforge.com/#/projects/1738896/files/9222143)
+initially showed **Release**, **1.60.1**, **Uploading** and **0 downloads**. At
+**13:37 Europe/Oslo** it showed **Approved**, still Release, 1.60.1 and 0 downloads.
+The first check of its [ordinary public file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+returned **404**; public availability remains unverified. See the
+[submission and status record](../data/curseforge-release-0.1.0-submission-20261017.json).
+The existing alpha.3 still showed **Approved**. ZIP: `dist/SessionScout-0.1.0-forever.zip`,
 47,331 bytes, SHA256
 `ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.
 See `data/release-0.1.0-publication-20261017.json`. Keep this project's public
@@ -50,11 +55,13 @@ and verified by its rendered link and screenshot. No repeat upload or download
 was requested. [Submission](../data/alpha3-curseforge-submission-20261017.json)
 and [publication observation](../data/publication-observation-20261017.json).
 
-The current Alpha-only project does not meet the
+Only Alpha files have verified public availability; the approved Release's
+first ordinary public-page check returned 404. The project has no verified published
+Release meeting the
 [official Release-file prerequisite for app synchronization](https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project).
 Manual website installation is the documented route. A successful Forever-app
 installation/update has not been demonstrated. The [Release decision](RELEASE_READINESS.md)
-requires essential normal-input and data-preservation observations, not a relabel
+rests on essential normal-input and data-preservation observations, not a relabel
 for visibility or completion of every peripheral research experiment.
 
 On 17 October, a focused policy review also replaced the GitHub release download
