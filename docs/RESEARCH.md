@@ -2,9 +2,7 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
-## Horizontal strategy correction — 17 October 2026
-
-### Additional bounded screen: performance troubleshooting
+## Performance troubleshooting screen — 17 October 2026
 
 After the essential SessionScout GUI check and first GitHub Release, one bounded
 screen examined performance attribution, which the earlier H4 error-parser work
@@ -26,6 +24,8 @@ reproducible Forever incident where the native workflow and an applicable
 profiler leave an obtainable, useful fact missing. The
 [source ledger](../data/performance-hypothesis-screening-20261017.json) records
 scope and unknowns. No product-value, prevalence or superiority claim follows.
+
+## Horizontal strategy correction — 17 October 2026
 
 The owner challenged concentration on SessionScout. The challenge is supported
 by the work record: several hypotheses existed in this document, but completed
