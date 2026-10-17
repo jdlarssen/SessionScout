@@ -60,6 +60,16 @@ input delivery from addon behavior, then finish the compact check below.
 The owner can also provide ordinary mouse-click observations during their own
 use; no repeated screen request is needed while they are playing.
 
+Offline follow-up found no actionable callback or overlapping-panel defect:
+there is no OnUpdate handler, tabs and nested buttons share the same constructor,
+and refresh does not clear focus or change views. Actual frame levels and mouse
+delivery remain unmeasured. In the next authorized window, trace one Edit button's
+OnMouseDown, OnMouseUp and OnClick before one physical click. No received events
+points to delivery/interception; down/up without a click narrows recognition;
+a received click with a failing callback supplies an actual Lua error. Keep the
+instrumentation temporary and task data unchanged. Do not call the handler
+directly again as a substitute for this missing input observation.
+
 1. Open `/scout`. Verify the session view is readable and task-administration
    controls do not obscure the suggested activities.
 2. With a real unfinished 120-minute task, apply 120, then 90. The first can

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "inspectedOn": "2026-10-17",
+  "hypothesis": "Explain why a desired quest cannot be started and identify a verified missing prerequisite",
+  "decision": "Park a new generic prerequisite addon; retain this historical eligibility case without treating it as a current Forever product gap",
+  "evidenceType": "One resolved player report, historical static addon-source inspection and current author-described alternatives; no recruited participant or runtime comparison",
+  "case": {
+    "id": "QP01",
+    "flavor": "Classic Season of Discovery",
+    "reportedDate": "2024-11-09",
+    "resolutionDate": "2024-11-10",
+    "dateProvenance": "Dates supplied by the retrieved Reddit search representation; the opened page displayed relative ages",
+    "reportSource": "https://www.reddit.com/r/classicwow/comments/1gnjopp/blood_of_the_lightbringer/",
+    "resolutionSource": "https://www.reddit.com/r/classicwow/comments/1gnjopp/comment/lwcb9vn/",
+    "characterContext": "Level 60 Holy Paladin",
+    "quest": { "id": 85455, "name": "The Blood of the Lightbringer" },
+    "reportedSituation": "The player had the quest-starting item but received a generic unmet-requirements message. They had skipped the Horn of Lordaeron chain because they played healing.",
+    "reportedResolution": "After replies identified that chain, the original player confirmed obtaining the horn and proceeding with Blood of the Lightbringer.",
+    "resolvedCause": "A missing Horn of Lordaeron prerequisite, as reported by the player after completing it; the exact prerequisite completion flag was not established",
+    "counterevidence": "Replies disagree about whether Shield of Righteousness belongs in the required sequence; do not adopt the entire sequence from one comment.",
+    "nativeBaseline": "The reported native error did not identify the missing condition. Other native hints and current client behavior were not inspected.",
+    "competitorUsedByReporter": null,
+    "reproducedHere": false,
+    "foreverApplicability": "Not established; this is a historical SoD incident, not a verified Forever chain or defect"
+  },
+  "historicalQuestieComparison": {
+    "repository": "https://github.com/Questie/Questie",
+    "tag": "v10.6.0",
+    "commit": "8cf4b1f16f4270afa02db32e138b561fe694f9b8",
+    "commitDate": "2024-10-09T06:07:53Z",
+    "commitSource": "https://github.com/Questie/Questie/commit/8cf4b1f16f4270afa02db32e138b561fe694f9b8",
+    "runtimeTested": false,
+    "sources": [
+      {
+        "source": "https://www.curseforge.com/wow/addons/questie/files/5761173",
+        "version": "v10.4.1",
+        "publishedOn": "2024-09-27",
+        "finding": "Release notes explicitly added the Horn of Lordaeron Paladin chain before the reported incident."
+      },
+      {
+        "source": "https://github.com/Questie/Questie/blob/8cf4b1f16f4270afa02db32e138b561fe694f9b8/Modules/Journey/QuestDetailsFrame.lua",
+        "finding": "CreatePreQuestGroup renders interactive quest labels from preQuestSingle and preQuestGroup; prerequisite presentation already existed."
+      },
+      {
+        "source": "https://github.com/Questie/Questie/blob/8cf4b1f16f4270afa02db32e138b561fe694f9b8/Database/Corrections/sodQuestFixes.lua",
+        "finding": "Corrections contain 85455, its subsequent quest 85034, and Horn-chain steps beginning with 85507 and 85508. The inspected 85455 correction has no explicit Horn prerequisite field."
+      },
+      {
+        "source": "https://github.com/Questie/Questie/blob/8cf4b1f16f4270afa02db32e138b561fe694f9b8/Database/Corrections/Automatic/sodBaseQuests.lua",
+        "finding": "The base record identifies 85455 as The Blood of the Lightbringer and likewise contains no explicit Horn prerequisite field."
+      }
+    ],
+    "identifiedQuests": [
+      { "id": 85455, "name": "The Blood of the Lightbringer" },
+      { "id": 85034, "name": "The Ruins of Andorhal", "recordedPreQuestSingle": [85455] },
+      { "id": 85507, "name": "Our Wayward Friend" },
+      { "id": 85508, "name": "Our Wayward Friend", "recordedPreQuestSingle": [85507] }
+    ],
+    "interpretation": "The two inspected records suggest a historical data relationship worth checking, not a missing prerequisite UI or a proven current Questie defect.",
+    "limits": [
+      "The reporter did not identify Questie as an installed or attempted tool.",
+      "Every possible data overlay and the complete effective runtime record were not inspected.",
+      "The exact Horn completion flag required by the game was not verified.",
+      "Current Questie data and behavior were not established by this historical pin.",
+      "Neither success nor failure for this player using Questie has been demonstrated."
+    ]
+  },
+  "foreverAlternatives": [
+    {
+      "name": "Completao!!: Forever",
+      "source": "https://www.curseforge.com/wow/addons/completao-forever",
+      "sourceRepository": "https://github.com/LechuckThePirate/Completao",
+      "versionDisplayed": "v1.2.4-forever",
+      "releaseDateDisplayed": "2026-10-16",
+      "authorClaims": "Prerequisite trees and completion/availability states, unmet requirements, quest search and waypoints to the needed predecessor.",
+      "authorLimitations": "Beta database gaps; incomplete coverage of new dungeons and some unknown in-instance starting coordinates.",
+      "runtimeTested": false,
+      "coverageOfCaseQP01": "Not established; this Forever alternative is not evidence about the historical SoD incident"
+    },
+    {
+      "name": "Forever Dungeon Scout",
+      "source": "https://www.curseforge.com/wow/addons/forever-dungeon-scout",
+      "versionDisplayed": "forever-dungeon-scout-0.11.8-beta.zip",
+      "releaseDateDisplayed": "2026-10-16",
+      "authorClaims": "Ordered dungeon prequests, completed/current/next-step state and pickup locations.",
+      "authorLimitations": "The author notes that beta quests, rewards and values can change between builds.",
+      "runtimeTested": false,
+      "coverageOfCaseQP01": "Not established; dungeon-specific advertising is not proof of this Paladin chain's coverage"
+    }
+  ],
+  "decisionReason": "Existing tools already provide the proposed guidance, while the one resolved historical incident does not establish a present Forever failure after using the best applicable alternative. A possible missing data edge alone does not justify a competing maintained database or generic guide.",
+  "reopenOnlyWhen": "A current resolved Forever incident with exact quest IDs remains confusing after actual use of the applicable existing tool, and the missing reliable information or interaction can be identified. Compare the full lookup/setup burden before implementation.",
+  "notEstablished": [
+    "A current Questie defect",
+    "A phasing or game bug",
+    "Complete native or competitor coverage",
+    "A current Forever unmet need surviving existing tools",
+    "Comparative player benefit or repeat use",
+    "Problem prevalence or a route to first place"
+  ],
+  "actionsNotTaken": ["Installation", "Client testing", "Outreach", "New addon implementation"]
+}

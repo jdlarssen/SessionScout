@@ -127,6 +127,38 @@ missing data, presentation and a game bug, make no product claim. Stop if existi
 tools suffice or the proposal depends on invented intent. This screen justifies
 no new journal, maintained quest database, client test or speculative feature.
 
+### Resolved prerequisite comparison — 17 October 2026
+
+**Decision: park a new generic prerequisite addon.** The bounded comparison
+found one resolved Classic Season of Discovery case: a level-60 Holy Paladin
+could not start **The Blood of the Lightbringer (85455)**. The reported native
+error named no missing condition. The [original player confirmed](https://www.reddit.com/r/classicwow/comments/1gnjopp/comment/lwcb9vn/)
+that completing the previously skipped Horn of Lordaeron chain allowed progress.
+This supports a reported eligibility cause, not a phasing bug. Replies dispute
+part of the prerequisite sequence; the exact required completion flag remains
+unverified. The [case and source ledger](../data/quest-prerequisite-screening-20261017.json)
+preserves that boundary and the precise quest identities.
+
+Questie added the Horn chain before this incident. Static inspection of
+v10.6.0, pinned to `8cf4b1f16f4270afa02db32e138b561fe694f9b8`, found an existing
+prerequisite UI and relevant chain records. The inspected base and correction
+records for 85455 contain no explicit Horn prerequisite. That suggests a
+historical data relationship to check, not a proven current Questie defect:
+the full effective runtime data was not inspected, and the player never says
+they tried Questie. Neither its success nor failure for this case is established.
+
+Current Forever alternatives also narrow the opportunity.
+[Completao!!](https://www.curseforge.com/wow/addons/completao-forever) advertises
+prerequisite trees, unmet requirements and predecessor waypoints, with disclosed
+beta coverage gaps. [Forever Dungeon Scout](https://www.curseforge.com/wow/addons/forever-dungeon-scout)
+advertises ordered dungeon prequests and next-step locations. These are author
+claims, not our runtime results or verified coverage of the SoD case.
+
+Existing guidance plus one historical incident does not justify another
+maintained database. Reopen on a current resolved Forever case with exact IDs
+that remains confusing after actual use of the applicable tool. No current
+comparative benefit, repeat use, client test or new implementation is established.
+
 ## Owner usability report — 15 October 2026
 
 **17 October follow-up:** the owner says the addon's GUI and user experience are
