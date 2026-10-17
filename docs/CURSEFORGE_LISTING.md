@@ -11,7 +11,7 @@ Summary: Pick a time budget and get up to three personal tasks that fit your nex
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
 
-Newest release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
+Newest CurseForge release: **SessionScout 0.1.0-alpha.2 — Forever**, file ID **9132600**.
 At approximately 19:57 Europe/Oslo on 12 October 2026, the author portal showed
 **Approved**, with one download. The public project and both alpha files were
 visible; the project displayed two total downloads. These are observed counters,
@@ -92,8 +92,14 @@ The tag targets verified source commit `0fffb795b25d98032d2bbd0280017315eeec4946
 the release is public and marked prerelease. Its uploaded ZIP digest matches the
 CurseForge submission hash above. This provided a manual download while
 CurseForge moderation was pending; it does not establish user adoption.
-The saved CurseForge description below has not
-been changed by this GitHub publication.
+On 17 October the existing CurseForge description was updated to link the public
+experimental GitHub alpha.3, while preserving the direct CurseForge alpha.2 route.
+It also makes the existing `/scout 120` command visible to players who keep alpha.2,
+labels the image as alpha.2, and assigns earlier client checks to earlier releases.
+The public page rendered the new text and exact GitHub release link after saving.
+This was a description update: no ZIP was selected or uploaded, and the separate
+CurseForge file-upload confirmation remains pending. Evidence:
+`.tools/curseforge-alpha3-link-20261017.png`.
 
 ## Saved project description
 
@@ -119,15 +125,15 @@ estimates and priorities, choose your available time, and see up to three tasks
 that fit. Use it for a weekly goal, an alt's next step, or a quick reminder before
 your next login.
 
-**Early alpha for WoW Forever 1.60.1.** Core workflows and saving through `/reload`
-have been tested in Forever beta 1.60.1.70338. Real reset crossings, use across
+**Early alpha for WoW Forever 1.60.1.** Core workflows in the earlier alpha releases,
+including saving through `/reload`, were tested in Forever beta 1.60.1.70338. Real reset crossings, use across
 multiple characters, combat behavior, other UI scales and long sessions still
 need testing. Retail and other Classic versions are not supported by the initial
 file.
 
 [![SessionScout in the Forever client with fictional example tasks](https://raw.githubusercontent.com/jdlarssen/SessionScout/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](https://github.com/jdlarssen/SessionScout/blob/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
 
-*Actual Forever client, fictional example tasks. Open the image at full size to read the planner. Manually entered estimates produce three suggestions totaling 30 minutes; the 60-minute dungeon stays outside this plan.*
+*Alpha.2 in the actual Forever client, fictional example tasks; this image predates the Custom minutes control. Open the image at full size to read the planner. Manually entered estimates produce three suggestions totaling 30 minutes; the 60-minute dungeon stays outside this plan.*
 
 ## Features
 
@@ -144,6 +150,12 @@ Download the Forever alpha from the
 [alpha.2 file page](https://www.curseforge.com/wow/addons/sessionscout/files/9132600).
 If you browse Files, set **Show alpha files** to **Show**; the default view hides
 these early builds.
+
+**More than 60 minutes?** Alpha.2 already accepts `/scout 120` for a two-hour budget
+(1–240 whole minutes). The
+[experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever)
+adds a visible **Custom minutes** field and **Apply**. Its automated checks passed;
+the new controls and current beta build 1.60.1.70450 still need in-client verification.
 
 With WoW closed, extract the ZIP's `SessionScout` folder into your Forever
 `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
@@ -171,7 +183,7 @@ your game version and steps to reproduce a problem.
 
 [Source code](https://github.com/jdlarssen/SessionScout) is available under the MIT license.
 
-## Alpha release notes
+## Historical alpha.1 release notes
 
 Initial implementation of task planning, manual completion, server reset timing,
 task editing, character notes and readiness information. Fixed missing task-list

@@ -21,7 +21,7 @@ saved, market prevalence, or that H1's core benefit exceeds its setup burden.
 
 Local alpha.3 adds Custom minutes and Apply, plus an explanation of the shortest
 unfinished task when nothing fits. The task-selection model is unchanged.
-[The client validation record](CLIENT_TESTING.md#custom-budget-correction--15-october-local-alpha3-pending-client-check)
+[The client validation record](CLIENT_TESTING.md#custom-budget-correction--alpha3-actual-client-check-remains-pending)
 records 62 automated checks and installation; the new controls have not yet been
 observed after an in-client reload. A real 90-minute budget must still exclude a
 120-minute task. The owner's statement of "more than 60 minutes" alone does not
@@ -49,6 +49,10 @@ One follow-up asks what helped and what was still missing when choosing the next
 task. That answer is pending. Keep the current correction and use the concrete
 answer to choose the next change; the slight reported benefit alone does not
 justify a broader recommendation engine or establish that H1 is validated.
+
+On 17 October the existing package was published as an experimental GitHub
+prerelease with those client-test limitations disclosed. Publication changes
+availability, not the strength of the owner feedback or evidence of adoption.
 
 ## Follow-up on specific evidence — 11 October, 20:15 Europe/Oslo
 
