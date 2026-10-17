@@ -45,6 +45,25 @@ Issues: https://github.com/jdlarssen/SessionScout/issues
 
 ## GitHub mirror (prereleases)
 
+### Alpha.3 draft — prepared 17 October, not public
+
+The owner-only [GitHub draft](https://github.com/jdlarssen/SessionScout/releases/tag/untagged-4497b73a9daf02c9b3ce)
+is release ID `415634645`, with tag name `v0.1.0-alpha.3-forever` and target
+`888a47b7ced501687dda3c7563550800cdf1d7fe`. API readback confirmed `draft: true`,
+`prerelease: true`, no publication timestamp, and the exact prepared notes.
+The rendered release page also shows Draft.
+
+Its two uploaded assets are the existing 38,070-byte alpha.3 ZIP and checksum;
+GitHub's ZIP digest matches
+`33834eed7b609be233f11dd84d318fb6c91b920d1a5f2db5c5f4b2c900256e74`.
+The checksum asset digest also matches locally. No ZIP was rebuilt, no earlier
+release changed, and no alpha.3 CurseForge file was submitted. The notes explain
+Custom minutes and the remaining actual-client check. Keep the draft unpublished
+until that check is recorded; update the validation paragraph before publication.
+Evidence: `.tools/observations/20261017-alpha3-draft.json`.
+
+### Public alpha.2 and alpha.1
+
 The current GitHub mirror is
 [SessionScout 0.1.0-alpha.2 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.2-forever),
 published at approximately 20:21 on 11 October. It adds the tested planner
@@ -55,6 +74,14 @@ The same alpha.2 ZIP was submitted separately to CurseForge as file **9132600**;
 its moderation status is recorded above. Its package excludes the
 local GearEvidencePilot and does not change the alpha.1 submission above.
 Both GitHub release tags and assets remain unchanged.
+
+On 15 October, the alpha.2 GitHub release notes were corrected after a focused
+distribution audit found they still described CurseForge as hidden and under
+review. They now link the public file and README installation steps, explain the
+Alpha filter and record the approval already verified on 12 October. The existing
+12 October foreground follow-up is linked as well. Exact body readback and rendered
+page verification passed; asset IDs, sizes, hashes, tag and prerelease flag were
+unchanged. This was a release-description correction, not a new release.
 
 The original alpha.1 ZIP and its checksum were published on 11 October 2026 at
 [SessionScout 0.1.0-alpha.1 — Forever](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.1-forever).

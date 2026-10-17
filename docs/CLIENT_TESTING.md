@@ -31,6 +31,12 @@ that it is excluded with the shortest-task explanation. Check that the new contr
 and two-line summary are readable. No alpha.3 public upload or successful in-client
 check is claimed yet. The broader checklist below remains incomplete.
 
+On 17 October the owner replied "det hjelper litt" (it helps a little) to a
+question about the new control and its usefulness. This is partial owner feedback,
+not recorded reproduction steps or visual verification of the 120/90-minute cases.
+The exact selected budget and remaining difficulty are being clarified. The
+GitHub alpha.3 candidate is prepared as a draft and remains unpublished.
+
 ## Full client validation checklist
 
 - Fresh install: addon appears, login has no Lua errors, `/scout` opens the empty

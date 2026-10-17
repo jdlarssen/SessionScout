@@ -37,6 +37,19 @@ by itself validate planning value. Instructions have already been provided, so
 this check cannot count as unaided discovery. Actual completion within the time
 available and later voluntary reuse remain unobserved.
 
+### Owner follow-up — 17 October 2026
+
+Asked whether the new time field displays correctly and whether its suggestions
+help choose a task, the owner replied: "det hjelper litt" (it helps a little).
+This is a limited positive self-report from the same owner. It does not identify
+the budget, selected task, time saved, exact controls used, or any remaining
+problem. It is not an independent-player result or a complete client test.
+
+One follow-up asks what helped and what was still missing when choosing the next
+task. That answer is pending. Keep the current correction and use the concrete
+answer to choose the next change; the slight reported benefit alone does not
+justify a broader recommendation engine or establish that H1 is validated.
+
 ## Follow-up on specific evidence — 11 October, 20:15 Europe/Oslo
 
 The previously search-only Warrior report is now directly readable in the
