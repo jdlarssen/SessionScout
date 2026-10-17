@@ -4,6 +4,29 @@ Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapsh
 
 ## Horizontal strategy correction — 17 October 2026
 
+### Additional bounded screen: performance troubleshooting
+
+After the essential SessionScout GUI check and first GitHub Release, one bounded
+screen examined performance attribution, which the earlier H4 error-parser work
+had not tested. A [Forever player](https://www.reddit.com/r/wowforever/comments/1wk4hjs/to_others_having_issues_with_stutteringperformance/)
+reports that lowering Secondary Lighting removed stuttering; another reply
+reports improvement. A [different report](https://www.reddit.com/r/wowforever/comments/1wvmabh/update_game_performance_improved_a_lot_since_this/)
+describes stutters disappearing after a client update without further manual
+changes. These are attributed outcomes with unknown builds and no controlled
+measurements. They do not establish addon-caused performance loss.
+
+[Freeloader](https://www.curseforge.com/wow/addons/freeloader) explicitly targets
+Forever 1.60.1 and advertises native-profiler CPU values, worst-frame peaks and
+cumulative spike counts. Its author also discloses callee-attribution and
+rendering-cost limits. This is advertised coverage, not our compatibility test.
+No download, installation or game setting was changed.
+
+**Decision:** park a generic profiler or automatic culprit-finder. Reopen on a
+reproducible Forever incident where the native workflow and an applicable
+profiler leave an obtainable, useful fact missing. The
+[source ledger](../data/performance-hypothesis-screening-20261017.json) records
+scope and unknowns. No product-value, prevalence or superiority claim follows.
+
 The owner challenged concentration on SessionScout. The challenge is supported
 by the work record: several hypotheses existed in this document, but completed
 work was dominated by one planner, a small local gear explanation and technical

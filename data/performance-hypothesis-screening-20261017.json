@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-10-17",
+  "question": "Does a new Forever addon-performance troubleshooting product have a concrete opening beyond the completed H4 error-explanation investigation?",
+  "scope": "Two focused search queries, then direct reads of two Forever player reports and one applicable author-maintained product page",
+  "priorWork": "H4 already screened fault/settings cases, retrospective prompts and an existing error interpreter. Those checks were read, not rerun.",
+  "cases": [
+    {
+      "source": "https://www.reddit.com/r/wowforever/comments/1wk4hjs/to_others_having_issues_with_stutteringperformance/",
+      "reportedObservation": "One player reports stuttering stopped after lowering Secondary Lighting from High to Good. A separate reply says the same change helped.",
+      "classification": "Attributed graphics-setting improvement, not reproduced or isolated by this project",
+      "unknowns": ["Exact client build", "Measured frame-time difference", "Installed addons", "Other concurrent changes", "Continued benefit"]
+    },
+    {
+      "source": "https://www.reddit.com/r/wowforever/comments/1wvmabh/update_game_performance_improved_a_lot_since_this/",
+      "reportedObservation": "A player previously using a lighting workaround reports that stutters disappeared after a game update without further manual changes.",
+      "classification": "Reported improvement coinciding with an update; cause and fixed build unverified",
+      "unknowns": ["Exact update/build", "Controlled before/after measurement", "Persistence of the improvement", "Addon contribution"]
+    }
+  ],
+  "applicableAlternative": {
+    "name": "Freeloader",
+    "source": "https://www.curseforge.com/wow/addons/freeloader",
+    "advertisedTarget": "Forever 1.60.1, plus Classic and Classic TBC",
+    "advertisedCoverage": "Native-profiler CPU display, per-addon worst-frame peak and cumulative spike counts",
+    "authorDisclosedLimits": "Attribution follows owning files/callees; displayed Lua CPU cost excludes rendering cost; window sampling stops while closed",
+    "evidenceClass": "Author description, not our runtime or performance measurement",
+    "installedOrDownloaded": false
+  },
+  "decision": "Park a generic profiler or automatic culprit-finder. The sampled reports do not establish an addon cause, and a Forever-targeted profiler already advertises the obvious measurements. No unmet comparative workflow demonstrated.",
+  "reopenWhen": "A concrete reproducible Forever incident remains unresolved after the native baseline and an applicable profiler, with an obtainable missing fact or preventable interaction",
+  "limits": [
+    "Purposive sources do not estimate prevalence, market size or willingness to install",
+    "Retrieved relative Reddit dates conflict with crawl metadata; no exact event date inferred",
+    "Neither player reports nor author descriptions establish current-client compatibility or diagnostic accuracy",
+    "No new addon, synthetic benchmark, settings change, installation, recruitment or third-party message performed"
+  ]
+}
