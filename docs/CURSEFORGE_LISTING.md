@@ -21,6 +21,17 @@ See `data/release-0.1.0-publication-20261017.json`. Keep this project's public
 download link on alpha.3 until the new CurseForge file is approved and verified;
 do not add an external GitHub file-download link to the CurseForge description.
 
+**Prepared description, not published:** `CURSEFORGE_DESCRIPTION_0.1.0.txt`
+contains the complete replacement project description for the new release.
+It documents My tasks → + New task → This session → Custom minutes / Apply,
+manual installation, completion scope and the scoped 70450 client checks. The
+existing public image is explicitly identified as alpha.2 with an older layout.
+Apply this copy only after the exact 0.1.0 CurseForge file is approved and its
+ordinary public file page is verified. Its download instruction uses the native
+Files tab, with no invented file ID or external file-download link. Until then,
+the saved public alpha.3 description below remains the applicable copy. Updating
+the description is preparation for onboarding, not evidence of adoption.
+
 Summary: Pick a time budget and get up to three personal tasks that fit your next WoW session.
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.

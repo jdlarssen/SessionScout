@@ -1,0 +1,75 @@
+**Choose your available time. See up to three of your own tasks that fit.**
+
+SessionScout helps turn a WoW to-do list into a plan for this session. Enter the
+tasks you want to do, give them time estimates and priorities, then choose your
+available minutes. It suggests up to three unfinished tasks whose combined
+estimates fit, favoring higher priorities.
+
+**For WoW Forever 1.60.1.** Version 0.1.0 separates **This session**, where you
+choose your time and see suggestions, from **My tasks**, where you manage the
+list. Estimates and completion are manual; the addon does not discover
+activities, detect quest completion or calculate gear upgrades.
+
+## Get started
+
+1. Download **SessionScout 0.1.0 — Forever** from this project's **Files** tab.
+   With WoW closed, extract the ZIP's `SessionScout` folder into your Forever
+   `Interface/AddOns` folder. The resulting path must contain
+   `SessionScout/SessionScout.toc` directly. Keep your SavedVariables when updating.
+2. Start Forever, enable SessionScout in the AddOns menu and enter `/scout`.
+3. Open **My tasks** → **+ New task**. Enter a task name and estimated minutes,
+   choose its priority, repeat setting and completion scope, then press **Add task**.
+4. Return to **This session**. Choose 15, 30 or 60 minutes, or enter 1–240 whole
+   minutes in **Custom minutes** and press **Apply**. For two hours, enter `120`.
+5. Mark a task **Done** when you finish. In **My tasks** → **Completed**, **Undo**
+   makes it unfinished again. Leave a **Next time, remember...** note for your
+   next session.
+
+**Nothing fits?** A task estimated at 120 minutes will not appear in a 90-minute
+plan. The planner shows the shortest unfinished estimate so you can adjust your
+available time or edit an estimate that was inaccurate.
+
+## What is saved
+
+- One-time, daily and weekly tasks, plus completion and your selected budget.
+- Shared task definitions: editing or deleting a task affects every character.
+  Completion can be separate for each character or shared across the account.
+- A next-session reminder for the current character.
+
+Daily and weekly completion uses reset times supplied by the server. If the
+required reset API is unavailable, SessionScout explains why completion could
+not be saved; it does not guess a reset schedule.
+
+There are no dependencies, external accounts or telemetry. General bag space
+and lowest equipped-item durability are shown outside combat.
+
+## Client image
+
+[![Earlier SessionScout interface in Forever with fictional example tasks](https://raw.githubusercontent.com/jdlarssen/SessionScout/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](https://github.com/jdlarssen/SessionScout/blob/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+
+*This is alpha.2 in the actual Forever client with fictional example tasks. It
+shows the planning principle, but predates Custom minutes and the separate
+This session / My tasks views in 0.1.0.*
+
+## Compatibility and feedback
+
+The new controls were checked with mouse and keyboard in Forever 1.60.1.70450:
+creating and editing tasks, cancelling edits, Done/Undo, confirmed deletion,
+custom budgets and invalid input. Existing tasks, completion and character
+settings were preserved after `/reload`. The release differs from the tested
+alpha.4 package only in its version strings.
+
+Actual reset crossings, multiple-character use, combat transitions, extreme UI
+scales and long sessions still need testing. Retail and other Classic versions
+are not supported by this file. Installation and updating through the
+CurseForge app have not been verified; the manual installation steps above apply.
+
+Did the suggestions help you choose, or did setup take more effort than it saved?
+Share a concrete example in the project comments or
+[issue tracker](https://github.com/jdlarssen/SessionScout/issues). For bugs, include
+your addon and game versions and the steps that caused the problem. Remove
+personal information from screenshots; do not attach complete SavedVariables.
+
+[Source code](https://github.com/jdlarssen/SessionScout) is available under the MIT
+license. See the [client test record](https://github.com/jdlarssen/SessionScout/blob/codex/sessionscout/docs/CLIENT_TESTING.md)
+for the scope of the checks.
