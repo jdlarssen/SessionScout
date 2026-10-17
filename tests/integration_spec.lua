@@ -45,11 +45,13 @@ local function world(saved, characterSaved, options)
         if name then env[name] = f end
         return f
     end
-    for _, method in ipairs({"SetPoint", "SetJustifyH", "SetTextColor", "SetClampedToScreen", "SetMovable", "EnableMouse",
+    for _, method in ipairs({"SetPoint", "ClearAllPoints", "SetJustifyH", "SetTextColor", "SetClampedToScreen", "SetMovable", "EnableMouse",
         "SetFrameStrata", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "RegisterForDrag", "SetAutoFocus",
         "SetNumeric", "StartMoving", "StopMovingOrSizing", "SetToplevel", "Raise"}) do
         methods[method] = function() end
     end
+    function methods:SetPoint(anchor, x, y) self.point = {anchor, x, y} end
+    function methods:ClearAllPoints() self.point = nil end
     function methods:SetSize(width, height) self.width, self.height = width, height end
     function methods:SetWidth(width) self.width = width end
     function methods:SetHeight(height) self.height = height end
@@ -58,7 +60,11 @@ local function world(saved, characterSaved, options)
     function methods:GetHeight() return self.height or 1080 end
     function methods:SetScale(scale) self.scale = scale end
     function methods:SetMaxLetters(limit) self.maxLetters = limit end
-    function methods:SetFocus() self.focus = true end
+    function methods:SetFocus()
+        assert(self:IsVisible(), "cannot focus a hidden input")
+        for _, other in ipairs(state.frames) do other.focus = false end
+        self.focus = true
+    end
     function methods:ClearFocus() self.focus = false end
     function methods:HasFocus() return self.focus == true end
     function methods:SetText(text) self.text = text; fire(self, "OnTextChanged", false) end
@@ -69,13 +75,24 @@ local function world(saved, characterSaved, options)
     end
     function methods:RegisterEvent(event) self.events = self.events or {}; self.events[event] = true end
     function methods:IsShown() return self.shown end
+    function methods:IsVisible() return self.shown and (not self.parent or self.parent:IsVisible()) end
     function methods:Show() if not self.shown then self.shown = true; fire(self, "OnShow") end end
     function methods:Hide() if self.shown then self.shown = false; fire(self, "OnHide") end end
     function methods:SetShown(shown) if shown then self:Show() else self:Hide() end end
     function methods:CreateFontString(name) return frame("FontString", name, self) end
-    function methods:Click() fire(self, "OnClick", "LeftButton") end
-    function methods:PressEnter() fire(self, "OnEnterPressed") end
-    function methods:MouseEnter() fire(self, "OnEnter") end
+    function methods:Click()
+        assert(self:IsVisible(), "cannot click a hidden control: " .. self.text)
+        fire(self, "OnClick", "LeftButton")
+    end
+    function methods:PressEnter()
+        assert(self:IsVisible(), "cannot type in a hidden input")
+        self:SetFocus(); fire(self, "OnEnterPressed")
+    end
+    function methods:PressEscape()
+        assert(self:IsVisible(), "cannot type in a hidden input")
+        fire(self, "OnEscapePressed")
+    end
+    function methods:MouseEnter() if self:IsVisible() then fire(self, "OnEnter") end end
     function methods:MouseLeave() fire(self, "OnLeave") end
     env.CreateFrame = function(kind, name, parent) return frame(kind, name, parent) end
     env.UIParent = frame("Frame", "UIParent"); env.UIParent.height = 1080
@@ -121,11 +138,33 @@ local function world(saved, characterSaved, options)
         local count = 0; for _, timer in ipairs(self.timers) do if not timer.cancelled then count = count + 1 end end
         return count
     end
+    function state:beginTask()
+        local w = ns.window
+        if not w.tasksView:IsVisible() then w.tasksTab:Click() end
+        if w.editor:IsVisible() then w.cancel:Click() end
+        w.newTask:Click()
+    end
     function state:add(label, minutes)
-        ns.window.taskLabel:SetText(label); ns.window.minutes:SetText(tostring(minutes)); ns.window.save:Click()
+        local w, previousView = ns.window, ns.window.view
+        if not w.editor:IsVisible() then self:beginTask() end
+        w.taskLabel:SetText(label); w.minutes:SetText(tostring(minutes)); w.save:Click()
+        if not w.editorOpen and previousView == "session" then w.sessionTab:Click() end
     end
     function state:row(label)
-        for _, row in ipairs(ns.window.taskRows) do if row.task and row.task.label == label then return row end end
+        local w, task = ns.window
+        if not w.tasksView:IsVisible() then w.tasksTab:Click() end
+        if w.editor:IsVisible() then w.cancel:Click() end
+        for _, candidate in ipairs(ns.db.tasks) do if candidate.label == label then task = candidate; break end end
+        if not task then error("task not found: " .. label) end
+        if ns.Model.IsCompleted(ns.db, task.id, ns.character, self.now) then w.completedFilter:Click()
+        else w.unfinishedFilter:Click() end
+        while w.previousPage:IsVisible() do w.previousPage:Click() end
+        for _ = 1, w.pageCount do
+            for _, row in ipairs(w.taskRows) do
+                if row.task and row.task.label == label then ok(row.container:IsVisible()); return row end
+            end
+            if w.nextPage:IsVisible() then w.nextPage:Click() end
+        end
         error("visible row not found: " .. label)
     end
     return ns, env, state
@@ -221,6 +260,7 @@ test("custom session minutes make a two-hour task actionable without exceeding t
     eq(ns.window.planRows[1].task, nil)
     contains(ns.window.planSummary:GetText(), "Shortest unfinished task: 120 min.")
 
+    ns.window.sessionTab:Click()
     ns.window.budgetInput:SetText("120"); ns.window.applyBudget:Click()
     eq(ns.settings.budget, 120)
     eq(ns.window.planRows[1].task.label, "RFK equipment run")
@@ -339,14 +379,15 @@ test("long task labels use bounded rows and full escaped hover tooltips", functi
     end
     for _, row in ipairs(ns.window.taskRows) do
         eq(row.text.wordWrap, false, "task name must not create extra visual lines")
-        eq(row.text.maxLines, 1); eq(row.text.height, 14)
+        eq(row.text.maxLines, 1); eq(row.text.height, 18)
         eq(row.metadata.wordWrap, false); eq(row.metadata.maxLines, 1); eq(row.metadata.height, 14)
     end
     local planRow, taskRow = ns.window.planRows[1], s:row(longLabel)
     eq(taskRow.text:GetText():find("\n", 1, true), nil, "a non-wrapping title must not contain newline metadata")
-    contains(taskRow.metadata:GetText(), "10m / Medium / Once / Character")
+    contains(taskRow.metadata:GetText(), "10 min / Medium / Once / Per character")
     local escaped = longLabel:gsub("|", "||")
     for _, control in ipairs({planRow.done, taskRow.edit}) do
+        if control == planRow.done then ns.window.sessionTab:Click() else ns.window.tasksTab:Click() end
         control:MouseEnter()
         ok(env.GameTooltip:IsShown()); eq(env.GameTooltip.owner, control)
         eq(env.GameTooltip.lines[1].text, escaped, "tooltip must retain the entire task label literally")
@@ -369,11 +410,11 @@ test("UI completion and undo alter the current character only", function()
 end)
 
 test("shared scope completes across characters and delete requires two clicks", function()
-    local ns, _, s = world(); s:login(); s:open(); ns.window.scope:Click(); s:add("Shared task", 10)
+    local ns, _, s = world(); s:login(); s:open(); s:beginTask(); ns.window.scope:Click(); s:add("Shared task", 10)
     eq(ns.db.tasks[1].scope, "account"); s:row("Shared task").toggle:Click()
     ok(ns.Model.IsCompleted(ns.db, ns.db.tasks[1].id, "Other-Player", s.now))
-    local row = s:row("Shared task"); row.remove:Click(); eq(#ns.db.tasks, 1); eq(row.remove:GetText(), "Confirm?")
-    row.remove:Click(); eq(#ns.db.tasks, 0); eq(ns.window.taskRows[1].task, nil)
+    s:row("Shared task").edit:Click(); ns.window.remove:Click(); eq(#ns.db.tasks, 1); eq(ns.window.remove:GetText(), "Confirm delete")
+    ns.window.remove:Click(); eq(#ns.db.tasks, 0); eq(ns.window.taskRows[1].task, nil)
     eq(ns.window.taskRows[1].metadata:GetText(), "", "deleted rows must clear their details")
 end)
 
@@ -450,11 +491,11 @@ test("legacy daily reset works without C_DateAndTime and never invents a weekly 
     env.C_DateAndTime = nil
     env.GetQuestResetTime = function() return 50 end
     local resets = ns.ResetTimes(); eq(resets.daily, s.now + 50); eq(resets.weekly, nil)
-    ns.window.recurrence:Click(); s:add("Legacy daily task", 10)
+    s:beginTask(); ns.window.recurrence:Click(); s:add("Legacy daily task", 10)
     local dailyID = ns.db.tasks[1].id; s:row("Legacy daily task").toggle:Click()
     ok(ns.Model.IsCompleted(ns.db, dailyID, ns.character, s.now))
     s.now = s.now + 50; ns.Refresh(); eq(ns.Model.IsCompleted(ns.db, dailyID, ns.character, s.now), false)
-    ns.window.recurrence:Click(); ns.window.recurrence:Click(); s:add("Unavailable weekly task", 10)
+    s:beginTask(); ns.window.recurrence:Click(); ns.window.recurrence:Click(); s:add("Unavailable weekly task", 10)
     local weeklyID = ns.db.tasks[2].id; eq(ns.db.tasks[2].recurrence, "weekly")
     s:row("Unavailable weekly task").toggle:Click()
     eq(ns.Model.IsCompleted(ns.db, weeklyID, ns.character, s.now), false)
@@ -462,7 +503,7 @@ test("legacy daily reset works without C_DateAndTime and never invents a weekly 
 end)
 
 test("unavailable recurrence reset surfaces failure without completing or losing task", function()
-    local ns, env, s = world(); s:login(); s:open(); ns.window.recurrence:Click(); s:add("Daily task", 10)
+    local ns, env, s = world(); s:login(); s:open(); s:beginTask(); ns.window.recurrence:Click(); s:add("Daily task", 10)
     local id = ns.db.tasks[1].id; eq(ns.db.tasks[1].recurrence, "daily")
     env.C_DateAndTime = {}; env.GetQuestResetTime = nil; s:row("Daily task").toggle:Click()
     eq(ns.Model.IsCompleted(ns.db, id, ns.character, s.now), false); eq(#ns.db.tasks, 1)
@@ -470,11 +511,161 @@ test("unavailable recurrence reset surfaces failure without completing or losing
 end)
 
 test("daily completion expires at the server boundary during visible refresh", function()
-    local ns, _, s = world(); s:login(); s:open(); ns.window.recurrence:Click(); s:add("Daily task", 10)
+    local ns, _, s = world(); s:login(); s:open(); s:beginTask(); ns.window.recurrence:Click(); s:add("Daily task", 10)
     local id = ns.db.tasks[1].id; s:row("Daily task").toggle:Click()
     s.now = s.now + 99; s.timers[#s.timers].callback(); ok(ns.Model.IsCompleted(ns.db, id, ns.character, s.now))
     s.now = s.now + 1; s.timers[#s.timers].callback(); eq(ns.Model.IsCompleted(ns.db, id, ns.character, s.now), false)
     eq(ns.window.planRows[1].task.id, id)
+end)
+
+test("session-first creation completion and undo use visible contextual controls", function()
+    local ns, _, s = world(); s:login(); s:open()
+    local w = ns.window
+    ok(w.sessionView:IsVisible()); eq(w.tasksView:IsVisible(), false)
+    eq(w.taskLabel:IsVisible(), false, "task form must not dominate a new session")
+    eq(pcall(function() w.save:Click() end), false, "mock interactions must reject hidden ancestors")
+    w.emptyPrimary:Click()
+    ok(w.editor:IsVisible()); eq(w.taskList:IsVisible(), false); ok(w.taskLabel:HasFocus())
+    eq(w.editorTitle:GetText(), "New task"); eq(w.remove:IsVisible(), false)
+    w.taskLabel:SetText("Visit the trainer"); w.taskLabel:PressEnter()
+    eq(w.taskLabel:HasFocus(), false); ok(w.minutes:HasFocus())
+    w.minutes:SetText("0"); w.minutes:PressEnter()
+    eq(#ns.db.tasks, 0); ok(w.feedback:IsVisible()); contains(w.feedback:GetText(), "Duration")
+    w.minutes:SetText("15"); w.minutes:PressEnter()
+    eq(#ns.db.tasks, 1); ok(w.taskList:IsVisible()); eq(w.editor:IsVisible(), false)
+    eq(w.minutes:HasFocus(), false); eq(w.taskLabel:HasFocus(), false)
+    w.sessionTab:Click()
+    contains(w.planRows[1].metadata:GetText(), "15 min estimated"); contains(w.planRows[1].metadata:GetText(), "Medium priority")
+    ok(w.planRows[1].done:IsVisible()); eq(w.taskRows[1].edit:IsVisible(), false)
+    w.planRows[1].done:Click()
+    ok(w.emptyPlan:IsVisible()); eq(w.emptyPrimary:GetText(), "View completed")
+    w.emptyPrimary:Click()
+    contains(w.completedFilter:GetText(), "Completed (1)"); eq(w.taskRows[1].toggle:GetText(), "Undo")
+    w.taskRows[1].toggle:Click()
+    eq(ns.Model.IsCompleted(ns.db, ns.db.tasks[1].id, ns.character, s.now), false)
+    contains(w.completedFilter:GetText(), "Completed (0)"); ok(w.taskListEmpty:IsVisible())
+    w.unfinishedFilter:Click(); eq(w.taskRows[1].task.label, "Visit the trainer")
+end)
+
+test("filtered pagination keeps task identity through save completion undo and delete", function()
+    local ns, _, s = world(); s:login(); s:open()
+    for i = 1, 7 do s:add("Task " .. i, 10) end
+    local w = ns.window
+    w.tasksTab:Click(); contains(w.pageText:GetText(), "Page 2 / 2")
+    eq(w.taskRows[2].task.label, "Task 7", "saved task should be revealed on its own page")
+    local seventhID = w.taskRows[2].task.id
+    w.taskRows[2].edit:Click(); w.taskLabel:SetText("Last task edited"); w.save:Click()
+    contains(w.pageText:GetText(), "Page 2 / 2"); eq(w.taskRows[2].task.id, seventhID)
+    eq(w.taskRows[2].task.label, "Last task edited")
+    w.taskRows[1].toggle:Click(); eq(w.taskRows[1].task.id, seventhID)
+    w.taskRows[1].toggle:Click()
+    contains(w.pageText:GetText(), "Page 1 / 1"); contains(w.unfinishedFilter:GetText(), "Unfinished (5)")
+    eq(w.nextPage:IsVisible(), false); eq(w.previousPage:IsVisible(), false)
+    w.completedFilter:Click(); contains(w.completedFilter:GetText(), "Completed (2)")
+    eq(w.taskRows[1].task.label, "Task 6"); w.taskRows[1].toggle:Click()
+    eq(w.taskRows[1].task.id, seventhID, "undo must not act on the newly shifted row")
+    w.taskRows[1].edit:Click(); w.remove:Click(); w.remove:Click()
+    eq(ns.Model.GetTask(ns.db, seventhID), nil); eq(#ns.db.tasks, 6)
+    eq(w.taskRows[1].task, nil); ok(w.taskListEmpty:IsVisible())
+    w.unfinishedFilter:Click(); contains(w.unfinishedFilter:GetText(), "Unfinished (6)")
+    w.nextPage:Click(); eq(w.taskRows[1].task.label, "Task 6")
+end)
+
+test("no-fit shortcuts expose the actual shortest task without changing estimates or time", function()
+    local ns, _, s = world(nil, {budget=90}); s:login(); s:open()
+    local literal = "RFK |cffff0000run|r"
+    s:add(literal, 120)
+    for i = 1, 5 do s:add("Long run " .. i, 180) end
+    local w = ns.window
+    contains(w.emptyTask:GetText(), "RFK ||cffff0000run||r")
+    contains(w.emptyDetails:GetText(), "120 min estimated"); contains(w.emptyDetails:GetText(), "90 min")
+    w.emptySecondary:Click(); ok(w.budgetInput:HasFocus())
+    eq(ns.settings.budget, 90); eq(ns.db.tasks[1].minutes, 120)
+    w.emptyPrimary:Click()
+    eq(w.budgetInput:HasFocus(), false); ok(w.taskList:IsVisible())
+    eq(w.taskRows[1].task.label, literal, "View tasks should reveal the named shortest task, even after saving on page two")
+    eq(ns.settings.budget, 90); eq(ns.db.tasks[1].minutes, 120)
+end)
+
+test("budget drafts survive view changes without hidden focus and explicit slash budgets replace them", function()
+    local ns, env, s = world(nil, {budget=60}); s:login(); s:open(); s:add("Long run", 120)
+    local w = ns.window
+    w.budgetInput:SetFocus(); w.budgetInput:SetText("120"); w.tasksTab:Click()
+    eq(w.budgetInput:HasFocus(), false); eq(w.budgetInput:IsVisible(), false)
+    s.timers[#s.timers].callback(); eq(w.budgetInput:GetText(), "120"); eq(ns.settings.budget, 60)
+    w.sessionTab:Click(); eq(w.budgetInput:GetText(), "120"); eq(w.budgetInput:HasFocus(), false)
+    w.applyBudget:Click(); eq(ns.settings.budget, 120); eq(w.planRows[1].task.label, "Long run")
+    w.budgetInput:SetFocus(); w.budgetInput:SetText("180"); w.budgetInput:PressEscape()
+    eq(w.budgetInput:GetText(), "120"); eq(w.budgetInput:HasFocus(), false)
+    w.budgetInput:SetFocus(); w.budgetInput:SetText("240")
+    env.SlashCmdList.SESSIONSCOUT("90")
+    eq(ns.settings.budget, 90); eq(w.budgetInput:GetText(), "90"); eq(w.budgetInput:HasFocus(), false)
+    eq(w.planRows[1].task, nil)
+end)
+
+test("a parked edit survives session navigation and the no-fit task shortcut", function()
+    local ns, _, s = world(nil, {budget=90}); s:login(); s:open(); s:add("RFK run", 120)
+    local w, id = ns.window, ns.db.tasks[1].id
+    s:row("RFK run").edit:Click(); w.taskLabel:SetText("Unfinished edit")
+    w.sessionTab:Click(); eq(w.taskLabel:HasFocus(), false); eq(w.editor:IsVisible(), false)
+    s.timers[#s.timers].callback(); eq(w.taskLabel:GetText(), "Unfinished edit")
+    w.emptyPrimary:Click()
+    ok(w.editor:IsVisible()); eq(w.taskLabel:GetText(), "Unfinished edit"); eq(w.editorTitle:GetText(), "Edit task")
+    eq(ns.Model.GetTask(ns.db, id).label, "RFK run", "navigation must not save the draft")
+    w.cancel:Click(); eq(w.taskLabel:HasFocus(), false); eq(w.taskRows[1].task.label, "RFK run")
+end)
+
+test("empty-state Add task shortcuts resume new and completed-task drafts", function()
+    local ns, _, s = world(); s:login(); s:open()
+    local w = ns.window
+    w.emptyPrimary:Click(); w.taskLabel:SetText("New draft"); w.minutes:SetText("17")
+    w.sessionTab:Click(); eq(w.emptyPrimary:GetText(), "Resume draft"); w.emptyPrimary:Click()
+    eq(w.taskLabel:GetText(), "New draft"); eq(w.minutes:GetText(), "17"); eq(#ns.db.tasks, 0)
+    w.save:Click(); s:row("New draft").toggle:Click()
+    s:row("New draft").edit:Click(); w.taskLabel:SetText("Completed edit draft")
+    w.sessionTab:Click(); eq(w.emptyPrimary:GetText(), "Resume draft")
+    eq(w.emptySecondary:IsVisible(), false); w.emptyPrimary:Click()
+    eq(w.editorTitle:GetText(), "Edit task"); eq(w.taskLabel:GetText(), "Completed edit draft")
+    eq(#ns.db.tasks, 1); eq(ns.db.tasks[1].label, "New draft")
+end)
+
+test("delete confirmation clears on view changes or closing while retaining the edit draft", function()
+    local ns, _, s = world(); s:login(); s:open(); s:add("Keep me", 10)
+    local w = ns.window
+    s:row("Keep me").edit:Click(); w.remove:Click()
+    contains(w.feedback:GetText(), "every character"); eq(w.remove:GetText(), "Confirm delete")
+    w.sessionTab:Click(); w.tasksTab:Click()
+    eq(w.remove:GetText(), "Delete task"); eq(w.feedback:GetText(), ""); eq(w.taskLabel:GetText(), "Keep me")
+    w.remove:Click(); eq(#ns.db.tasks, 1, "a disarmed confirmation needs two new clicks")
+    s:open(); eq(w.taskLabel:HasFocus(), false); s:open()
+    eq(w.remove:GetText(), "Delete task"); eq(w.feedback:GetText(), ""); eq(#ns.db.tasks, 1)
+    w.remove:Click(); eq(#ns.db.tasks, 1); w.remove:Click(); eq(#ns.db.tasks, 0)
+end)
+
+test("one and two task sessions compact the reminder while management keeps its full height", function()
+    local ns, _, s = world(nil, {budget=60}); s:login(); s:open()
+    local w = ns.window
+    eq(w.height, 620, "empty guidance needs its full card")
+    s:add("First", 10); eq(w.height, 480)
+    eq(w.noteLabel.point[3], -220); eq(w.readiness.point[3], -310)
+    w.tasksTab:Click(); eq(w.height, 620); w.sessionTab:Click(); eq(w.height, 480)
+    s:add("Second", 10); eq(w.height, 550); eq(w.noteLabel.point[3], -290)
+    s:add("Third", 10); eq(w.height, 620); eq(w.noteLabel.point[3], -360)
+    w.planRows[1].done:Click(); eq(w.height, 550)
+    w.planRows[1].done:Click(); eq(w.height, 480)
+    w.planRows[1].done:Click(); eq(w.height, 620); ok(w.emptyPlan:IsVisible())
+end)
+
+test("failed weekly completion remains visible in both session and unfinished views", function()
+    local ns, env, s = world(); s:login(); s:open(); s:beginTask()
+    ns.window.recurrence:Click(); ns.window.recurrence:Click(); s:add("Weekly activity", 10)
+    local w, id = ns.window, ns.db.tasks[1].id
+    env.C_DateAndTime = {}; env.GetQuestResetTime = nil
+    w.sessionTab:Click(); w.planRows[1].done:Click()
+    eq(w.planRows[1].task.id, id); ok(w.planRows[1].container:IsVisible()); contains(s.messages[#s.messages], "reset")
+    w.tasksTab:Click(); contains(w.unfinishedFilter:GetText(), "Unfinished (1)")
+    contains(w.completedFilter:GetText(), "Completed (0)"); eq(w.taskRows[1].task.id, id)
+    eq(ns.Model.IsCompleted(ns.db, id, ns.character, s.now), false)
 end)
 
 print(string.format("Integration: %d passed, %d failed", passed, failed))

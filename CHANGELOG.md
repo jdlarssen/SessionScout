@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.4 — unreleased GUI revision
+
+- Separate the default session planner from task management.
+- Show task creation/editing only when requested, with explicit field labels.
+- Make completed tasks available separately, retaining manual Undo.
+- Show recommendation estimates and priorities clearly, and give empty/no-fit
+  states direct next actions without changing the user's time or task estimates.
+
+This revision responds to the owner's GUI/UX feedback. It retains the current
+selection model and saved-data format. All 71 automated checks passed (15 model,
+37 mocked integration, 19 Python), including nine new UI workflow regressions.
+A local package and source-derived layout previews were produced. It has not
+been installed in the game or published as a release. Actual-client rendering
+and keyboard/interaction checks remain pending.
+
 ## 0.1.0-alpha.3 — experimental GitHub prerelease, 2026-10-17
 
 - Add a visible **Custom minutes** field and **Apply** button for session budgets
@@ -23,8 +38,12 @@ Published as an explicitly experimental
 on 17 October at 06:58 UTC, using the existing package from source commit
 `888a47b7ced501687dda3c7563550800cdf1d7fe`. The public tag resolves to that commit,
 and both uploaded asset digests match the prepared draft. The previous alpha
-packages remain unchanged. Alpha.3 has not yet been submitted to CurseForge;
-alpha.2 remains available there. See the [release scope](docs/CLIENT_TESTING.md).
+packages remain unchanged. After explicit owner authorization, the same ZIP was
+submitted to CurseForge on 17 October at 09:27 Europe/Oslo as file **9219847**,
+Alpha for 1.60.1, with automatic publication after approval. The initial file row
+showed **Uploading**; this does not confirm approval or public availability.
+Alpha.2 remains available there. See the [release scope](docs/CLIENT_TESTING.md)
+and [submission record](data/alpha3-curseforge-submission-20261017.json).
 
 ## 0.1.0-alpha.2 — 2026-10-11
 

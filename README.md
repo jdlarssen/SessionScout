@@ -12,6 +12,10 @@ rendering and input checks for that control are still pending. The earlier
 alpha.2 remains publicly available on CurseForge, with scoped client checks on
 Forever 1.60.1.70338.
 
+The development checkout contains an **unreleased alpha.4 GUI revision**.
+Download links below still point to alpha.3/alpha.2; the new interface has not
+yet been validated in the actual game or published as a release.
+
 [Download experimental alpha.3 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
 [Previous alpha.2 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9132600) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
@@ -99,8 +103,9 @@ See the [client test record](docs/CLIENT_TESTING.md) for methodology and the
 remaining checks. The temporary QA addon was removed and the user's original
 account and character data were restored and independently hash-verified.
 
-The 62 automated Lua model, mocked integration and Python tooling checks support
-logic and packaging validation. They do not replace actual client checks.
+The published alpha.3 passed 62 automated Lua model, mocked integration and
+Python tooling checks. The unreleased alpha.4 checkout passes 71. These support
+logic and packaging validation and do not replace actual client checks.
 
 Both CurseForge releases use the **Alpha** channel. On the project's website,
 open **Files** and set **Show alpha files** to **Show** if the list appears empty.

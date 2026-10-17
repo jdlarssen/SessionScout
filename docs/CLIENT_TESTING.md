@@ -5,6 +5,49 @@ Automated tests are not a substitute for these checks.
 Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
+## GUI revision — alpha.4; local development, client check pending
+
+The owner's 17 October feedback says the GUI/user experience is not good.
+The local correction separates the session planner and task administration,
+uses a contextual editor and completed-task filter, and improves the no-fit
+path. Model selection rules and the saved-data format are unchanged. Source
+inspection and mocked workflows cannot establish visual quality or real-client
+focus behaviour. No alpha.4 installation or client test is recorded yet.
+
+Local validation passed: 15 model, 37 mocked integration and 19 Python tests,
+plus Lua 5.1 syntax checks. Nine new workflows cover session-first task creation,
+completion/Undo, filtered pagination and task identity, no-fit navigation,
+budget/editor drafts, deletion disarming, compact sizing and failed recurrence
+completion. Independent source review identified draft loss and stale deletion
+feedback; both were fixed and covered. Empty-state actions say Resume draft
+when an unsaved editor is held, rather than silently replacing it.
+
+Four source-derived previews (120-minute plan, 90-minute no-fit, unfinished list,
+editor) were inspected in a background browser. Mock geometry was contained in
+the window, with simplified fonts/textures explicitly labelled. These are layout
+aids and do not complete the actual-client checks below.
+
+Local package: `dist/SessionScout-0.1.0-alpha.4-forever.zip`.
+SHA256: `afb902838370b390b8ee64439e446d99a5456b358a02bfbaefa40f37b9583052`.
+
+When a fresh short screen window is explicitly granted, prepare the existing
+guarded install and backup first, then perform one reload and a compact check:
+
+1. Open `/scout`. Verify the session view is readable and task-administration
+   controls do not obscure the suggested activities.
+2. With a real unfinished 120-minute task, apply 120, then 90. The first can
+   suggest the task; the second must explain that it does not fit. Check the
+   task-name display and direct route to task management without editing time.
+3. Add, edit, cancel, complete and undo one explicitly disposable example task;
+   verify unfinished/completed filters and return to the session view. Remove
+   only that example with the confirmation control.
+4. Check note persistence and keyboard focus when switching views, opening or
+   cancelling the editor, hiding/reopening, and using Escape. Confirm the current
+   character's existing task data remain intact, then release the screen.
+
+Keep the package experimental until observations support any stronger claim.
+Do not mark these steps passed from the offline preview or mocked tests.
+
 ## Custom budget correction — alpha.3; actual-client check remains pending
 
 An owner-supplied screenshot showed ten saved tasks, a selected 60-minute budget,

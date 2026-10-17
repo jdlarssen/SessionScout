@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "version": "0.1.0-alpha.4",
+  "scope": "Bounded GUI correction following owner usability feedback",
+  "modelChanged": false,
+  "savedDataSchemaChanged": false,
+  "tests": {
+    "model": 15,
+    "mockedIntegration": 37,
+    "python": 19,
+    "total": 71,
+    "newIntegrationWorkflows": 9,
+    "allPassed": true,
+    "lua51SyntaxPassed": true
+  },
+  "review": "Draft-loss and stale deletion-feedback findings fixed and covered; final source review found no further actionable data or workflow defects",
+  "preview": {
+    "type": "Source-derived layout with fictional data; not a game screenshot",
+    "uiSourceSha256": "71d2fee814145e0e7b9e42675daaa31c3f83b5a89879ad3f9ac4057cb55b7ce0",
+    "inspectedStates": ["120-minute plan", "90-minute no-fit", "unfinished task list", "task editor"],
+    "limitations": ["Approximate fonts and native textures", "No actual-client focus or keyboard validation"],
+    "localOutputDirectory": ".tools/previews"
+  },
+  "package": {
+    "path": "dist/SessionScout-0.1.0-alpha.4-forever.zip",
+    "bytes": 47347,
+    "sha256": "afb902838370b390b8ee64439e446d99a5456b358a02bfbaefa40f37b9583052"
+  },
+  "installed": false,
+  "publishedAsRelease": false,
+  "actualClientValidation": "Pending a fresh agreed screen window"
+}

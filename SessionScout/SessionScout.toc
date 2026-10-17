@@ -2,7 +2,7 @@
 ## Title: SessionScout
 ## Notes: Pick a time budget. See your next three tasks.
 ## Author: SessionScout contributors
-## Version: 0.1.0-alpha.3
+## Version: 0.1.0-alpha.4
 ## SavedVariables: SessionScoutDB
 ## SavedVariablesPerCharacter: SessionScoutCharDB
 ## Category: Quests & Leveling

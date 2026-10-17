@@ -129,6 +129,16 @@ no new journal, maintained quest database, client test or speculative feature.
 
 ## Owner usability report — 15 October 2026
 
+**17 October follow-up:** the owner says the addon's GUI and user experience are
+not good. This supersedes the pending request for a more specific description
+with broad negative usability feedback, not a measured cause or evidence that a
+visual redesign will establish product fit. Inspection of the current source
+and the older screenshot identifies a plausible, actionable issue: the main
+screen exposes extensive task administration alongside a sparse recommendation
+area. A bounded correction separates choosing an activity from managing tasks,
+improves labels and no-fit actions, and retains the existing recommendation
+model. Actual-client observation and a fresh usefulness report remain necessary.
+
 The owner reported having entered tasks and having more than 60 minutes available,
 but receiving no suggestion of what to do. Their game screenshot shows ten saved
 tasks, a selected 60-minute budget, three visible unfinished tasks estimated at

@@ -1,5 +1,19 @@
 # Local build and install tools
 
+## Offline UI layout preview
+
+`python tools/preview_ui.py` executes the current Model/Core/UI through the
+integration-test mock with fictional tasks and writes HTML, SVG and geometry
+JSON under `.tools/previews/`. It requires Lupa with Lua 5.1 (the local development
+copy is under `.tools/python`). Open the HTML to inspect the session, no-fit,
+task-list and editor layouts without launching or controlling WoW.
+
+The preview records real source geometry and visibility, but approximates fonts,
+wrapping and native button textures. It is explicitly labelled and includes the
+UI source hash. It is not a game screenshot, input test or compatibility proof.
+
+## Release package and installation
+
 `python tools/build.py --flavor forever` creates
 `dist/SessionScout-<version>-forever.zip` and its SHA256 file. Forever is the only
 configured flavor and the default. Its TOC must specify Interface `16001` alone;
