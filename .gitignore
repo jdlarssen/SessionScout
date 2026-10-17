@@ -6,3 +6,14 @@ __pycache__/
 *.log
 .env
 *.local
+
+# Local planning and working notes
+/STATUS.md
+/docs/RESEARCH.md
+/docs/CURSEFORGE_LISTING.md
+/docs/COMMUNITY_HELP_REPLY.txt
+/docs/MODERATOR_RESEARCH_REQUEST.txt
+/docs/PLAYER_RESEARCH_INVITATION.txt
+/docs/WAGO_LISTING.txt
+/data/popularity-*.json
+/data/daily-observation-*.json

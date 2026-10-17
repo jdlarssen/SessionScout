@@ -1,9 +1,9 @@
 # Gear Evidence pilot validation
 
 This is a local discovery experiment, not a released addon or a validated product.
-The user's actual problem episode was uncertainty about Enhancement BiS lists
-before a roughly 90-minute RFK session. Two analyst-selected RFK candidates make
-that question testable against equipped gear. They are not confirmed hunt targets.
+It compares two selected RFK candidates against equipped gear to explain
+differences between fixed Enhancement stat models. This does not establish that
+either candidate is a player's preferred farming target.
 
 ## Acceptance checks
 
@@ -60,7 +60,7 @@ Observed between 18:15 and 18:20 Europe/Oslo:
   newly installed staged-talent guard.
 - Candidate switching, both hover tooltips, scrolling through all source/drop
   notes, Escape closing and manual refresh worked. The observed layout showed
-  both model summaries without scrolling at the user's current UI scale.
+  both model summaries without scrolling at the tested UI scale.
 
 At 18:25-18:26, a second UI revision was reloaded and inspected. Both candidates
 showed the nonzero stat contributions alongside the two model summaries without
@@ -83,7 +83,7 @@ Normal logout was submitted after QA. Character selection was visibly confirmed
 at 18:32. The six installed pilot files remain available for voluntary local use.
 
 No gameplay, equipment, talent or unrelated addon settings were changed. These
-are agent-operated functional checks. They do not verify actual combat
+are functional checks. They do not verify actual combat
 transitions, real cold-cache failures, other UI scales, long sessions, drop
 availability or a DPS benefit. Do not initiate combat just to exercise a guard.
 
@@ -92,12 +92,10 @@ availability or a DPS benefit. Do not initiate combat just to exercise a guard.
 Passing code tests is not evidence of a better player decision. The next
 comparative observation is whether this explanation resolves a concrete doubt
 that the user's existing list/addon leaves unresolved, and whether they choose
-to use it again. One owner's feedback cannot establish broad demand or a route
-to first place. Preserve negative findings rather than expand the prototype to
-make activity look like validation.
+to use it again. A single report cannot establish broad demand. Record negative
+findings as well as positive outcomes.
 
-The 20:15 source comparison in `docs/RESEARCH.md` adds a concrete baseline check:
-record the comparison tool's version, the player's actual allocation, selected
+For a baseline comparison, record the comparison tool's version, the player's actual allocation, selected
 versus automatically detected profile, static versus simulation mode, and custom
 priorities. Let the player use the existing tool's profile/explanation controls
 before comparing the pilot. Keep correcting a context selection distinct from

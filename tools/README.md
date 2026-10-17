@@ -52,8 +52,8 @@ for the completed scoped checks and remaining gaps.
 
 ## Offline research observation
 
-`observe_tog_parser.py` reproduces the narrow TOG Tools observation described in
-[RESEARCH.md](../docs/RESEARCH.md#h4-offline-competitor-observation--11-october-2248-europeoslo).
+`observe_tog_parser.py` reproduces the narrow TOG Tools observation recorded in
+[the parser output](../data/togtools-parser-observations-20261011.json).
 It requires the separately obtained official ZIP and an existing Lupa runtime
 with Lua 5.1 (2.8 was used, from `.tools/python`). It downloads nothing, reads only
 the pinned parser member, and neither installs an addon nor interacts with WoW.

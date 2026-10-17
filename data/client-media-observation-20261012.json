@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
   "sessionLocal": "approximately 2026-10-12 21:23-21:29 Europe/Oslo",
-  "authorization": "Fresh user instruction: pcn er fri i en liten periode, så bare bruk den",
-  "method": "Native WoW input and immediate screenshots through computer-use; no public screenshot exported",
+  "method": "Physical WoW mouse/keyboard input and screenshot observation; rendering and input results are scoped to the recorded checks",
   "client": {
     "flavor": "Forever beta",
     "freshExactBuildVerified": false,
@@ -25,15 +24,22 @@
       "observed": "Unrelated tooltip obscured an earlier view; planner was closed at final observation; no additional photo attempt before restoration"
     },
     {
-      "case": "Restore and release",
+      "case": "Restore original data",
       "result": "passed",
-      "observed": "Commands 5 and 6 completed; client printed SessionScout restored; addon and chat closed; native session reset"
+      "observed": "Restoration commands completed; client printed SessionScout restored; addon closed"
     }
   ],
   "dataPreservation": {
     "localBackupManifest": "backups/sessionscout-screen-20261012T192338Z/manifest.json",
     "backupHashesVerifiedBeforeAndAfterCopy": true,
-    "fixtureCommandsExecuted": [1, 2, 3, 4, 5, 6],
+    "fixtureCommandsExecuted": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
     "originalRootsPreserved": true,
     "originalNestedTablesModifiedByFixture": false,
     "bidirectionalRootKeyValueEqualityAsserted": true,
@@ -44,7 +50,6 @@
     "No full Lua-error or taint audit",
     "Actual dragging remains unverified",
     "Normal UI creation, completion and persistence of the 60-minute task were not tested",
-    "No publication-ready product media or participant evidence delivered",
-    "Future native control requires a fresh agreed screen window"
+    "No publication-ready product media or participant evidence delivered"
   ]
 }

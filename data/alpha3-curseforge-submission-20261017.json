@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "submittedOn": "2026-10-17",
   "displayedSubmissionTime": "09:27 Europe/Oslo",
-  "authorization": "Owner replied 1. Ja. to the specific alpha.3 upload and automatic-publication request",
   "projectId": 1738896,
   "fileId": 9219847,
   "authorUrl": "https://authors.curseforge.com/#/projects/1738896/files/9219847",
@@ -18,6 +17,9 @@
   "detailReadback": "Experimental name, Alpha channel, 1.60.1 and complete changelog matched the prepared submission",
   "publicAvailabilityVerified": false,
   "laterPublicationObservation": "data/publication-observation-20261017.json",
-  "previousFilesUnchanged": [9132600, 9128965],
+  "previousFilesUnchanged": [
+    9132600,
+    9128965
+  ],
   "screenshot": ".tools/alpha3-curseforge-submitted-20261017.png"
 }

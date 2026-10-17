@@ -30,7 +30,6 @@
     "automaticPublicationAfterApproval": true,
     "gameVersion": "1.60.1",
     "status": "Prepared form, not submitted",
-    "authorization": "New ZIP upload requested once; pending",
     "screenshot": ".tools/release-0.1.0-curseforge-prepared.png",
     "intendedChannel": "Release"
   },

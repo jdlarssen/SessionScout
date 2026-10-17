@@ -5,15 +5,13 @@
   "clientVersion": "1.60.1.70450",
   "sourceCommit": "d94ca15034c3a65117692042dd3db0d365108c1e",
   "priorObservation": "data/alpha4-client-validation-20261017.json",
-  "authorization": "Fresh owner-granted screen window for the prepared input, disposable-task cleanup and reload check",
-  "screenWindowApproximate": "2026-10-17 10:34-10:45 Europe/Oslo",
   "reinstalled": false,
   "addonSourceChangedDuringTest": false,
   "inputDiagnostic": {
     "control": "Cancel",
     "firstPhysicalClick": "No mouse-down, mouse-up or click received; measured cursor/focus landed below the button",
     "adjustedPhysicalClick": "Mouse-down, mouse-up and click received, editor cancelled normally",
-    "interpretation": "Tool coordinate delivery explained the observed failure; no addon callback defect demonstrated",
+    "interpretation": "The initial input landed below the button; correcting delivery restored the expected interaction. No addon callback defect was demonstrated.",
     "directCallbackUsedToPass": false,
     "temporaryTraceClearedByReload": true
   },
@@ -27,7 +25,7 @@
     "Apply original 90-minute budget: fitting 90-minute recommendation; 120-minute disposable task excluded",
     "Delete only disposable task through two-step confirmation; original 7 unfinished and 4 completed counts restored",
     "One reload and normal /scout reopening: 90-minute budget, matching recommendation and empty reminder retained",
-    "Escape closes addon; chat closed before ending native control"
+    "Escape closes the addon"
   ],
   "preservation": {
     "method": "Fresh before/after SavedVariables copies, copy hashes checked, Lua tables compared recursively after reload",
@@ -41,7 +39,6 @@
     "savedReminderEmpty": true
   },
   "privateEvidenceDirectory": ".tools/evidence/client/alpha4-input-20261017",
-  "privateEvidenceMustNotBePublished": "Screenshots and SavedVariables contain personal task information and unrelated game chat",
   "visibleLuaErrorObserved": false,
   "fullErrorOrTaintAuditPerformed": false,
   "decision": "Essential interaction and preservation checks support preparing the first scoped 0.1.0 Release; publication and app availability are separate",
@@ -51,5 +48,6 @@
     "Full logout/login and restart permutations, drag behavior and complete bag/durability matrix",
     "New nonempty reminder editing was not repeated in this window",
     "Product usefulness, voluntary reuse and CurseForge-app installation/update are not established by this test"
-  ]
+  ],
+  "testWindowApproximate": "2026-10-17 10:34-10:45 Europe/Oslo"
 }

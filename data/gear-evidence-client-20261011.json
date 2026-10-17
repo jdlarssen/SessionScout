@@ -4,22 +4,70 @@
   "client_build": "1.60.1.70338",
   "interface": 16001,
   "method": "GearEvidencePilot live item API reads, visually cross-checked against both candidate and equipped item tooltips",
-  "context": {"level": 30, "class": "SHAMAN", "enhancement_active_ranks": 26, "elemental_active_ranks": 0, "restoration_active_ranks": 0},
+  "context": {
+    "level": 30,
+    "class": "SHAMAN",
+    "enhancement_active_ranks": 26,
+    "elemental_active_ranks": 0,
+    "restoration_active_ranks": 0
+  },
   "items": {
-    "252516": {"name": "Brawler's Leather Legguards", "role": "equipped", "stats": {"armor": 90, "str": 7, "agi": 9, "sta": 7, "spi": 6}},
-    "6690": {"name": "Ferine Leggings", "role": "candidate", "stats": {"armor": 96, "int": 12, "ap": 26}},
-    "5964": {"name": "Barbaric Shoulders", "role": "equipped", "stats": {"armor": 76, "str": 5, "agi": 5, "sta": 6}},
-    "6697": {"name": "Batwing Mantle", "role": "candidate", "stats": {"armor": 38, "agi": 3, "int": 11, "sp": 6}}
+    "252516": {
+      "name": "Brawler's Leather Legguards",
+      "role": "equipped",
+      "stats": {
+        "armor": 90,
+        "str": 7,
+        "agi": 9,
+        "sta": 7,
+        "spi": 6
+      }
+    },
+    "6690": {
+      "name": "Ferine Leggings",
+      "role": "candidate",
+      "stats": {
+        "armor": 96,
+        "int": 12,
+        "ap": 26
+      }
+    },
+    "5964": {
+      "name": "Barbaric Shoulders",
+      "role": "equipped",
+      "stats": {
+        "armor": 76,
+        "str": 5,
+        "agi": 5,
+        "sta": 6
+      }
+    },
+    "6697": {
+      "name": "Batwing Mantle",
+      "role": "candidate",
+      "stats": {
+        "armor": 38,
+        "agi": 3,
+        "int": 11,
+        "sp": 6
+      }
+    }
   },
   "displayed_model_deltas": {
-    "6690": {"WOWF Enhancement PvE": 20.680, "Lootified 1.2.0 default static": 2.863},
-    "6697": {"WOWF Enhancement PvE": 2.490, "Lootified 1.2.0 default static": 1.718}
+    "6690": {
+      "WOWF Enhancement PvE": 20.68,
+      "Lootified 1.2.0 default static": 2.863
+    },
+    "6697": {
+      "WOWF Enhancement PvE": 2.49,
+      "Lootified 1.2.0 default static": 1.718
+    }
   },
   "limitations": [
     "Displayed model deltas are rounded to three decimal places; they are weighted points, not DPS or comparable scales.",
     "The UI confirmed live stats and tooltip attributes for these four items only.",
     "No drop was observed and no source claim about beta acquisition was validated by this test.",
     "No equipment or talents were changed, and no combat, dungeon or damage measurement was performed.",
-    "This is agent-operated functional QA, not owner feedback, voluntary reuse or market validation."
+    "These functional checks do not establish player feedback, voluntary reuse or market validation."
   ]
 }

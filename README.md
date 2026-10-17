@@ -4,127 +4,108 @@
 
 Choose how much time you have. See up to three personal tasks that fit.
 
-SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
-deliberate plan for their next session. Its name and positioning are provisional.
-**0.1.0 is available on CurseForge and GitHub for Forever 1.60.1.** It includes
-the session/task-management redesign tested as alpha.4. Physical task operations,
-120/90-minute budgets, invalid input and preservation of existing data after
-reload passed on 17 October in Forever 1.60.1.70450. The release differs from
-that tested build only in its version strings. Its CurseForge Release file was
-verified publicly available on 17 October at 20:04 Europe/Oslo.
+SessionScout turns your WoW to-do list into a plan for your next session. Enter
+tasks with time estimates and priorities, choose your available minutes, and see
+up to three unfinished tasks that fit. **Version 0.1.0 supports WoW Forever
+1.60.1.** Estimates and completion are manual.
 
-[Download 0.1.0 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143) ·
+[Download on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143) ·
 [Alternate download on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
-[Source](https://github.com/jdlarssen/SessionScout) ·
-[Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
+[Report an issue](https://github.com/jdlarssen/SessionScout/issues)
 
-[![SessionScout in the Forever client: three suggested tasks totaling 30 minutes, from four fictional example tasks](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+[![SessionScout in Forever with three suggested tasks totaling 30 minutes](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
 
-Alpha.2 in the Forever client, with fictional example tasks; this image predates
-the Custom minutes control. Open it at full size to read the planner. Estimates
-and priorities are entered manually; the 60-minute dungeon stays outside this
-30-minute plan.
+*Alpha.2 in the Forever client with fictional example tasks. This image predates
+the Custom minutes control and the separate This session / My tasks views in
+0.1.0. Estimates and priorities are entered manually; the 60-minute dungeon stays
+outside this 30-minute plan.*
+
+## Install
+
+1. Download `SessionScout-0.1.0-forever.zip` from
+   [CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
+   or [GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
+2. With WoW closed, extract its `SessionScout` directory into your Forever
+   `Interface/AddOns` folder. The current beta uses `_classic_beta_/Interface/AddOns`.
+   The resulting path must contain `SessionScout/SessionScout.toc` directly.
+   Keep your SavedVariables when updating.
+3. Start the game and enable SessionScout in the AddOns menu.
+4. Enter `/scout` or `/sessionscout`.
+
+Installation and updating through the CurseForge app have not been verified;
+use the manual installation steps above.
 
 ## Use
 
-1. Download `SessionScout-0.1.0-forever.zip` from the
-   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
-   or the [GitHub release](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
-   With WoW closed, extract its `SessionScout` directory into your Forever
-   `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
-   The resulting path must contain `SessionScout/SessionScout.toc` directly.
-2. Start the game and enable SessionScout in the AddOns menu.
-3. Enter `/scout` (or `/sessionscout`).
-4. Open **My tasks**, choose **New task** and enter its estimated minutes,
-   priority and recurrence. Choose whether
-   completion is shared across the account or tracked separately per character.
-5. Return to **This session**. Choose 15, 30 or 60 minutes, or enter 1–240 whole minutes in **Custom minutes**
-   and press **Apply** or Enter. `/scout 45` also accepts a custom budget.
-6. Complete tasks manually. Daily and weekly completion expires at the reset
-   time supplied by the game. Undo reverses a completion for the applicable scope.
+1. Open **My tasks** → **+ New task**. Enter a name and estimated minutes,
+   then choose priority, recurrence and completion scope. Press **Add task**.
+2. Return to **This session**. Choose 15, 30 or 60 minutes, or enter 1–240 whole
+   minutes in **Custom minutes** and press **Apply** or Enter. `/scout 45` also
+   accepts a custom budget.
+3. Mark a task **Done** when you finish. In **My tasks** → **Completed**, **Undo**
+   makes it unfinished again.
+4. Leave a **Next time, remember...** note for your next session.
 
-Task definitions are shared across characters; “Per character” refers to their
-completion. Editing or deleting a definition affects every character. The
-“Next time” note belongs only to the current character. Delete needs a second click.
+**Nothing fits?** A task estimated at 120 minutes will not appear in a 90-minute
+plan. Check the shortest unfinished estimate shown by the planner, then adjust
+your available time or correct an inaccurate task estimate.
 
-## What it does
+Task definitions are shared across characters. Editing or deleting a definition
+affects every character; deleting requires a second click. Completion can be
+shared across the account or tracked per character. The next-session note
+belongs only to the current character.
 
-- Recommends at most three unfinished tasks within the chosen time budget.
-- Prefers more high-priority tasks, then medium, then low; ties favor used time.
-- Saves tasks, completion and a personal reminder using WoW SavedVariables.
-- Shows general bag space and lowest equipped-item durability outside combat.
-- Uses no external service, telemetry, advertising, chat broadcasts or dependencies.
+## Features
 
-It does not automatically detect quest completion, recommend game content, time
-your activities, or synchronize between separate WoW accounts. Time estimates are
-your own. If the weekly-reset API is unavailable, weekly tasks cannot be marked
-complete until it is available; the addon does not guess a reset date.
+- Up to three unfinished tasks within the chosen time budget.
+- More high-priority tasks are preferred, then medium, then low; ties favor used time.
+- One-time, daily and weekly tasks with manual completion and Undo.
+- Tasks, completion, selected budget and reminders saved through WoW SavedVariables.
+- General bag space and lowest equipped-item durability shown outside combat.
+- No dependencies, external service, telemetry, advertising or chat broadcasts.
 
-## Feedback
+Daily and weekly completion uses reset times supplied by the game. If the
+required reset API is unavailable, completion cannot be saved and the addon
+explains why; it does not guess a reset schedule. One-time tasks remain available.
 
-Use the [issue tracker](https://github.com/jdlarssen/SessionScout/issues) to report
-a reproducible bug or describe a real play session. The templates distinguish
-technical errors from whether the addon helped after setup effort, and whether
-you chose to use it again. Reports that it did not help are useful too.
-
-Use fictional task names and remove chat or personal information from optional
-screenshots. Please do not attach complete SavedVariables files.
+SessionScout does not discover game activities, detect quest completion, calculate
+gear upgrades, time your activities or synchronize separate WoW accounts.
 
 ## Compatibility and validation
 
-The release targets **Forever 1.60.1, interface 16001**. Actual client checks on
-**1.60.1.70338** passed for task creation/editing/deletion, completion/undo,
-priorities and budgets, pagination, and reload persistence of tasks, completion,
-budget and a Unicode note. Daily and weekly completion stored server-reset
-timestamps. Physical Unicode/pipe text entry, cancelling an edit and Escape were
-also checked. A task-metadata display defect found in the client was fixed and
-visually verified.
+The release targets **Forever 1.60.1, interface 16001**. The UI and logic used in
+0.1.0 passed 71 automated Lua model, mocked integration and Python tooling checks.
+In-client checks on **1.60.1.70450** covered creating and editing tasks, cancelling
+edits, Done/Undo, confirmed deletion, 120/90-minute budgets and invalid input.
+Existing tasks, completion and character settings were preserved after `/reload`.
+The release differs from the tested alpha.4 package only in its version strings.
 
-Alpha.3 adds the custom-budget field and clearer no-fit messages. Its new-control
-rendering, keyboard entry and focus behavior remain unverified in the actual
-client. Alpha.3 installation was recorded on **1.60.1.70374**. The development
-alpha.4 was subsequently installed on **1.60.1.70450**. A follow-up on 17 October
-resolved the initial input-delivery problem: the control tool was clicking below
-its targets. With corrected coordinates, physical create/edit/cancel,
-complete/undo, confirmed deletion, 120/90-minute budgets and invalid input passed.
-One reload preserved all 11 original tasks, completion records and character
-settings. The disposable task was removed. See the
-[scoped follow-up](data/alpha4-input-validation-20261017.json); it does not certify
-every client interaction or establish that the product is useful to other players.
+Earlier checks on **1.60.1.70338** covered task operations, priority and recurrence
+controls, completion scope, pagination, Unicode/pipe text entry, Escape, server-reset
+timestamps and reload persistence. Scoped window-overlap checks also passed.
+These checks do not replace testing across all supported workflows.
 
-Alpha.2 adds a window-ordering correction: the planner raises as one window when
-opened, and periodic refreshes do not change foreground order. Scoped overlap
-checks with the separately corrected local GearEvidencePilot passed on the same
-client. The already-visible pilot and exposed-planner click cases also passed
-in a follow-up on 12 October. Manual dragging remains unverified; see the client
-test record for the exact checks. The pilot is not
-included in this release, and the alpha.1 tag and ZIP remain unchanged.
+Actual daily/weekly reset crossings, second-character behavior, combat transitions,
+manual window dragging, extreme UI scales, long sessions, full logout/restart
+permutations and the complete bag/durability matrix remain unverified. Retail,
+Classic Era and other Classic flavors are not supported by this package.
+See the [client test record](docs/CLIENT_TESTING.md) and
+[0.1.0 release record](docs/RELEASE_READINESS.md) for the test scope and package details.
 
-This is a scoped release, not full compatibility certification. Actual daily/weekly
-reset crossings, second-character behavior, combat transitions, extreme UI scales
-and long-session behavior remain unverified. Retail, Classic Era and other
-Classic flavors have not been validated or packaged as supported releases.
-See the [client test record](docs/CLIENT_TESTING.md) for methodology and the
-remaining checks. The temporary QA addon was removed and the user's original
-account and character data were restored and independently hash-verified.
-
-The published alpha.3 passed 62 automated Lua model, mocked integration and
-Python tooling checks. The alpha.4 source used for 0.1.0 passed 71. These support
-logic and packaging validation and do not replace actual client checks.
-
-The current public CurseForge file is **0.1.0, Release, Forever 1.60.1**.
-The [previous alpha.3](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
+Earlier [alpha.3](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
 and [alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
-remain available; set **Show alpha files** to **Show** in the website's **Files**
-tab when looking for those older versions.
-The 0.1.0 Release showed **Approved** at 13:37 Europe/Oslo on 17 October, while
-public checks at 13:37 and 13:59 returned **404**. At 20:04, the ordinary public
-page showed the correct file, Release channel, Forever 1.60.1 and a download link.
-See the [submission record](data/curseforge-release-0.1.0-submission-20261017.json).
-Use the website download and manual installation above. Actual Forever-app
-installation/update support remains unverified; public availability does not
-establish successful app installation, adoption or popularity. The release
-decision and publication status are recorded in [Release readiness](docs/RELEASE_READINESS.md).
+files remain available. Set **Show alpha files** to **Show** in CurseForge's
+**Files** tab when looking for older versions.
+
+## Feedback
+
+Report reproducible bugs or describe a real play session in the
+[issue tracker](https://github.com/jdlarssen/SessionScout/issues). Include the addon
+and game versions, the steps taken and the result. Feedback about whether the
+suggestions helped you choose a task is useful too.
+
+Remove chat and personal information from screenshots. Please do not attach
+complete SavedVariables files.
 
 ## Development
 
@@ -137,22 +118,6 @@ python tools/build.py
 
 The build creates a deterministic ZIP in `dist/`. Only addon source, its TOC and
 license are packaged. See [build and installation tools](tools/README.md) for the
-guarded local Forever installer. `tools/observe_rank.py --help` describes the optional
-single-page ranking observer; unavailable observations are recorded as unknown.
+local Forever installer and [the changelog](CHANGELOG.md) for version history.
 
-See [research](docs/RESEARCH.md), [project status](STATUS.md) and the
-[provisional listing draft](docs/CURSEFORGE_LISTING.md). No ranking or download
-claims should be made without fresh evidence from the actual published project.
-
-## Local product experiment
-
-[`experiments/GearEvidencePilot`](experiments/GearEvidencePilot/README.txt) is a
-separate RFK gear-evidence experiment for a level 30 Enhancement Shaman on
-Forever. It reads equipped items and two candidate items from the client,
-explains stat tradeoffs under two dated fixed-weight models, and exposes source
-limitations. It is not included in the SessionScout package or published on
-CurseForge. See its [validation record](experiments/GearEvidencePilot/TESTING.md).
-
-Read the [Ferine Leggings comparison](docs/GEAR_COMPARISON_EXAMPLE.md) for one
-verified stat tradeoff, the two fixed-model calculations and what remains unknown.
-No installation is needed to read the example.
+SessionScout is released under the [MIT license](LICENSE).

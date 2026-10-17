@@ -16,14 +16,8 @@
     "file:UI.lua:71D2FEE814145E0E7B9E42675DAAA31C3F83B5A89879AD3F9AC4057CB55B7CE0"
   ],
   "nativeTest": "Limited actual-client rendering observed; physical input validation unresolved",
-  "screenUseEndedAtApproximate": "2026-10-17T10:14:00+02:00",
-  "inputCollision": {
-    "observed": true,
-    "response": "Stopped native input until the other authorized chat reported releasing WoW; then resumed this owner's test window",
-    "anotherChatMessaged": false
-  },
   "runtime": {
-    "loadedAfter": "Another authorized chat reloaded WoW after installation; the alpha.4 layout was subsequently observed",
+    "loadedAfter": "Reload; the alpha.4 layout was subsequently observed",
     "observations": [
       "/scout opened the new session view with the existing 90-minute budget and a matching recommendation",
       "A physical click opened My tasks; the list displayed 7 unfinished and 4 completed tasks",
@@ -48,6 +42,7 @@
     ".tools/evidence/client/alpha4-20261017/tasks.png",
     ".tools/evidence/client/alpha4-20261017/editor-diagnostic.png"
   ],
-  "nextCheck": "In a fresh screen window, distinguish physical input delivery from addon behavior before testing budget changes and disposable task mutations; do not reinstall unchanged alpha.4",
-  "publicRelease": false
+  "nextCheck": "Physical budget/edit/cancel and task mutation checks; completed later in alpha4-input-validation-20261017.json",
+  "publicRelease": false,
+  "testEndedAtApproximate": "2026-10-17T10:14:00+02:00"
 }

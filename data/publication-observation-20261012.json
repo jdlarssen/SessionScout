@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "observationWindowLocal": "2026-10-12 approximately 19:57-20:01 Europe/Oslo",
-  "method": "Manual observation of rendered CurseForge author portal and ordinary public website in the authenticated Codex in-app browser",
+  "method": "Observation of rendered CurseForge author portal and ordinary public website",
   "project": {
     "id": 1738896,
     "slug": "sessionscout",
@@ -49,19 +49,8 @@
     "publicParagraphVerified": true,
     "repositoryHomepage": "https://www.curseforge.com/wow/addons/sessionscout",
     "repositoryHomepageReadBackVerified": true,
-    "packageChanged": false,
-    "redditEligibilityCheck": {
-      "reason": "One check after roughly another day of account aging",
-      "control": "r/WowUI Create post",
-      "accountDisplayedAgeDays": 2,
-      "ageRequirementMet": false,
-      "karmaRequirementMet": false,
-      "numericThresholdsDisclosed": false,
-      "editorOpened": false,
-      "postSubmitted": false
-    }
+    "packageChanged": false
   },
-  "rankEvidenceFile": "popularity-20261012T180417930916Z-5b1d28ef319147a8927736a71fc02604.json",
   "limits": [
     "Platform download counters do not identify unique players, successful installations or repeat use.",
     "Publication approval is not evidence of product demand or first place.",

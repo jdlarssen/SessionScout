@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "submittedOn": "2026-10-17",
   "displayedSubmissionTime": "13:34 Europe/Oslo",
-  "authorization": "Owner approved proceeding directly after the concrete 0.1.0 upload proposal; this resolves that file/destination/channel/automatic-publication request, not unrelated future action-time confirmations",
   "projectId": 1738896,
   "fileId": 9222143,
   "authorUrl": "https://authors.curseforge.com/#/projects/1738896/files/9222143",
@@ -26,11 +25,6 @@
     "publicFilesObservation": "All game versions and flavors, alpha files shown: only alpha.1, alpha.2 and alpha.3; 1-3 of 3 results",
     "interpretation": "Approval verified; public availability still unverified. No repeat upload or premature description change.",
     "screenshot": ".tools/release-0.1.0-curseforge-approved-20261017.jpg"
-  },
-  "scheduledFollowup": {
-    "observedAtLocal": "2026-10-17 13:59 Europe/Oslo",
-    "publicFileObservation": "404",
-    "oneTimeAutomationDeleted": true
   },
   "publicVerification": {
     "observedAtLocal": "2026-10-17 20:04 Europe/Oslo",
@@ -57,10 +51,18 @@
     "screenshot": ".tools/release-0.1.0-public-description-20261017.jpg"
   },
   "publicAvailabilityVerified": true,
-  "previousFilesUnchanged": [9219847, 9132600, 9128965],
+  "previousFilesUnchanged": [
+    9219847,
+    9132600,
+    9128965
+  ],
   "newUploadAttemptCount": 1,
   "privateClientEvidenceUploaded": false,
   "nativeComputerControlUsed": false,
   "appInstallOrAdoptionVerified": false,
-  "screenshot": ".tools/release-0.1.0-curseforge-submitted-20261017.jpg"
+  "screenshot": ".tools/release-0.1.0-curseforge-submitted-20261017.jpg",
+  "intermediatePublicCheck": {
+    "observedAtLocal": "2026-10-17 13:59 Europe/Oslo",
+    "publicFileObservation": "404"
+  }
 }

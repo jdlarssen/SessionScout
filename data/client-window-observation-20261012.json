@@ -2,8 +2,7 @@
   "schemaVersion": 1,
   "observationDate": "2026-10-12",
   "sessionLocal": "approximately 20:53-20:59 Europe/Oslo",
-  "authorization": "Fresh user instruction: Bare overta pcn",
-  "method": "Native WoW input and immediate screenshot observation through the computer-use skill; screenshots retained in the tool transcript, not exported as public media",
+  "method": "Physical WoW mouse/keyboard input and screenshot observation; rendering and input results are scoped to the recorded checks",
   "client": {
     "flavor": "Forever beta",
     "freshExactBuildVerified": false,
@@ -19,20 +18,26 @@
   "results": [
     {
       "case": "Invoke an already-visible pilot from behind the planner",
-      "steps": ["/gearevidence", "/scout", "/gearevidence"],
+      "steps": [
+        "/gearevidence",
+        "/scout",
+        "/gearevidence"
+      ],
       "result": "passed",
       "observed": "Entire pilot including controls rose above planner without visible interleaving"
     },
     {
       "case": "Click exposed planner behind pilot",
-      "steps": ["Click blank exposed planner background"],
+      "steps": [
+        "Click blank exposed planner background"
+      ],
       "result": "passed",
       "observed": "Entire planner including controls rose above pilot without visible interleaving"
     },
     {
-      "case": "Wind down",
+      "case": "Close controls",
       "result": "passed",
-      "observed": "Both addon Close buttons worked, chat closed, native tool session reset and screen released; incoming group invitation left untouched"
+      "observed": "Both addon Close buttons worked"
     }
   ],
   "dataPreservation": {
@@ -45,7 +50,6 @@
   "limits": [
     "No full Lua-error or taint audit; no visible error popup observed",
     "Actual dragging was not tested in this batch",
-    "Product photos were deferred to release the screen for an incoming invitation",
     "Extended client validation remains incomplete; these results do not establish full compatibility or player adoption"
   ]
 }

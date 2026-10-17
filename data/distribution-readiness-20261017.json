@@ -29,16 +29,25 @@
     "sourceModifiedDateDisplayed": "2024-09-24",
     "requirement": "At least one Release file before a project syncs to the CurseForge app",
     "observedFiles": [
-      { "fileId": 9128965, "releaseType": "Alpha" },
-      { "fileId": 9132600, "releaseType": "Alpha" },
-      { "fileId": 9219847, "releaseType": "Alpha" }
+      {
+        "fileId": 9128965,
+        "releaseType": "Alpha"
+      },
+      {
+        "fileId": 9132600,
+        "releaseType": "Alpha"
+      },
+      {
+        "fileId": 9219847,
+        "releaseType": "Alpha"
+      }
     ],
     "releaseFileRequirementMet": false,
     "actualForeverAppWorkflowTested": false,
     "decisionRecord": "docs/RELEASE_READINESS.md",
     "releasePromotionPerformed": false
   },
-  "nextEvidence": "Normal-input and data-preservation client check of already installed alpha.4 in a fresh owner-granted screen window",
+  "nextEvidence": "Normal-input and data-preservation client check of installed alpha.4; subsequently recorded in alpha4-input-validation-20261017.json",
   "nativeScreenUsed": false,
   "newOutreach": false,
   "unchangedTestsRerun": false

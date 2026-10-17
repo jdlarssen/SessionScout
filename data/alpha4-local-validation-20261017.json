@@ -9,7 +9,7 @@
     "completedAt": "2026-10-17T07:45:31Z",
     "packageMatchesLocalSha256": true
   },
-  "scope": "Bounded GUI correction following owner usability feedback",
+  "scope": "Session/task-management GUI correction following usability feedback",
   "modelChanged": false,
   "savedDataSchemaChanged": false,
   "tests": {
@@ -25,8 +25,16 @@
   "preview": {
     "type": "Source-derived layout with fictional data; not a game screenshot",
     "uiSourceSha256": "71d2fee814145e0e7b9e42675daaa31c3f83b5a89879ad3f9ac4057cb55b7ce0",
-    "inspectedStates": ["120-minute plan", "90-minute no-fit", "unfinished task list", "task editor"],
-    "limitations": ["Approximate fonts and native textures", "No actual-client focus or keyboard validation"],
+    "inspectedStates": [
+      "120-minute plan",
+      "90-minute no-fit",
+      "unfinished task list",
+      "task editor"
+    ],
+    "limitations": [
+      "Approximate fonts and native textures",
+      "No actual-client focus or keyboard validation"
+    ],
     "localOutputDirectory": ".tools/previews"
   },
   "package": {
@@ -36,6 +44,6 @@
   },
   "installed": true,
   "publishedAsRelease": false,
-  "actualClientValidation": "Installed and observed in Forever 1.60.1.70450: session and task-list views rendered, and direct Edit callback opened the editor. Physical budget/Edit/Cancel input remains unresolved; this is not a full client pass",
+  "actualClientValidation": "Initial rendering observation in Forever1.60.1.70450; physical input was unresolved at this stage and was checked subsequently in alpha4-input-validation-20261017.json",
   "clientRecord": "data/alpha4-client-validation-20261017.json"
 }
