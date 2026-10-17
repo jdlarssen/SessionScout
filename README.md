@@ -6,21 +6,15 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout is an early WoW Classic/Forever addon prototype for people who want a small,
 deliberate plan for their next session. Its name and positioning are provisional.
-**Experimental alpha.3 is available on CurseForge and GitHub for Forever 1.60.1.** It adds a
-visible Custom minutes control. Its automated checks passed; actual-client
-rendering and input checks for that control are still pending. The earlier
-alpha.2 remains publicly available on CurseForge, with scoped client checks on
-Forever 1.60.1.70338.
-
-The development checkout contains the **0.1.0 Release candidate**, including
+**0.1.0 is available on GitHub for Forever 1.60.1.** It includes
 the session/task-management redesign tested as alpha.4. Physical task operations,
 120/90-minute budgets, invalid input and preservation of existing data after
-reload passed on 17 October in Forever 1.60.1.70450. The candidate differs from
-that tested build only in its version strings. Download links below still point
-to the verified public alpha.3/alpha.2 until a new release is published.
+reload passed on 17 October in Forever 1.60.1.70450. The release differs from
+that tested build only in its version strings. CurseForge currently offers the
+older experimental alpha.3; its 0.1.0 upload is prepared but not submitted.
 
-[Download experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
-[GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
+[Download 0.1.0 on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
+[Previous experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
 [Source](https://github.com/jdlarssen/SessionScout) ·
 [Report a reproducible issue](https://github.com/jdlarssen/SessionScout/issues)
 
@@ -33,17 +27,17 @@ and priorities are entered manually; the 60-minute dungeon stays outside this
 
 ## Use
 
-1. Download `SessionScout-0.1.0-alpha.3-forever.zip` from the
-   [CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9219847)
-   or the [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever).
+1. Download `SessionScout-0.1.0-forever.zip` from the
+   [GitHub release](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
    With WoW closed, extract its `SessionScout` directory into your Forever
    `Interface/AddOns` folder (the current beta uses `_classic_beta_/Interface/AddOns`).
    The resulting path must contain `SessionScout/SessionScout.toc` directly.
 2. Start the game and enable SessionScout in the AddOns menu.
 3. Enter `/scout` (or `/sessionscout`).
-4. Add a task, its estimated minutes, priority and recurrence. Choose whether
+4. Open **My tasks**, choose **New task** and enter its estimated minutes,
+   priority and recurrence. Choose whether
    completion is shared across the account or tracked separately per character.
-5. Choose 15, 30 or 60 minutes, or enter 1–240 whole minutes in **Custom minutes**
+5. Return to **This session**. Choose 15, 30 or 60 minutes, or enter 1–240 whole minutes in **Custom minutes**
    and press **Apply** or Enter. `/scout 45` also accepts a custom budget.
 6. Complete tasks manually. Daily and weekly completion expires at the reset
    time supplied by the game. Undo reverses a completion for the applicable scope.
@@ -77,7 +71,7 @@ screenshots. Please do not attach complete SavedVariables files.
 
 ## Compatibility and validation
 
-The alpha targets **Forever 1.60.1, interface 16001**. Actual client checks on
+The release targets **Forever 1.60.1, interface 16001**. Actual client checks on
 **1.60.1.70338** passed for task creation/editing/deletion, completion/undo,
 priorities and budgets, pagination, and reload persistence of tasks, completion,
 budget and a Unicode note. Daily and weekly completion stored server-reset
@@ -105,7 +99,7 @@ in a follow-up on 12 October. Manual dragging remains unverified; see the client
 test record for the exact checks. The pilot is not
 included in this release, and the alpha.1 tag and ZIP remain unchanged.
 
-This is a scoped alpha, not full compatibility certification. Actual daily/weekly
+This is a scoped release, not full compatibility certification. Actual daily/weekly
 reset crossings, second-character behavior, combat transitions, extreme UI scales
 and long-session behavior remain unverified. Retail, Classic Era and other
 Classic flavors have not been validated or packaged as supported releases.
@@ -119,7 +113,7 @@ logic and packaging validation and do not replace actual client checks.
 
 The CurseForge releases use the **Alpha** channel. On the project's website,
 open **Files** and set **Show alpha files** to **Show** if the list appears empty.
-The link above opens experimental alpha.3. The
+The CurseForge link above opens experimental alpha.3; GitHub has 0.1.0. The
 [previous alpha.2](https://www.curseforge.com/wow/addons/sessionscout/files/9132600)
 remains available.
 This Alpha-only project does not yet meet CurseForge's

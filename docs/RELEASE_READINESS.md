@@ -1,8 +1,8 @@
 # First Release decision
 
 Updated 17 October 2026 after the approximately 10:34–10:45 Europe/Oslo client
-follow-up. **Ready to prepare a scoped 0.1.0 Forever Release; no public Release
-is claimed by this record.** The tested candidate is the installed alpha.4 GUI,
+follow-up. **0.1.0 is published on GitHub; CurseForge submission is prepared and
+awaits the requested new-file upload authorization.** The tested candidate is the installed alpha.4 GUI,
 source `d94ca15034c3a65117692042dd3db0d365108c1e`.
 Its [71 automated checks and CI passed](../data/alpha4-local-validation-20261017.json).
 The [initial client observation](../data/alpha4-client-validation-20261017.json)
@@ -73,17 +73,19 @@ changes data, do not blindly restore an older snapshot over their work.
 
 The essential normal-input, task-operation, budget and data-preservation gates
 are now supported by recorded observations, with no known blocking error in
-that path. Prepare **0.1.0** using the tested UI and logic: change only the
-version metadata in the TOC and `Core.lua`, build
-`SessionScout-0.1.0-forever.zip`, and record its checksum and exact differences
-from the tested alpha.4 package. Keep interface **16001**, the existing data
-schema and the supported target **Forever 1.60.1** unchanged. No separate
-alpha.4 publication or unchanged reinstallation is required.
+that path. **0.1.0** was prepared using the tested UI and logic: only the version
+metadata in the TOC and `Core.lua` changed. Archive comparison confirms all other
+members are byte-identical to alpha.4. Interface **16001**, the data schema and
+target **Forever 1.60.1** are unchanged. Source `b4a0f86` passed CI, and its CI
+artifact, local ZIP and uploaded GitHub asset have the same checksum. See the
+[publication evidence](../data/release-0.1.0-publication-20261017.json).
+No separate alpha.4 publication or unchanged reinstallation is required.
 
-Prepare accurate release notes and the exact upload proposal; respect any
-required destination-specific confirmation. Preserve existing alpha packages
-and tags. Keep download links on the currently verified file until the new
-public file is verified. Do not infer outreach permission from this decision.
+The [release notes](RELEASE_0.1.0.txt) and exact CurseForge upload proposal are
+prepared. The browser's new-file upload confirmation is pending. Existing alpha
+packages and tags are preserved. GitHub download links now point to verified
+0.1.0; CurseForge links remain on verified alpha.3 until its own new file is
+publicly verified. Do not infer outreach permission from this decision.
 
 Keep the broader client checklist as follow-up work. Disclose unobserved real
 reset crossings, alternate-character behavior, combat transitions, extreme UI

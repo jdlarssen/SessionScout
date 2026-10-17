@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-17T08:53:13.4236262Z",
+  "version": "0.1.0",
+  "releaseId": 415685767,
+  "url": "https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever",
+  "publishedAt": "2026-10-17T08:50:56Z",
+  "draft": false,
+  "prerelease": false,
+  "tag": "v0.1.0-forever",
+  "sourceCommit": "b4a0f86e10119ca38a6292d1dc8e5627e0b82479",
+  "releaseNotesMatch": true,
+  "ciUrl": "https://github.com/jdlarssen/SessionScout/actions/runs/39018835464",
+  "ciConclusion": "success",
+  "ciArtifactMatchesLocalZip": true,
+  "assets": [
+    {
+      "name": "SessionScout-0.1.0-forever.zip",
+      "size": 47331,
+      "digest": "sha256:ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c"
+    },
+    {
+      "name": "SessionScout-0.1.0-forever.zip.sha256",
+      "size": 97,
+      "digest": "sha256:84ff4f14175443b501b7a5a4118972c609e381950adba33fee5a07bc55c20b21"
+    }
+  ],
+  "curseForge": {
+    "projectId": 1738896,
+    "automaticPublicationAfterApproval": true,
+    "gameVersion": "1.60.1",
+    "status": "Prepared form, not submitted",
+    "authorization": "New ZIP upload requested once; pending",
+    "screenshot": ".tools/release-0.1.0-curseforge-prepared.png",
+    "intendedChannel": "Release"
+  },
+  "privateClientEvidenceUploaded": false,
+  "adoptionClaim": false
+}

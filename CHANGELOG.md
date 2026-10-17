@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — first Release candidate, 2026-10-17
+## 0.1.0 — first GitHub Release, 2026-10-17
 
 Includes the session/task-management redesign below and the custom-minute
 control. A fresh physical-input test on Forever 1.60.1.70450 passed normal task
@@ -15,8 +15,13 @@ The release package differs from tested alpha.4 only in its two version strings.
 The same saved-data format and selection model are retained. See the
 [client evidence](data/alpha4-input-validation-20261017.json) and
 [release notes](docs/RELEASE_0.1.0.txt) for scope and remaining limits.
-No public Release availability or CurseForge-app installation claim is made by
-this preparation entry.
+Published on [GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever)
+at 08:50:56 UTC. The tag resolves to `b4a0f86e10119ca38a6292d1dc8e5627e0b82479`,
+whose CI passed. The CI artifact, local ZIP and uploaded asset all match SHA256
+`ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.
+CurseForge submission is prepared and awaits the requested new-file upload
+authorization; its existing alpha files are unchanged. No CurseForge-app
+installation claim follows from GitHub publication.
 
 ## 0.1.0-alpha.4 — unreleased GUI revision
 

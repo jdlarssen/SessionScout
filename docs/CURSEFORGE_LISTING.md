@@ -7,6 +7,20 @@ Public project: https://www.curseforge.com/wow/addons/sessionscout
 Manage: https://authors.curseforge.com/#/projects/1738896/files
 Author preview: https://www.curseforge.com/wow/addons/sessionscout/preview
 
+**0.1.0 preparation update, 17 October:** the first regular Release is published
+on GitHub, tagged `v0.1.0-forever` at `b4a0f86`. Its CI and essential physical
+client checks passed. The CurseForge form is prepared with the name
+`SessionScout 0.1.0 — Forever`, Release, 1.60.1, automatic publication after
+approval, no dependencies and `RELEASE_0.1.0.txt` as its Markdown changelog.
+The new ZIP has not been attached or submitted; its upload authorization was
+requested once and remains pending. Do not repeat the question or imply a
+CurseForge Release exists yet. ZIP: `dist/SessionScout-0.1.0-forever.zip`,
+47,331 bytes, SHA256
+`ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.
+See `data/release-0.1.0-publication-20261017.json`. Keep this project's public
+download link on alpha.3 until the new CurseForge file is approved and verified;
+do not add an external GitHub file-download link to the CurseForge description.
+
 Summary: Pick a time budget and get up to three personal tasks that fit your next WoW session.
 
 Saved categories: Quests & Leveling; Miscellaneous. Comments enabled.
