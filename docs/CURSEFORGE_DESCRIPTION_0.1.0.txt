@@ -10,6 +10,14 @@ choose your time and see suggestions, from **My tasks**, where you manage the
 list. Estimates and completion are manual; the addon does not discover
 activities, detect quest completion or calculate gear upgrades.
 
+## Interface preview
+
+[![Source-derived preview of SessionScout 0.1.0 with one saved task fitting a 120-minute session](https://raw.githubusercontent.com/jdlarssen/SessionScout/ca6621e5bcea8eb2303c0affd351d2a4b40a4c8c/docs/media/sessionscout-0.1.0-session-preview.png)](https://github.com/jdlarssen/SessionScout/blob/ca6621e5bcea8eb2303c0affd351d2a4b40a4c8c/docs/media/sessionscout-0.1.0-session-preview.png)
+
+*Source-derived preview of 0.1.0 with fictional, manually entered tasks.
+One saved task fits a 120-minute session. Fonts and button textures are
+approximate; this is not an in-game screenshot or a calculated gear recommendation.*
+
 ## Get started
 
 1. Download [**SessionScout 0.1.0 — Forever**](https://www.curseforge.com/wow/addons/sessionscout/files/9222143),
@@ -44,14 +52,6 @@ not be saved; it does not guess a reset schedule.
 There are no dependencies, external accounts or telemetry. General bag space
 and lowest equipped-item durability are shown outside combat.
 
-## Client image
-
-[![Earlier SessionScout interface in Forever with fictional example tasks](https://raw.githubusercontent.com/jdlarssen/SessionScout/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)](https://github.com/jdlarssen/SessionScout/blob/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
-
-*This is alpha.2 in the actual Forever client with fictional example tasks. It
-shows the planning principle, but predates Custom minutes and the separate
-This session / My tasks views in 0.1.0.*
-
 ## Compatibility and feedback
 
 The new controls were checked with mouse and keyboard in Forever 1.60.1.70450:
@@ -64,6 +64,10 @@ Actual reset crossings, multiple-character use, combat transitions, extreme UI
 scales and long sessions still need testing. Retail and other Classic versions
 are not supported by this file. Installation and updating through the
 CurseForge app have not been verified; the manual installation steps above apply.
+
+An [earlier in-game image of alpha.2](https://github.com/jdlarssen/SessionScout/blob/8eb0bcb/docs/media/sessionscout-30-minute-plan-forever-20261012.jpg)
+shows the previous layout with fictional tasks. It predates Custom minutes and
+the separate This session / My tasks views in 0.1.0.
 
 Did the suggestions help you choose, or did setup take more effort than it saved?
 Share a concrete example in the project comments or
