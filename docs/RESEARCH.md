@@ -2,6 +2,54 @@
 
 Research date: 11 October 2026 (Europe/Oslo). This is an initial research snapshot, not proof of demand, compatibility, name availability, or future ranking.
 
+## Horizontal strategy correction — 17 October 2026
+
+The owner challenged concentration on SessionScout. The challenge is supported
+by the work record: several hypotheses existed in this document, but completed
+work was dominated by one planner, a small local gear explanation and technical
+checks. No independent comparative player test has validated a leading product.
+The owner's "it helps a little" does not justify treating SessionScout as that
+leader. Time already invested is not evidence for further feature investment.
+
+**Operating decision:** keep SessionScout in maintenance and observation; finish
+prepared distribution within its actual permissions and fix demonstrated defects.
+Use the next discretionary work for a bounded alternative problem investigation.
+Separate evidence discovery, feasibility/competitor comparison, and player-value
+validation. The earlier five/six-participant gates apply to the last stage, not
+to whether any useful source investigation may begin. An unavailable recruitment
+channel or pending upload blocks that action, not the whole search for a product.
+
+New public-source screening produced three distinct dispositions:
+
+| Problem | Evidence and counterevidence | Decision |
+| --- | --- | --- |
+| A dungeon group forms but cannot start | A [Forever player discussion](https://www.reddit.com/r/wowforever/comments/1wzuqwc/please_be_near_the_dungeon_or_around_the_area/) reports repeated long arrival waits, missing summoning helpers and departures. Other participants accept normal travel time or avoid waiting at an entrance before finding a group. [LFG Forever](https://www.curseforge.com/wow/addons/lfg-forever) already advertises filters, player locations and whisper management; [WhereYouAt](https://www.curseforge.com/wow/addons/whereyouat) documents listing-leader location and its other-member limitation. | Investigate disagreement about readiness and responsibilities after group formation. Generic filtering/location is already served; no new finder or ETA promise is justified. |
+| Find a guild crafter | An [author/player discussion](https://www.reddit.com/r/classicwow/comments/1rvd95m/addon_i_built_an_addon_to_solve_the_who_can_craft/) reports repeated craft requests and actual GuildCrafts use, including a duplicate-response complaint and reported correction. [GuildCrafts](https://www.curseforge.com/wow/addons/guildcrafts) covers recipe lookup/contact; [Guild Commons](https://us.forums.blizzard.com/en/wow/t/super-useful-guild-commons-addon/2364181) advertises Forever sharing and supply requests. | Park new implementation. An applicable unmet need surviving these alternatives has not been established. Maintainer departure alone is insufficient. |
+| Settings disappear on reload | An [unresolved Forever beta report](https://eu.forums.blizzard.com/en/blizzard/t/classic-forever-beta-savedvariables-are-written-on-logoutreload-but-not-loaded-back-%E2%80%93-every-addon-loses-its-settings/17983) describes settings loss across several addons, with no verified resolution. | Reject as a new recovery-addon direction on this evidence. A transient client persistence fault may be outside an addon's ability to fix. |
+
+These are reported incidents and author-described alternatives, not recruited
+testers, measured prevalence, runtime comparisons or new market validation.
+Sources were inspected on 17 October; relative timestamps on retrieved Reddit
+pages are not treated as independently verified creation dates.
+
+**Next bounded comparison:** examine group-start incidents against the native
+location check, a direct agreement in chat and LFG Forever. Identify the exact
+missing agreement/information, the earliest moment it could help, and whether
+the client could obtain it without guessing travel time or intent. The tradeoff
+must count the applicant's waiting/setup effort as well as the group's delay.
+Stop if existing tools plus a simple agreement adequately cover the cases, or
+the remaining issue is unwillingness that UI cannot fix. A surviving concrete
+gap can earn a small demonstration; only a later real comparison can establish
+time saved, improved starts or voluntary reuse. No messages, installations or
+new addon implementation follow from this screening alone.
+
+Keep other hypotheses eligible for replacement or reopening when a new concrete
+case warrants it. Prefer repeated value, quick benefit with little administration,
+an advantage over the best applicable alternative, a reachable audience, and a
+credible expansion path beyond the initial Forever audience. None currently
+establishes a route to first place. Spread the search across problems; concentrate
+development only after one earns stronger comparative evidence.
+
 ## Owner usability report — 15 October 2026
 
 The owner reported having entered tasks and having more than 60 minutes available,
