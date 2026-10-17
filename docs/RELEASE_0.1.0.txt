@@ -1,0 +1,23 @@
+SessionScout 0.1.0 - Forever
+
+Choose how much time you have and see up to three unfinished personal tasks that fit.
+
+This first regular release brings the tested session planner and task-management redesign together:
+- This session focuses on your time budget, suggested tasks and next-session reminder.
+- My tasks separates unfinished and completed tasks, with a dedicated editor and Undo.
+- Custom minutes accepts 1-240 whole minutes. Invalid entries keep your current budget.
+- If nothing fits, the planner explains the shortest unfinished estimate and offers a route to your tasks.
+- Existing tasks, completion and reminders keep the same saved-data format.
+
+Open /scout. In My tasks, choose New task and enter your own time estimate and priority. Return to This session and select a preset or enter Custom minutes, then Apply. Task definitions are shared across characters; completion can be per-character or shared. Editing or deleting a definition affects every character.
+
+Targets WoW Forever 1.60.1 (interface 16001). The new controls were exercised in 1.60.1.70450 using physical mouse and keyboard input: create/edit/cancel, complete/undo, confirmed deletion, 120/90-minute budgets and invalid input. After one reload, all 11 original tasks, completion records and character settings matched their pre-test values. The disposable task was removed. The release differs from that tested alpha.4 package only in its two version strings.
+
+Validation includes 71 automated model, mocked integration and Python tooling checks. Actual reset crossings, alternate characters, combat transitions, extreme UI scales, long sessions and every restart/bag/durability case remain unverified. Earlier scoped checks include reminder persistence; this latest window preserved the existing empty reminder. No full Lua-error or taint audit was performed.
+
+This is a manual task planner. It does not discover game activities, detect quest completion, measure how long tasks take, or calculate gear upgrades. It has no external service or telemetry. CurseForge-app detection, installation and updating for Forever have not been verified.
+
+To install manually, close WoW and extract the SessionScout directory into your Forever Interface/AddOns folder. SessionScout/SessionScout.toc must be directly inside it. Keep your WTF/SavedVariables data when updating.
+
+Source and issue reports: https://github.com/jdlarssen/SessionScout
+Validation record: https://github.com/jdlarssen/SessionScout/blob/codex/sessionscout/docs/CLIENT_TESTING.md

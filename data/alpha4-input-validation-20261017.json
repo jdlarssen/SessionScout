@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "version": "0.1.0-alpha.4",
+  "clientVersion": "1.60.1.70450",
+  "sourceCommit": "d94ca15034c3a65117692042dd3db0d365108c1e",
+  "priorObservation": "data/alpha4-client-validation-20261017.json",
+  "authorization": "Fresh owner-granted screen window for the prepared input, disposable-task cleanup and reload check",
+  "screenWindowApproximate": "2026-10-17 10:34-10:45 Europe/Oslo",
+  "reinstalled": false,
+  "addonSourceChangedDuringTest": false,
+  "inputDiagnostic": {
+    "control": "Cancel",
+    "firstPhysicalClick": "No mouse-down, mouse-up or click received; measured cursor/focus landed below the button",
+    "adjustedPhysicalClick": "Mouse-down, mouse-up and click received, editor cancelled normally",
+    "interpretation": "Tool coordinate delivery explained the observed failure; no addon callback defect demonstrated",
+    "directCallbackUsedToPass": false,
+    "temporaryTraceClearedByReload": true
+  },
+  "physicalChecksPassed": [
+    "Create one uniquely named disposable task with a 10-minute estimate",
+    "Edit estimate to 20 and Cancel: original 10-minute value retained",
+    "Edit estimate to 120 and Save: selected disposable task updated",
+    "Complete disposable task and observe completed filter; Undo restores unfinished state",
+    "Apply 120-minute budget and observe a fitting 120-minute recommendation",
+    "Apply invalid zero: validation shown and committed 120-minute budget retained",
+    "Apply original 90-minute budget: fitting 90-minute recommendation; 120-minute disposable task excluded",
+    "Delete only disposable task through two-step confirmation; original 7 unfinished and 4 completed counts restored",
+    "One reload and normal /scout reopening: 90-minute budget, matching recommendation and empty reminder retained",
+    "Escape closes addon; chat closed before ending native control"
+  ],
+  "preservation": {
+    "method": "Fresh before/after SavedVariables copies, copy hashes checked, Lua tables compared recursively after reload",
+    "originalTaskCount": 11,
+    "originalTasksUnchanged": true,
+    "allProgressUnchanged": true,
+    "characterDataUnchanged": true,
+    "disposableTaskAbsent": true,
+    "onlyAccountChange": "nextId increased from 13 to 14 after disposable-task creation; expected monotonic ID allocation",
+    "savedBudget": 90,
+    "savedReminderEmpty": true
+  },
+  "privateEvidenceDirectory": ".tools/evidence/client/alpha4-input-20261017",
+  "privateEvidenceMustNotBePublished": "Screenshots and SavedVariables contain personal task information and unrelated game chat",
+  "visibleLuaErrorObserved": false,
+  "fullErrorOrTaintAuditPerformed": false,
+  "decision": "Essential interaction and preservation checks support preparing the first scoped 0.1.0 Release; publication and app availability are separate",
+  "remainingLimits": [
+    "Actual daily/weekly reset crossings and alternate-character behavior",
+    "Combat transitions, extreme UI scales and long sessions",
+    "Full logout/login and restart permutations, drag behavior and complete bag/durability matrix",
+    "New nonempty reminder editing was not repeated in this window",
+    "Product usefulness, voluntary reuse and CurseForge-app installation/update are not established by this test"
+  ]
+}

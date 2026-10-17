@@ -12,10 +12,12 @@ rendering and input checks for that control are still pending. The earlier
 alpha.2 remains publicly available on CurseForge, with scoped client checks on
 Forever 1.60.1.70338.
 
-The development checkout contains an **unreleased alpha.4 GUI revision**.
-Download links below still point to alpha.3/alpha.2. The new session and task-list
-views have been observed in the actual game, but physical input testing is
-unresolved. Alpha.4 has not been published as a release.
+The development checkout contains the **0.1.0 Release candidate**, including
+the session/task-management redesign tested as alpha.4. Physical task operations,
+120/90-minute budgets, invalid input and preservation of existing data after
+reload passed on 17 October in Forever 1.60.1.70450. The candidate differs from
+that tested build only in its version strings. Download links below still point
+to the verified public alpha.3/alpha.2 until a new release is published.
 
 [Download experimental alpha.3 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9219847) ·
 [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-alpha.3-forever) ·
@@ -86,11 +88,14 @@ visually verified.
 Alpha.3 adds the custom-budget field and clearer no-fit messages. Its new-control
 rendering, keyboard entry and focus behavior remain unverified in the actual
 client. Alpha.3 installation was recorded on **1.60.1.70374**. The development
-alpha.4 was subsequently installed and observed on **1.60.1.70450**: the session
-and task-list views rendered, and direct invocation of Edit opened the editor.
-Physical budget/Edit/Cancel input remains unresolved. Automated regressions,
-callback diagnostics and earlier 70338 checks do not establish these pending
-interaction results.
+alpha.4 was subsequently installed on **1.60.1.70450**. A follow-up on 17 October
+resolved the initial input-delivery problem: the control tool was clicking below
+its targets. With corrected coordinates, physical create/edit/cancel,
+complete/undo, confirmed deletion, 120/90-minute budgets and invalid input passed.
+One reload preserved all 11 original tasks, completion records and character
+settings. The disposable task was removed. See the
+[scoped follow-up](data/alpha4-input-validation-20261017.json); it does not certify
+every client interaction or establish that the product is useful to other players.
 
 Alpha.2 adds a window-ordering correction: the planner raises as one window when
 opened, and periodic refreshes do not change foreground order. Scoped overlap
@@ -109,7 +114,7 @@ remaining checks. The temporary QA addon was removed and the user's original
 account and character data were restored and independently hash-verified.
 
 The published alpha.3 passed 62 automated Lua model, mocked integration and
-Python tooling checks. The unreleased alpha.4 checkout passes 71. These support
+Python tooling checks. The alpha.4 source used for 0.1.0 passed 71. These support
 logic and packaging validation and do not replace actual client checks.
 
 The CurseForge releases use the **Alpha** channel. On the project's website,

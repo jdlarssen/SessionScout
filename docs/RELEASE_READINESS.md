@@ -1,12 +1,17 @@
 # First Release decision
 
-Updated 17 October 2026. **Not ready for promotion yet; no Release file has
-been created or promoted.** The candidate is the current alpha.4 GUI, source
-`d94ca15034c3a65117692042dd3db0d365108c1e`, already installed locally.
+Updated 17 October 2026 after the approximately 10:34–10:45 Europe/Oslo client
+follow-up. **Ready to prepare a scoped 0.1.0 Forever Release; no public Release
+is claimed by this record.** The tested candidate is the installed alpha.4 GUI,
+source `d94ca15034c3a65117692042dd3db0d365108c1e`.
 Its [71 automated checks and CI passed](../data/alpha4-local-validation-20261017.json).
-The [client observation](../data/alpha4-client-validation-20261017.json) confirms
-rendering, but physical budget/Edit/Cancel input remains unresolved. Direct
-callback invocation is not a successful mouse-input test.
+The [initial client observation](../data/alpha4-client-validation-20261017.json)
+at approximately 10:03–10:14 confirmed rendering but left physical input
+unresolved; publication was held at that point. The
+[physical-input follow-up](../data/alpha4-input-validation-20261017.json)
+now supports normal controls, budget validation and preservation/persistence of
+the owner's data on Forever **1.60.1.70450**. No source fix or reinstallation was
+needed. Direct callback invocation is not counted as a physical-input pass.
 
 ## Why a Release matters
 
@@ -24,38 +29,38 @@ percentage and completion of every peripheral test are research/planning choices
 not platform Release requirements. They are not prerequisites for this decision.
 Product value and voluntary reuse still require their own evidence.
 
-## One bounded client check
+## Bounded client check — passed
 
-Use a fresh, explicitly agreed screen window. Confirm exclusive control before
-input; the previous test collided with another chat. Do not reinstall unchanged
-alpha.4. Preserve a fresh backup and record the current budget, reminder and
-task/completion state before any mutation. Do not put personal task data or chat
-in public evidence.
+The fresh owner-authorized screen window used the already-installed alpha.4 and
+fresh SavedVariables backups. An initial Cancel click produced no mouse events.
+Read-only control-centre, cursor and focus inspection showed input delivered
+below the intended target. Correcting the computer-use coordinates delivered
+mouse-down, mouse-up and click events, and Cancel worked. Subsequent workflow
+checks used physical input throughout.
 
-1. Open `/scout`. Observe the normal session and task views. Trace one Edit
-   button's mouse-down/up/click delivery temporarily if physical clicking still
-   fails. Distinguish delivered input from callback behavior before proceeding;
-   another direct callback invocation cannot pass this check.
-2. Through normal controls, create one uniquely named, disposable test task with
-   a 10-minute estimate. Edit its estimate to 20 and Cancel: it must remain 10.
-   Edit it again to 120 and Save: only that task must change. Check keyboard
-   focus, readable fields and return to the task list.
-3. Enter 120 in Custom minutes and Apply; then enter 90 and Apply. The committed
-   budget must match each value, displayed recommendations must stay within it,
-   and the 120-minute test task must be excluded at 90. At 120 it is eligible,
-   but other task priorities may determine the shortlist; do not rewrite the
-   owner's estimates to force a result. Cancelled or invalid input must not
-   replace the committed budget.
-4. Complete and undo the disposable task using normal controls. Verify its
-   completed/unfinished state and filter visibility. Close and reopen the window
-   to check that focus and the saved edit remain usable. No owner task should
-   change.
-5. Remove only the disposable task through its confirmation control. Restore the
-   original budget, compare the original task/completion state and reminder, and
-   clear temporary tracing. If the agreed window includes it, use one `/reload`
-   to confirm the restored state persists. Otherwise record persistence as
-   pending. Close the addon and chat, release input and tell the owner the screen
-   is free.
+1. A uniquely named disposable 10-minute task was created. Editing to 20 and
+   cancelling retained 10; editing to 120 and saving retained 120.
+2. Done and Undo worked, with the task appearing in the appropriate completed
+   and unfinished filters.
+3. Custom minutes accepted 120 and produced a fitting 120-minute recommendation.
+   Invalid `0` preserved the committed 120-minute budget. Applying 90 produced
+   a fitting 90-minute recommendation and excluded the 120-minute test task.
+   No owner estimate was changed to force a recommendation.
+4. Only the disposable task was deleted through its confirmation control. Counts
+   returned to 7 unfinished and 4 completed. After one `/reload`, `/scout`
+   displayed the original 90-minute budget, a matching recommendation and the
+   empty character reminder.
+5. Semantic comparison of persisted SavedVariables passed: all 11 original
+   tasks, all completion/progress data and the complete character data matched
+   the fresh backups. The disposable task was absent. The sole account change
+   was the expected `nextId` increment from 13 to 14; it was not rolled back.
+
+No visible Lua error was observed; this was not a full error-log or taint audit.
+The reload cleared temporary event tracing. The addon and chat were closed,
+native input ended at approximately 10:45 and the control kernel was reset.
+Private evidence remains in `.tools/evidence/client/alpha4-input-20261017/`;
+only the sanitized result should be published. The detailed observations and
+broader unobserved checks remain in [Client testing](CLIENT_TESTING.md).
 
 ## Stop and decision rules
 
@@ -66,17 +71,25 @@ actual failure before changing source; do not attribute a delivery problem to
 the addon or count a programmatic callback as a physical pass. If another actor
 changes data, do not blindly restore an older snapshot over their work.
 
-A first Release can be prepared when normal input, budget behavior, disposable
-task edit/cancel/complete/undo, and preservation/persistence of existing data are
-supported by recorded observations, with no known blocking error in that path.
-Fix any demonstrated defect and verify the affected workflow before promotion.
-Keep the broader [client checklist](CLIENT_TESTING.md) as follow-up work; disclose
-unobserved reset crossings, alternate-character behavior and other limits
-without claiming complete compatibility.
+The essential normal-input, task-operation, budget and data-preservation gates
+are now supported by recorded observations, with no known blocking error in
+that path. Prepare **0.1.0** using the tested UI and logic: change only the
+version metadata in the TOC and `Core.lua`, build
+`SessionScout-0.1.0-forever.zip`, and record its checksum and exact differences
+from the tested alpha.4 package. Keep interface **16001**, the existing data
+schema and the supported target **Forever 1.60.1** unchanged. No separate
+alpha.4 publication or unchanged reinstallation is required.
 
-Then prepare the properly versioned Release, accurate notes and exact upload
-proposal; respect any required destination-specific confirmation. Do not relabel
-an experimental package merely for visibility, reupload an unchanged file or
-infer outreach permission. Actual Forever-app installation/update remains a
-separate verification before advertising that route. No new source, ZIP,
-installation, test execution, upload or channel change accompanied this record.
+Prepare accurate release notes and the exact upload proposal; respect any
+required destination-specific confirmation. Preserve existing alpha packages
+and tags. Keep download links on the currently verified file until the new
+public file is verified. Do not infer outreach permission from this decision.
+
+Keep the broader client checklist as follow-up work. Disclose unobserved real
+reset crossings, alternate-character behavior, combat transitions, extreme UI
+scales, full logout/restart permutations, long-session behavior and the complete
+bag/durability matrix. These limits do not establish a known defect or require
+inventing new features, but preclude a complete-compatibility claim. Actual
+Forever-app installation/update remains a separate verification before
+advertising that route. A Release channel does not establish product value,
+adoption or popularity.

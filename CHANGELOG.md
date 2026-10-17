@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0 — first Release candidate, 2026-10-17
+
+Includes the session/task-management redesign below and the custom-minute
+control. A fresh physical-input test on Forever 1.60.1.70450 passed normal task
+creation, edit/save/cancel, complete/undo, confirmed deletion, 120/90-minute
+budgets and invalid-input preservation. One reload and a semantic SavedVariables
+comparison verified all 11 original tasks, completion and character settings
+unchanged; the disposable task was removed. Only the expected next-ID increment
+remained. The earlier click issue was traced to the control tool's coordinate
+delivery, with no addon fix required.
+
+The release package differs from tested alpha.4 only in its two version strings.
+The same saved-data format and selection model are retained. See the
+[client evidence](data/alpha4-input-validation-20261017.json) and
+[release notes](docs/RELEASE_0.1.0.txt) for scope and remaining limits.
+No public Release availability or CurseForge-app installation claim is made by
+this preparation entry.
+
 ## 0.1.0-alpha.4 — unreleased GUI revision
 
 - Separate the default session planner from task management.
@@ -17,6 +35,10 @@ screen use, the session and task-list views rendered in Forever 1.60.1.70450.
 A direct Edit callback opened the editor, but physical budget/Edit/Cancel input
 did not respond reliably and remains unresolved. This is not a full client pass.
 It has not been published as a release.
+
+Follow-up at 10:34–10:45 Europe/Oslo resolved physical input and data preservation;
+see the 0.1.0 entry above. Alpha.4 remains a preserved test artifact and is not
+being published as a separate additional alpha.
 
 ## 0.1.0-alpha.3 — experimental CurseForge/GitHub alpha, 2026-10-17
 

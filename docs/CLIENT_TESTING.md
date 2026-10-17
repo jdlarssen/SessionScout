@@ -1,11 +1,13 @@
 # Release validation in the actual game
 
-Status: **earlier scoped alpha checks passed; alpha.4 rendering observed, physical input unresolved**.
+Status: **alpha.4 essential physical-input and data-preservation checks passed on 17 October; broader compatibility checks remain open**.
 Automated tests are not a substitute for these checks.
-Primary target: Forever beta 1.60.1.70338 (interface 16001). Record actual client version/build, date and outcomes here before uploading a
+Current observed target: Forever beta 1.60.1.70450 (interface 16001); earlier checks below used 70338. Record actual client version/build, date and outcomes here before uploading a
 public release. Never mark a platform supported only by changing its TOC number.
 
-## GUI revision — alpha.4; limited client observations, input unresolved
+## GUI revision — alpha.4; essential client checks passed
+
+### Initial observations — 17 October, 10:03–10:14 Europe/Oslo
 
 The owner's 17 October feedback says the GUI/user experience is not good.
 The local correction separates the session planner and task administration,
@@ -54,38 +56,68 @@ aids and do not complete the actual-client checks below.
 Local package: `dist/SessionScout-0.1.0-alpha.4-forever.zip`.
 SHA256: `afb902838370b390b8ee64439e446d99a5456b358a02bfbaefa40f37b9583052`.
 
-Alpha.4 is already installed and loaded. Do not reinstall it unchanged. When a
-fresh short screen window is explicitly granted, first distinguish physical
-input delivery from addon behavior, then finish the compact check below.
-The owner can also provide ordinary mouse-click observations during their own
-use; no repeated screen request is needed while they are playing.
+The initial decision was to keep publication pending a fresh, bounded physical
+input and data-preservation check. Offline follow-up found no actionable callback
+or overlapping-panel defect: there is no OnUpdate handler, tabs and nested
+buttons share the same constructor, and refresh does not clear focus or change
+views. Input delivery still needed observation; another direct callback invocation
+would not resolve it. The follow-up below supplies that missing evidence.
 
-Offline follow-up found no actionable callback or overlapping-panel defect:
-there is no OnUpdate handler, tabs and nested buttons share the same constructor,
-and refresh does not clear focus or change views. Actual frame levels and mouse
-delivery remain unmeasured. In the next authorized window, trace one Edit button's
-OnMouseDown, OnMouseUp and OnClick before one physical click. No received events
-points to delivery/interception; down/up without a click narrows recognition;
-a received click with a failing callback supplies an actual Lua error. Keep the
-instrumentation temporary and task data unchanged. Do not call the handler
-directly again as a substitute for this missing input observation.
+### Physical-input follow-up — 17 October, approximately 10:34–10:45 Europe/Oslo
 
-1. Open `/scout`. Verify the session view is readable and task-administration
-   controls do not obscure the suggested activities.
-2. With a real unfinished 120-minute task, apply 120, then 90. The first can
-   suggest the task; the second must explain that it does not fit. Check the
-   task-name display and direct route to task management without editing time.
-3. Add, edit, cancel, complete and undo one explicitly disposable example task;
-   verify unfinished/completed filters and return to the session view. Remove
-   only that example with the confirmation control.
-4. Check note persistence and keyboard focus when switching views, opening or
-   cancelling the editor, hiding/reopening, and using Escape. Confirm the current
-   character's existing task data remain intact, then release the screen.
+The owner granted a fresh screen window. The installed alpha.4 from source
+`d94ca15034c3a65117692042dd3db0d365108c1e` was tested in Forever
+**1.60.1.70450** without a source change or reinstallation. Fresh account and
+character SavedVariables backups were taken before mutations.
 
-Keep the package experimental until observations support any stronger claim.
-Do not mark these steps passed from the offline preview or mocked tests.
+An initial physical Cancel click produced no mouse-down, mouse-up or click
+events. Read-only inspection of the control centre, cursor position and mouse
+focus showed delivery below the intended target. Adjusted computer-use
+coordinates delivered all three events and Cancel worked. This resolves the
+observed input-delivery problem; it did not require an addon fix. Temporary
+event tracing was cleared by the final reload. The successful workflow below
+used physical mouse/keyboard input, not direct callback invocation.
 
-## Custom budget correction — alpha.3; actual-client check remains pending
+- Created one uniquely named disposable task with a 10-minute estimate. Editing
+  it to 20 and cancelling preserved 10; editing to 120 and saving preserved 120.
+- Completed the disposable task and observed it in the completed filter. Undo
+  returned it to unfinished status and the corresponding filter.
+- Applied a 120-minute budget and observed a fitting 120-minute recommendation.
+  The disposable task was eligible, but selection of that particular task was
+  not required. Invalid input `0` was rejected while the committed budget
+  remained 120. Applying 90 restored a fitting 90-minute recommendation and
+  excluded the 120-minute disposable task.
+- Deleted only the disposable task through the confirmation control. The list
+  returned to the original 7 unfinished and 4 completed tasks.
+- Performed one `/reload`, then opened `/scout`. The 90-minute budget, matching
+  recommendation and empty character reminder were present. A semantic comparison
+  of the persisted SavedVariables against the fresh backups passed: all 11
+  original task definitions and all completion/progress data were identical;
+  character data were identical, including budget 90 and the empty reminder.
+  The disposable task was absent. The only account difference was `nextId`
+  advancing from 13 to 14 after its creation; the ID counter was not rolled back.
+
+No visible Lua error was observed; this was not a full error-log or taint audit.
+The addon and chat were closed, native control ended at approximately 10:45 and
+the control kernel was reset. The screen was released to the owner.
+
+The sanitized record is
+[`data/alpha4-input-validation-20261017.json`](../data/alpha4-input-validation-20261017.json).
+Private backups, comparison evidence and screenshots remain under
+`.tools/evidence/client/alpha4-input-20261017/`; they include personal task data
+or unrelated game UI and must not be published as product media.
+
+These observations support preparing the scoped **0.1.0 Forever Release** with
+the tested logic and UI. They do not establish user satisfaction, adoption, full
+Forever compatibility or CurseForge-app installation/update support. No public
+Release is claimed by this test record. The full checklist below remains open
+where no specific observation is recorded.
+
+## Custom budget correction — alpha.3; historical publication decision
+
+This section records the evidence available when alpha.3 was published. Its
+then-pending input checks are not retroactively marked passed on alpha.3; the
+later alpha.4 workflow and its actual client build are recorded above.
 
 An owner-supplied screenshot showed ten saved tasks, a selected 60-minute budget,
 several unfinished 120-minute tasks and no recommendation. The preset-only UI
@@ -402,12 +434,13 @@ or a new Lua-error/taint audit. Actual dragging remains unverified.
 - Check repeated open/close behavior and a safe combat transition when available.
   There is no measured long-duration memory or timer-growth result.
 
-The observed startup, rendering, task operations, budget selection, recurrence
-completion and reload-persistence checks support a scoped Forever alpha with
-the limitations below disclosed. They do not establish full compatibility.
+The earlier observations supported scoped Forever alphas. The 17 October
+alpha.4 follow-up additionally supports preparation of the first scoped 0.1.0
+Release, with the limitations below disclosed. These observations do not
+establish full compatibility.
 
 Still unverified: real daily/weekly reset crossing, alternate-character sharing
 and isolation, full logout/login and restart persistence, low/high UI scales, and
-the complete bag-family/durability matrix. If any are deferred for an alpha, name
+the complete bag-family/durability matrix. If any are deferred for a release, name
 them explicitly in release notes; do not mark this checklist wholly passed or
 claim full Forever compatibility from the partial checks above.

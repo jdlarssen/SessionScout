@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0",
+  "preparedAt": "2026-10-17",
+  "channel": "Release",
+  "gameVersion": "1.60.1",
+  "interface": 16001,
+  "package": "dist/SessionScout-0.1.0-forever.zip",
+  "bytes": 47331,
+  "sha256": "ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c",
+  "testedSourceCommit": "d94ca15034c3a65117692042dd3db0d365108c1e",
+  "comparedAgainst": "dist/SessionScout-0.1.0-alpha.4-forever.zip",
+  "onlyChangedMembers": [
+    "SessionScout/Core.lua",
+    "SessionScout/SessionScout.toc"
+  ],
+  "change": "Only two version strings; all other archive bytes identical",
+  "lua51Syntax": "passed",
+  "physicalTestRecord": "data/alpha4-input-validation-20261017.json",
+  "releaseNotes": "docs/RELEASE_0.1.0.txt",
+  "published": false,
+  "clientReinstallationRequiredForVersionOnlyDelta": false
+}
