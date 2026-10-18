@@ -113,13 +113,15 @@ complete SavedVariables files.
 
 ## Development
 
-The unreleased **0.2.0-alpha.1** adds manual task selection: choose a suggestion
+The opt-in [**0.2.0-alpha.1 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever)
+adds manual task selection: choose a suggestion
 or use **Choose myself** to pick any unfinished task. A chosen task stays selected
 for the current character until changed or completed. Longer estimates show a
 budget warning without changing the task or the available time. **Use suggestions**
 returns to the automatic planner. These controls are not in the 0.1.0 download
-above; see the [manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md) for their
-current validation status.
+above. The new controls have **not yet been tested in the WoW client**; see the
+[manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md) for automated coverage
+and the remaining checks. The default download remains the client-tested 0.1.0.
 
 ```sh
 lua5.1 tests/model_spec.lua

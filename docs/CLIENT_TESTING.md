@@ -1,9 +1,11 @@
 # Client validation
 
-Last updated: 17 October 2026.
+Last updated: 18 October 2026.
 
-**Essential task, budget and reload checks passed in Forever beta
-1.60.1.70450 (interface 16001).** Broader compatibility checks remain open.
+**The 0.1.0 release's essential task, budget and reload checks passed in Forever
+beta 1.60.1.70450 (interface 16001).** Broader compatibility checks remain open.
+The newer experimental 0.2.0-alpha.1 manual-choice controls have not been tested
+in the client; see the [separate test plan](MANUAL_CHOICE_TESTING.md).
 
 ## Tested versions and methods
 
@@ -11,6 +13,7 @@ Last updated: 17 October 2026.
 | --- | --- | --- |
 | `0.1.0-alpha.4` | [`d94ca15034c3a65117692042dd3db0d365108c1e`](https://github.com/jdlarssen/SessionScout/commit/d94ca15034c3a65117692042dd3db0d365108c1e) | Automated checks, actual-client rendering, and physical mouse/keyboard workflows on 17 October in Forever 1.60.1.70450. |
 | `0.1.0` | [`b4a0f86e10119ca38a6292d1dc8e5627e0b82479`](https://github.com/jdlarssen/SessionScout/commit/b4a0f86e10119ca38a6292d1dc8e5627e0b82479) | Release archive compared with tested alpha.4; only the two version strings in `Core.lua` and `SessionScout.toc` changed. No logic, UI or saved-data schema change. The version-only archive was not separately reinstalled for the client checks. |
+| `0.2.0-alpha.1` | [`9734a72f854d2d9a6bfbbf1869e8b2ce7646a040`](https://github.com/jdlarssen/SessionScout/commit/9734a72f854d2d9a6bfbbf1869e8b2ce7646a040) | 80 automated checks, Lua 5.1 syntax, CI and source-derived layout previews passed. Actual-client input, rendering and persistence checks for the new manual-choice flow remain pending. |
 
 Release archive: `SessionScout-0.1.0-forever.zip`, 47,331 bytes.
 SHA256: `ba7079a7f56275c434bf81abbe72f6c91860e92228a9d222506a09c16a30573c`.

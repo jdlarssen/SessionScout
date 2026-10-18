@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0-alpha.1 — unreleased development build
+## 0.2.0-alpha.1 — 2026-10-18, experimental prerelease
 
 - Choose a task directly from a suggestion or from **My tasks**.
 - Open **Choose myself** to pick any unfinished task, including one with an
@@ -11,8 +11,9 @@
   to the automatic planner.
 - Preserve an unfinished editor draft while browsing the task picker.
 
-The published 0.1.0 files remain unchanged. New controls require in-client
-validation; automated and layout checks are recorded in the
+Available as an opt-in [GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever).
+The default 0.1.0 download remains unchanged. The new controls have not yet been
+tested in the WoW client; automated and layout checks are recorded in the
 [manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md).
 
 ## 0.1.0 — 2026-10-17

@@ -1,7 +1,11 @@
 # Manual task choice — 0.2.0-alpha.1
 
-This development version lets the player override the automatic suggestions.
-It targets Forever 1.60.1, interface 16001. It is not the published 0.1.0 package.
+This experimental version lets the player override the automatic suggestions.
+It targets Forever 1.60.1, interface 16001. The opt-in
+[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever)
+was published on 18 October; its new controls have not yet been tested in WoW.
+The default client-tested download remains 0.1.0. Back up existing saved data
+and addon files before testing.
 
 ## Expected behavior
 
