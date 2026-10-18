@@ -125,8 +125,11 @@ Scoped client checks on 18 October 2026 in Forever **1.60.1.70450** verified
 choosing an existing task, closing and reopening Scout, direct Done/Undo and
 opening Librarian 1.3.0 from the tracker. Existing tasks and completion records
 were preserved after cleanup and reload. The default tracker overlaps the
-quest/objective list and some bag slots in the tested layout. Two drag attempts
-did not visibly move it, so movement and position restoration remain unverified.
+quest/objective list and some bag slots in the tested layout. Two alpha.2 drag
+attempts were inconclusive. The user subsequently confirmed manual movement in
+the local, unreleased alpha.3 build, whose drag behavior is unchanged; its default
+position still overlapped other controls in their layout. Drag the tracker to
+suit your layout. Position restoration after reload remains unverified.
 See the [tracker and book-guide test record](docs/TRACKER_TESTING.md) for the
 remaining checks and limitations.
 

@@ -16,8 +16,8 @@ Book guide action, not Librarian's journal or detected collection progress.*
 ## Use
 
 1. Choose an unfinished task and close Scout. A compact tracker keeps its title
-   visible. Background dragging and saved positioning are implemented, but movement
-   was not confirmed in the client check; see the placement limitation below.
+   visible. Drag its background to suit your layout; the default position can
+   overlap other controls. See the version-specific movement checks below.
 2. Use **Done** when your goal is reached. **Undo** restores and reselects that
    task. **Choose next** opens the picker, or a new-task form if none remain.
    No next task is chosen automatically. The completion card lasts only until
@@ -83,17 +83,28 @@ Librarian **1.3.0** already loaded, at a 3440 × 1440 display resolution.
 
 **Placement limitation:** the default tracker overlapped the quest/objective list
 and some bag slots in this layout. Two native drag attempts moved the cursor but
-did not visibly move the tracker. The cause was not established; these attempts
-do not count as a successful movement or position-restoration test. The default
-overlap needs to be addressed before treating placement as validated.
+did not visibly move the tracker. These alpha.2 attempts were inconclusive: they
+do not establish a dragging defect or count as successful movement or
+position-restoration tests.
+
+### Subsequent user report — local alpha.3
+
+After installing the local alpha.3 build and resetting its position, the user
+confirmed they could move the tracker manually wherever they wanted. Alpha.3
+changes the default position and leaves drag behavior unchanged. Its default
+position still overlapped bags/objectives in their layout, so manual placement
+remains necessary there. This report confirms movement for that local build and
+setup; it does not establish a successful alpha.2 drag test, position restoration
+after reload or a default placement suitable for every layout.
 
 Screenshots and raw saved-data snapshots are kept privately because they contain
 chat and character information. Only the sanitized results are published here.
 
 ## Remaining client checks
 
-- Confirm tracker movement and a changed position surviving reload, with placement
-  that leaves essential controls visible. Check selection restoration on reload.
+- Verify a manually changed position surviving reload, with placement that leaves
+  essential controls visible. Check selection restoration on reload. The alpha.2
+  native movement check remains inconclusive; alpha.3 movement is user-reported.
 - Click **Choose next** and exercise the picker, including the no-tasks state.
 - Open the book journal from the main card. Validate book progress against known
   collection state; opening a journal alone does not establish detection accuracy.

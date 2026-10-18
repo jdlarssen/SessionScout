@@ -6,8 +6,11 @@
   alpha.2 overlapped the quest/objective list in a client check. Existing saved
   positions are retained. Drag behavior is unchanged.
 
-This placement adjustment is source-only and still needs a client check. It does
-not change the published alpha.2 package or the default 0.1.0 download.
+In a local client check after resetting the position, the user confirmed manual
+tracker movement. The adjusted default still overlapped bags/objectives in that
+layout; the tracker can be positioned manually. Position restoration after reload
+remains unverified. This unreleased build does not change the published alpha.2
+package or the default 0.1.0 download.
 
 ## 0.2.0-alpha.2 — 2026-10-18, experimental prerelease
 
@@ -27,9 +30,10 @@ The default client-tested release remains 0.1.0.
   Scoped checks in Forever **1.60.1.70450** on 18 October verified task selection,
   tracker display, Open Scout, direct Done/Undo and opening Librarian 1.3.0 from
   the tracker. Existing tasks and completion records were preserved after cleanup
-  and reload. Default placement overlapped other controls, and two drag attempts
-  did not visibly move the tracker; movement and position restoration remain
-  unverified. See the [client test record](docs/TRACKER_TESTING.md) for limits.
+  and reload. Default placement overlapped other controls. Two alpha.2 drag
+  attempts were inconclusive; later user-reported movement in the local alpha.3
+  build is recorded above. Position restoration after reload remains unverified.
+  See the [client test record](docs/TRACKER_TESTING.md) for limits.
 
 ## 0.2.0-alpha.1 — 2026-10-18, experimental prerelease
 
