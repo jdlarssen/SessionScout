@@ -1,6 +1,8 @@
 # Chosen-task tracker and book guide — 0.2.0-alpha.2
 
-Development source for Forever 1.60.1, interface 16001. Not yet published.
+Experimental build for Forever 1.60.1, interface 16001.
+The [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever)
+was published on 18 October 2026.
 The new controls and optional companion interaction have not been tested in WoW.
 The default public client-tested release remains 0.1.0.
 
@@ -35,6 +37,13 @@ login/reload restoration, Done/Undo/next, unavailable reset times, missing ident
 future saved-data versions, explicit guide binding, cancel/unlink/delete, character
 isolation, missing/malformed/failing companion and successful journal opening.
 Source-derived HTML/SVG layouts are approximations, not client screenshots.
+
+[Source CI](https://github.com/jdlarssen/SessionScout/actions/runs/39119703126)
+passed for commit `68a53db955243a1ec7d60443e443f88451cfb6b7`. The 59,023-byte
+release ZIP matches that commit's addon files and has SHA-256
+`73c5dc86456ead1a957b44b8fdce1773f1b8aa75578cbc2423e3348ee6b28cde`.
+GitHub's uploaded asset digest matches the local package. No verification download
+was needed. These checks do not establish player adoption or client compatibility.
 
 The integration targets the public `Librarian:OpenJournal()` entry point inspected
 in [Librarian v1.3.0](https://github.com/thoriphes/Librarian/releases/tag/v1.3.0).
