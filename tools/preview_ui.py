@@ -217,7 +217,8 @@ def render(frames, root_id, name, title, digest):
             return True
         return f["parent"] is not None and visible(by_id[f["parent"]])
 
-    width = int(root["width"] + 48)
+    # Compact trackers must not clip the source-preview disclaimer above them.
+    width = max(708, int(root["width"] + 48))
     height = int(root["height"] + 165)
     elements = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#20282d"/>',
@@ -274,10 +275,14 @@ def main():
             ns.window.Hide(ns.window)
             frames, root_id = snapshot(ns, state, ns.tracker)
             print(render(frames, root_id, "chosen-tracker", "Chosen task remains visible with the planner closed; direct Done and Open Scout actions.", digest))
+            book_task = ns.GetChosenTask()
+            original_label = book_task.label
+            ns.Model.UpdateTask(ns.db, book_task.id, lua.table_from({"label": "Collect the library books I still need"}))
             ns.settings.taskGuides = lua.table_from({ns.GetChosenTask().id: "librarian-books"})
             ns.Refresh()
             frames, root_id = snapshot(ns, state, ns.tracker)
             print(render(frames, root_id, "book-tracker", "Optional Book guide link on a chosen task; completion remains manual.", digest))
+            ns.Model.UpdateTask(ns.db, book_task.id, lua.table_from({"label": original_label}))
             ns.settings.taskGuides = None
             ns.Refresh()
             ns.tracker.done.Click(ns.tracker.done)

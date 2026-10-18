@@ -6,6 +6,12 @@ was published on 18 October 2026.
 The new controls and optional companion interaction have not been tested in WoW.
 The default public client-tested release remains 0.1.0.
 
+![Source-derived tracker preview with a fictional library-book task](media/sessionscout-0.2.0-alpha.2-book-tracker-preview.png)
+
+*Source-derived layout preview with a fictional task, not an in-game screenshot.
+Fonts, wrapping and button textures are approximate. This shows Scout's optional
+Book guide action, not Librarian's journal or detected collection progress.*
+
 ## Use
 
 1. Choose an unfinished task and close Scout. A compact, movable tracker keeps
