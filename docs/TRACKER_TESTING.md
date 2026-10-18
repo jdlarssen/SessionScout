@@ -3,7 +3,8 @@
 Experimental build for Forever 1.60.1, interface 16001.
 The [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever)
 was published on 18 October 2026.
-The new controls and optional companion interaction have not been tested in WoW.
+Scoped client checks on 18 October 2026 are recorded below, including an unresolved
+tracker-placement issue and checks that remain outstanding.
 The default public client-tested release remains 0.1.0.
 
 ![Source-derived tracker preview with a fictional library-book task](media/sessionscout-0.2.0-alpha.2-book-tracker-preview.png)
@@ -14,8 +15,9 @@ Book guide action, not Librarian's journal or detected collection progress.*
 
 ## Use
 
-1. Choose an unfinished task and close Scout. A compact, movable tracker keeps
-   its title visible. Drag the background to move it; the position is saved.
+1. Choose an unfinished task and close Scout. A compact tracker keeps its title
+   visible. Background dragging and saved positioning are implemented, but movement
+   was not confirmed in the client check; see the placement limitation below.
 2. Use **Done** when your goal is reached. **Undo** restores and reselects that
    task. **Choose next** opens the picker, or a new-task form if none remain.
    No next task is chosen automatically. The completion card lasts only until
@@ -55,14 +57,46 @@ The integration targets the public `Librarian:OpenJournal()` entry point inspect
 in [Librarian v1.3.0](https://github.com/thoriphes/Librarian/releases/tag/v1.3.0).
 No Librarian code, data, assets or libraries are redistributed in SessionScout.
 
+## Client checks — 18 October 2026
+
+Tested the alpha.2 addon files from commit
+`68a53db955243a1ec7d60443e443f88451cfb6b7` in Forever **1.60.1.70450**, with
+Librarian **1.3.0** already loaded, at a 3440 × 1440 display resolution.
+
+- Choosing an existing unfinished task from **My tasks** worked. Closing Scout
+  showed its tracker, and **Open Scout** returned to the chosen-task card.
+- **Done** on the tracker showed the completed-task card with **Undo** and
+  **Choose next**, without choosing a replacement. **Undo** restored and
+  reselected the unfinished task. **Choose next** was visible but was not clicked.
+- Saving **Guide: Library books** in the editor added **Book guide** to the tracker
+  and main card. Clicking it on the tracker opened the actual Librarian journal.
+  The journal showed a missing book in the current zone, four books in bags and
+  the next reward. This verifies the handoff and visible journal content, not the
+  accuracy of every collection record. Opening it did not complete the Scout task.
+  The main-card guide action was visible but was not clicked.
+- The temporary guide link was removed. **Use suggestions** cleared the chosen
+  task and hid the tracker. After a final `/reload`, the account SavedVariables
+  file was byte-identical to the baseline: all 11 task definitions and all six
+  completion records were preserved. The original 159-minute budget, empty note
+  and welcome state were unchanged. The only character-file additions were an
+  empty guide table and a tracker-position record at the same default location.
+
+**Placement limitation:** the default tracker overlapped the quest/objective list
+and some bag slots in this layout. Two native drag attempts moved the cursor but
+did not visibly move the tracker. The cause was not established; these attempts
+do not count as a successful movement or position-restoration test. The default
+overlap needs to be addressed before treating placement as validated.
+
+Screenshots and raw saved-data snapshots are kept privately because they contain
+chat and character information. Only the sanitized results are published here.
+
 ## Remaining client checks
 
-- Choose an existing task, close Scout and verify that its tracker appears without
-  covering essential controls. Drag it and check position after reload.
-- Use Done, Undo and Choose next. Confirm the intended task changes and original
-  estimates, priorities and other completions stay intact.
-- Link a book task and open its journal from both the main window and tracker.
-  Confirm journal controls are visible and its own book progress is meaningful.
+- Confirm tracker movement and a changed position surviving reload, with placement
+  that leaves essential controls visible. Check selection restoration on reload.
+- Click **Choose next** and exercise the picker, including the no-tasks state.
+- Open the book journal from the main card. Validate book progress against known
+  collection state; opening a journal alone does not establish detection accuracy.
 - Verify missing/disabled Librarian gives a readable message and preserves the
   selected task. Check small UI scales, combat transitions and other characters.
 

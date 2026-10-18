@@ -3,7 +3,8 @@
 This experimental version lets the player override the automatic suggestions.
 It targets Forever 1.60.1, interface 16001. The opt-in
 [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever)
-was published on 18 October; its new controls have not yet been tested in WoW.
+was published on 18 October before client testing of its new controls.
+Later scoped checks used alpha.2; see the [tracker test record](TRACKER_TESTING.md).
 The default client-tested download remains 0.1.0. Back up existing saved data
 and addon files before testing.
 
@@ -31,7 +32,7 @@ selection from a later page. Lua 5.1 syntax checks also passed.
 
 Source-derived previews of the picker, selected task and task-management list
 were visually checked. They use fictional tasks and approximate WoW fonts and
-textures. No new-control in-client test has been completed yet. These checks
+textures. No new-control in-client test had been completed at publication. These checks
 do not establish game compatibility or usability.
 
 ## Short client check

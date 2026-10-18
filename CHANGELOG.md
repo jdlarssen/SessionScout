@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0-alpha.3 — unreleased
+
+- Start a tracker without a saved position farther from the right edge, where
+  alpha.2 overlapped the quest/objective list in a client check. Existing saved
+  positions are retained. Drag behavior is unchanged.
+
+This placement adjustment is source-only and still needs a client check. It does
+not change the published alpha.2 package or the default 0.1.0 download.
+
 ## 0.2.0-alpha.2 — 2026-10-18, experimental prerelease
 
 [GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever).
@@ -15,7 +24,12 @@ The default client-tested release remains 0.1.0.
   remains manual. The link is saved per character.
 - Missing or incompatible Librarian leaves ordinary task tracking available.
 - 89 automated checks pass (15 model, 55 mocked integration, 19 tooling).
-  The new tracker and companion interaction have not yet been tested in WoW.
+  Scoped checks in Forever **1.60.1.70450** on 18 October verified task selection,
+  tracker display, Open Scout, direct Done/Undo and opening Librarian 1.3.0 from
+  the tracker. Existing tasks and completion records were preserved after cleanup
+  and reload. Default placement overlapped other controls, and two drag attempts
+  did not visibly move the tracker; movement and position restoration remain
+  unverified. See the [client test record](docs/TRACKER_TESTING.md) for limits.
 
 ## 0.2.0-alpha.1 — 2026-10-18, experimental prerelease
 
@@ -29,9 +43,10 @@ The default client-tested release remains 0.1.0.
 - Preserve an unfinished editor draft while browsing the task picker.
 
 Available as an opt-in [GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever).
-The default 0.1.0 download remains unchanged. The new controls have not yet been
-tested in the WoW client; automated and layout checks are recorded in the
-[manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md).
+The default 0.1.0 download remains unchanged. At alpha.1 publication, the new
+controls had not been tested in the WoW client; automated and layout checks are
+recorded in the [manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md).
+Subsequent scoped client checks used alpha.2 and are recorded above.
 
 ## 0.1.0 — 2026-10-17
 

@@ -114,15 +114,21 @@ complete SavedVariables files.
 ## Development
 
 The opt-in [**0.2.0-alpha.2 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever)
-adds a movable chosen-task tracker, direct
+adds a chosen-task tracker, direct
 Done/Undo/Choose next actions, and an optional link to
 [Librarian Books Forever](https://www.curseforge.com/wow/addons/librarian-forever).
 To link a book task, edit it, choose **Guide: Library books**, save and choose
 the task. **Book guide** then opens Librarian's journal. Librarian is installed
 separately; it is not bundled or required for ordinary tasks. Guide links belong
 to the current character, and opening the guide never completes a Scout task.
-This experimental build has not yet been tested in the WoW client. See the
-[tracker and book-guide test plan](docs/TRACKER_TESTING.md).
+Scoped client checks on 18 October 2026 in Forever **1.60.1.70450** verified
+choosing an existing task, closing and reopening Scout, direct Done/Undo and
+opening Librarian 1.3.0 from the tracker. Existing tasks and completion records
+were preserved after cleanup and reload. The default tracker overlaps the
+quest/objective list and some bag slots in the tested layout. Two drag attempts
+did not visibly move it, so movement and position restoration remain unverified.
+See the [tracker and book-guide test record](docs/TRACKER_TESTING.md) for the
+remaining checks and limitations.
 
 The earlier [**0.2.0-alpha.1 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever)
 introduced manual task selection, also included in alpha.2: choose a suggestion
@@ -130,9 +136,9 @@ or use **Choose myself** to pick any unfinished task. A chosen task stays select
 for the current character until changed or completed. Longer estimates show a
 budget warning without changing the task or the available time. **Use suggestions**
 returns to the automatic planner. These controls are not in the 0.1.0 download
-above. The new controls have **not yet been tested in the WoW client**; see the
-[manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md) for automated coverage
-and the remaining checks. The default download remains the client-tested 0.1.0.
+above. Alpha.1 was published before client testing of these controls; the scoped
+checks above used alpha.2. The [manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md)
+records the earlier automated coverage. The default download remains 0.1.0.
 
 ```sh
 lua5.1 tests/model_spec.lua

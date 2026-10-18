@@ -225,7 +225,7 @@ local function createTracker()
     local position = ns.settings.trackerPosition
     if validPosition(position) then
         t:SetPoint(position.point, UIParent, position.relativePoint, position.x, position.y)
-    else t:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -40, -260) end
+    else t:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -380, -260) end
     t:SetBackdrop({ bgFile="Interface\\Buttons\\WHITE8X8", edgeFile="Interface\\Buttons\\WHITE8X8", edgeSize=1 })
     t:SetBackdropColor(0.045, 0.065, 0.085, 0.94); t:SetBackdropBorderColor(0.2, 0.35, 0.39, 1)
     t:RegisterForDrag("LeftButton")
