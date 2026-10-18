@@ -3,6 +3,8 @@
 Experimental build for Forever 1.60.1, interface 16001.
 The [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever)
 was published on 18 October 2026.
+The same package is also available on
+[CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9243366).
 Scoped client checks on 18 October 2026 are recorded below, including an unresolved
 tracker-placement issue and checks that remain outstanding.
 The default public client-tested release remains 0.1.0.

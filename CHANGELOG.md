@@ -14,7 +14,8 @@ package or the default 0.1.0 download.
 
 ## 0.2.0-alpha.2 — 2026-10-18, experimental prerelease
 
-[GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever).
+[CurseForge test build](https://www.curseforge.com/wow/addons/sessionscout/files/9243366)
+and [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever).
 The default client-tested release remains 0.1.0.
 
 - Keep a chosen task in a small movable tracker when Scout is closed. Its

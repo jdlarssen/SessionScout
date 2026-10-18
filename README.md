@@ -113,8 +113,10 @@ complete SavedVariables files.
 
 ## Development
 
-The opt-in [**0.2.0-alpha.2 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever)
-adds a chosen-task tracker, direct
+The opt-in **0.2.0-alpha.2 test build** is available from
+[CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9243366) or
+[GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever).
+It adds a chosen-task tracker, direct
 Done/Undo/Choose next actions, and an optional link to
 [Librarian Books Forever](https://www.curseforge.com/wow/addons/librarian-forever).
 To link a book task, edit it, choose **Guide: Library books**, save and choose
