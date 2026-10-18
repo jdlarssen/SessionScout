@@ -1,6 +1,6 @@
 ---
-name: Feedback from a real session or decision
-about: Describe using the addon or written comparison, a skipped opportunity, or why you stopped.
+name: Feedback from a real play session
+about: Describe using SessionScout, a skipped opportunity, or why you stopped.
 title: ""
 ---
 
@@ -13,19 +13,21 @@ useful answers. Estimates are welcome; say "not measured" when appropriate.
 
 ## Recent situation
 
-- Component: SessionScout / GearEvidencePilot (local prototype) / Written gear comparison (no installation)
-- What were you actually doing, and how much time did you have?
+- SessionScout version and WoW version/build (if known):
+- What were you actually trying to do? Include available time if it mattered.
 - Was there a specific problem or decision, or was the usual approach enough?
-
-For the written comparison, describe reading or applying the explanation;
-reading it alone is not addon use.
+- Which did you use: suggestions / choosing and remembering a task / Book guide /
+  none? More than one is fine.
 
 ## Usual approach, effort and result
 
-- How did you handle this situation before or without the tool or explanation?
+- How did you handle this situation before or without SessionScout?
 - What setup, reading or maintenance effort did it require?
 - What, if anything, changed in what you actually did? Include any extra work,
   confusion or lack of benefit.
+
+If you used **Book guide**, what did Scout add, if anything, compared with opening
+Librarian directly? If you have not tried that comparison, say so.
 
 ## Later use
 
