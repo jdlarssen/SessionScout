@@ -102,6 +102,24 @@ after reload or a default placement suitable for every layout.
 Screenshots and raw saved-data snapshots are kept privately because they contain
 chat and character information. Only the sanitized results are published here.
 
+## Later source correction — unreleased alpha.4
+
+A daily or weekly completion card could stay visible after its recorded reset
+while the planner was closed and no inventory/combat event triggered a refresh.
+Alpha.4 refreshes that visible recurring completion card every 30 seconds and
+stops its timer on hiding, dismissal or Undo. Unfinished and one-time cards do
+not start a timer. Expiration clears the card without selecting another task.
+
+Two new regressions fail against the previous UI: the model reports unfinished
+at the reset boundary, but the completed card remains visible. With the fix,
+all 15 model and 58 mocked integration checks pass, including those regressions
+and a timer-lifecycle check. They cover character/account completion, preserved
+unrelated progress/settings, no automatic selection and timer cancellation.
+Lua 5.1 syntax passed for the five addon/test Lua files.
+
+This is automated evidence only. The correction has not been installed or tested
+at an actual server reset in WoW. The published alpha.2 artifact is unchanged.
+
 ## Remaining client checks
 
 - Verify a manually changed position surviving reload, with placement that leaves

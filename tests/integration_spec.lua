@@ -387,6 +387,85 @@ test("finishing the last task offers a new task and does not persist the success
     eq(#ns.db.tasks, 1, "opening the next-task form must not invent an activity")
 end)
 
+for _, recurrence in ipairs({"daily", "weekly"}) do
+    test("tracker recurrence reset expires the " .. recurrence .. " success card without game events", function()
+        local position = {point="TOPLEFT", relativePoint="TOPLEFT", x=25, y=-80}
+        local ns, _, s = world(nil, {budget=75, note="Keep my reminder", trackerPosition=position,
+            unrelated="preserve"}); s:login()
+        -- Cover both a planner that has never been created and one already closed.
+        if recurrence == "weekly" then s:open(); s:open(); eq(ns.window:IsShown(), false)
+        else eq(ns.window, nil) end
+        local keep = assert(ns.Model.AddTask(ns.db, {label="Completed one-time task", minutes=10}))
+        ok(ns.Model.CompleteTask(ns.db, keep.id, ns.character, s.now))
+        local keptProgress = ns.db.progress.characters[ns.character][keep.id]
+        local task = assert(ns.Model.AddTask(ns.db, {label="Recurring reminder", minutes=20,
+            recurrence=recurrence, scope=recurrence == "weekly" and "account" or "character"}))
+        ok(ns.ChooseTask(task.id)); ns.tracker.done:Click()
+        eq(ns.tracker.done:GetText(), "Undo"); eq(ns.settings.selectedTaskID, nil)
+        local records = task.scope == "account" and ns.db.progress.account or ns.db.progress.characters[ns.character]
+        local resetAt = records[task.id].resetAt
+        local function tickActiveTimers()
+            local active = {}
+            for _, timer in ipairs(s.timers) do
+                if not timer.cancelled then active[#active + 1] = timer end
+            end
+            for _, timer in ipairs(active) do timer.callback() end
+        end
+        s.now = resetAt - 1; tickActiveTimers()
+        ok(ns.tracker:IsShown()); ok(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now))
+        s.now = resetAt; tickActiveTimers()
+        eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
+        eq(ns.tracker:IsShown(), false, "the completed card must not remain visible after its task resets")
+        eq(ns.tracker.task, nil); eq(ns.trackerCompletedID, nil)
+        eq(records[task.id], nil, "expired progress must be removed at the recorded boundary")
+        eq(ns.GetChosenTask(), nil); eq(ns.settings.selectedTaskID, nil, "reset must not choose another task")
+        eq(s:activeTimers(), 0)
+        eq(#ns.db.tasks, 2); eq(ns.db.tasks[1], keep); eq(ns.db.tasks[2], task)
+        eq(ns.db.progress.characters[ns.character][keep.id], keptProgress)
+        ok(ns.Model.IsCompleted(ns.db, keep.id, ns.character, s.now))
+        eq(ns.settings.budget, 75); eq(ns.settings.note, "Keep my reminder")
+        eq(ns.settings.trackerPosition, position); eq(ns.settings.unrelated, "preserve")
+        if recurrence == "weekly" then eq(ns.window:IsShown(), false) else eq(ns.window, nil) end
+    end)
+end
+
+test("tracker recurrence timer follows only the visible recurring success card", function()
+    local ns, _, s = world(); s:login()
+    local once = assert(ns.Model.AddTask(ns.db, {label="One-time task", minutes=10}))
+    local daily = assert(ns.Model.AddTask(ns.db, {label="Daily task", minutes=20, recurrence="daily"}))
+    ok(ns.ChooseTask(once.id)); eq(s:activeTimers(), 0)
+    ns.tracker.done:Click(); eq(ns.tracker.done:GetText(), "Undo"); eq(s:activeTimers(), 0)
+    ns.Refresh(); eq(s:activeTimers(), 0, "one-time success must not poll")
+    ok(ns.ChooseTask(daily.id)); eq(s:activeTimers(), 0, "an unfinished chosen task must not poll")
+    ns.tracker.done:Click(); eq(s:activeTimers(), 1)
+    local first = s.timers[#s.timers]; eq(first.interval, 30)
+    local total = #s.timers
+    ns.Refresh(); ns.Refresh()
+    eq(#s.timers, total, "repeated refresh must not allocate duplicate timers")
+    eq(s:activeTimers(), 1)
+    ns.tracker.done:Click()
+    eq(first.cancelled, true); eq(s:activeTimers(), 0, "Undo must stop polling")
+    eq(ns.GetChosenTask().id, daily.id); eq(ns.tracker.done:GetText(), "Done")
+    ns.tracker.done:Click(); eq(s:activeTimers(), 1)
+    local dismissed = s.timers[#s.timers]
+    ns.tracker.close:Click()
+    eq(dismissed.cancelled, true); eq(s:activeTimers(), 0); eq(ns.tracker:IsShown(), false)
+    ok(ns.Model.ResetTask(ns.db, daily.id, ns.character)); ok(ns.ChooseTask(daily.id))
+    ns.tracker.done:Click(); eq(s:activeTimers(), 1)
+    local hidden = s.timers[#s.timers]
+    ns.tracker.open:Click()
+    eq(hidden.cancelled, true, "opening the planner must cancel the tracker timer")
+    ok(ns.window:IsShown()); eq(ns.tracker:IsShown(), false)
+    eq(s:activeTimers(), 1, "only the planner timer may remain while the planner is shown")
+    local planner = s.timers[#s.timers]
+    s:open()
+    eq(planner.cancelled, true); ok(ns.tracker:IsShown()); eq(ns.tracker.done:GetText(), "Undo")
+    eq(s:activeTimers(), 1, "showing the still-completed recurring tracker must restart one timer")
+    local resumed = s.timers[#s.timers]; eq(resumed.cancelled, false); eq(resumed.interval, 30)
+    ns.Refresh(); eq(s:activeTimers(), 1); eq(s.timers[#s.timers], resumed)
+    ns.tracker.close:Click(); eq(resumed.cancelled, true); eq(s:activeTimers(), 0)
+end)
+
 test("invalid future and unavailable-character data never creates a tracker", function()
     for _, id in ipairs({false, {}, "missing-task"}) do
         local ns, _, s = world(nil, {selectedTaskID=id}); s:login(); ns.Refresh()

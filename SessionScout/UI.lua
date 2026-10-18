@@ -217,9 +217,24 @@ local function validPosition(position)
         and type(position.y) == "number" and position.y == position.y and math.abs(position.y) < 100000
 end
 
+local function updateTrackerTicker(t)
+    -- A recurring completion can expire while the planner is closed and no
+    -- inventory event fires. Only its visible confirmation needs timed refresh.
+    local needsRefresh = t:IsVisible() and t.completed and t.task and t.task.recurrence ~= "once"
+    if needsRefresh and C_Timer and C_Timer.NewTicker then
+        if not t.ticker then t.ticker = C_Timer.NewTicker(30, ns.Refresh) end
+    elseif t.ticker then
+        t.ticker:Cancel(); t.ticker = nil
+    end
+end
+
 local function createTracker()
     local t = CreateFrame("Frame", "SessionScoutTracker", UIParent, "BackdropTemplate")
     ns.tracker = t; t:Hide(); t:SetSize(320, 160)
+    t:SetScript("OnShow", updateTrackerTicker)
+    t:SetScript("OnHide", function(self)
+        if self.ticker then self.ticker:Cancel(); self.ticker = nil end
+    end)
     t:SetClampedToScreen(true); t:SetMovable(true); t:EnableMouse(true); t:SetFrameStrata("MEDIUM")
     t:SetScale(math.min(1, (UIParent:GetHeight() - 40) / 160))
     local position = ns.settings.trackerPosition
@@ -301,7 +316,7 @@ function ns.RenderTracker()
     t:SetHeight(hasGuide and 184 or 160)
     t:SetScale(math.min(1, (UIParent:GetHeight() - 40) / (hasGuide and 184 or 160)))
     if hasGuide then t.detail:SetText("Use Book guide to check what remains.\nMark Done when your own goal is reached.") end
-    t.close:SetShown(completed); t:Show()
+    t.close:SetShown(completed); t:Show(); updateTrackerTicker(t)
 end
 
 function ns.CreateWindow()
@@ -316,7 +331,7 @@ function ns.CreateWindow()
     w:RegisterForDrag("LeftButton")
     w:SetScript("OnDragStart", w.StartMoving); w:SetScript("OnDragStop", w.StopMovingOrSizing)
     w:SetScript("OnHide", ns.SaveNote)
-    -- Only a visible planner is refreshed; no background polling or per-frame work.
+    -- Refresh the planner only while visible; no per-frame work.
     w:SetScript("OnShow", function()
         w:Raise()
         if ns.tracker then ns.tracker:Hide() end

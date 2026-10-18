@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0-alpha.4 — unreleased
+
+- Refresh a visible daily/weekly completion card every 30 seconds, so it clears
+  after the recorded server reset even while the planner is closed. No next task
+  is selected automatically. The timer stops when the card is hidden, dismissed
+  or undone; unfinished and one-time tasks do not need this timer.
+
+This correction has not been checked at an actual server reset in the client.
+The public alpha.2 package and default 0.1.0 download are unchanged.
+
 ## 0.2.0-alpha.3 — unreleased
 
 - Start a tracker without a saved position farther from the right edge, where
