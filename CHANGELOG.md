@@ -1,6 +1,8 @@
 # Changelog
 
-## 0.2.0-alpha.4 — unreleased
+## 0.2.0-alpha.4 — 2026-10-18, experimental prerelease
+
+[GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever).
 
 - Refresh a visible daily/weekly completion card every 30 seconds, so it clears
   after the recorded server reset even while the planner is closed. No next task

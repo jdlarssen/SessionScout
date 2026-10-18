@@ -102,7 +102,10 @@ after reload or a default placement suitable for every layout.
 Screenshots and raw saved-data snapshots are kept privately because they contain
 chat and character information. Only the sanitized results are published here.
 
-## Later source correction — unreleased alpha.4
+## Later source correction — experimental alpha.4
+
+[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever),
+published 18 October 2026. The CurseForge test package remains alpha.2.
 
 A daily or weekly completion card could stay visible after its recorded reset
 while the planner was closed and no inventory/combat event triggered a refresh.

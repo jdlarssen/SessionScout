@@ -17,6 +17,12 @@ if you want to test the features below. They are **only in the experimental alph
 the standard 0.1.0 download and setup below remain unchanged. Back up your addon
 files and saved data before testing, and keep SavedVariables when updating.
 
+A newer [**0.2.0-alpha.4 test build on GitHub**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever)
+fixes a completed daily/weekly reminder that could stay visible after its reset.
+Its visible completion card refreshes every 30 seconds. The correction passed
+automated checks but has not been tested at an actual server reset in WoW.
+Use the ZIP and manual installation instructions on that release page.
+
 - **Choose your task.** Pick a suggestion or any unfinished task from **My tasks**.
   A task longer than your available time shows a warning without changing its
   estimate. **Use suggestions** returns to the planner.
@@ -88,7 +94,7 @@ The 0.1.0 controls were checked with mouse and keyboard in Forever 1.60.1.70450:
 creating and editing tasks, cancelling edits, Done/Undo, confirmed deletion,
 custom budgets and invalid input. Existing tasks, completion and character
 settings were preserved after `/reload`. The release differs from the tested
-alpha.4 package only in its version strings.
+0.1.0-alpha.4 package only in its version strings.
 
 Actual reset crossings, multiple-character use, combat transitions, extreme UI
 scales and long sessions still need testing. Retail and other Classic versions

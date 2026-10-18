@@ -1,0 +1,64 @@
+# SessionScout 0.2.0-alpha.4 — Forever (experimental)
+
+An opt-in test build for WoW Forever 1.60.1, interface 16001.
+The default client-tested release remains [0.1.0 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143).
+
+## Fix: completed reminders after a reset
+
+A daily or weekly task could still show **Task completed / Undo** after its
+recorded server reset when Scout was closed and no inventory/combat event
+refreshed the screen. Its completion had already expired in the task model.
+
+The visible completion card now refreshes every 30 seconds and clears on the
+first refresh after that reset. It does not choose another task. Hiding,
+dismissing or undoing the card stops the timer; unfinished and one-time tasks
+do not start this timer. Task definitions, saved completion rules and the
+SavedVariables format are unchanged.
+
+This build also includes the alpha.3 default-position adjustment for a tracker
+without a saved position. Existing saved positions are retained. The default
+can still overlap other UI; drag the tracker background to suit your layout.
+
+## Included from alpha.2
+
+Choose your own task, keep its reminder visible with Scout closed, and use
+**Done**, **Undo**, **Open Scout** or **Choose next** from the tracker. An optional
+**Guide: Library books** link opens the separately installed
+[Librarian Books Forever](https://www.curseforge.com/wow/addons/librarian-forever)
+journal. Opening a guide does not complete a Scout task. No companion addon is
+required for ordinary tasks, and none is bundled.
+
+## Validation and limits
+
+92 automated checks passed: 15 model, 58 mocked WoW integration and 19 tooling
+checks, plus Lua 5.1 syntax and [source CI](https://github.com/jdlarssen/SessionScout/actions/runs/39152800129).
+Two new regressions reproduce the stale card against the old UI and pass with
+the fix. Checks also cover timer cancellation, no automatic selection and
+preservation of unrelated progress and settings.
+
+The new timer has **not been tested at an actual server reset in WoW**. Earlier
+scoped client checks used alpha.2 and covered task selection, tracker display,
+Done/Undo and opening Librarian. Manual movement was subsequently reported on
+the local alpha.3 build. Restoration of a moved position and chosen task after
+reload still needs client verification. These earlier checks are not an
+alpha.4 client-test claim. See the [tracker test record](https://github.com/jdlarssen/SessionScout/blob/393cb452586bfca7d141a3442bc93c3ba11ac4a7/docs/TRACKER_TESTING.md).
+
+## Manual installation
+
+Download **SessionScout-0.2.0-alpha.4-forever.zip**, not GitHub's source-code
+archives. With WoW closed, back up the existing addon and extract the ZIP's
+`SessionScout` folder into your Forever `Interface/AddOns` directory. The
+current beta uses `_classic_beta_/Interface/AddOns`. Keep your SavedVariables
+when updating. Start WoW, enable the addon and use `/scout`.
+
+Retail and other Classic flavors are not supported by this package. App-based
+installation/update is unverified. No automatic installation is performed.
+
+Source: `393cb452586bfca7d141a3442bc93c3ba11ac4a7`.
+ZIP: 59,708 bytes; SHA-256:
+`545a59d750c5a0d7e14729e7657fd0a42fa54b4972ed6d13b0ae4b86a489ce95`.
+The local and CI package digests match.
+
+Report concrete results or bugs in the [issue tracker](https://github.com/jdlarssen/SessionScout/issues).
+Include addon/game versions and what happened; omit names, chat and complete
+SavedVariables. Feedback that the addon was unnecessary is useful too.

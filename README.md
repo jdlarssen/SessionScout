@@ -113,7 +113,15 @@ complete SavedVariables files.
 
 ## Development
 
-The opt-in **0.2.0-alpha.2 test build** is available from
+The latest opt-in [**0.2.0-alpha.4 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever)
+fixes a daily/weekly completion card that could remain visible after its recorded
+server reset while the planner was closed. The visible card now refreshes every
+30 seconds; hiding or undoing it stops that timer. It also includes the alpha.3
+default-position adjustment, retaining existing saved positions. All 92 automated
+checks pass, but the new timer has not been checked at an actual reset in WoW.
+This is an experimental GitHub download; the default release above remains 0.1.0.
+
+The earlier **0.2.0-alpha.2 test build** is available from
 [CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9243366) or
 [GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.2-forever).
 It adds a chosen-task tracker, direct
@@ -123,7 +131,7 @@ To link a book task, edit it, choose **Guide: Library books**, save and choose
 the task. **Book guide** then opens Librarian's journal. Librarian is installed
 separately; it is not bundled or required for ordinary tasks. Guide links belong
 to the current character, and opening the guide never completes a Scout task.
-Scoped client checks on 18 October 2026 in Forever **1.60.1.70450** verified
+Scoped alpha.2 client checks on 18 October 2026 in Forever **1.60.1.70450** verified
 choosing an existing task, closing and reopening Scout, direct Done/Undo and
 opening Librarian 1.3.0 from the tracker. Existing tasks and completion records
 were preserved after cleanup and reload. The default tracker overlaps the

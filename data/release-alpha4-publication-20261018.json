@@ -1,0 +1,59 @@
+{
+  "observedAtUtc": "2026-10-18T20:29:02.7066556Z",
+  "version": "0.2.0-alpha.4",
+  "platform": "GitHub",
+  "releaseId": 416689021,
+  "url": "https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever",
+  "tag": "v0.2.0-alpha.4-forever",
+  "sourceCommit": "393cb452586bfca7d141a3442bc93c3ba11ac4a7",
+  "publishedAtUtc": "2026-10-18T20:24:22Z",
+  "draft": false,
+  "prerelease": true,
+  "publicPageVerified": true,
+  "releaseBodyMatchedPreparedNotes": true,
+  "assets": [
+    {
+      "id": 654403867,
+      "name": "SessionScout-0.2.0-alpha.4-forever.zip",
+      "bytes": 59708,
+      "digest": "sha256:545a59d750c5a0d7e14729e7657fd0a42fa54b4972ed6d13b0ae4b86a489ce95",
+      "state": "uploaded",
+      "url": "https://github.com/jdlarssen/SessionScout/releases/download/v0.2.0-alpha.4-forever/SessionScout-0.2.0-alpha.4-forever.zip"
+    },
+    {
+      "id": 654403863,
+      "name": "SessionScout-0.2.0-alpha.4-forever.zip.sha256",
+      "bytes": 105,
+      "digest": "sha256:878ca8d278f5c806ede90b741fa97024fd403e339691dc6b395a2c2f88c9cffc",
+      "state": "uploaded",
+      "url": "https://github.com/jdlarssen/SessionScout/releases/download/v0.2.0-alpha.4-forever/SessionScout-0.2.0-alpha.4-forever.zip.sha256"
+    }
+  ],
+  "assetsMatchedLocalFiles": true,
+  "downloadedForVerification": false,
+  "previousValidation": {
+    "modelChecksPassed": 15,
+    "integrationChecksPassed": 58,
+    "toolingChecksPassed": 19,
+    "ciRunId": 39152800129,
+    "ciConclusion": "success",
+    "localAndCIPackageDigestsMatched": true,
+    "checksRepeatedForPublication": false
+  },
+  "clientResetVerified": false,
+  "installed": false,
+  "curseForgeFileUploaded": false,
+  "curseForgeTestFileId": 9243366,
+  "stableCurseForgeFileId": 9222143,
+  "curseForgeDescription": {
+    "url": "https://www.curseforge.com/wow/addons/sessionscout",
+    "source": "docs/CURSEFORGE_DESCRIPTION_TRACKER_ALPHA.txt",
+    "update": "Added public GitHub alpha.4 link, reset-fix scope and actual-client-test limitation; disambiguated historical 0.1.0-alpha.4",
+    "saved": true,
+    "publiclyVerified": true,
+    "descriptionSHA256": "d4e873c83a8dad7578bb4bacadf519c3d1abaae3fc56cb9bcb20042bba33a05f"
+  },
+  "nativeControl": false,
+  "rankingChecked": false,
+  "adoptionProven": false
+}
