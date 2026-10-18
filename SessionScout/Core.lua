@@ -1,7 +1,7 @@
 local addonName, ns = ...
 local M = ns.Model
 ns.name = addonName
-ns.version = "0.1.0"
+ns.version = "0.2.0-alpha.1"
 
 function ns.Now()
     return GetServerTime and GetServerTime() or time()
@@ -83,6 +83,49 @@ function ns.Readiness()
     return #parts > 0 and table.concat(parts, "  /  ") or "Readiness is unavailable on this client."
 end
 
+local function validCharacter(value)
+    return readable(value) and type(value) == "string" and #value > 0 and #value <= 200
+        and not value:find("%c")
+end
+
+local function validChoiceID(value)
+    return readable(value) and type(value) == "string" and #value > 0 and #value <= 80
+        and value:match("^[%w_-]+$") ~= nil
+end
+
+-- Returns the current definition; callers must treat it as read-only.
+-- A valid choice survives unavailable identity and shorter session budgets.
+function ns.GetChosenTask()
+    if not ns.db or not ns.settings then return nil end
+    local id = ns.settings.selectedTaskID
+    if readable(id) and id == nil then return nil end
+    local task = validChoiceID(id) and M.GetTask(ns.db, id)
+    if not task then ns.settings.selectedTaskID = nil; return nil end
+    if not validCharacter(ns.character) then return nil end
+    local completed, err = M.IsCompleted(ns.db, id, ns.character, ns.Now())
+    if err then return nil end
+    if completed then ns.settings.selectedTaskID = nil; return nil end
+    return task
+end
+
+function ns.ChooseTask(id)
+    if not ns.db or not ns.settings then return false, "Saved data could not be loaded." end
+    if not validCharacter(ns.character) then return false, "Character identity is not available yet." end
+    if not validChoiceID(id) or not M.GetTask(ns.db, id) then return false, "Task not found." end
+    local completed, err = M.IsCompleted(ns.db, id, ns.character, ns.Now())
+    if err then return false, err end
+    if completed then return false, "This task is already complete." end
+    ns.settings.selectedTaskID = id
+    ns.Refresh()
+    return true
+end
+
+function ns.ClearChoice()
+    if not ns.db or not ns.settings then return end
+    ns.settings.selectedTaskID = nil
+    ns.Refresh()
+end
+
 function ns.Complete(id)
     if not ns.db then return end
     if not ns.character then ns.Message("Character identity is not available yet. Try /scout again after combat."); return end
@@ -94,6 +137,7 @@ end
 function ns.Refresh()
     if not ns.db then return end
     M.Refresh(ns.db, ns.Now())
+    ns.GetChosenTask()
     if ns.Render and ns.window and ns.window:IsShown() then ns.Render() end
 end
 
@@ -126,8 +170,10 @@ events:SetScript("OnEvent", function(_, event, loadedName)
         ns.settings.budget = math.floor(ns.settings.budget)
         if type(ns.settings.note) ~= "string" then ns.settings.note = "" end
         ns.settings.note = truncateLetters(ns.settings.note, 500)
+        ns.GetChosenTask()
     elseif event == "PLAYER_LOGIN" and ns.db then
         ns.character = characterKey()
+        ns.Refresh()
         if not ns.settings.welcomed then
             ns.Message("Type /scout and choose your available minutes. Add your own tasks to start.")
             ns.settings.welcomed = true

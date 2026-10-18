@@ -113,6 +113,14 @@ complete SavedVariables files.
 
 ## Development
 
+The unreleased **0.2.0-alpha.1** adds manual task selection: choose a suggestion
+or use **Choose myself** to pick any unfinished task. A chosen task stays selected
+for the current character until changed or completed. Longer estimates show a
+budget warning without changing the task or the available time. **Use suggestions**
+returns to the automatic planner. These controls are not in the 0.1.0 download
+above; see the [manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md) for their
+current validation status.
+
 ```sh
 lua5.1 tests/model_spec.lua
 lua5.1 tests/integration_spec.lua

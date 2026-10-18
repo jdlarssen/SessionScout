@@ -68,9 +68,9 @@ end
 local function updateViews()
     local w = ns.window
     w.sessionView:SetShown(w.view == "session")
-    w.tasksView:SetShown(w.view == "tasks")
-    w.taskList:SetShown(not w.editorOpen)
-    w.editor:SetShown(w.editorOpen == true)
+    w.tasksView:SetShown(w.view ~= "session")
+    w.taskList:SetShown(w.view == "choose" or not w.editorOpen)
+    w.editor:SetShown(w.view == "tasks" and w.editorOpen == true)
     w.sessionTab:SetText(w.view == "session" and "|cff52d9bbThis session|r" or "This session")
     w.tasksTab:SetText(w.view == "tasks" and "|cff52d9bbMy tasks|r" or "My tasks")
 end
@@ -170,6 +170,18 @@ local function selectFilter(value)
     taskFilter = value; ns.window.pendingDelete = nil; ns.Refresh()
 end
 
+local function chooseTask()
+    page = 1; taskFilter = "unfinished"
+    -- The picker leaves a parked editor draft intact and offers no editing actions.
+    showView("choose")
+end
+
+local function pickTask(task)
+    if not task then return end
+    local ok, err = ns.ChooseTask(task.id)
+    if ok then showView("session") else ns.Message(err or "Could not choose this task.") end
+end
+
 function ns.SaveNote()
     if ns.window and ns.settings then ns.settings.note = ns.window.note:GetText() end
 end
@@ -224,15 +236,18 @@ function ns.CreateWindow()
     end)
     w.applyBudget = button(session, "Apply", 514, -28, 120, applyBudget)
     w.planSummary = boundedLabel(session, "", 22, -72, "GameFontHighlight", 612, 32, 2)
-    w.planExplanation = label(session, "Based on your saved estimates and priorities.", 22, -108, "GameFontDisableSmall", 612)
+    w.planExplanation = label(session, "Suggestions based on estimates and priorities.", 22, -114, "GameFontDisableSmall", 296)
+    w.showSuggestions = button(session, "Use suggestions", 326, -108, 144, function() ns.ClearChoice() end)
+    w.chooseTask = button(session, "Choose myself", 480, -108, 154, chooseTask)
     w.planRows = {}
     for i = 1, 3 do
         local row = {}
         row.container = panel(session, 22, -134 - (i - 1) * 70, 612, 62, true)
-        row.text = boundedLabel(row.container, "", 12, -9, "GameFontHighlight", 480, 20, 1)
-        row.metadata = boundedLabel(row.container, "", 12, -36, "GameFontHighlightSmall", 480, 16, 1)
+        row.text = boundedLabel(row.container, "", 12, -9, "GameFontHighlight", 400, 20, 1)
+        row.metadata = boundedLabel(row.container, "", 12, -36, "GameFontHighlightSmall", 400, 16, 1)
+        row.choose = button(row.container, "Choose", 426, -19, 80, function() pickTask(row.task) end)
         row.done = button(row.container, "Done", 514, -19, 86, function() if row.task then ns.Complete(row.task.id) end end)
-        row.container:EnableMouse(true); taskTooltip(row.container, row); taskTooltip(row.done, row)
+        row.container:EnableMouse(true); taskTooltip(row.container, row); taskTooltip(row.done, row); taskTooltip(row.choose, row)
         w.planRows[i] = row
     end
     w.emptyPlan = panel(session, 22, -134, 612, 202, true)
@@ -241,8 +256,8 @@ function ns.CreateWindow()
     w.emptyDetails = boundedLabel(w.emptyPlan, "", 14, -104, "GameFontHighlightSmall", 584, 38, 2)
     w.emptyPrimary = button(w.emptyPlan, "Add task", 14, -160, 148, function()
         if w.emptyMode == "empty" then newTask()
+        elseif w.emptyMode == "no-fit" then chooseTask()
         else
-            if w.emptyMode == "no-fit" then w.revealTaskID = w.shortestTaskID end
             showView("tasks")
             selectFilter(w.emptyMode == "complete" and "completed" or "unfinished")
         end
@@ -261,13 +276,15 @@ function ns.CreateWindow()
     w.unfinishedFilter = button(w.taskList, "Unfinished", 22, -4, 160, function() selectFilter("unfinished") end)
     w.completedFilter = button(w.taskList, "Completed", 192, -4, 160, function() selectFilter("completed") end)
     w.newTask = button(w.taskList, "+ New task", 492, -4, 142, newTask)
+    w.chooseBack = button(w.taskList, "Back", 492, -4, 142, function() showView("session") end)
     w.taskRows = {}
     for i = 1, 5 do
         local row = {}
         row.container = panel(w.taskList, 22, -50 - (i - 1) * 54, 612, 48, true)
-        row.text = boundedLabel(row.container, "", 12, -7, "GameFontHighlight", 420, 18, 1)
+        row.text = boundedLabel(row.container, "", 12, -7, "GameFontHighlight", 324, 18, 1)
         -- Separate lines avoid the Forever client's non-wrapping newline suppression.
-        row.metadata = boundedLabel(row.container, "", 12, -28, "GameFontHighlightSmall", 420, 14, 1)
+        row.metadata = boundedLabel(row.container, "", 12, -28, "GameFontHighlightSmall", 324, 14, 1)
+        row.choose = button(row.container, "Choose", 356, -12, 76, function() pickTask(row.task) end)
         row.toggle = button(row.container, "Done", 440, -12, 74, function()
             if not row.task then return end
             if row.task.completed then
@@ -277,14 +294,14 @@ function ns.CreateWindow()
             else ns.Complete(row.task.id) end
         end)
         row.edit = button(row.container, "Edit", 522, -12, 78, function() if row.task then editTask(row.task) end end)
-        row.container:EnableMouse(true); taskTooltip(row.container, row); taskTooltip(row.edit, row)
+        row.container:EnableMouse(true); taskTooltip(row.container, row); taskTooltip(row.edit, row); taskTooltip(row.choose, row)
         w.taskRows[i] = row
     end
     w.taskListEmpty = boundedLabel(w.taskList, "", 26, -64, "GameFontHighlight", 600, 60, 3)
     w.previousPage = button(w.taskList, "Previous", 22, -330, 96, function() page = math.max(1, page - 1); ns.Refresh() end)
     w.nextPage = button(w.taskList, "Next", 128, -330, 96, function() page = math.min(w.pageCount or 1, page + 1); ns.Refresh() end)
     w.pageText = label(w.taskList, "", 244, -336, "GameFontHighlightSmall", 390)
-    boundedLabel(w.taskList, "Task definitions are shared across characters. Completion follows each task's setting.", 22, -376, "GameFontHighlightSmall", 612, 36, 2)
+    w.taskListHelp = boundedLabel(w.taskList, "Task definitions are shared across characters. Completion follows each task's setting.", 22, -376, "GameFontHighlightSmall", 612, 36, 2)
     boundedLabel(w.taskList, "Estimates and completion are manual. Daily and weekly tasks reset with the server.", 22, -436, "GameFontDisableSmall", 612, 36, 2)
 
     w.editor = panel(tasks, 0, 0, 660, 490)
@@ -330,6 +347,10 @@ function ns.Render()
     if not w or not ns.character then return end
     local budget = ns.settings.budget
     local plan, err = M.BuildPlan(ns.db, ns.character, ns.Now(), budget)
+    local chosen = ns.GetChosenTask()
+    if chosen then
+        plan = {tasks={chosen}, totalMinutes=chosen.minutes, budgetMinutes=budget}
+    end
     local tasks = M.ListTasks(ns.db, ns.character, ns.Now())
     if not w.budgetDirty and not w.budgetInput:HasFocus() then syncBudget() end
     for i, minutes in ipairs({ 15, 30, 60 }) do
@@ -357,12 +378,16 @@ function ns.Render()
     w.shortestTaskID = shortest and shortest.id
     w.emptyPlan:SetShown(count == 0)
     w.planExplanation:SetShown(count > 0)
+    w.planExplanation:SetText(chosen and "Chosen by you. Mark Done when you finish." or "Suggestions based on estimates and priorities.")
+    w.chooseTask:SetShown(unfinished > 0)
+    w.chooseTask:SetText(chosen and "Change task" or "Choose myself")
+    w.showSuggestions:SetShown(chosen ~= nil)
     if #tasks == 0 then
         w.emptyMode = "empty"
         w.planSummary:SetText("Start with one task for this session.")
         w.emptyTitle:SetText("What would make this session worthwhile?")
         w.emptyTask:SetText("Add an activity you want to do and an honest estimate of how long it takes.")
-        w.emptyDetails:SetText("SessionScout chooses from your tasks. It does not discover quests or activities for you.")
+        w.emptyDetails:SetText("Get suggestions from your tasks, or choose one yourself. Activities are entered manually.")
         w.emptyPrimary:SetText("Add task"); w.emptySecondary:Hide()
     elseif not shortest then
         w.emptyMode = "complete"
@@ -376,13 +401,21 @@ function ns.Render()
         w.planSummary:SetText("No task fits " .. budget .. " min. Shortest unfinished task: " .. shortest.minutes .. " min.")
         w.emptyTitle:SetText("Your shortest unfinished task")
         w.emptyTask:SetText(ns.SafeText(shortest.label))
-        w.emptyDetails:SetText(shortest.minutes .. " min estimated. Your available time is still " .. budget .. " min.\nView your tasks, or change the time if you have longer.")
-        w.emptyPrimary:SetText("View tasks"); w.emptySecondary:SetText("Change time"); w.emptySecondary:Show()
+        w.emptyDetails:SetText(shortest.minutes .. " min estimated. Your available time is still " .. budget .. " min.\nYou can choose a task yourself, even if its estimate is longer.")
+        w.emptyPrimary:SetText("Choose a task"); w.emptySecondary:SetText("Change time"); w.emptySecondary:Show()
     else
         w.emptyMode = nil
-        w.planSummary:SetText(count .. (count == 1 and " next action / " or " next actions / ") .. plan.totalMinutes .. " of " .. budget .. " min.")
+        if chosen then
+            local summary = "Your chosen task / " .. chosen.minutes .. " min estimated."
+            if chosen.minutes > budget then
+                summary = summary .. "\n" .. (chosen.minutes - budget) .. " min over your " .. budget .. "-minute budget."
+            else summary = summary .. " Available time: " .. budget .. " min." end
+            w.planSummary:SetText(summary)
+        else
+            w.planSummary:SetText(count .. (count == 1 and " suggestion / " or " suggestions / ") .. plan.totalMinutes .. " of " .. budget .. " min.")
+        end
     end
-    if count == 0 and w.editorOpen then
+    if count == 0 and w.editorOpen and w.emptyMode ~= "no-fit" then
         w.emptyPrimary:SetText("Resume draft")
         if w.emptyMode == "complete" then w.emptySecondary:Hide() end
     end
@@ -390,8 +423,9 @@ function ns.Render()
     for i, row in ipairs(w.planRows) do
         local task = plan.tasks[i]; row.task = task
         row.container:SetShown(task ~= nil)
-        row.text:SetText(task and (i .. ". " .. ns.SafeText(task.label)) or "")
+        row.text:SetText(task and ((chosen and "" or i .. ". ") .. ns.SafeText(task.label)) or "")
         row.metadata:SetText(task and (task.minutes .. " min estimated  /  " .. priorityNames[task.priority] .. " priority") or "")
+        row.choose:SetShown(task ~= nil and not chosen)
     end
     w.readiness:SetText(ns.Readiness())
 
@@ -408,8 +442,12 @@ function ns.Render()
         end
     end
     w.revealTaskID = nil
-    w.unfinishedFilter:SetText((taskFilter == "unfinished" and "|cff52d9bb" or "") .. "Unfinished (" .. unfinished .. ")" .. (taskFilter == "unfinished" and "|r" or ""))
+    local choosing = w.view == "choose"
+    w.unfinishedFilter:SetText((taskFilter == "unfinished" and "|cff52d9bb" or "") .. (choosing and "Choose a task (" or "Unfinished (") .. unfinished .. ")" .. (taskFilter == "unfinished" and "|r" or ""))
     w.completedFilter:SetText((taskFilter == "completed" and "|cff52d9bb" or "") .. "Completed (" .. completed .. ")" .. (taskFilter == "completed" and "|r" or ""))
+    w.completedFilter:SetShown(not choosing); w.newTask:SetShown(not choosing); w.chooseBack:SetShown(choosing)
+    w.taskListHelp:SetText(choosing and "Choose any unfinished task. Your time budget, estimates and priorities stay as you set them. Your choice is saved for this character."
+        or "Task definitions are shared across characters. Completion follows each task's setting.")
     w.pageCount = math.max(1, math.ceil(#filtered / 5)); page = math.min(page, w.pageCount)
     w.pageText:SetText("Page " .. page .. " / " .. w.pageCount .. "  (" .. #filtered .. " " .. taskFilter .. ")")
     w.previousPage:SetShown(page > 1); w.nextPage:SetShown(page < w.pageCount)
@@ -418,8 +456,13 @@ function ns.Render()
     for i, row in ipairs(w.taskRows) do
         local task = filtered[(page - 1) * 5 + i]; row.task = task
         row.container:SetShown(task ~= nil)
+        row.text:SetWidth(choosing and 480 or 324); row.metadata:SetWidth(choosing and 480 or 324)
         row.text:SetText(task and ns.SafeText(task.label) or "")
         row.metadata:SetText(task and (task.minutes .. " min / " .. priorityNames[task.priority] .. " / " .. recurrenceNames[task.recurrence] .. " / " .. (task.scope == "account" and "Shared completion" or "Per character")) or "")
         if task then row.toggle:SetText(task.completed and "Undo" or "Done") end
+        row.choose:SetShown(task ~= nil and not task.completed)
+        row.choose:SetText(task and chosen and task.id == chosen.id and "Chosen" or "Choose")
+        row.choose:ClearAllPoints(); row.choose:SetPoint("TOPLEFT", choosing and 522 or 356, -12)
+        row.toggle:SetShown(not choosing); row.edit:SetShown(not choosing)
     end
 end

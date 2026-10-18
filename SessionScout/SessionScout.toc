@@ -1,8 +1,8 @@
 ## Interface: 16001
 ## Title: SessionScout
-## Notes: Pick a time budget. See your next three tasks.
+## Notes: Get task suggestions, or choose your next activity yourself.
 ## Author: SessionScout contributors
-## Version: 0.1.0
+## Version: 0.2.0-alpha.1
 ## SavedVariables: SessionScoutDB
 ## SavedVariablesPerCharacter: SessionScoutCharDB
 ## Category: Quests & Leveling

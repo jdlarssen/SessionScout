@@ -6,7 +6,9 @@
 integration-test mock with fictional tasks and writes HTML, SVG and geometry
 JSON under `.tools/previews/`. It requires Lupa with Lua 5.1 (the local development
 copy is under `.tools/python`). Open the HTML to inspect the session, no-fit,
-task-list and editor layouts without launching or controlling WoW.
+task-list, picker, manual-choice and editor layouts without launching or
+controlling WoW. `chosen-90.html` shows an explicit 120-minute choice with
+a 90-minute budget; the original estimate is retained with a warning.
 
 The preview records real source geometry and visibility, but approximates fonts,
 wrapping and native button textures. It is explicitly labelled and includes the

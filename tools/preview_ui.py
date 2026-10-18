@@ -261,6 +261,14 @@ def main():
         lua, ns, env, state = make_world(budget)
         frames, root_id = snapshot(ns, state)
         print(render(frames, root_id, f"session-{budget}", f"Session with {budget} available minutes; three unfinished 120-minute tasks.", digest))
+        ns.window.chooseTask.Click(ns.window.chooseTask)
+        frames, root_id = snapshot(ns, state)
+        if budget == 120:
+            print(render(frames, root_id, "choose-task", "Manual task picker; all unfinished tasks are available.", digest))
+        ns.window.taskRows[3].choose.Click(ns.window.taskRows[3].choose)
+        frames, root_id = snapshot(ns, state)
+        print(render(frames, root_id, f"chosen-{budget}", f"Player-selected 120-minute task with {budget} available minutes; estimates remain unchanged.", digest))
+        ns.window.showSuggestions.Click(ns.window.showSuggestions)
         if budget == 120:
             # The implementation may place management behind a separate tab.
             if ns.window.tasksTab is not None:

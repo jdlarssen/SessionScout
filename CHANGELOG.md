@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.0-alpha.1 — unreleased development build
+
+- Choose a task directly from a suggestion or from **My tasks**.
+- Open **Choose myself** to pick any unfinished task, including one with an
+  estimate longer than the available time. The original estimate and budget
+  are retained, with an explicit warning when the choice exceeds the budget.
+- Keep one chosen task per character through window closing and reloads.
+  Completing or deleting it clears the choice; **Use suggestions** returns
+  to the automatic planner.
+- Preserve an unfinished editor draft while browsing the task picker.
+
+The published 0.1.0 files remain unchanged. New controls require in-client
+validation; automated and layout checks are recorded in the
+[manual-choice test plan](docs/MANUAL_CHOICE_TESTING.md).
+
 ## 0.1.0 — 2026-10-17
 
 First Release for **WoW Forever 1.60.1**, interface **16001**.
