@@ -2,9 +2,10 @@
 ## Title: SessionScout
 ## Notes: Get task suggestions, or choose your next activity yourself.
 ## Author: SessionScout contributors
-## Version: 0.2.0-alpha.1
+## Version: 0.2.0-alpha.2
 ## SavedVariables: SessionScoutDB
 ## SavedVariablesPerCharacter: SessionScoutCharDB
+## OptionalDeps: Librarian
 ## Category: Quests & Leveling
 ## X-Game-Flavor: Forever
 

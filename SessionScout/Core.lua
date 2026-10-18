@@ -1,7 +1,7 @@
 local addonName, ns = ...
 local M = ns.Model
 ns.name = addonName
-ns.version = "0.2.0-alpha.1"
+ns.version = "0.2.0-alpha.2"
 
 function ns.Now()
     return GetServerTime and GetServerTime() or time()
@@ -127,17 +127,23 @@ function ns.ClearChoice()
 end
 
 function ns.Complete(id)
-    if not ns.db then return end
-    if not ns.character then ns.Message("Character identity is not available yet. Try /scout again after combat."); return end
+    if not ns.db then return false, "Saved data could not be loaded." end
+    if not validCharacter(ns.character) then
+        local err = "Character identity is not available yet. Try /scout again after combat."
+        ns.Message(err)
+        return false, err
+    end
     local ok, err = M.CompleteTask(ns.db, id, ns.character, ns.Now(), ns.ResetTimes())
     if not ok then ns.Message(err or "Could not complete this task.") end
     ns.Refresh()
+    return ok, err
 end
 
 function ns.Refresh()
     if not ns.db then return end
     M.Refresh(ns.db, ns.Now())
     ns.GetChosenTask()
+    if ns.RenderTracker then ns.RenderTracker() end
     if ns.Render and ns.window and ns.window:IsShown() then ns.Render() end
 end
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0-alpha.2 — development, not yet published
+
+- Keep a chosen task in a small movable tracker when Scout is closed. Its
+  position and the choice are saved for the current character.
+- Finish directly from the tracker. Its confirmation offers **Undo** and
+  **Choose next**, without a slash command or an automatically chosen replacement.
+- Link a task to the optional **Librarian Books Forever** journal. Set
+  **Guide: Library books** in the task editor, then open **Book guide** from
+  the chosen task or tracker. Book progress stays in Librarian; Scout completion
+  remains manual. The link is saved per character.
+- Missing or incompatible Librarian leaves ordinary task tracking available.
+- 89 automated checks pass (15 model, 55 mocked integration, 19 tooling).
+  The new tracker and companion interaction have not yet been tested in WoW.
+
 ## 0.2.0-alpha.1 — 2026-10-18, experimental prerelease
 
 - Choose a task directly from a suggestion or from **My tasks**.

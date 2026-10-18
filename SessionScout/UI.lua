@@ -6,6 +6,23 @@ local priorityNames = { "High", "Medium", "Low" }
 local page, editID, taskFilter = 1, nil, "unfinished"
 local form = { recurrence = "once", scope = "character", priority = 2 }
 
+local function guideFor(task)
+    local guides = ns.settings and ns.settings.taskGuides
+    return task and type(guides) == "table" and guides[task.id] == "librarian-books"
+end
+
+local function openBookGuide()
+    local guide = _G.Librarian
+    if type(guide) ~= "table" or type(guide.OpenJournal) ~= "function"
+        or type(guide.db) ~= "table" or type(guide.char) ~= "table" then
+        ns.Message("Book guide needs Librarian Books Forever enabled. After a new installation, restart WoW if it is missing from AddOns.")
+        return
+    end
+    local ok = pcall(guide.OpenJournal, guide)
+    if not ok then ns.Message("Librarian could not open its book guide. Your task is unchanged.")
+    elseif ns.window and ns.window:IsShown() then ns.window:Hide() end
+end
+
 local function label(parent, text, x, y, size, width)
     local f = parent:CreateFontString(nil, "OVERLAY", size or "GameFontNormal")
     f:SetPoint("TOPLEFT", x, y)
@@ -93,6 +110,7 @@ updateForm = function()
     w.recurrence:SetText(recurrenceNames[form.recurrence] .. " >")
     w.scope:SetText((form.scope == "account" and "Shared across characters" or "Separate for each character") .. " >")
     w.priority:SetText(priorityNames[form.priority] .. " >")
+    w.guide:SetText(form.guide and "Guide: Library books >" or "Guide: None >")
     w.save:SetText(editID and "Save changes" or "Add task")
     w.remove:SetShown(editID ~= nil)
     w.remove:SetText(w.pendingDelete == editID and editID and "Confirm delete" or "Delete task")
@@ -124,7 +142,7 @@ local function editTask(task)
     clearFocus()
     local w = ns.window
     editID = task.id
-    form = { recurrence = task.recurrence, scope = task.scope, priority = task.priority }
+    form = { recurrence = task.recurrence, scope = task.scope, priority = task.priority, guide = guideFor(task) }
     w.taskLabel:SetText(task.label); w.minutes:SetText(tostring(task.minutes))
     w.feedback:SetText(""); w.pendingDelete = nil; w.editorOpen = true
     updateForm(); updateViews(); w.taskLabel:SetFocus()
@@ -137,6 +155,10 @@ local function saveTask()
     local result, err
     if editID then result, err = M.UpdateTask(ns.db, editID, task) else result, err = M.AddTask(ns.db, task) end
     if not result then w.feedback:SetText(ns.SafeText(err or "Check the task fields.")); return end
+    if form.guide then
+        if type(ns.settings.taskGuides) ~= "table" then ns.settings.taskGuides = {} end
+        ns.settings.taskGuides[result.id] = "librarian-books"
+    elseif type(ns.settings.taskGuides) == "table" then ns.settings.taskGuides[result.id] = nil end
     -- Reveal the saved task even when it belongs to another page or completion filter.
     w.revealTaskID = result.id
     closeEditor()
@@ -186,6 +208,102 @@ function ns.SaveNote()
     if ns.window and ns.settings then ns.settings.note = ns.window.note:GetText() end
 end
 
+local trackerAnchors = { TOPLEFT=true, TOP=true, TOPRIGHT=true, LEFT=true, CENTER=true,
+    RIGHT=true, BOTTOMLEFT=true, BOTTOM=true, BOTTOMRIGHT=true }
+
+local function validPosition(position)
+    return type(position) == "table" and trackerAnchors[position.point] and trackerAnchors[position.relativePoint]
+        and type(position.x) == "number" and position.x == position.x and math.abs(position.x) < 100000
+        and type(position.y) == "number" and position.y == position.y and math.abs(position.y) < 100000
+end
+
+local function createTracker()
+    local t = CreateFrame("Frame", "SessionScoutTracker", UIParent, "BackdropTemplate")
+    ns.tracker = t; t:Hide(); t:SetSize(320, 160)
+    t:SetClampedToScreen(true); t:SetMovable(true); t:EnableMouse(true); t:SetFrameStrata("MEDIUM")
+    t:SetScale(math.min(1, (UIParent:GetHeight() - 40) / 160))
+    local position = ns.settings.trackerPosition
+    if validPosition(position) then
+        t:SetPoint(position.point, UIParent, position.relativePoint, position.x, position.y)
+    else t:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -40, -260) end
+    t:SetBackdrop({ bgFile="Interface\\Buttons\\WHITE8X8", edgeFile="Interface\\Buttons\\WHITE8X8", edgeSize=1 })
+    t:SetBackdropColor(0.045, 0.065, 0.085, 0.94); t:SetBackdropBorderColor(0.2, 0.35, 0.39, 1)
+    t:RegisterForDrag("LeftButton")
+    t:SetScript("OnDragStart", t.StartMoving)
+    t:SetScript("OnDragStop", function(self)
+        self:StopMovingOrSizing()
+        local point, relative, relativePoint, x, y = self:GetPoint(1)
+        local saved = {point=point, relativePoint=relativePoint, x=x, y=y}
+        if (relative == UIParent or relative == nil) and validPosition(saved) then ns.settings.trackerPosition = saved end
+    end)
+    t.heading = label(t, "Your chosen task", 12, -10, "GameFontNormal", 258)
+    t.heading:SetTextColor(unpack(accent))
+    t.text = boundedLabel(t, "", 12, -34, "GameFontHighlight", 296, 38, 2)
+    t.detail = boundedLabel(t, "", 12, -79, "GameFontHighlightSmall", 296, 30, 2)
+    t.open = button(t, "Open Scout", 12, -122, 142, function()
+        local completed = ns.trackerCompletedID ~= nil and ns.GetChosenTask() == nil
+        if not ns.window or not ns.window:IsShown() then ns.Toggle() end
+        if ns.window and ns.window:IsShown() then
+            if completed then
+                local unfinished = false
+                for _, task in ipairs(M.ListTasks(ns.db, ns.character, ns.Now())) do
+                    if not task.completed then unfinished = true; break end
+                end
+                if unfinished then chooseTask() else newTask() end
+            else showView("session") end
+        end
+    end)
+    t.done = button(t, "Done", 166, -122, 142, function()
+        if not t.task then return end
+        if t.completed then
+            local id = t.task.id
+            local ok, err = M.ResetTask(ns.db, id, ns.character)
+            if ok then ns.trackerCompletedID = nil; ns.ChooseTask(id)
+            else ns.Message(err or "Could not undo this task.") end
+        else
+            local id = t.task.id
+            if ns.Complete(id) then ns.trackerCompletedID = id; ns.Refresh() end
+        end
+    end)
+    t.guide = button(t, "Book guide", 12, -112, 296, openBookGuide)
+    t.close = button(t, "x", 284, -5, 24, function() ns.trackerCompletedID = nil; ns.Refresh() end)
+    taskTooltip(t, t); taskTooltip(t.done, t); taskTooltip(t.open, t)
+    return t
+end
+
+function ns.RenderTracker()
+    local task = ns.GetChosenTask()
+    local completed = false
+    if task then ns.trackerCompletedID = nil
+    elseif ns.db and ns.character and ns.trackerCompletedID then
+        task = M.GetTask(ns.db, ns.trackerCompletedID)
+        completed = task and M.IsCompleted(ns.db, task.id, ns.character, ns.Now()) == true
+        if not completed then task = nil; ns.trackerCompletedID = nil end
+    end
+    if not task or (ns.window and ns.window:IsShown()) then
+        if ns.tracker then ns.tracker.task = nil; ns.tracker:Hide() end
+        return
+    end
+    local t = ns.tracker or createTracker()
+    t.task, t.completed = task, completed
+    t.heading:SetText(completed and "Task completed" or "Your chosen task")
+    t.text:SetText(ns.SafeText(task.label))
+    t.detail:SetText(completed and "Choose another task when you are ready."
+        or (task.minutes .. " min estimated.\nMark Done when you have finished."))
+    t.open:SetText(completed and "Choose next" or "Open Scout")
+    t.done:SetText(completed and "Undo" or "Done")
+    local hasGuide = guideFor(task) and not completed
+    t.guide:SetShown(hasGuide)
+    local controlsY = hasGuide and -148 or -122
+    for _, control in ipairs({t.open, t.done}) do
+        control:ClearAllPoints(); control:SetPoint("TOPLEFT", control == t.open and 12 or 166, controlsY)
+    end
+    t:SetHeight(hasGuide and 184 or 160)
+    t:SetScale(math.min(1, (UIParent:GetHeight() - 40) / (hasGuide and 184 or 160)))
+    if hasGuide then t.detail:SetText("Use Book guide to check what remains.\nMark Done when your own goal is reached.") end
+    t.close:SetShown(completed); t:Show()
+end
+
 function ns.CreateWindow()
     local w = CreateFrame("Frame", "SessionScoutWindow", UIParent, "BackdropTemplate")
     ns.window = w; w.view = "session"
@@ -201,6 +319,7 @@ function ns.CreateWindow()
     -- Only a visible planner is refreshed; no background polling or per-frame work.
     w:SetScript("OnShow", function()
         w:Raise()
+        if ns.tracker then ns.tracker:Hide() end
         if C_Timer and C_Timer.NewTicker then w.ticker = C_Timer.NewTicker(30, ns.Refresh) end
     end)
     w:HookScript("OnHide", function()
@@ -208,6 +327,7 @@ function ns.CreateWindow()
         clearFocus(); syncBudget(); w.budgetError = nil
         if w.pendingDelete then w.feedback:SetText("") end
         w.pendingDelete = nil; updateForm()
+        ns.Refresh()
     end)
     UISpecialFrames[#UISpecialFrames + 1] = "SessionScoutWindow"
     local title = label(w, "SessionScout", 22, -20, "GameFontNormalLarge")
@@ -247,6 +367,7 @@ function ns.CreateWindow()
         row.metadata = boundedLabel(row.container, "", 12, -36, "GameFontHighlightSmall", 400, 16, 1)
         row.choose = button(row.container, "Choose", 426, -19, 80, function() pickTask(row.task) end)
         row.done = button(row.container, "Done", 514, -19, 86, function() if row.task then ns.Complete(row.task.id) end end)
+        row.guide = button(row.container, "Book guide", 418, -19, 92, openBookGuide)
         row.container:EnableMouse(true); taskTooltip(row.container, row); taskTooltip(row.done, row); taskTooltip(row.choose, row)
         w.planRows[i] = row
     end
@@ -320,7 +441,8 @@ function ns.CreateWindow()
     w.scope = button(w.editor, "Separate for each character >", 22, -208, 282, function()
         form.scope = form.scope == "character" and "account" or "character"; updateForm()
     end)
-    label(w.editor, "Click a choice to cycle its options.", 22, -246, "GameFontDisableSmall", 612)
+    w.guide = button(w.editor, "Guide: None >", 22, -246, 282, function() form.guide = not form.guide; updateForm() end)
+    boundedLabel(w.editor, "Book guide uses Librarian Books Forever. This link is saved for this character.", 318, -246, "GameFontDisableSmall", 294, 32, 2)
     boundedLabel(w.editor, "Task definitions are shared. Editing or deleting a task affects every character. Completion can be separate or shared.", 22, -282, "GameFontHighlightSmall", 612, 42, 3)
     w.feedback = boundedLabel(w.editor, "", 22, -336, "GameFontHighlight", 612, 38, 2)
     w.save = button(w.editor, "Add task", 22, -390, 154, saveTask)
@@ -330,6 +452,7 @@ function ns.CreateWindow()
         if w.pendingDelete == editID then
             local ok, err = M.DeleteTask(ns.db, editID)
             if not ok then w.feedback:SetText(ns.SafeText(err or "Could not delete this task.")); return end
+            if type(ns.settings.taskGuides) == "table" then ns.settings.taskGuides[editID] = nil end
             closeEditor()
         else
             w.pendingDelete = editID
@@ -426,6 +549,7 @@ function ns.Render()
         row.text:SetText(task and ((chosen and "" or i .. ". ") .. ns.SafeText(task.label)) or "")
         row.metadata:SetText(task and (task.minutes .. " min estimated  /  " .. priorityNames[task.priority] .. " priority") or "")
         row.choose:SetShown(task ~= nil and not chosen)
+        row.guide:SetShown(chosen ~= nil and guideFor(task) == true)
     end
     w.readiness:SetText(ns.Readiness())
 

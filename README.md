@@ -113,6 +113,16 @@ complete SavedVariables files.
 
 ## Development
 
+The current **0.2.0-alpha.2 source** adds a movable chosen-task tracker, direct
+Done/Undo/Choose next actions, and an optional link to
+[Librarian Books Forever](https://www.curseforge.com/wow/addons/librarian-forever).
+To link a book task, edit it, choose **Guide: Library books**, save and choose
+the task. **Book guide** then opens Librarian's journal. Librarian is installed
+separately; it is not bundled or required for ordinary tasks. Guide links belong
+to the current character, and opening the guide never completes a Scout task.
+This source version is not yet published or tested in the WoW client. See the
+[tracker and book-guide test plan](docs/TRACKER_TESTING.md).
+
 The opt-in [**0.2.0-alpha.1 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.1-forever)
 adds manual task selection: choose a suggestion
 or use **Choose myself** to pick any unfinished task. A chosen task stays selected

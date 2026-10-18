@@ -106,7 +106,7 @@ def make_world(budget):
     return lua, ns, env, state
 
 
-def snapshot(ns, state):
+def snapshot(ns, state, root=None):
     frames = list(state.frames.values())
     for i, frame in enumerate(frames):
         frame.previewID = i
@@ -119,6 +119,8 @@ def snapshot(ns, state):
             "kind", "name", "text", "font", "fontSize", "width", "height", "shown", "scale",
             "justifyH", "justifyV", "wordWrap", "maxLines", "template", "alpha", "enabled", "frameLevel",
         ]}
+        if not isinstance(fields["text"], str):
+            fields["text"] = ""
         fields.update({
             "id": frame.previewID,
             "parent": frame.parent.previewID if frame.parent is not None else None,
@@ -130,7 +132,7 @@ def snapshot(ns, state):
             "textureColor": table_values(frame.textureColor),
         })
         result.append(fields)
-    return result, ns.window.previewID
+    return result, (root or ns.window).previewID
 
 
 def rgba(values, default):
@@ -268,6 +270,21 @@ def main():
         ns.window.taskRows[3].choose.Click(ns.window.taskRows[3].choose)
         frames, root_id = snapshot(ns, state)
         print(render(frames, root_id, f"chosen-{budget}", f"Player-selected 120-minute task with {budget} available minutes; estimates remain unchanged.", digest))
+        if budget == 120:
+            ns.window.Hide(ns.window)
+            frames, root_id = snapshot(ns, state, ns.tracker)
+            print(render(frames, root_id, "chosen-tracker", "Chosen task remains visible with the planner closed; direct Done and Open Scout actions.", digest))
+            ns.settings.taskGuides = lua.table_from({ns.GetChosenTask().id: "librarian-books"})
+            ns.Refresh()
+            frames, root_id = snapshot(ns, state, ns.tracker)
+            print(render(frames, root_id, "book-tracker", "Optional Book guide link on a chosen task; completion remains manual.", digest))
+            ns.settings.taskGuides = None
+            ns.Refresh()
+            ns.tracker.done.Click(ns.tracker.done)
+            frames, root_id = snapshot(ns, state, ns.tracker)
+            print(render(frames, root_id, "completed-tracker", "Completion confirmation with Undo and Choose next; no automatic task selection.", digest))
+            ns.tracker.done.Click(ns.tracker.done)
+            ns.tracker.open.Click(ns.tracker.open)
         ns.window.showSuggestions.Click(ns.window.showSuggestions)
         if budget == 120:
             # The implementation may place management behind a separate tab.

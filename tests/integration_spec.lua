@@ -50,7 +50,14 @@ local function world(saved, characterSaved, options)
         "SetNumeric", "StartMoving", "StopMovingOrSizing", "SetToplevel", "Raise"}) do
         methods[method] = function() end
     end
-    function methods:SetPoint(anchor, x, y) self.point = {anchor, x, y} end
+    function methods:SetPoint(...) self.point = {...} end
+    function methods:GetPoint()
+        local point = self.point or {"CENTER", env.UIParent, "CENTER", 0, 0}
+        if type(point[2]) == "number" then
+            return point[1], self.parent or env.UIParent, point[1], point[2], point[3]
+        end
+        return point[1], point[2] or env.UIParent, point[3] or point[1], point[4] or 0, point[5] or 0
+    end
     function methods:ClearAllPoints() self.point = nil end
     function methods:SetSize(width, height) self.width, self.height = width, height end
     function methods:SetWidth(width) self.width = width end
@@ -194,7 +201,7 @@ test("unreadable identity defers UI and completion until combat recovery", funct
     local shared = assert(ns.Model.AddTask(ns.db, {label="Deferred shared", minutes=10, scope="account"}))
     s:open(); eq(ns.window, nil); eq(s:activeTimers(), 0)
     contains(s.messages[#s.messages], "identity is not available")
-    ns.Complete(personal.id); ns.Complete(shared.id)
+    eq(ns.Complete(personal.id), false); eq(ns.Complete(shared.id), false)
     eq(next(ns.db.progress.characters), nil, "deferred identity must not create character progress")
     eq(next(ns.db.progress.account), nil, "deferred identity must not mark shared tasks complete")
     env.UnitGUID = function() return "Player-1-RECOVERED" end
@@ -213,6 +220,7 @@ test("unsupported future schema preserves both original saved tables", function(
     eq(env.SessionScoutCharDB, char); eq(char.budget, 75); eq(char.welcomed, false); eq(ns.window, nil)
     eq(char.selectedTaskID, choice)
     eq(ns.ChooseTask("task-1"), false); ns.ClearChoice(); ns.Refresh()
+    eq(ns.Complete("task-1"), false)
     eq(char.selectedTaskID, choice, "choice operations must not mutate unsupported saved data")
     contains(table.concat(s.messages, "\n"), "newer SessionScout version")
 end)
@@ -282,6 +290,201 @@ test("completion and deletion clear a choice while the window is closed", functi
     s:event("BAG_UPDATE_DELAYED"); eq(ns.settings.selectedTaskID, nil)
 end)
 
+test("tracker rendering follows choice cleanup without requiring the main window", function()
+    local ns, env, s = world()
+    local saved = ns.Model.NewState()
+    local first = assert(ns.Model.AddTask(saved, {label="Saved choice", minutes=10}))
+    local second = assert(ns.Model.AddTask(saved, {label="New choice", minutes=20}))
+    env.SessionScoutDB = saved
+    env.SessionScoutCharDB = {budget=15, selectedTaskID=first.id}
+    local rendered = {}
+    ns.RenderTracker = function()
+        local task = ns.GetChosenTask()
+        rendered[#rendered+1] = task and task.id or false
+    end
+    ns.Refresh(); eq(#rendered, 0, "unloaded data must not invoke tracker rendering")
+    s:login(); eq(ns.window, nil); eq(rendered[#rendered], first.id)
+    ok(ns.ChooseTask(second.id)); eq(rendered[#rendered], second.id); eq(ns.window, nil)
+    ns.ClearChoice(); eq(rendered[#rendered], false)
+    ok(ns.ChooseTask(first.id)); ok(ns.Complete(first.id))
+    eq(rendered[#rendered], false, "completed choices must be cleared before tracker rendering")
+    ok(ns.ChooseTask(second.id)); ok(ns.Model.DeleteTask(ns.db, second.id)); ns.Refresh()
+    eq(rendered[#rendered], false, "deleted choices must be cleared before tracker rendering")
+    eq(ns.window, nil, "tracker updates must not open the main planner")
+end)
+
+test("the chosen task tracker survives closing and reload and opens the planner", function()
+    local ns, env, s = world(nil, {budget=15}); s:login(); s:open()
+    local task = assert(ns.Model.AddTask(ns.db, {label="Remember |cffff0000RFK|r", minutes=120}))
+    local nextTask = assert(ns.Model.AddTask(ns.db, {label="Next activity", minutes=10}))
+    ok(ns.ChooseTask(task.id))
+    ok(not ns.tracker or not ns.tracker:IsShown(), "the planner already shows the chosen task")
+    s:open(); eq(ns.window:IsShown(), false)
+    ok(ns.tracker:IsShown()); eq(ns.tracker.task.id, task.id)
+    contains(ns.tracker.text:GetText(), "Remember ||cffff0000RFK||r")
+    eq(ns.settings.budget, 15); eq(task.minutes, 120)
+    ns.tracker.open:Click(); ok(ns.window:IsShown()); eq(ns.tracker:IsShown(), false)
+    s:open(); ok(ns.tracker:IsShown()); eq(ns.GetChosenTask().id, task.id)
+    s:event("PLAYER_LOGOUT")
+    local reloaded, _, rs = world(env.SessionScoutDB, env.SessionScoutCharDB); rs:login()
+    eq(reloaded.window, nil, "login must restore the tracker without opening the planner")
+    ok(reloaded.tracker:IsShown()); eq(reloaded.tracker.task.id, task.id)
+    reloaded.tracker.done:Click()
+    ok(reloaded.tracker:IsShown()); eq(reloaded.GetChosenTask(), nil)
+    eq(reloaded.tracker.done:GetText(), "Undo"); eq(reloaded.settings.selectedTaskID, nil)
+    ok(reloaded.Model.IsCompleted(reloaded.db, task.id, reloaded.character, rs.now))
+    eq(reloaded.window, nil, "Done from the tracker must not open the planner")
+    reloaded.tracker.open:Click()
+    eq(reloaded.window.view, "choose"); eq(reloaded.tracker:IsShown(), false)
+    eq(reloaded.GetChosenTask(), nil, "Choose next must wait for an explicit selection")
+    eq(reloaded.window.taskRows[1].task.id, nextTask.id)
+    reloaded.window.taskRows[1].choose:Click()
+    eq(reloaded.GetChosenTask().id, nextTask.id); eq(reloaded.window.view, "session")
+    rs:open(); ok(reloaded.tracker:IsShown()); eq(reloaded.tracker.task.id, nextTask.id)
+end)
+
+test("clearing or deleting a chosen task hides the tracker without changing completion", function()
+    local ns, _, s = world(); s:login()
+    local task = assert(ns.Model.AddTask(ns.db, {label="Temporary choice", minutes=10}))
+    ok(ns.ChooseTask(task.id)); ok(ns.tracker:IsShown())
+    ns.ClearChoice(); eq(ns.tracker:IsShown(), false)
+    eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
+    ok(ns.ChooseTask(task.id)); ok(ns.tracker:IsShown())
+    ok(ns.Model.DeleteTask(ns.db, task.id)); ns.Refresh()
+    eq(ns.tracker:IsShown(), false); eq(ns.settings.selectedTaskID, nil); eq(ns.window, nil)
+end)
+
+test("failed tracker completion preserves the visible choice until a server reset is available", function()
+    local ns, env, s = world(); s:login()
+    local task = assert(ns.Model.AddTask(ns.db, {label="Weekly goal", minutes=20, recurrence="weekly"}))
+    ok(ns.ChooseTask(task.id)); ok(ns.tracker:IsShown())
+    env.C_DateAndTime = {}; env.GetQuestResetTime = nil
+    ns.tracker.done:Click()
+    ok(ns.tracker:IsShown()); eq(ns.tracker.task.id, task.id); eq(ns.GetChosenTask().id, task.id)
+    eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
+    contains(s.messages[#s.messages], "reset")
+    env.C_DateAndTime.GetSecondsUntilWeeklyReset = function() return 50 end
+    ns.tracker.done:Click()
+    ok(ns.tracker:IsShown()); eq(ns.GetChosenTask(), nil); eq(ns.settings.selectedTaskID, nil)
+    eq(ns.tracker.done:GetText(), "Undo")
+    ok(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now))
+    ns.tracker.done:Click()
+    eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
+end)
+
+test("finishing the last task offers a new task and does not persist the success card", function()
+    local ns, env, s = world(); s:login()
+    local task = assert(ns.Model.AddTask(ns.db, {label="Only task", minutes=10}))
+    ok(ns.ChooseTask(task.id)); ns.tracker.done:Click()
+    ok(ns.tracker:IsShown()); eq(ns.tracker.done:GetText(), "Undo")
+    eq(ns.settings.selectedTaskID, nil)
+    s:event("PLAYER_LOGOUT")
+    local reloaded, _, rs = world(env.SessionScoutDB, env.SessionScoutCharDB); rs:login()
+    eq(reloaded.tracker, nil, "the success card is session feedback, not another saved choice")
+    ns.tracker.open:Click()
+    ok(ns.window.editor:IsVisible()); eq(ns.window.view, "tasks")
+    eq(ns.window.editorTitle:GetText(), "New task"); eq(ns.GetChosenTask(), nil)
+    eq(#ns.db.tasks, 1, "opening the next-task form must not invent an activity")
+end)
+
+test("invalid future and unavailable-character data never creates a tracker", function()
+    for _, id in ipairs({false, {}, "missing-task"}) do
+        local ns, _, s = world(nil, {selectedTaskID=id}); s:login(); ns.Refresh()
+        eq(ns.tracker, nil); eq(ns.window, nil)
+    end
+    local future = {version=999, tasks={{id="future-task", label="Future"}}}
+    local char = {selectedTaskID="future-task", note="Keep"}
+    local unsupported, _, us = world(future, char); us:login(); unsupported.Refresh()
+    eq(unsupported.tracker, nil); eq(char.selectedTaskID, "future-task")
+
+    local ns, env, s = world()
+    local saved = ns.Model.NewState()
+    local task = assert(ns.Model.AddTask(saved, {label="Await identity", minutes=10}))
+    env.SessionScoutDB = saved; env.SessionScoutCharDB = {selectedTaskID=task.id}
+    local secret = secretMarker(env)
+    env.UnitGUID = function() return secret end
+    env.UnitName = function() return secret end
+    env.GetRealmName = function() return secret end
+    s:login(); ns.Refresh()
+    eq(ns.character, nil); eq(ns.tracker, nil); eq(ns.settings.selectedTaskID, task.id)
+    env.UnitGUID = function() return "Player-1-RECOVERED" end
+    s:event("PLAYER_REGEN_ENABLED")
+    ok(ns.tracker:IsShown()); eq(ns.tracker.task.id, task.id); eq(ns.window, nil)
+    ns.character = nil; ns.Refresh()
+    eq(ns.tracker:IsShown(), false, "temporary identity loss must hide stale tracker content")
+    eq(ns.settings.selectedTaskID, task.id)
+end)
+
+test("book-guide links are explicit character settings and survive reload without changing task data", function()
+    local ns, env, s = world(); s:login(); s:open()
+    s:beginTask(); ns.window.guide:Click(); s:add("Read library books", 20)
+    local task, w = ns.db.tasks[1], ns.window
+    eq(ns.settings.taskGuides[task.id], "librarian-books"); eq(task.guide, nil)
+    ok(ns.ChooseTask(task.id)); w.sessionTab:Click(); ok(w.planRows[1].guide:IsVisible())
+    s:row(task.label).edit:Click(); eq(w.guide:GetText(), "Guide: Library books >")
+    w.guide:Click(); w.cancel:Click()
+    eq(ns.settings.taskGuides[task.id], "librarian-books", "cancel must not commit the changed guide")
+    s:row(task.label).edit:Click(); w.taskLabel:SetText("Read the next book"); w.save:Click()
+    eq(ns.settings.taskGuides[task.id], "librarian-books"); eq(task.label, "Read the next book")
+    s:open(); ok(ns.tracker.guide:IsVisible())
+    s:event("PLAYER_LOGOUT")
+    local reloaded, _, rs = world(env.SessionScoutDB, env.SessionScoutCharDB); rs:login()
+    eq(reloaded.settings.taskGuides[task.id], "librarian-books"); ok(reloaded.tracker.guide:IsVisible())
+    local alt, _, as = world(env.SessionScoutDB, {}, {guid="Player-1-ALT"}); as:login()
+    ok(alt.ChooseTask(task.id)); eq(alt.tracker.guide:IsVisible(), false)
+    eq(alt.db.tasks[1].guide, nil, "a character guide binding must not leak into shared definitions")
+    rs:open(); rs:row("Read the next book").edit:Click()
+    reloaded.window.guide:Click(); reloaded.window.save:Click()
+    eq(reloaded.settings.taskGuides[task.id], nil)
+    reloaded.window.sessionTab:Click(); eq(reloaded.window.planRows[1].guide:IsVisible(), false)
+    rs:row("Read the next book").edit:Click(); reloaded.window.guide:Click(); reloaded.window.save:Click()
+    eq(reloaded.settings.taskGuides[task.id], "librarian-books")
+    rs:row("Read the next book").edit:Click(); reloaded.window.remove:Click(); reloaded.window.remove:Click()
+    eq(reloaded.settings.taskGuides[task.id], nil); eq(reloaded.Model.GetTask(reloaded.db, task.id), nil)
+end)
+
+test("book-guide opening handles unavailable and failing dependencies without completing the task", function()
+    local ns, env, s = world(); s:login(); s:open()
+    s:beginTask(); ns.window.guide:Click(); s:add("Book checklist", 15)
+    local task, w = ns.db.tasks[1], ns.window
+    ok(ns.ChooseTask(task.id)); w.sessionTab:Click()
+    env.Librarian = nil
+    w.planRows[1].guide:Click(); contains(s.messages[#s.messages], "Librarian Books Forever enabled")
+    ok(w:IsShown(), "a missing guide must leave the current planner available")
+    local opened = 0
+    env.Librarian = {OpenJournal=function() opened=opened+1 end}
+    w.planRows[1].guide:Click(); eq(opened, 0, "an uninitialized dependency must not be called")
+    env.Librarian.db, env.Librarian.char = true, true
+    w.planRows[1].guide:Click(); eq(opened, 0, "malformed dependency state must not be called")
+    env.Librarian.db, env.Librarian.char = {}, {}
+    env.Librarian.OpenJournal = function() error("dependency failure") end
+    w.planRows[1].guide:Click(); contains(s.messages[#s.messages], "could not open")
+    ok(w:IsShown(), "a failing guide must not dismiss the planner")
+    env.Librarian.OpenJournal = function(self) eq(self, env.Librarian); opened=opened+1 end
+    w.planRows[1].guide:Click(); eq(opened, 1)
+    eq(w:IsShown(), false, "the DIALOG planner must not cover the opened guide")
+    ok(ns.tracker:IsShown()); ns.tracker.guide:Click(); eq(opened, 2)
+    eq(ns.GetChosenTask().id, task.id); eq(ns.settings.selectedTaskID, task.id)
+    eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
+    eq(next(ns.db.progress.characters), nil); eq(next(ns.db.progress.account), nil)
+    eq(task.minutes, 15); eq(task.label, "Book checklist")
+    ns.tracker.done:Click(); eq(ns.tracker.guide:IsVisible(), false)
+end)
+
+test("book labels and malformed settings never silently attach a guide", function()
+    local ns, _, s = world(nil, {taskGuides="corrupt", budget=45, note="Keep note"}); s:login(); s:open()
+    s:add("Library books rewards wowf.io", 10)
+    local task = ns.db.tasks[1]
+    ok(ns.ChooseTask(task.id)); ns.window.sessionTab:Click()
+    eq(ns.window.planRows[1].guide:IsVisible(), false)
+    s:row(task.label).edit:Click(); ns.window.guide:Click()
+    ns.window.minutes:SetText("0"); ns.window.save:Click()
+    eq(ns.settings.taskGuides, "corrupt", "an invalid task save must not commit a guide binding")
+    eq(task.minutes, 10); ns.window.minutes:SetText("10"); ns.window.save:Click()
+    eq(ns.settings.taskGuides[task.id], "librarian-books")
+    eq(ns.settings.budget, 45); eq(ns.settings.note, "Keep note")
+end)
+
 test("choosing recurring tasks does not query or guess resets and failed completion keeps the choice", function()
     local ns, env, s = world(); s:login()
     local calls = 0
@@ -289,10 +492,12 @@ test("choosing recurring tasks does not query or guess resets and failed complet
     env.GetQuestResetTime = nil
     local task = assert(ns.Model.AddTask(ns.db, {label="Weekly activity", minutes=20, recurrence="weekly"}))
     ok(ns.ChooseTask(task.id)); ns.Refresh(); eq(ns.GetChosenTask().id, task.id); eq(calls, 0)
-    ns.Complete(task.id); eq(calls, 1); eq(ns.GetChosenTask().id, task.id)
+    local completed, err = ns.Complete(task.id)
+    eq(completed, false); contains(err, "reset"); contains(s.messages[#s.messages], "reset")
+    eq(calls, 1); eq(ns.GetChosenTask().id, task.id)
     eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
     env.C_DateAndTime.GetSecondsUntilWeeklyReset = function() return 50 end
-    ns.Complete(task.id); eq(ns.settings.selectedTaskID, nil)
+    ok(ns.Complete(task.id)); eq(ns.settings.selectedTaskID, nil)
     s.now = s.now + 50; ns.Refresh()
     eq(ns.Model.IsCompleted(ns.db, task.id, ns.character, s.now), false)
     eq(ns.GetChosenTask(), nil, "a recurrence reset must not silently restore a completed choice")
