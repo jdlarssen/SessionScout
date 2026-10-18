@@ -1,0 +1,33 @@
+SessionScout 0.2.0-alpha.2 — Experimental Alpha for WoW Forever 1.60.1 (interface 16001).
+Scoped client checks on 18 October verified task selection, tracker display, Open Scout, direct Done/Undo and opening Librarian 1.3.0 from the tracker in Forever 1.60.1.70450. All original tasks and completion records were preserved after cleanup and reload.
+The default tracker position can overlap the objective list or bag slots. Drag its background to suit your layout. Position restoration after reload remains unverified in the client.
+For the client-tested standard release, use SessionScout 0.1.0 in this project's Files tab.
+
+## Keep your chosen task visible
+
+- Choose an unfinished task and close Scout. A small tracker keeps your choice visible. Drag its background to place it where it works for your layout.
+- Mark the task **Done** directly from the tracker. The confirmation offers **Undo** and **Choose next**, without another slash command. Scout does not select a replacement automatically.
+- **Open Scout** returns to the planner. **Use suggestions** clears your manual choice.
+
+## Optional book guide
+
+Install and enable [Librarian Books Forever](https://www.curseforge.com/wow/addons/librarian-forever) separately. Edit your book task, select **Guide: Library books**, save and choose the task. **Book guide** opens Librarian's journal from the chosen card or tracker.
+
+Librarian supplies its own book locations and progress. It is optional and is not included in this ZIP. Guide links are saved per character. Missing or incompatible Librarian leaves normal task tracking available and displays an explanation.
+
+Scout completion remains manual: opening the guide does not mean your collection goal is complete. Browser checkmarks are not imported, and Scout does not infer a guide from your task name.
+
+## Validation and installation
+
+89 automated checks passed (15 model, 55 mocked integration, 19 Python tooling), plus Lua 5.1 syntax and CI on source `68a53db955243a1ec7d60443e443f88451cfb6b7`. These checks do not establish actual-client rendering, input, dragging, persistence or companion compatibility.
+
+The scoped client results are summarized above. Two alpha.2 drag attempts were inconclusive. Manual movement was subsequently reported with the local alpha.3 build, which leaves drag behavior unchanged; that report does not establish alpha.2 movement or reload persistence. This download is alpha.2.
+
+Back up addon files and saved data before testing. Keep SavedVariables when updating. If WoW does not discover a newly installed addon after reload, restart the client at a convenient time and check AddOns. Other WoW flavors are not supported by this package.
+
+The default client-tested 0.1.0 remains in this project's Files tab. This experimental build is an Alpha.
+
+[Tracker behavior and remaining client checks](https://github.com/jdlarssen/SessionScout/blob/0e085637d60cf4f9cf4d9afe566d93cbafba5796/docs/TRACKER_TESTING.md)
+
+Report addon/game versions, steps and actual results in the project comments or [issue tracker](https://github.com/jdlarssen/SessionScout/issues). Remove personal information from screenshots and do not attach complete SavedVariables files.
+
