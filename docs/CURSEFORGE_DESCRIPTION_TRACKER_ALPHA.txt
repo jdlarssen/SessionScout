@@ -17,12 +17,6 @@ if you want to test the features below. They are **only in the experimental alph
 the standard 0.1.0 download and setup below remain unchanged. Back up your addon
 files and saved data before testing, and keep SavedVariables when updating.
 
-A newer [**0.2.0-alpha.4 test build on GitHub**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever)
-fixes a completed daily/weekly reminder that could stay visible after its reset.
-Its visible completion card refreshes every 30 seconds. The correction passed
-automated checks but has not been tested at an actual server reset in WoW.
-Use the ZIP and manual installation instructions on that release page.
-
 - **Choose your task.** Pick a suggestion or any unfinished task from **My tasks**.
   A task longer than your available time shows a warning without changing its
   estimate. **Use suggestions** returns to the planner.
