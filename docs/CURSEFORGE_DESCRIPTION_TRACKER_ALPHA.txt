@@ -10,17 +10,37 @@ choose your time and see suggestions, from **My tasks**, where you manage the
 list. Estimates and completion are manual; the addon does not discover
 activities, detect quest completion or calculate gear upgrades.
 
-## Optional alpha: choose and track your own task
+## Experimental tracker: keep your chosen task on screen
 
 [**Try SessionScout 0.2.0-alpha.4 — Forever**](https://www.curseforge.com/wow/addons/sessionscout/files/9268483)
 if you want to test the features below. They are **only in the experimental alpha**;
 the standard 0.1.0 download and setup below remain unchanged. Back up your addon
 files and saved data before testing, and keep SavedVariables when updating.
 
-Alpha.4 fixes a completed daily/weekly reminder that could stay visible after its reset.
-Its visible completion card refreshes every 30 seconds. The correction passed
-automated checks but has not been tested at an actual server reset in WoW.
-Use the ZIP and manual installation instructions on the linked CurseForge file page.
+Use the ZIP and manual installation instructions on the linked file page, then
+try it with something you already intend to do:
+
+1. Enter `/scout`, open **Choose myself** (or **Change task**), and press **Choose** beside your task.
+   Add one under **My tasks** → **+ New task** if needed.
+2. Close Scout. Your chosen task stays on a compact tracker. Drag its background
+   somewhere convenient and play as usual.
+3. When you finish, press **Done** on the tracker. **Undo** restores it;
+   **Choose next** opens the picker without choosing a replacement for you.
+
+[**Short tracker trial and setup**](https://github.com/jdlarssen/SessionScout/blob/codex/sessionscout/docs/TRY_TRACKER.md) ·
+[**Share a short result**](https://github.com/jdlarssen/SessionScout/issues/new?template=tracker_feedback.yml)
+
+You can also reply in this project's comments: what were you trying to remember,
+what do you normally use, and what helped or got in the way? Deciding not to use
+it or finding no benefit is useful feedback too.
+
+![Source-derived alpha.2 tracker illustration with a fictional library-book task](https://raw.githubusercontent.com/jdlarssen/SessionScout/aa8d71c611942883e7b8ddbf98d495e53588a513/docs/media/sessionscout-0.2.0-alpha.2-book-tracker-preview.png)
+
+*Earlier alpha.2 source-derived illustration, not an in-game screenshot. The
+task is fictional; fonts and textures are approximate. Book guide requires the
+separate, optional Librarian addon described below.*
+
+### More tracker controls and limits
 
 - **Choose your task.** Pick a suggestion or any unfinished task from **My tasks**.
   A task longer than your available time shows a warning without changing its
@@ -44,6 +64,11 @@ Done/Undo and opening Librarian 1.3.0 from the tracker, with existing tasks and
 completion records preserved. This is not a full compatibility check. See the
 [tracker test record](https://github.com/jdlarssen/SessionScout/blob/codex/sessionscout/docs/TRACKER_TESTING.md)
 for the remaining checks and placement limitations.
+
+Alpha.4 also fixes a completed daily/weekly reminder that could stay visible
+after its reset. Its visible completion card refreshes every 30 seconds. This
+correction passed automated checks but has not been tested at an actual server
+reset in WoW. The alpha remains experimental.
 
 ## Interface preview
 
@@ -106,9 +131,11 @@ the separate This session / My tasks views in 0.1.0.
 
 ## Feedback
 
-Did the suggestions help you choose, or did setup take more effort than it saved?
-Share a concrete example in the project comments or
-[issue tracker](https://github.com/jdlarssen/SessionScout/issues). For bugs, include
+Did the reminder help you act on your chosen task? Did the suggestions help you
+choose, or did setup take more effort than it saved? Share a concrete example
+in the project comments or the
+[short tracker feedback form](https://github.com/jdlarssen/SessionScout/issues/new?template=tracker_feedback.yml).
+For bugs, include
 your addon and game versions and the steps that caused the problem. Remove
 personal information from screenshots; do not attach complete SavedVariables.
 

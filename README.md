@@ -13,6 +13,29 @@ up to three unfinished tasks that fit. **Version 0.1.0 supports WoW Forever
 [Alternate download on GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever) ·
 [Report an issue](https://github.com/jdlarssen/SessionScout/issues)
 
+## Try the chosen-task tracker
+
+Keep the task you chose on screen and mark it **Done** without entering `/scout`
+again. These features are in the optional **0.2.0-alpha.4 experimental build** for
+Forever 1.60.1. **Stable 0.1.0 remains the default download above.**
+
+[Download the tracker alpha on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9268483)
+and follow the [short setup and trial guide](docs/TRY_TRACKER.md).
+Back up your addon files and saved data before testing; keep SavedVariables when
+updating. Once installed:
+
+1. Open `/scout`, then **My tasks**, and **Choose** an unfinished task.
+2. Close Scout. Its compact tracker keeps your chosen task visible while you play.
+3. Press **Done** on the tracker when you finish. **Undo** restores the task;
+   **Choose next** lets you pick another without a slash command.
+
+Completion is manual, and Scout never chooses your replacement task. The optional
+book-guide link opens a separately installed Librarian Books Forever journal.
+See the [test scope and remaining checks](docs/TRACKER_TESTING.md), including
+tracker placement, reload restoration and the new reset timer.
+
+[Tell us how the tracker worked in your session](https://github.com/jdlarssen/SessionScout/issues/new?template=tracker_feedback.yml).
+
 ## Interface preview
 
 [![Source-derived preview of SessionScout 0.1.0 with one saved task fitting a 120-minute session](docs/media/sessionscout-0.1.0-session-preview.png)](docs/media/sessionscout-0.1.0-session-preview.png)
@@ -105,8 +128,11 @@ files remain available. Set **Show alpha files** to **Show** in CurseForge's
 
 Report reproducible bugs or describe a real play session in the
 [issue tracker](https://github.com/jdlarssen/SessionScout/issues). Include the addon
-and game versions, the steps taken and the result. Feedback about whether the
-suggestions helped you choose a task is useful too.
+and game versions, the steps taken and the result. Did suggestions help you
+choose, did the tracker help you remember, or did setup and controls get in the
+way? For the experimental tracker, use the
+[short session feedback form](https://github.com/jdlarssen/SessionScout/issues/new?template=tracker_feedback.yml).
+Finding that your usual method works better is useful feedback too.
 
 Remove chat and personal information from screenshots. Please do not attach
 complete SavedVariables files.

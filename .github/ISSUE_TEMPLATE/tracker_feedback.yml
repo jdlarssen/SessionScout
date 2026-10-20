@@ -1,0 +1,43 @@
+name: Quick task-reminder feedback
+description: A short result from trying the tracker, or deciding not to.
+title: "Task reminder feedback"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No benefit, problems and deciding not to try are useful answers.
+        Omit names, chat and personal details. Do not attach complete SavedVariables files.
+  - type: input
+    id: versions
+    attributes:
+      label: Addon and game versions (optional)
+      placeholder: "For example: SessionScout 0.2.0-alpha.4, Forever 1.60.1; full build if known"
+    validations:
+      required: false
+  - type: textarea
+    id: usual_method
+    attributes:
+      label: How do you usually remember this task?
+      description: A few words are enough. If you do not need a reminder, say so.
+    validations:
+      required: false
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened?
+      description: What helped, got in the way, failed or made no difference? If you did not try it, why?
+      placeholder: "Describe the task without personal details and the result. If Book guide was involved, what did Scout add compared with opening Librarian directly? 'Not compared' is fine."
+    validations:
+      required: true
+  - type: dropdown
+    id: later_use
+    attributes:
+      label: On a later relevant occasion (optional)
+      options:
+        - No later opportunity yet
+        - Used it again by my own choice
+        - Used it after a reminder or test instruction
+        - Had another opportunity but chose not to use it
+        - Did not try the tracker
+    validations:
+      required: false
