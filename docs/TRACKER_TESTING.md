@@ -104,8 +104,11 @@ chat and character information. Only the sanitized results are published here.
 
 ## Later source correction — experimental alpha.4
 
-[GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever),
-published 18 October 2026. The CurseForge test package remains alpha.2.
+The [GitHub prerelease](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever)
+was published on 18 October 2026. The same unchanged package was published as a
+[CurseForge Alpha](https://www.curseforge.com/wow/addons/sessionscout/files/9268483)
+on 20 October 2026. The default release remains 0.1.0; alpha.2 remains available
+as a historical package with the client evidence recorded above.
 
 A daily or weekly completion card could stay visible after its recorded reset
 while the planner was closed and no inventory/combat event triggered a refresh.

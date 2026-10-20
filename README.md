@@ -113,13 +113,17 @@ complete SavedVariables files.
 
 ## Development
 
-The latest opt-in [**0.2.0-alpha.4 test build**](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever)
-fixes a daily/weekly completion card that could remain visible after its recorded
+The latest opt-in **0.2.0-alpha.4 test build** is available on
+[CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9268483) and
+[GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever).
+The unchanged package was published as a CurseForge Alpha on 20 October 2026,
+following its GitHub prerelease on 18 October. It fixes a daily/weekly completion
+card that could remain visible after its recorded
 server reset while the planner was closed. The visible card now refreshes every
 30 seconds; hiding or undoing it stops that timer. It also includes the alpha.3
 default-position adjustment, retaining existing saved positions. All 92 automated
 checks pass, but the new timer has not been checked at an actual reset in WoW.
-This is an experimental GitHub download; the default release above remains 0.1.0.
+This remains an experimental Alpha; the default release above remains 0.1.0.
 
 The earlier **0.2.0-alpha.2 test build** is available from
 [CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9243366) or

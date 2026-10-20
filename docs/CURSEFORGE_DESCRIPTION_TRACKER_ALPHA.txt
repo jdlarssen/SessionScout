@@ -12,10 +12,15 @@ activities, detect quest completion or calculate gear upgrades.
 
 ## Optional alpha: choose and track your own task
 
-[**Try SessionScout 0.2.0-alpha.2 — Forever**](https://www.curseforge.com/wow/addons/sessionscout/files/9243366)
+[**Try SessionScout 0.2.0-alpha.4 — Forever**](https://www.curseforge.com/wow/addons/sessionscout/files/9268483)
 if you want to test the features below. They are **only in the experimental alpha**;
 the standard 0.1.0 download and setup below remain unchanged. Back up your addon
 files and saved data before testing, and keep SavedVariables when updating.
+
+Alpha.4 fixes a completed daily/weekly reminder that could stay visible after its reset.
+Its visible completion card refreshes every 30 seconds. The correction passed
+automated checks but has not been tested at an actual server reset in WoW.
+Use the ZIP and manual installation instructions on the linked CurseForge file page.
 
 - **Choose your task.** Pick a suggestion or any unfinished task from **My tasks**.
   A task longer than your available time shows a warning without changing its

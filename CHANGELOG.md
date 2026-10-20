@@ -2,7 +2,10 @@
 
 ## 0.2.0-alpha.4 — 2026-10-18, experimental prerelease
 
-[GitHub test build](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever).
+[CurseForge test build](https://www.curseforge.com/wow/addons/sessionscout/files/9268483)
+and [GitHub mirror](https://github.com/jdlarssen/SessionScout/releases/tag/v0.2.0-alpha.4-forever).
+The unchanged package was published on CurseForge as an Alpha on 20 October 2026;
+the GitHub prerelease dates from 18 October. The default release remains 0.1.0.
 
 - Refresh a visible daily/weekly completion card every 30 seconds, so it clears
   after the recorded server reset even while the planner is closed. No next task

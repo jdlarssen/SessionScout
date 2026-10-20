@@ -37,5 +37,6 @@
     "publicUrl": "https://www.curseforge.com/wow/addons/sessionscout",
     "alpha4Linked": false,
     "packageChanged": false
-  }
+  },
+  "subsequentPublicationRecord": "data/curseforge-alpha4-publication-20261020.json"
 }
