@@ -14,12 +14,17 @@ no benefit is useful feedback too.
    [its CurseForge file page](https://www.curseforge.com/wow/addons/sessionscout/files/9268483).
 2. With WoW closed, back up your existing SessionScout addon folder and your
    Forever `WTF` folder, which contains saved settings. Extract the ZIP's
-   `SessionScout` folder into your Forever `Interface/AddOns` folder; the current
-   beta uses `_classic_beta_/Interface/AddOns`. The resulting path must contain
-   `SessionScout/SessionScout.toc` directly. Keep your SavedVariables when updating.
+   `SessionScout` folder into your World of Warcraft installation's
+   `_forever_/Interface/AddOns` folder. The resulting path must be
+   `_forever_/Interface/AddOns/SessionScout/SessionScout.toc`.
+   `_classic_beta_` is the separate earlier beta folder. Keep your SavedVariables
+   when updating.
 3. Start WoW, enable SessionScout in the AddOns menu, and enter `/scout`.
 
 Retail and other Classic flavors are unsupported. App-based installation is unverified.
+The recorded client checks used the beta. The launch client **1.60.1.70790** has
+not yet been tested with this alpha; the installation path above was checked
+without starting the game.
 
 ## During your usual session
 

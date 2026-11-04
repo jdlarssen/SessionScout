@@ -1,7 +1,7 @@
 # SessionScout 0.2.0-alpha.4 — Forever (experimental)
 
 An opt-in test build for WoW Forever 1.60.1, interface 16001.
-The default client-tested release remains [0.1.0 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143).
+The default release, tested in the beta client, remains [0.1.0 on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143).
 
 ## Fix: completed reminders after a reset
 
@@ -43,13 +43,19 @@ the local alpha.3 build. Restoration of a moved position and chosen task after
 reload still needs client verification. These earlier checks are not an
 alpha.4 client-test claim. See the [tracker test record](https://github.com/jdlarssen/SessionScout/blob/393cb452586bfca7d141a3442bc93c3ba11ac4a7/docs/TRACKER_TESTING.md).
 
+Installation note updated 4 November: the launch client is installed separately
+at `_forever_`, version **1.60.1.70790**. Neither this alpha nor stable 0.1.0 has
+been run in that client. Earlier beta checks do not establish launch compatibility.
+
 ## Manual installation
 
 Download **SessionScout-0.2.0-alpha.4-forever.zip**, not GitHub's source-code
 archives. With WoW closed, back up the existing addon and extract the ZIP's
-`SessionScout` folder into your Forever `Interface/AddOns` directory. The
-current beta uses `_classic_beta_/Interface/AddOns`. Keep your SavedVariables
-when updating. Start WoW, enable the addon and use `/scout`.
+`SessionScout` folder into your World of Warcraft installation's
+`_forever_/Interface/AddOns` directory. The resulting path must be
+`_forever_/Interface/AddOns/SessionScout/SessionScout.toc`. `_classic_beta_` is
+the separate earlier beta folder. Keep your SavedVariables when updating.
+Start WoW, enable the addon and use `/scout`.
 
 Retail and other Classic flavors are not supported by this package. App-based
 installation/update is unverified. No automatic installation is performed.

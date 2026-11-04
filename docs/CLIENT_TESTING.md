@@ -1,11 +1,24 @@
 # Client validation
 
-Last updated: 18 October 2026.
+Last updated: 4 November 2026 (installation metadata only; no new game test).
 
 **The 0.1.0 release's essential task, budget and reload checks passed in Forever
 beta 1.60.1.70450 (interface 16001).** Broader compatibility checks remain open.
-The newer experimental 0.2.0-alpha.1 manual-choice controls have not been tested
-in the client; see the [separate test plan](MANUAL_CHOICE_TESTING.md).
+
+## Launch installation observation — 4 November
+
+A read-only installation check found an active `wowf` product at version
+**1.60.1.70790** in `.build.info`. `_forever_/Wow.exe` reports the same version,
+and `_forever_/Interface/AddOns` exists. The earlier `_classic_beta_` installation
+is separate. The README and tracker trial now point to the launch folder.
+
+This check did not start WoW, install an addon, read player saved data or exercise
+any game API. Neither 0.1.0 nor 0.2.0-alpha.4 has been run in the launch client.
+The existing beta checks below remain the available runtime evidence; a future
+launch-client check must record its exact build and results separately.
+
+Later experimental tracker checks and their remaining limits are recorded in
+the [tracker test record](TRACKER_TESTING.md).
 
 ## Tested versions and methods
 

@@ -6,7 +6,7 @@ Choose how much time you have. See up to three personal tasks that fit.
 
 SessionScout turns your WoW to-do list into a plan for your next session. Enter
 tasks with time estimates and priorities, choose your available minutes, and see
-up to three unfinished tasks that fit. **Version 0.1.0 supports WoW Forever
+up to three unfinished tasks that fit. **Version 0.1.0 targets WoW Forever
 1.60.1.** Estimates and completion are manual.
 
 [Download on CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143) ·
@@ -52,15 +52,18 @@ shows the previous layout with fictional tasks.
 1. Download `SessionScout-0.1.0-forever.zip` from
    [CurseForge](https://www.curseforge.com/wow/addons/sessionscout/files/9222143)
    or [GitHub](https://github.com/jdlarssen/SessionScout/releases/tag/v0.1.0-forever).
-2. With WoW closed, extract its `SessionScout` directory into your Forever
-   `Interface/AddOns` folder. The current beta uses `_classic_beta_/Interface/AddOns`.
-   The resulting path must contain `SessionScout/SessionScout.toc` directly.
+2. With WoW closed, extract its `SessionScout` directory into your World of
+   Warcraft installation's `_forever_/Interface/AddOns` folder. The resulting
+   path must be `_forever_/Interface/AddOns/SessionScout/SessionScout.toc`.
+   `_classic_beta_` belongs to the earlier beta client; it is a separate folder.
    Keep your SavedVariables when updating.
 3. Start the game and enable SessionScout in the AddOns menu.
 4. Enter `/scout` or `/sessionscout`.
 
 Installation and updating through the CurseForge app have not been verified;
 use the manual installation steps above.
+The recorded game tests used the beta client. The launch client has not yet
+been tested; see [compatibility and validation](#compatibility-and-validation).
 
 ## Use
 
@@ -106,6 +109,11 @@ In-client checks on **1.60.1.70450** covered creating and editing tasks, cancell
 edits, Done/Undo, confirmed deletion, 120/90-minute budgets and invalid input.
 Existing tasks, completion and character settings were preserved after `/reload`.
 The release differs from the tested alpha.4 package only in its version strings.
+
+On 4 November, a read-only installation check found the launch client at
+`_forever_`, version **1.60.1.70790**. Neither stable 0.1.0 nor experimental
+0.2.0-alpha.4 has been run in that client. The folder correction above does not
+extend the beta test results to the launch build.
 
 Earlier checks on **1.60.1.70338** covered task operations, priority and recurrence
 controls, completion scope, pagination, Unicode/pipe text entry, Escape, server-reset
