@@ -22,18 +22,21 @@ configured flavor and the default. Its TOC must specify Interface `16001` alone;
 the build does not modify the TOC or claim support for another client. The flavor
 suffix keeps this artifact distinct from earlier Retail development packages.
 
-The PowerShell installer requires an explicit client directory:
+To preview installation from this checkout, pass the Forever client directory
+you intend to use. For the launch client, run
 
 ```powershell
-pwsh -File tools/install.ps1 -WoWPath 'C:\Program Files (x86)\World of Warcraft\_classic_beta_' -WhatIf
-pwsh -File tools/install.ps1 -WoWPath 'C:\Program Files (x86)\World of Warcraft\_classic_beta_'
+pwsh -File tools/install.ps1 -WoWPath 'C:\Program Files (x86)\World of Warcraft\_forever_' -WhatIf
 ```
 
-`-WhatIf` validates local evidence and previews the destination without writing.
-Remove it only when installation is intended. The currently observed target is
-the `wow_classic_beta` product with `WowB.exe` version `1.60.1`. Executable version,
-`.flavor.info` and one active parent `.build.info` row must agree. Other products
-and versions are refused rather than being treated as compatible automatically.
+For the beta client, use `_classic_beta_` in the same command. Check the product,
+build and destination in the preview, then omit `-WhatIf` when ready to install.
+
+The installer reads the product from the selected client's `.flavor.info`.
+It requires `Wow.exe` for launch (`wowf`) or `WowB.exe` for beta
+(`wow_classic_beta`). The executable must report a `1.60.1` build, and exactly
+one active row in the parent `.build.info` must match both the product and the
+full executable version. A preview checks these files without writing.
 
 Only TOC-listed Lua, the TOC and the optional license are installed. The installer
 rejects junctions and symbolic links. Before replacing an existing `SessionScout`
@@ -46,8 +49,8 @@ the game.
 
 Python tests exercise release allowlisting, reproducibility, exact flavor/TOC
 matching and refusal of unconfigured flavors. On 11 October 2026 the installer
-passed `-WhatIf`, then installed the alpha into the verified local Forever
-1.60.1.70338 client and checked file hashes. Existing-installation rollback has
+passed `-WhatIf`, then installed the alpha into the local Forever beta client
+1.60.1.70338 and checked file hashes. Existing-installation rollback has
 not been exercised against the game folder. Installation does not establish
 in-game compatibility; see the later [client test record](../docs/CLIENT_TESTING.md)
 for the completed scoped checks and remaining gaps.

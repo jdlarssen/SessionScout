@@ -2,14 +2,14 @@
 .SYNOPSIS
 Install this checkout's SessionScout files into one explicitly selected client.
 .DESCRIPTION
-Currently accepts only the observed Classic/Forever beta product wow_classic_beta,
-client version 1.60.1, and Interface 16001. It does not certify in-game compatibility.
-Requires matching executable, .flavor.info and parent .build.info evidence.
+Accepts the Forever launch (wowf) and beta (wow_classic_beta) clients on 1.60.1
+for Interface 16001. Requires matching executable, .flavor.info and parent
+.build.info evidence. Runtime compatibility requires separate in-game testing.
 Only SessionScout is replaced. An existing installation is copied and hash-verified
 under this workspace's backups directory before replacement, with rollback on error.
 Use -WhatIf to validate and preview without writing. Does not launch or reload WoW.
 .EXAMPLE
-pwsh -File tools/install.ps1 -WoWPath 'C:\Program Files (x86)\World of Warcraft\_classic_beta_' -WhatIf
+pwsh -File tools/install.ps1 -WoWPath 'C:\Program Files (x86)\World of Warcraft\_forever_' -WhatIf
 #>
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Medium')]
 param(
@@ -99,22 +99,28 @@ $client = [IO.Path]::GetFullPath($WoWPath)
 Assert-NoReparsePath $workspace
 Assert-NoReparsePath $client
 if (-not (Test-Path -LiteralPath $client -PathType Container)) {
-    throw 'WoWPath must name the existing client folder that directly contains WowB.exe.'
-}
-$executable = Join-Path $client 'WowB.exe'
-if (-not (Test-Path -LiteralPath $executable -PathType Leaf)) {
-    throw 'This installer requires the observed Classic beta client executable WowB.exe.'
-}
-Assert-NoReparsePath $executable
-$clientVersion = (Get-Item -LiteralPath $executable).VersionInfo.FileVersion
-if ($clientVersion -notmatch '^1\.60\.1\.\d+$') {
-    throw "Unsupported client version: $clientVersion. Expected the 1.60.1 Forever development target."
+    throw 'WoWPath must name the existing client folder that directly contains .flavor.info.'
 }
 $flavorFile = Join-Path $client '.flavor.info'
 Assert-NoReparsePath $flavorFile
 $flavorLines = @(Get-Content -LiteralPath $flavorFile | Where-Object { $_.Trim() })
-if ($flavorLines.Count -ne 2 -or $flavorLines[0].Trim() -ne 'Product Flavor!STRING:0' -or $flavorLines[1].Trim() -ne 'wow_classic_beta') {
-    throw 'The client .flavor.info must identify the observed wow_classic_beta product.'
+if ($flavorLines.Count -ne 2 -or $flavorLines[0].Trim() -cne 'Product Flavor!STRING:0') {
+    throw 'Expected a product header and one product identifier in .flavor.info.'
+}
+$clientProduct = $flavorLines[1].Trim()
+$executableName = switch -CaseSensitive ($clientProduct) {
+    'wowf'             { 'Wow.exe' }
+    'wow_classic_beta' { 'WowB.exe' }
+    default            { throw "Unsupported .flavor.info product: $clientProduct." }
+}
+$executable = Join-Path $client $executableName
+if (-not (Test-Path -LiteralPath $executable -PathType Leaf)) {
+    throw "The $clientProduct client requires $executableName."
+}
+Assert-NoReparsePath $executable
+$clientVersion = (Get-Item -LiteralPath $executable).VersionInfo.FileVersion
+if ($clientVersion -notmatch '^1\.60\.1\.\d+$') {
+    throw "Unsupported client version: $clientVersion. Expected Forever 1.60.1."
 }
 $buildInfo = Join-Path (Split-Path -Parent $client) '.build.info'
 Assert-NoReparsePath $buildInfo
@@ -127,7 +133,7 @@ $activeIndex = [Array]::IndexOf($headers, 'Active')
 if ($versionIndex -lt 0 -or $productIndex -lt 0 -or $activeIndex -lt 0) { throw 'Unsupported .build.info columns.' }
 $matchingBuilds = @($buildLines | Select-Object -Skip 1 | Where-Object {
     $fields = $_ -split '\|'
-    $fields.Count -eq $headers.Count -and $fields[$productIndex] -eq 'wow_classic_beta' -and
+    $fields.Count -eq $headers.Count -and $fields[$productIndex] -ceq $clientProduct -and
         $fields[$activeIndex] -eq '1' -and $fields[$versionIndex] -eq $clientVersion
 })
 if ($matchingBuilds.Count -ne 1) { throw 'The executable, flavor and one active .build.info row must agree.' }
@@ -184,7 +190,7 @@ Assert-Within $staging $runDirectory
 Assert-Within $previous $runDirectory
 Assert-NoReparsePath $runDirectory
 
-if (-not $PSCmdlet.ShouldProcess($destination, "Install SessionScout $addonVersion for Classic beta $clientVersion; preserve existing files under $runDirectory")) {
+if (-not $PSCmdlet.ShouldProcess($destination, "Install SessionScout $addonVersion for $clientProduct $clientVersion and preserve existing files under $runDirectory")) {
     return
 }
 
@@ -230,7 +236,7 @@ $record = [ordered]@{
     addonVersion = $addonVersion
     interface = 16001
     flavor = 'forever'
-    clientProduct = 'wow_classic_beta'
+    clientProduct = $clientProduct
     clientVersion = $clientVersion
     destination = $destination
     previousInstallation = $(if ($hadExisting) { $previous } else { $null })
